@@ -1,0 +1,255 @@
+[
+  {
+    "slug": "01-math",
+    "title": "数学基础",
+    "group": "基础与算法",
+    "summary": "线性代数、微积分、概率统计、优化与信息论",
+    "prerequisites": []
+  },
+  {
+    "slug": "02-programming",
+    "title": "编程与计算机基础",
+    "group": "基础与算法",
+    "summary": "Python、数据结构、Git、Linux、SQL 与软件工程",
+    "prerequisites": []
+  },
+  {
+    "slug": "03-data",
+    "title": "数据工程与数据质量",
+    "group": "基础与算法",
+    "summary": "采集、清洗、标注、切分、数据治理与数据版本",
+    "prerequisites": [
+      "02-programming"
+    ]
+  },
+  {
+    "slug": "04-machine-learning",
+    "title": "机器学习",
+    "group": "基础与算法",
+    "summary": "回归、分类、树模型、聚类、降维与泛化",
+    "prerequisites": [
+      "01-math",
+      "02-programming",
+      "03-data"
+    ]
+  },
+  {
+    "slug": "05-deep-learning",
+    "title": "深度学习",
+    "group": "基础与算法",
+    "summary": "自动微分、反向传播、优化、网络结构与训练诊断",
+    "prerequisites": [
+      "04-machine-learning"
+    ]
+  },
+  {
+    "slug": "06-nlp",
+    "title": "自然语言处理",
+    "group": "基础与算法",
+    "summary": "文本表示、序列建模、语言模型与语言任务",
+    "prerequisites": [
+      "05-deep-learning"
+    ]
+  },
+  {
+    "slug": "07-computer-vision",
+    "title": "计算机视觉",
+    "group": "基础与算法",
+    "summary": "分类、检测、分割、视觉表示与三维视觉",
+    "prerequisites": [
+      "05-deep-learning"
+    ]
+  },
+  {
+    "slug": "08-time-series",
+    "title": "时间序列与异常检测",
+    "group": "基础与算法",
+    "summary": "预测、时序切分、统计基线与分布漂移",
+    "prerequisites": [
+      "04-machine-learning"
+    ]
+  },
+  {
+    "slug": "09-llm",
+    "title": "大语言模型",
+    "group": "模型与应用",
+    "summary": "Tokenizer、Transformer、位置编码、预训练与 MoE",
+    "prerequisites": [
+      "05-deep-learning",
+      "06-nlp"
+    ]
+  },
+  {
+    "slug": "10-generative-multimodal",
+    "title": "生成模型与多模态",
+    "group": "模型与应用",
+    "summary": "VAE、GAN、扩散、flow matching、视觉语言、音频视频",
+    "prerequisites": [
+      "05-deep-learning"
+    ]
+  },
+  {
+    "slug": "11-ai-applications",
+    "title": "AI 应用开发",
+    "group": "模型与应用",
+    "summary": "API、结构化输出、流式、缓存、工具调用与产品设计",
+    "prerequisites": [
+      "02-programming"
+    ]
+  },
+  {
+    "slug": "12-rag",
+    "title": "检索增强生成",
+    "group": "模型与应用",
+    "summary": "切块、embedding、混合召回、重排、引用与权限",
+    "prerequisites": [
+      "11-ai-applications",
+      "23-recommendation-search"
+    ]
+  },
+  {
+    "slug": "13-agents",
+    "title": "Agent 与工作流",
+    "group": "模型与应用",
+    "summary": "工具、规划、状态、记忆、MCP、边界与评估",
+    "prerequisites": [
+      "11-ai-applications"
+    ]
+  },
+  {
+    "slug": "14-finetuning-alignment",
+    "title": "微调与对齐",
+    "group": "模型与应用",
+    "summary": "SFT、LoRA、QLoRA、RLHF、DPO 与偏好学习",
+    "prerequisites": [
+      "09-llm",
+      "03-data"
+    ]
+  },
+  {
+    "slug": "15-evaluation-safety",
+    "title": "评估、安全与负责任 AI",
+    "group": "模型与应用",
+    "summary": "评测、数据污染、红队、隐私、公平与可观测性",
+    "prerequisites": [
+      "04-machine-learning"
+    ]
+  },
+  {
+    "slug": "16-hardware-systems",
+    "title": "硬件与系统基础",
+    "group": "AI Infra",
+    "summary": "CPU、GPU、内存、OS、网络、存储与性能模型",
+    "prerequisites": [
+      "02-programming"
+    ]
+  },
+  {
+    "slug": "17-gpu-kernels-compilers",
+    "title": "GPU、算子与编译器",
+    "group": "AI Infra",
+    "summary": "CUDA、Triton、算子融合、roofline、图优化与编译",
+    "prerequisites": [
+      "16-hardware-systems",
+      "05-deep-learning"
+    ]
+  },
+  {
+    "slug": "18-distributed-training",
+    "title": "分布式训练",
+    "group": "AI Infra",
+    "summary": "DDP、FSDP、ZeRO、TP、PP、EP、通信与容错",
+    "prerequisites": [
+      "16-hardware-systems",
+      "05-deep-learning"
+    ]
+  },
+  {
+    "slug": "19-inference-serving",
+    "title": "推理与模型服务",
+    "group": "AI Infra",
+    "summary": "KV Cache、批处理、量化、推测解码、PD 分离与 SLO",
+    "prerequisites": [
+      "09-llm",
+      "16-hardware-systems"
+    ]
+  },
+  {
+    "slug": "20-mlops",
+    "title": "MLOps 与生产系统",
+    "group": "AI Infra",
+    "summary": "实验、流水线、版本、部署、监控、回滚与成本",
+    "prerequisites": [
+      "03-data",
+      "04-machine-learning"
+    ]
+  },
+  {
+    "slug": "21-edge-ai",
+    "title": "端侧 AI",
+    "group": "AI Infra",
+    "summary": "移动端、浏览器、ONNX、量化、隐私与设备约束",
+    "prerequisites": [
+      "05-deep-learning",
+      "19-inference-serving"
+    ]
+  },
+  {
+    "slug": "22-rl-robotics",
+    "title": "强化学习与机器人",
+    "group": "交叉领域",
+    "summary": "MDP、控制、模仿、离线 RL、具身智能与世界模型",
+    "prerequisites": [
+      "01-math",
+      "05-deep-learning"
+    ]
+  },
+  {
+    "slug": "23-recommendation-search",
+    "title": "推荐与信息检索",
+    "group": "交叉领域",
+    "summary": "倒排、BM25、向量检索、召回、排序与在线实验",
+    "prerequisites": [
+      "03-data",
+      "04-machine-learning"
+    ]
+  },
+  {
+    "slug": "24-graphs",
+    "title": "图学习与知识表示",
+    "group": "交叉领域",
+    "summary": "图算法、知识图谱、GNN、图评测与结构化关系",
+    "prerequisites": [
+      "05-deep-learning"
+    ]
+  },
+  {
+    "slug": "25-causal-probabilistic",
+    "title": "因果推断与概率建模",
+    "group": "交叉领域",
+    "summary": "贝叶斯、图模型、因果识别、干预与不确定性",
+    "prerequisites": [
+      "01-math",
+      "04-machine-learning"
+    ]
+  },
+  {
+    "slug": "26-ai-for-science",
+    "title": "AI for Science",
+    "group": "交叉领域",
+    "summary": "分子、蛋白质、材料、科学机器学习与神经算子",
+    "prerequisites": [
+      "05-deep-learning",
+      "24-graphs"
+    ]
+  },
+  {
+    "slug": "27-classical-ai",
+    "title": "经典 AI 与规划优化",
+    "group": "交叉领域",
+    "summary": "搜索、博弈、逻辑、约束求解、进化计算与神经符号",
+    "prerequisites": [
+      "02-programming"
+    ]
+  }
+]

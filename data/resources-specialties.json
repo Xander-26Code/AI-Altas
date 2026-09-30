@@ -1,0 +1,563 @@
+[
+  {
+    "id": "specialty-silver",
+    "title": "David Silver · Reinforcement Learning",
+    "url": "https://davidstarsilver.wordpress.com/teaching/",
+    "kind": "course",
+    "language": "英文",
+    "level": "入门",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "从 MDP、价值函数、策略梯度建立决策学习框架",
+    "topics": [
+      "22-rl-robotics"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-gymnasium",
+    "title": "Gymnasium",
+    "url": "https://gymnasium.farama.org/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "入门",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "核对环境接口、终止与截断语义，练表格 Q-learning",
+    "topics": [
+      "22-rl-robotics"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-cs285",
+    "title": "Berkeley CS285 · Deep Reinforcement Learning",
+    "url": "https://rail.eecs.berkeley.edu/deeprlcourse/",
+    "kind": "course",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "以模仿、策略梯度、离线 RL 组织进阶；大型深度实验需 GPU",
+    "topics": [
+      "22-rl-robotics"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-underactuated",
+    "title": "MIT Underactuated Robotics",
+    "url": "https://underactuated.mit.edu/",
+    "kind": "book",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "补足动力学、LQR、轨迹优化和控制约束",
+    "topics": [
+      "22-rl-robotics"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-lerobot",
+    "title": "LeRobot",
+    "url": "https://huggingface.co/docs/lerobot/index",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "学习演示数据与策略接口；实机另需机器人硬件",
+    "topics": [
+      "22-rl-robotics"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-rt2",
+    "title": "RT-2: Vision-Language-Action Models",
+    "url": "https://robotics-transformer2.github.io/",
+    "kind": "paper",
+    "language": "英文",
+    "level": "研究",
+    "access": "免费",
+    "compute": "无",
+    "why": "从作者项目页理解 VLA 的动作表示，阅读不需 GPU",
+    "topics": [
+      "22-rl-robotics"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-mujoco",
+    "title": "MuJoCo",
+    "url": "https://github.com/google-deepmind/mujoco",
+    "kind": "project",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "认识动力学仿真与接触；大规模策略学习另算算力",
+    "topics": [
+      "22-rl-robotics"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-ir",
+    "title": "Introduction to Information Retrieval",
+    "url": "https://nlp.stanford.edu/IR-book/",
+    "kind": "book",
+    "language": "英文",
+    "level": "入门",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "作者免费在线版；优先倒排、评分和检索评估",
+    "topics": [
+      "23-recommendation-search"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-tfrs",
+    "title": "TensorFlow Recommenders",
+    "url": "https://www.tensorflow.org/recommenders",
+    "kind": "docs",
+    "language": "中英",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "官方示例连接推荐数据、召回与排序",
+    "topics": [
+      "23-recommendation-search"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-faiss",
+    "title": "Faiss Documentation",
+    "url": "https://faiss.ai/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "从精确向量索引到 ANN 的速度、内存、召回权衡",
+    "topics": [
+      "23-recommendation-search"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-movielens",
+    "title": "MovieLens · GroupLens",
+    "url": "https://grouplens.org/datasets/movielens/",
+    "kind": "project",
+    "language": "英文",
+    "level": "入门",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "推荐任务的数据入口；具体版本和再分发遵守原始数据条款",
+    "topics": [
+      "23-recommendation-search"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-torchrec",
+    "title": "TorchRec Overview",
+    "url": "https://meta-pytorch.org/torchrec/overview.html",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "把大 embedding 表、分片与推荐工程连接起来",
+    "topics": [
+      "23-recommendation-search"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-networkx",
+    "title": "NetworkX",
+    "url": "https://networkx.org/documentation/stable/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "入门",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "先学图构造、路径、中心性，建立非神经基线",
+    "topics": [
+      "24-graphs"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-rdf",
+    "title": "W3C RDF 1.1 Primer",
+    "url": "https://www.w3.org/TR/rdf11-primer/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "入门",
+    "access": "免费",
+    "compute": "无",
+    "why": "通过三元组、IRI 和 Turtle 理解知识表示",
+    "topics": [
+      "24-graphs"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-cs224w",
+    "title": "Stanford CS224W",
+    "url": "https://cs224w.stanford.edu/",
+    "kind": "course",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "图学习主线，连接消息传递、图表示与作业",
+    "topics": [
+      "24-graphs"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-pyg",
+    "title": "PyTorch Geometric",
+    "url": "https://pytorch-geometric.readthedocs.io/en/latest/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "从小图例子学到 mini-batch、采样与大图训练",
+    "topics": [
+      "24-graphs"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-ogb",
+    "title": "Open Graph Benchmark",
+    "url": "https://ogb.stanford.edu/",
+    "kind": "project",
+    "language": "英文",
+    "level": "研究",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "使用官方划分和评估器，规范节点、边和图任务比较",
+    "topics": [
+      "24-graphs"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-probml",
+    "title": "Probabilistic Machine Learning",
+    "url": "https://probml.github.io/pml-book/",
+    "kind": "book",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "作者公开资料可读；按概率、图模型和推断主题选章，纸书另售",
+    "topics": [
+      "25-causal-probabilistic"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-cs228",
+    "title": "Stanford CS228 Notes",
+    "url": "https://ermongroup.github.io/cs228-notes/",
+    "kind": "course",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "无",
+    "why": "按表示、推断、学习三层组织概率图模型",
+    "topics": [
+      "25-causal-probabilistic"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-pymc",
+    "title": "Learn PyMC & Bayesian Modeling",
+    "url": "https://www.pymc.io/projects/docs/en/stable/learn.html",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "做后验和预测检查，不只报告点估计",
+    "topics": [
+      "25-causal-probabilistic"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-whatif",
+    "title": "Causal Inference: What If",
+    "url": "https://miguelhernan.org/whatifbook",
+    "kind": "book",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "原作者开放电子资料，从识别假设学习因果推断",
+    "topics": [
+      "25-causal-probabilistic"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-dowhy",
+    "title": "DoWhy v0.13 Documentation",
+    "url": "https://www.pywhy.org/dowhy/v0.13/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "固定版本入口，区分建模、识别、估计和反驳检查",
+    "topics": [
+      "25-causal-probabilistic"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-econml",
+    "title": "EconML",
+    "url": "https://www.pywhy.org/EconML/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "研究异质效应和 double machine learning 的使用条件",
+    "topics": [
+      "25-causal-probabilistic"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-deepchem",
+    "title": "DeepChem",
+    "url": "https://deepchem.io/",
+    "kind": "project",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "从分子表示、性质预测与结构切分开始",
+    "topics": [
+      "26-ai-for-science"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-alphafold",
+    "title": "AlphaFold 2",
+    "url": "https://github.com/google-deepmind/alphafold",
+    "kind": "project",
+    "language": "英文",
+    "level": "研究",
+    "access": "免费",
+    "compute": "GPU",
+    "why": "查看结构预测输入、置信度、数据库需求和原始许可；不是低成本复现承诺",
+    "topics": [
+      "26-ai-for-science"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-deepmd",
+    "title": "DeePMD-kit",
+    "url": "https://docs.deepmodeling.com/projects/deepmd/en/latest/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "研究",
+    "access": "免费",
+    "compute": "GPU",
+    "why": "学习能量与力目标、数据、势函数和模型偏差检查",
+    "topics": [
+      "26-ai-for-science"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-deepxde",
+    "title": "DeepXDE",
+    "url": "https://deepxde.readthedocs.io/en/latest/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "从 ODE/PDE 和边界条件理解物理约束训练",
+    "topics": [
+      "26-ai-for-science"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-neuraloperator",
+    "title": "NeuralOperator",
+    "url": "https://neuraloperator.github.io/dev/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "研究",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "理解函数到函数映射及分辨率、训练分布的限制",
+    "topics": [
+      "26-ai-for-science"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-aima",
+    "title": "Artificial Intelligence: A Modern Approach",
+    "url": "https://aima.cs.berkeley.edu/",
+    "kind": "book",
+    "language": "英文",
+    "level": "入门",
+    "access": "部分免费",
+    "compute": "CPU",
+    "why": "目录、代码与练习公开，完整教材另售；补齐经典 AI 全景",
+    "topics": [
+      "27-classical-ai"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-cs188",
+    "title": "Berkeley CS188 · Fall 2024 archive",
+    "url": "https://inst.eecs.berkeley.edu/~cs188/archive/fa24/",
+    "kind": "course",
+    "language": "英文",
+    "level": "入门",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "固定归档课程；学习搜索、博弈、约束与概率推理",
+    "topics": [
+      "27-classical-ai"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-ortools",
+    "title": "Google OR-Tools",
+    "url": "https://developers.google.com/optimization",
+    "kind": "docs",
+    "language": "中英",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "从排班和路由理解组合优化、可行性与最优性",
+    "topics": [
+      "27-classical-ai"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-z3",
+    "title": "Online Z3 Guide",
+    "url": "https://microsoft.github.io/z3guide/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "使用 SMT 和可执行例子理解 SAT、UNSAT 与 UNKNOWN",
+    "topics": [
+      "27-classical-ai"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  },
+  {
+    "id": "specialty-deap",
+    "title": "DEAP",
+    "url": "https://deap.readthedocs.io/en/master/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "进化计算的表示、选择、变异、统计与多目标优化",
+    "topics": [
+      "27-classical-ai"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+  }
+]
