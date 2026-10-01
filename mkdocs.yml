@@ -1,0 +1,118 @@
+site_name: AI Atlas · AI 全栈学习地图
+site_description: 从基础、算法与模型，到应用开发和 AI Infra 的中文学习指南
+use_directory_urls: false
+strict: true
+theme:
+  name: material
+  language: zh
+  font: false
+  palette:
+    - scheme: default
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: 切换深色主题
+    - scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: 切换浅色主题
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - content.code.copy
+    - toc.follow
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+extra_css:
+  - assets/extra.css
+extra_javascript:
+  - assets/resources.js
+  - assets/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+nav:
+  - 开始:
+      - 首页: index.md
+      - 选择起点: start.md
+      - 知识地图: map.md
+  - 学习路线:
+      - 路线总览: roadmaps/README.md
+      - 零基础: roadmaps/beginner.md
+      - 算法工程: roadmaps/algorithm.md
+      - 应用开发: roadmaps/application.md
+      - LLM 训练: roadmaps/llm.md
+      - AI Infra: roadmaps/infra.md
+      - 研究入门: roadmaps/research.md
+  - 基础与算法:
+      - 01 数学基础: topics/01-math.md
+      - 02 编程与计算机基础: topics/02-programming.md
+      - 03 数据工程与数据质量: topics/03-data.md
+      - 04 机器学习: topics/04-machine-learning.md
+      - 05 深度学习: topics/05-deep-learning.md
+      - 06 自然语言处理: topics/06-nlp.md
+      - 07 计算机视觉: topics/07-computer-vision.md
+      - 08 时间序列与异常检测: topics/08-time-series.md
+  - 模型与应用:
+      - 09 大语言模型: topics/09-llm.md
+      - 10 生成模型与多模态: topics/10-generative-multimodal.md
+      - 11 AI 应用开发: topics/11-ai-applications.md
+      - 12 检索增强生成: topics/12-rag.md
+      - 13 Agent 与工作流: topics/13-agents.md
+      - 14 微调与对齐: topics/14-finetuning-alignment.md
+      - 15 评估、安全与负责任 AI: topics/15-evaluation-safety.md
+  - AI Infra:
+      - 16 硬件与系统基础: topics/16-hardware-systems.md
+      - 17 GPU、算子与编译器: topics/17-gpu-kernels-compilers.md
+      - 18 分布式训练: topics/18-distributed-training.md
+      - 19 推理与模型服务: topics/19-inference-serving.md
+      - 20 MLOps 与生产系统: topics/20-mlops.md
+      - 21 端侧 AI: topics/21-edge-ai.md
+  - 交叉领域:
+      - 22 强化学习与机器人: topics/22-rl-robotics.md
+      - 23 推荐与信息检索: topics/23-recommendation-search.md
+      - 24 图学习与知识表示: topics/24-graphs.md
+      - 25 因果推断与概率建模: topics/25-causal-probabilistic.md
+      - 26 AI for Science: topics/26-ai-for-science.md
+      - 27 经典 AI 与规划优化: topics/27-classical-ai.md
+  - 实践:
+      - 项目总览: projects/README.md
+      - 01 线性回归: projects/01-regression.md
+      - 02 检索评估: projects/02-retrieval.md
+      - 03 Attention: projects/03-attention.md
+      - 04 显存账本: projects/04-memory.md
+      - 05 微调对照: projects/05-finetuning.md
+      - 06 服务压测: projects/06-serving.md
+      - 07 Agent: projects/07-agent.md
+      - 08 论文复现: projects/08-reproduction.md
+  - 资源与维护:
+      - 资源目录: resources.md
+      - 学习方法: guides/study-method.md
+      - 环境与算力: guides/environment.md
+      - 调研总览: research/README.md
+      - 基础组来源: research/foundations-sources.md
+      - 模型组来源: research/models-sources.md
+      - 系统组来源: research/infra-sources.md
+      - 交叉领域来源: research/specialties-sources.md
+      - 质量记录: quality.md
+      - 贡献指南: contributing.md
+      - 维护与发布: guides/maintenance.md

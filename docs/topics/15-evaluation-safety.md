@@ -1,7 +1,7 @@
 # 15 · 评估、可靠性与安全
 
 > 目标：为 AI 系统建立能发现退化的评估集，量化不确定性，检查数据泄漏、隐私、权限和群体表现，并写出可供他人判断的报告。
-> 先修：训练/验证/测试切分、基础统计、AI 应用或模型实验。主动学习约 25–40 小时；数据整理与指标计算可用 CPU，模型推理算力取决于所选模型。
+> 先修：训练/验证/测试切分、基础统计、AI 应用或模型实验。建议规划 80–140 小时。这是完成先修后系统学习主教材、练习和一个项目的规划预算，不含补先修，不等于掌握整个领域。
 
 ## 按这个顺序学
 
@@ -45,7 +45,15 @@ LLM-as-a-judge 可以快速辅助标注，但它也可能偏爱更长、风格�
 
 阅读免费；评估工具的 CPU / GPU 条件取决于待测模型。安全练习只在自己的测试系统内运行。核实日期：2026-09-30。
 
-<!-- RESOURCE_TABLE:15-evaluation-safety -->
+| 资源 | 语言 / 级别 | 费用 / 算力 | 为什么推荐、读哪部分 |
+| --- | --- | --- | --- |
+| [LM Evaluation Harness](https://github.com/EleutherAI/lm-evaluation-harness) | 英文 / 进阶 | 免费 / 可选GPU | 读任务配置、指标和结果记录；先用小模型与小任务验证流程，再增加规模。 |
+| [HELM: Holistic Evaluation of Language Models](https://arxiv.org/abs/2211.09110) | 英文 / 进阶 | 免费 / 无 | 读场景与多指标设计，给自己的应用建立覆盖矩阵；使用原论文理解方法而非追榜。 |
+| [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) | 英文 / 进阶 | 免费 / 无 | 从框架与Playbook入口理解治理、识别、衡量与管理，把责任与证据写进项目流程。 |
+| [OWASP Top 10 for LLM Applications](https://genai.owasp.org/llm-top-10/) | 英文 / 进阶 | 免费 / CPU | 优先读prompt injection、敏感信息泄漏、输出处理与过度代理；映射到自有系统测试。 |
+| [WinoBias: Gender Bias in Coreference Resolution](https://arxiv.org/abs/1804.06876) | 英文 / 进阶 | 免费 / 无 | 读配对样本构造与分组评估；学习控制变量，不把一个英语基准当完整公平结论。 |
+| [Datasheets for Datasets](https://arxiv.org/abs/1803.09010) | 英文 / 入门 | 免费 / 无 | 按动机、组成、收集和推荐用途整理自己的数据说明；填未知而不是编造来源。 |
+| [Model Cards for Model Reporting](https://arxiv.org/abs/1810.03993) | 英文 / 入门 | 免费 / 无 | 读模型卡要素与示例，为自己的模型记录用途、分组指标、评估条件与限制。 |
 
 ## 实践：给一个 AI 项目做“可以复算”的评估包
 

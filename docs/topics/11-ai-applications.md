@@ -1,7 +1,7 @@
 # 11 · AI 应用开发
 
 > 目标：把一次模型调用变成有输入契约、失败处理、成本记录和评估的应用；完成一个可演示、可维护的最小产品。
-> 先修：Python 或 TypeScript、HTTP / JSON、基础后端开发。无需先训练大模型。主动学习约 25–40 小时；CPU 加模拟模型即可完成工程练习，接入云端服务可能产生费用。
+> 先修：Python 或 TypeScript、HTTP / JSON、基础后端开发。无需先训练大模型。建议规划 80–140 小时。这是完成先修后系统学习主教材、练习和一个项目的规划预算，不含补先修，不等于掌握整个领域。
 
 ## 按这个顺序学
 
@@ -49,7 +49,15 @@
 
 课程材料免费不意味着示例 API 免费；先用本地模拟响应完成测试，再自行选择模型服务。核实日期：2026-09-30。
 
-<!-- RESOURCE_TABLE:11-ai-applications -->
+| 资源 | 语言 / 级别 | 费用 / 算力 | 为什么推荐、读哪部分 |
+| --- | --- | --- | --- |
+| [Full Stack LLM Bootcamp](https://fullstackdeeplearning.com/llm-bootcamp/) | 英文 / 进阶 | 免费 / CPU | 先读UX、LLMOps和askFSDL项目分析，学习产品完整链路；2023示例接口需对照现行文档。 |
+| [Microsoft Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners) | 中英 / 入门 | 免费 / CPU | 优先学提示、聊天、函数调用、UX、安全和生命周期章节；材料免费，云端API可能收费。 |
+| [JSON Schema: Creating your first schema](https://json-schema.org/learn/getting-started-step-by-step) | 英文 / 入门 | 免费 / CPU | 完整做一遍对象、字段、嵌套与验证示例；用于给模型输出定义可检查的结构契约。 |
+| [MDN: Using server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events) | 英文 / 进阶 | 免费 / CPU | 读EventSource、事件格式、错误和关闭连接；将流式展示与最终业务提交分开设计。 |
+| [Pydantic Models](https://docs.pydantic.dev/latest/concepts/models/) | 英文 / 进阶 | 免费 / CPU | 读模型定义、字段与验证错误；练习结构校验后再做业务语义检查。 |
+| [RFC 9111: HTTP Caching](https://www.rfc-editor.org/rfc/rfc9111.html) | 英文 / 进阶 | 免费 / CPU | 读缓存键、新鲜度、验证与失效章节；迁移这些思想时区分HTTP缓存和模型结果缓存。 |
+| [OpenTelemetry: Traces](https://opentelemetry.io/docs/concepts/signals/traces/) | 英文 / 进阶 | 免费 / CPU | 读trace与span概念，把检索、模型、重排和工具各阶段耗时关联到一次请求。 |
 
 ## 实践：可审计的工单分类服务
 

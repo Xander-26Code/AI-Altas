@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">AI Atlas learning map</title>
+  <desc id="desc">Foundations connect to models, applications and systems. Specialized branches include robotics, search, graphs, causal inference, science and planning.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M 32 0 L 0 0 0 32" fill="none" stroke="#284440" stroke-width="0.6"/></pattern>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7" fill="none" stroke="#a6d5c8"/></marker>
+  </defs>
+  <rect width="1200" height="420" rx="18" fill="#102d29"/>
+  <rect width="1200" height="420" rx="18" fill="url(#grid)"/>
+  <g font-family="system-ui, -apple-system, Arial, sans-serif">
+    <text x="48" y="54" fill="#a7d7c8" font-size="13" letter-spacing="3">AI ATLAS / A MAP FOR BUILDERS</text>
+    <text x="48" y="102" fill="#f5f4e9" font-size="34" font-weight="650">Understand. Build. Measure.</text>
+    <text x="48" y="132" fill="#bdd1c9" font-size="16">Follow the connections. Learn through evidence.</text>
+    <g transform="translate(48 176)">
+      <rect width="246" height="128" rx="12" fill="#e7eee4"/>
+      <text x="20" y="30" font-size="12" fill="#43695d" letter-spacing="2">01 / FOUNDATIONS</text>
+      <text x="20" y="64" font-size="22" fill="#123e32" font-weight="650">Math + code + data</text>
+      <text x="20" y="99" font-size="14" fill="#406053">Reason about the problem</text>
+    </g>
+    <g transform="translate(334 176)">
+      <rect width="246" height="128" rx="12" fill="#c9e4d5"/>
+      <text x="20" y="30" font-size="12" fill="#43695d" letter-spacing="2">02 / MODELS</text>
+      <text x="20" y="64" font-size="22" fill="#123e32" font-weight="650">Learn representations</text>
+      <text x="20" y="99" font-size="14" fill="#406053">Train, evaluate and explain</text>
+    </g>
+    <g transform="translate(620 176)">
+      <rect width="246" height="128" rx="12" fill="#e8d3a6"/>
+      <text x="20" y="30" font-size="12" fill="#695337" letter-spacing="2">03 / APPLICATIONS</text>
+      <text x="20" y="64" font-size="22" fill="#403927" font-weight="650">Build useful products</text>
+      <text x="20" y="99" font-size="14" fill="#64593d">Retrieval, tools and workflows</text>
+    </g>
+    <g transform="translate(906 176)">
+      <rect width="246" height="128" rx="12" fill="#b6d9d6"/>
+      <text x="20" y="30" font-size="12" fill="#355e5b" letter-spacing="2">04 / SYSTEMS</text>
+      <text x="20" y="64" font-size="22" fill="#123e3d" font-weight="650">Make it run reliably</text>
+      <text x="20" y="99" font-size="14" fill="#365e5b">Hardware, serving and MLOps</text>
+    </g>
+    <g stroke="#a6d5c8" stroke-width="1.5" marker-end="url(#arrow)"><path d="M301 240h25"/><path d="M587 240h25"/><path d="M873 240h25"/></g>
+    <path d="M48 337h1104" stroke="#496b61"/>
+    <text x="48" y="372" font-size="14" fill="#d2e3d9">Explore further</text>
+    <text x="213" y="372" font-size="14" fill="#a9c9bc">Robotics / Search / Graphs / Causality / Science / Planning</text>
+    <text x="1081" y="372" font-size="13" fill="#d2e3d9">ZH / EN</text>
+  </g>
+</svg>

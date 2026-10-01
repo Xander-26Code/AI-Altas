@@ -1,7 +1,7 @@
 # 13 · Agents、工具与工作流
 
 > 目标：用有限工具、显式状态和停止条件构建一个能完成任务的 agent；知道什么时候确定性工作流更合适。
-> 先修：AI 应用开发、JSON schema、函数调用、状态机、基本测试。主动学习约 25–45 小时；CPU 可以运行模拟环境，真实模型调用的费用另计。
+> 先修：AI 应用开发、JSON schema、函数调用、状态机、基本测试。建议规划 80–160 小时。这是完成先修后系统学习主教材、练习和一个项目的规划预算，不含补先修，不等于掌握整个领域。
 
 ## 按这个顺序学
 
@@ -43,7 +43,15 @@ MCP 解决的是应用连接外部能力时的接口协议问题。host 管理�
 
 教程与论文免费；接入模型服务、运行大型软件环境可能另有成本。CPU 可完成本章模拟练习。核实日期：2026-09-30。
 
-<!-- RESOURCE_TABLE:13-agents -->
+| 资源 | 语言 / 级别 | 费用 / 算力 | 为什么推荐、读哪部分 |
+| --- | --- | --- | --- |
+| [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents) | 英文 / 进阶 | 免费 / CPU | 读workflows、agents和工具设计附录；先画清控制流，再选框架。 |
+| [Model Context Protocol Documentation](https://modelcontextprotocol.io/docs/getting-started/intro) | 英文 / 进阶 | 免费 / CPU | 从简介进入Architecture与Security；实现前固定规范版本，并单独设计权限与信任边界。 |
+| [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629) | 英文 / 进阶 | 免费 / 无 | 读行动与观察交替的轨迹示例，自己用结构化状态实现最小循环。 |
+| [Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761) | 英文 / 研究 | 免费 / 无 | 读API调用样本构造和筛选方法；区分训练模型用工具与应用运行时调度。 |
+| [SWE-bench](https://github.com/SWE-bench/SWE-bench) | 英文 / 进阶 | 免费 / CPU | 读任务定义与评估harness，理解测试环境与最终代码行为；本地容器可能占用较多磁盘内存。 |
+| [τ-bench: Tool-Agent-User Interaction](https://arxiv.org/abs/2406.12045) | 英文 / 研究 | 免费 / 无 | 读最终数据库状态评估与多次运行可靠性指标；为自己的工具任务定义可执行成功条件。 |
+| [LangGraph Overview](https://docs.langchain.com/oss/python/langgraph/overview) | 英文 / 进阶 | 免费 / CPU | 读持久执行、状态、streaming与human-in-the-loop概念；先有纯代码基线再引入编排。 |
 
 ## 实践：在模拟仓库里完成补货建议
 

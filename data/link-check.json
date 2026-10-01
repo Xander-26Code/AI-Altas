@@ -1,0 +1,2862 @@
+{
+  "checked_at": "2026-09-30T20:14:04.396968+00:00",
+  "scope": "Markdown/image destinations, curated resource URLs, configured scripts and built HTML href/src when site exists; capped GET; external fragments need separate review",
+  "counts": {
+    "local-preview": 1,
+    "ok": 181,
+    "restricted": 2
+  },
+  "results": [
+    {
+      "url": "http://127.0.0.1:8000",
+      "sources": [
+        "README.md"
+      ],
+      "checked_at": "2026-09-30T20:14:01.392955+00:00",
+      "status": "local-preview",
+      "note": "Local preview URL; not a public web resource"
+    },
+    {
+      "url": "https://aima.cs.berkeley.edu/",
+      "sources": [
+        "data/resources-specialties.json:specialty-aima",
+        "docs/resources.md",
+        "docs/topics/27-classical-ai.md",
+        "site/resources.html",
+        "site/topics/27-classical-ai.html"
+      ],
+      "checked_at": "2026-09-30T19:44:01.112640+00:00",
+      "http_status": 200,
+      "final_url": "https://aima.cs.berkeley.edu/",
+      "status": "ok"
+    },
+    {
+      "url": "https://apple.github.io/coremltools/docs-guides/source/overview-coremltools.html",
+      "sources": [
+        "data/resources-infra.json:infra-coremltools",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/21-edge-ai.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/21-edge-ai.html"
+      ],
+      "checked_at": "2026-09-30T19:44:01.112443+00:00",
+      "http_status": 200,
+      "final_url": "https://apple.github.io/coremltools/docs-guides/source/overview-coremltools.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/",
+      "sources": [
+        "data/resources-foundations.json:foundation-uci",
+        "docs/resources.md",
+        "docs/topics/03-data.md",
+        "site/resources.html",
+        "site/topics/03-data.html"
+      ],
+      "checked_at": "2026-09-30T19:44:01.112741+00:00",
+      "http_status": 200,
+      "final_url": "https://archive.ics.uci.edu/",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/1706.03762",
+      "sources": [
+        "data/resources-models.json:model-003",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/09-llm.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/09-llm.html"
+      ],
+      "checked_at": "2026-09-30T19:44:01.112797+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/1706.03762",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/1803.09010",
+      "sources": [
+        "data/resources-foundations.json:foundation-datasheets",
+        "data/resources-models.json:model-049",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/03-data.md",
+        "docs/topics/15-evaluation-safety.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/03-data.html",
+        "site/topics/15-evaluation-safety.html"
+      ],
+      "checked_at": "2026-09-30T19:44:01.112851+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/1803.09010",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/1804.06876",
+      "sources": [
+        "data/resources-models.json:model-048",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/15-evaluation-safety.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/15-evaluation-safety.html"
+      ],
+      "checked_at": "2026-09-30T19:56:02.552750+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/1804.06876",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/1810.03993",
+      "sources": [
+        "data/resources-models.json:model-050",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/15-evaluation-safety.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/15-evaluation-safety.html"
+      ],
+      "checked_at": "2026-09-30T19:56:02.552547+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/1810.03993",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2005.11401",
+      "sources": [
+        "data/resources-models.json:model-023",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/12-rag.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/12-rag.html"
+      ],
+      "checked_at": "2026-09-30T19:44:01.112945+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2005.11401",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2006.11239",
+      "sources": [
+        "data/resources-models.json:model-010",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/10-generative-multimodal.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/10-generative-multimodal.html"
+      ],
+      "checked_at": "2026-09-30T19:44:01.112983+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2006.11239",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2101.03961",
+      "sources": [
+        "data/resources-models.json:model-005",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/09-llm.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/09-llm.html"
+      ],
+      "checked_at": "2026-09-30T19:44:01.563573+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2101.03961",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2103.00020",
+      "sources": [
+        "data/resources-models.json:model-012",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/10-generative-multimodal.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/10-generative-multimodal.html"
+      ],
+      "checked_at": "2026-09-30T19:44:01.575087+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2103.00020",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2104.09864",
+      "sources": [
+        "data/resources-models.json:model-004",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/09-llm.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/09-llm.html"
+      ],
+      "checked_at": "2026-09-30T19:56:02.552942+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2104.09864",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2106.09685",
+      "sources": [
+        "data/resources-models.json:model-039",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/14-finetuning-alignment.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/14-finetuning-alignment.html"
+      ],
+      "checked_at": "2026-09-30T19:44:02.045548+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2106.09685",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2203.02155",
+      "sources": [
+        "data/resources-models.json:model-041",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/14-finetuning-alignment.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/14-finetuning-alignment.html"
+      ],
+      "checked_at": "2026-09-30T19:44:02.049275+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2203.02155",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2204.03458",
+      "sources": [
+        "data/resources-models.json:model-015",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/10-generative-multimodal.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/10-generative-multimodal.html"
+      ],
+      "checked_at": "2026-09-30T19:56:02.553031+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2204.03458",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2210.02747",
+      "sources": [
+        "data/resources-models.json:model-011",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/10-generative-multimodal.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/10-generative-multimodal.html"
+      ],
+      "checked_at": "2026-09-30T19:44:02.466540+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2210.02747",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2210.03629",
+      "sources": [
+        "data/resources-models.json:model-032",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/13-agents.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/13-agents.html"
+      ],
+      "checked_at": "2026-09-30T19:44:02.616995+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2210.03629",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2211.09110",
+      "sources": [
+        "data/resources-models.json:model-045",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/15-evaluation-safety.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/15-evaluation-safety.html"
+      ],
+      "checked_at": "2026-09-30T19:44:02.932204+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2211.09110",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2211.17192",
+      "sources": [
+        "data/resources-infra.json:infra-speculative-decoding",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/19-inference-serving.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/19-inference-serving.html"
+      ],
+      "checked_at": "2026-09-30T19:44:03.023665+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2211.17192",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2212.04356",
+      "sources": [
+        "data/resources-models.json:model-013",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/10-generative-multimodal.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/10-generative-multimodal.html"
+      ],
+      "checked_at": "2026-09-30T19:56:02.553255+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2212.04356",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2212.09748",
+      "sources": [
+        "data/resources-models.json:model-014",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/10-generative-multimodal.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/10-generative-multimodal.html"
+      ],
+      "checked_at": "2026-09-30T19:44:03.303664+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2212.09748",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2302.04761",
+      "sources": [
+        "data/resources-models.json:model-033",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/13-agents.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/13-agents.html"
+      ],
+      "checked_at": "2026-09-30T19:56:02.553225+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2302.04761",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2305.14314",
+      "sources": [
+        "data/resources-models.json:model-040",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/14-finetuning-alignment.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/14-finetuning-alignment.html"
+      ],
+      "checked_at": "2026-09-30T19:44:03.353983+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2305.14314",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2305.18290",
+      "sources": [
+        "data/resources-models.json:model-042",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/14-finetuning-alignment.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/14-finetuning-alignment.html"
+      ],
+      "checked_at": "2026-09-30T19:44:03.680666+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2305.18290",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2307.03172",
+      "sources": [
+        "data/resources-models.json:model-029",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/12-rag.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/12-rag.html"
+      ],
+      "checked_at": "2026-09-30T19:44:03.766447+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2307.03172",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2309.06180",
+      "sources": [
+        "data/resources-infra.json:infra-paged-attention",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/19-inference-serving.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/19-inference-serving.html"
+      ],
+      "checked_at": "2026-09-30T19:44:04.129929+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2309.06180",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2401.09670",
+      "sources": [
+        "data/resources-infra.json:infra-distserve",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/19-inference-serving.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/19-inference-serving.html"
+      ],
+      "checked_at": "2026-09-30T19:44:04.250652+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2401.09670",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2402.03300",
+      "sources": [
+        "data/resources-models.json:model-043",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/14-finetuning-alignment.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/14-finetuning-alignment.html"
+      ],
+      "checked_at": "2026-09-30T19:44:04.479469+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2402.03300",
+      "status": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2406.12045",
+      "sources": [
+        "data/resources-models.json:model-035",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/13-agents.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/13-agents.html"
+      ],
+      "checked_at": "2026-09-30T19:56:02.553888+00:00",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2406.12045",
+      "status": "ok"
+    },
+    {
+      "url": "https://atlas.mitre.org/",
+      "sources": [
+        "docs/research/models-sources.md",
+        "site/research/models-sources.html"
+      ],
+      "checked_at": "2026-09-30T20:09:20.191495+00:00",
+      "http_status": 200,
+      "final_url": "https://atlas.mitre.org/",
+      "status": "ok"
+    },
+    {
+      "url": "https://book-zh.mlc.ai/",
+      "sources": [
+        "data/resources-infra.json:infra-mlc-zh",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/17-gpu-kernels-compilers.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/17-gpu-kernels-compilers.html"
+      ],
+      "checked_at": "2026-09-30T19:44:04.519675+00:00",
+      "http_status": 200,
+      "final_url": "https://book-zh.mlc.ai/",
+      "status": "ok"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js",
+      "sources": [
+        "mkdocs.yml",
+        "site/404.html",
+        "site/contributing.html",
+        "site/guides/environment.html",
+        "site/guides/maintenance.html",
+        "site/guides/study-method.html",
+        "site/index.html",
+        "site/map.html",
+        "site/projects/01-regression.html",
+        "site/projects/02-retrieval.html",
+        "site/projects/03-attention.html",
+        "site/projects/04-memory.html",
+        "site/projects/05-finetuning.html",
+        "site/projects/06-serving.html",
+        "site/projects/07-agent.html",
+        "site/projects/08-reproduction.html",
+        "site/projects/index.html",
+        "site/quality.html",
+        "site/research/foundations-sources.html",
+        "site/research/index.html",
+        "site/research/infra-sources.html",
+        "site/research/models-sources.html",
+        "site/research/specialties-sources.html",
+        "site/resources.html",
+        "site/roadmaps/algorithm.html",
+        "site/roadmaps/application.html",
+        "site/roadmaps/beginner.html",
+        "site/roadmaps/index.html",
+        "site/roadmaps/infra.html",
+        "site/roadmaps/llm.html",
+        "site/roadmaps/research.html",
+        "site/start.html",
+        "site/topics/01-math.html",
+        "site/topics/02-programming.html",
+        "site/topics/03-data.html",
+        "site/topics/04-machine-learning.html",
+        "site/topics/05-deep-learning.html",
+        "site/topics/06-nlp.html",
+        "site/topics/07-computer-vision.html",
+        "site/topics/08-time-series.html",
+        "site/topics/09-llm.html",
+        "site/topics/10-generative-multimodal.html",
+        "site/topics/11-ai-applications.html",
+        "site/topics/12-rag.html",
+        "site/topics/13-agents.html",
+        "site/topics/14-finetuning-alignment.html",
+        "site/topics/15-evaluation-safety.html",
+        "site/topics/16-hardware-systems.html",
+        "site/topics/17-gpu-kernels-compilers.html",
+        "site/topics/18-distributed-training.html",
+        "site/topics/19-inference-serving.html",
+        "site/topics/20-mlops.html",
+        "site/topics/21-edge-ai.html",
+        "site/topics/22-rl-robotics.html",
+        "site/topics/23-recommendation-search.html",
+        "site/topics/24-graphs.html",
+        "site/topics/25-causal-probabilistic.html",
+        "site/topics/26-ai-for-science.html",
+        "site/topics/27-classical-ai.html"
+      ],
+      "checked_at": "2026-09-30T19:56:02.554008+00:00",
+      "http_status": 200,
+      "final_url": "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js",
+      "status": "ok"
+    },
+    {
+      "url": "https://course.fast.ai/",
+      "sources": [
+        "data/resources-foundations.json:foundation-fastai",
+        "docs/resources.md",
+        "docs/topics/05-deep-learning.md",
+        "site/resources.html",
+        "site/topics/05-deep-learning.html"
+      ],
+      "checked_at": "2026-09-30T19:44:04.701419+00:00",
+      "http_status": 200,
+      "final_url": "https://course.fast.ai/",
+      "status": "ok"
+    },
+    {
+      "url": "https://crfm.stanford.edu/helm/latest/",
+      "sources": [
+        "docs/research/models-sources.md",
+        "site/research/models-sources.html"
+      ],
+      "checked_at": "2026-09-30T20:09:20.191739+00:00",
+      "http_status": 200,
+      "final_url": "https://crfm.stanford.edu/helm/latest/",
+      "status": "ok"
+    },
+    {
+      "url": "https://cs144.github.io/",
+      "sources": [
+        "data/resources-infra.json:infra-cs144",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/16-hardware-systems.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/16-hardware-systems.html"
+      ],
+      "checked_at": "2026-09-30T19:56:02.877589+00:00",
+      "http_status": 200,
+      "final_url": "https://cs144.github.io/",
+      "status": "ok"
+    },
+    {
+      "url": "https://cs224w.stanford.edu/",
+      "sources": [
+        "data/resources-specialties.json:specialty-cs224w",
+        "docs/resources.md",
+        "docs/topics/24-graphs.md",
+        "site/resources.html",
+        "site/topics/24-graphs.html"
+      ],
+      "checked_at": "2026-09-30T19:44:05.081929+00:00",
+      "http_status": 200,
+      "final_url": "http://web.stanford.edu/class/cs224w/",
+      "status": "ok"
+    },
+    {
+      "url": "https://cs229.stanford.edu/main_notes.pdf",
+      "sources": [
+        "data/resources-foundations.json:foundation-cs229-notes",
+        "docs/resources.md",
+        "docs/topics/04-machine-learning.md",
+        "site/resources.html",
+        "site/topics/04-machine-learning.html"
+      ],
+      "checked_at": "2026-09-30T19:56:03.004152+00:00",
+      "http_status": 200,
+      "final_url": "https://cs229.stanford.edu/main_notes.pdf",
+      "status": "ok"
+    },
+    {
+      "url": "https://cs231n.stanford.edu/",
+      "sources": [
+        "data/resources-foundations.json:foundation-cs231n",
+        "docs/resources.md",
+        "docs/topics/07-computer-vision.md",
+        "site/resources.html",
+        "site/topics/07-computer-vision.html"
+      ],
+      "checked_at": "2026-09-30T19:44:05.458732+00:00",
+      "http_status": 200,
+      "final_url": "https://cs231n.stanford.edu/",
+      "status": "ok"
+    },
+    {
+      "url": "https://cs336.stanford.edu/",
+      "sources": [
+        "data/resources-infra.json:infra-cs336",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/17-gpu-kernels-compilers.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/17-gpu-kernels-compilers.html"
+      ],
+      "checked_at": "2026-09-30T19:44:05.531184+00:00",
+      "http_status": 200,
+      "final_url": "https://cs336.stanford.edu/",
+      "status": "ok"
+    },
+    {
+      "url": "https://cs336.stanford.edu/spring2025/",
+      "sources": [
+        "data/resources-models.json:model-002",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/09-llm.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/09-llm.html"
+      ],
+      "checked_at": "2026-09-30T19:56:03.041275+00:00",
+      "http_status": 200,
+      "final_url": "https://cs336.stanford.edu/spring2025/",
+      "status": "ok"
+    },
+    {
+      "url": "https://cs50.harvard.edu/python/",
+      "sources": [
+        "data/resources-foundations.json:foundation-cs50p",
+        "docs/resources.md",
+        "docs/topics/02-programming.md",
+        "site/resources.html",
+        "site/topics/02-programming.html"
+      ],
+      "checked_at": "2026-09-30T19:44:06.502957+00:00",
+      "http_status": 200,
+      "final_url": "https://cs50.harvard.edu/python/",
+      "status": "ok"
+    },
+    {
+      "url": "https://csapp.cs.cmu.edu/",
+      "sources": [
+        "data/resources-infra.json:infra-csapp",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/16-hardware-systems.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/16-hardware-systems.html"
+      ],
+      "checked_at": "2026-09-30T19:44:06.632921+00:00",
+      "http_status": 200,
+      "final_url": "https://csapp.cs.cmu.edu/",
+      "status": "ok"
+    },
+    {
+      "url": "https://d2l.ai/",
+      "sources": [
+        "README.md",
+        "docs/research/README.md",
+        "site/research/index.html"
+      ],
+      "checked_at": "2026-09-30T19:44:07.441156+00:00",
+      "http_status": 200,
+      "final_url": "https://d2l.ai/",
+      "status": "ok"
+    },
+    {
+      "url": "https://davidstarsilver.wordpress.com/teaching/",
+      "sources": [
+        "data/resources-specialties.json:specialty-silver",
+        "docs/resources.md",
+        "docs/topics/22-rl-robotics.md",
+        "site/resources.html",
+        "site/topics/22-rl-robotics.html"
+      ],
+      "checked_at": "2026-09-30T19:44:07.902053+00:00",
+      "http_status": 200,
+      "final_url": "https://davidstarsilver.wordpress.com/teaching/",
+      "status": "ok"
+    },
+    {
+      "url": "https://deap.readthedocs.io/en/master/",
+      "sources": [
+        "data/resources-specialties.json:specialty-deap",
+        "docs/resources.md",
+        "docs/topics/27-classical-ai.md",
+        "site/resources.html",
+        "site/topics/27-classical-ai.html"
+      ],
+      "checked_at": "2026-09-30T19:44:08.176103+00:00",
+      "http_status": 200,
+      "final_url": "https://deap.readthedocs.io/en/master/",
+      "status": "ok"
+    },
+    {
+      "url": "https://deepchem.io/",
+      "sources": [
+        "data/resources-specialties.json:specialty-deepchem",
+        "docs/resources.md",
+        "docs/topics/26-ai-for-science.md",
+        "site/resources.html",
+        "site/topics/26-ai-for-science.html"
+      ],
+      "checked_at": "2026-09-30T19:44:08.340315+00:00",
+      "http_status": 200,
+      "final_url": "https://deepchem.io/",
+      "status": "ok"
+    },
+    {
+      "url": "https://deepxde.readthedocs.io/en/latest/",
+      "sources": [
+        "data/resources-specialties.json:specialty-deepxde",
+        "docs/resources.md",
+        "docs/topics/26-ai-for-science.md",
+        "site/resources.html",
+        "site/topics/26-ai-for-science.html"
+      ],
+      "checked_at": "2026-09-30T19:44:08.554246+00:00",
+      "http_status": 200,
+      "final_url": "https://deepxde.readthedocs.io/en/latest/",
+      "status": "ok"
+    },
+    {
+      "url": "https://detectron2.readthedocs.io/en/latest/tutorials/index.html",
+      "sources": [
+        "data/resources-foundations.json:foundation-detectron2",
+        "docs/resources.md",
+        "docs/topics/07-computer-vision.md",
+        "site/resources.html",
+        "site/topics/07-computer-vision.html"
+      ],
+      "checked_at": "2026-09-30T19:44:08.847762+00:00",
+      "http_status": 200,
+      "final_url": "https://detectron2.readthedocs.io/en/latest/tutorials/index.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events",
+      "sources": [
+        "data/resources-models.json:model-019",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/11-ai-applications.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/11-ai-applications.html"
+      ],
+      "checked_at": "2026-09-30T19:44:09.296570+00:00",
+      "http_status": 200,
+      "final_url": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events",
+      "status": "ok"
+    },
+    {
+      "url": "https://developers.google.com/edge/litert/overview",
+      "sources": [
+        "data/resources-infra.json:infra-litert",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/21-edge-ai.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/21-edge-ai.html"
+      ],
+      "checked_at": "2026-09-30T19:44:09.356479+00:00",
+      "http_status": 200,
+      "final_url": "https://developers.google.com/edge/litert/overview",
+      "status": "ok"
+    },
+    {
+      "url": "https://developers.google.com/machine-learning/crash-course",
+      "sources": [
+        "data/resources-foundations.json:foundation-google-mlcc",
+        "docs/resources.md",
+        "docs/topics/04-machine-learning.md",
+        "site/resources.html",
+        "site/topics/04-machine-learning.html"
+      ],
+      "checked_at": "2026-09-30T19:44:09.615833+00:00",
+      "http_status": 200,
+      "final_url": "https://developers.google.com/machine-learning/crash-course",
+      "status": "ok"
+    },
+    {
+      "url": "https://developers.google.com/optimization",
+      "sources": [
+        "data/resources-specialties.json:specialty-ortools",
+        "docs/resources.md",
+        "docs/topics/27-classical-ai.md",
+        "site/resources.html",
+        "site/topics/27-classical-ai.html"
+      ],
+      "checked_at": "2026-09-30T19:44:09.879886+00:00",
+      "http_status": 200,
+      "final_url": "https://developers.google.com/optimization",
+      "status": "ok"
+    },
+    {
+      "url": "https://dlsyscourse.org/",
+      "sources": [
+        "data/resources-infra.json:infra-dlsys",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/17-gpu-kernels-compilers.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/17-gpu-kernels-compilers.html"
+      ],
+      "checked_at": "2026-09-30T19:44:09.880052+00:00",
+      "http_status": 200,
+      "final_url": "https://dlsyscourse.org/",
+      "status": "ok"
+    },
+    {
+      "url": "https://doc.dvc.org/user-guide/project-structure/dvc-files",
+      "sources": [
+        "data/resources-infra.json:infra-dvc-files",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/20-mlops.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/20-mlops.html"
+      ],
+      "checked_at": "2026-09-30T19:44:09.892785+00:00",
+      "http_status": 200,
+      "final_url": "https://doc.dvc.org/user-guide/project-structure/dvc-files",
+      "status": "ok"
+    },
+    {
+      "url": "https://docs.astral.sh/uv/guides/projects/",
+      "sources": [
+        "data/resources-foundations.json:foundation-uv",
+        "docs/resources.md",
+        "docs/topics/02-programming.md",
+        "site/resources.html",
+        "site/topics/02-programming.html"
+      ],
+      "checked_at": "2026-09-30T19:44:10.386396+00:00",
+      "http_status": 200,
+      "final_url": "https://docs.astral.sh/uv/guides/projects/",
+      "status": "ok"
+    },
+    {
+      "url": "https://docs.deepmodeling.com/projects/deepmd/en/latest/",
+      "sources": [
+        "data/resources-specialties.json:specialty-deepmd",
+        "docs/resources.md",
+        "docs/topics/26-ai-for-science.md",
+        "site/resources.html",
+        "site/topics/26-ai-for-science.html"
+      ],
+      "checked_at": "2026-09-30T19:44:10.459479+00:00",
+      "http_status": 200,
+      "final_url": "https://docs.deepmodeling.com/projects/deepmd/en/latest/",
+      "status": "ok"
+    },
+    {
+      "url": "https://docs.kernel.org/admin-guide/mm/concepts.html",
+      "sources": [
+        "data/resources-infra.json:infra-linux-memory",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/16-hardware-systems.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/16-hardware-systems.html"
+      ],
+      "checked_at": "2026-09-30T19:44:10.462346+00:00",
+      "http_status": 200,
+      "final_url": "https://docs.kernel.org/admin-guide/mm/concepts.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://docs.langchain.com/oss/python/langgraph/overview",
+      "sources": [
+        "data/resources-models.json:model-036",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/13-agents.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/13-agents.html"
+      ],
+      "checked_at": "2026-09-30T19:56:03.443279+00:00",
+      "http_status": 200,
+      "final_url": "https://docs.langchain.com/oss/python/langgraph/overview",
+      "status": "ok"
+    },
+    {
+      "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/index.html",
+      "sources": [
+        "data/resources-infra.json:infra-cuda-guide",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/17-gpu-kernels-compilers.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/17-gpu-kernels-compilers.html"
+      ],
+      "checked_at": "2026-09-30T19:44:10.573683+00:00",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/cuda/cuda-programming-guide/index.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/usage/collectives.html",
+      "sources": [
+        "data/resources-infra.json:infra-nccl",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/18-distributed-training.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/18-distributed-training.html"
+      ],
+      "checked_at": "2026-09-30T19:44:10.790806+00:00",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/usage/collectives.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html",
+      "sources": [
+        "data/resources-infra.json:infra-nsight-compute",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/17-gpu-kernels-compilers.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/17-gpu-kernels-compilers.html"
+      ],
+      "checked_at": "2026-09-30T19:44:10.878697+00:00",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html",
+      "sources": [
+        "data/resources-foundations.json:foundation-opencv",
+        "docs/resources.md",
+        "docs/topics/07-computer-vision.md",
+        "site/resources.html",
+        "site/topics/07-computer-vision.html"
+      ],
+      "checked_at": "2026-09-30T20:14:01.394336+00:00",
+      "http_status": 403,
+      "status": "restricted",
+      "note": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.pydantic.dev/latest/concepts/models/",
+      "sources": [
+        "data/resources-models.json:model-020",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/11-ai-applications.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/11-ai-applications.html"
+      ],
+      "checked_at": "2026-09-30T19:44:11.102098+00:00",
+      "http_status": 200,
+      "final_url": "https://pydantic.dev/docs/validation/latest/concepts/models/",
+      "status": "ok"
+    },
+    {
+      "url": "https://docs.pytest.org/en/stable/getting-started.html",
+      "sources": [
+        "data/resources-foundations.json:foundation-pytest",
+        "docs/resources.md",
+        "docs/topics/02-programming.md",
+        "site/resources.html",
+        "site/topics/02-programming.html"
+      ],
+      "checked_at": "2026-09-30T19:44:11.106163+00:00",
+      "http_status": 200,
+      "final_url": "https://docs.pytest.org/en/stable/getting-started.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://docs.python.org/zh-cn/3/tutorial/",
+      "sources": [
+        "data/resources-foundations.json:foundation-python",
+        "docs/resources.md",
+        "docs/topics/02-programming.md",
+        "site/resources.html",
+        "site/topics/02-programming.html"
+      ],
+      "checked_at": "2026-09-30T19:44:11.156509+00:00",
+      "http_status": 200,
+      "final_url": "https://docs.python.org/zh-cn/3/tutorial/",
+      "status": "ok"
+    },
+    {
+      "url": "https://docs.pytorch.org/tutorials/beginner/basics/intro.html",
+      "sources": [
+        "data/resources-foundations.json:foundation-pytorch-basics",
+        "docs/resources.md",
+        "docs/topics/05-deep-learning.md",
+        "site/resources.html",
+        "site/topics/05-deep-learning.html"
+      ],
+      "checked_at": "2026-09-30T19:44:11.199666+00:00",
+      "http_status": 200,
+      "final_url": "https://docs.pytorch.org/tutorials/beginner/basics/intro.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://docs.pytorch.org/tutorials/intermediate/FSDP_tutorial.html",
+      "sources": [
+        "data/resources-infra.json:infra-fsdp2",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/18-distributed-training.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/18-distributed-training.html"
+      ],
+      "checked_at": "2026-09-30T19:44:11.534568+00:00",
+      "http_status": 200,
+      "final_url": "https://docs.pytorch.org/tutorials/intermediate/FSDP_tutorial.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://docs.pytorch.org/tutorials/intermediate/TP_tutorial.html",
+      "sources": [
+        "data/resources-infra.json:infra-tensor-parallel",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/18-distributed-training.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/18-distributed-training.html"
+      ],
+      "checked_at": "2026-09-30T19:44:11.580141+00:00",
+      "http_status": 200,
+      "final_url": "https://docs.pytorch.org/tutorials/intermediate/TP_tutorial.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://docs.pytorch.org/tutorials/intermediate/ddp_tutorial.html",
+      "sources": [
+        "data/resources-infra.json:infra-ddp",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/18-distributed-training.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/18-distributed-training.html"
+      ],
+      "checked_at": "2026-09-30T19:44:11.635748+00:00",
+      "http_status": 200,
+      "final_url": "https://docs.pytorch.org/tutorials/intermediate/ddp_tutorial.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://docs.pytorch.org/tutorials/intermediate/torch_compile_tutorial.html",
+      "sources": [
+        "data/resources-infra.json:infra-torch-compile",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/17-gpu-kernels-compilers.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/17-gpu-kernels-compilers.html"
+      ],
+      "checked_at": "2026-09-30T19:44:11.760842+00:00",
+      "http_status": 200,
+      "final_url": "https://docs.pytorch.org/tutorials/intermediate/torch_compile_tutorial.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://docs.pytorch.org/tutorials/intermediate/torchvision_tutorial.html",
+      "sources": [
+        "data/resources-foundations.json:foundation-torchvision",
+        "docs/resources.md",
+        "docs/topics/07-computer-vision.md",
+        "site/resources.html",
+        "site/topics/07-computer-vision.html"
+      ],
+      "checked_at": "2026-09-30T19:44:11.776709+00:00",
+      "http_status": 200,
+      "final_url": "https://docs.pytorch.org/tutorials/intermediate/torchvision_tutorial.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://docs.pytorch.org/tutorials/recipes/distributed_checkpoint_recipe.html",
+      "sources": [
+        "data/resources-infra.json:infra-distributed-checkpoint",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/18-distributed-training.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/18-distributed-training.html"
+      ],
+      "checked_at": "2026-09-30T19:44:11.780369+00:00",
+      "http_status": 200,
+      "final_url": "https://docs.pytorch.org/tutorials/recipes/distributed_checkpoint_recipe.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://docs.vllm.ai/en/stable/benchmarking/cli/",
+      "sources": [
+        "data/resources-infra.json:infra-vllm-benchmark",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/19-inference-serving.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/19-inference-serving.html"
+      ],
+      "checked_at": "2026-09-30T19:44:12.216702+00:00",
+      "http_status": 200,
+      "final_url": "https://docs.vllm.ai/en/stable/benchmarking/cli/",
+      "status": "ok"
+    },
+    {
+      "url": "https://docs.vllm.ai/en/stable/features/disagg_prefill/",
+      "sources": [
+        "data/resources-infra.json:infra-disagg-prefill",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/19-inference-serving.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/19-inference-serving.html"
+      ],
+      "checked_at": "2026-09-30T19:44:12.216950+00:00",
+      "http_status": 200,
+      "final_url": "https://docs.vllm.ai/en/stable/features/disagg_prefill/",
+      "status": "ok"
+    },
+    {
+      "url": "https://docs.vllm.ai/en/stable/getting_started/quickstart/",
+      "sources": [
+        "data/resources-infra.json:infra-vllm-quickstart",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/19-inference-serving.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/19-inference-serving.html"
+      ],
+      "checked_at": "2026-09-30T19:44:12.555482+00:00",
+      "http_status": 200,
+      "final_url": "https://docs.vllm.ai/en/stable/getting_started/quickstart/",
+      "status": "ok"
+    },
+    {
+      "url": "https://duckdb.org/docs/current/guides/overview",
+      "sources": [
+        "data/resources-foundations.json:foundation-duckdb",
+        "docs/resources.md",
+        "docs/topics/03-data.md",
+        "site/resources.html",
+        "site/topics/03-data.html"
+      ],
+      "checked_at": "2026-09-30T19:44:12.745196+00:00",
+      "http_status": 200,
+      "final_url": "https://duckdb.org/docs/current/guides/overview",
+      "status": "ok"
+    },
+    {
+      "url": "https://ermongroup.github.io/cs228-notes/",
+      "sources": [
+        "data/resources-specialties.json:specialty-cs228",
+        "docs/resources.md",
+        "docs/topics/25-causal-probabilistic.md",
+        "site/resources.html",
+        "site/topics/25-causal-probabilistic.html"
+      ],
+      "checked_at": "2026-09-30T19:44:12.963444+00:00",
+      "http_status": 200,
+      "final_url": "https://ermongroup.github.io/cs228-notes/",
+      "status": "ok"
+    },
+    {
+      "url": "https://faiss.ai/",
+      "sources": [
+        "data/resources-specialties.json:specialty-faiss",
+        "docs/resources.md",
+        "docs/topics/23-recommendation-search.md",
+        "site/resources.html",
+        "site/topics/23-recommendation-search.html"
+      ],
+      "checked_at": "2026-09-30T19:44:13.048990+00:00",
+      "http_status": 200,
+      "final_url": "https://faiss.ai/",
+      "status": "ok"
+    },
+    {
+      "url": "https://fullstackdeeplearning.com/",
+      "sources": [
+        "README.md",
+        "docs/research/README.md",
+        "site/research/index.html"
+      ],
+      "checked_at": "2026-09-30T19:44:13.295104+00:00",
+      "http_status": 200,
+      "final_url": "https://fullstackdeeplearning.com/",
+      "status": "ok"
+    },
+    {
+      "url": "https://fullstackdeeplearning.com/llm-bootcamp/",
+      "sources": [
+        "data/resources-models.json:model-016",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/11-ai-applications.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/11-ai-applications.html"
+      ],
+      "checked_at": "2026-09-30T19:56:03.548303+00:00",
+      "http_status": 200,
+      "final_url": "https://fullstackdeeplearning.com/llm-bootcamp/",
+      "status": "ok"
+    },
+    {
+      "url": "https://genai.owasp.org/llm-top-10/",
+      "sources": [
+        "data/resources-models.json:model-047",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/15-evaluation-safety.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/15-evaluation-safety.html"
+      ],
+      "checked_at": "2026-09-30T19:44:13.461364+00:00",
+      "http_status": 200,
+      "final_url": "https://genai.owasp.org/llm-top-10/",
+      "status": "ok"
+    },
+    {
+      "url": "https://git-scm.com/book/zh/v2",
+      "sources": [
+        "data/resources-foundations.json:foundation-progit",
+        "docs/resources.md",
+        "docs/topics/02-programming.md",
+        "site/resources.html",
+        "site/topics/02-programming.html"
+      ],
+      "checked_at": "2026-09-30T19:44:13.564743+00:00",
+      "http_status": 200,
+      "final_url": "https://git-scm.com/book/zh/v2",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/EleutherAI/lm-evaluation-harness",
+      "sources": [
+        "data/resources-models.json:model-044",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/15-evaluation-safety.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/15-evaluation-safety.html"
+      ],
+      "checked_at": "2026-09-30T19:44:13.580830+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/EleutherAI/lm-evaluation-harness",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/SWE-bench/SWE-bench",
+      "sources": [
+        "data/resources-models.json:model-034",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/13-agents.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/13-agents.html"
+      ],
+      "checked_at": "2026-09-30T19:56:03.722505+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/SWE-bench/SWE-bench",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/beir-cellar/beir",
+      "sources": [
+        "data/resources-models.json:model-028",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/12-rag.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/12-rag.html"
+      ],
+      "checked_at": "2026-09-30T19:56:03.889462+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/beir-cellar/beir",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/datawhalechina/pumpkin-book",
+      "sources": [
+        "data/resources-foundations.json:foundation-pumpkin",
+        "docs/resources.md",
+        "docs/topics/04-machine-learning.md",
+        "site/resources.html",
+        "site/topics/04-machine-learning.html"
+      ],
+      "checked_at": "2026-09-30T19:44:13.700355+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/datawhalechina/pumpkin-book",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/facebookresearch/faiss/wiki",
+      "sources": [
+        "data/resources-models.json:model-027",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/12-rag.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/12-rag.html"
+      ],
+      "checked_at": "2026-09-30T19:56:03.902562+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/facebookresearch/faiss/wiki",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/google-deepmind/alphafold",
+      "sources": [
+        "data/resources-specialties.json:specialty-alphafold",
+        "docs/resources.md",
+        "docs/topics/26-ai-for-science.md",
+        "site/resources.html",
+        "site/topics/26-ai-for-science.html"
+      ],
+      "checked_at": "2026-09-30T19:44:13.966997+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/google-deepmind/alphafold",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/google-deepmind/mujoco",
+      "sources": [
+        "data/resources-specialties.json:specialty-mujoco",
+        "docs/resources.md",
+        "docs/topics/22-rl-robotics.md",
+        "site/resources.html",
+        "site/topics/22-rl-robotics.html"
+      ],
+      "checked_at": "2026-09-30T19:44:14.109466+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/google-deepmind/mujoco",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/google/sentencepiece",
+      "sources": [
+        "data/resources-foundations.json:foundation-sentencepiece",
+        "data/resources-models.json:model-006",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/06-nlp.md",
+        "docs/topics/09-llm.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/06-nlp.html",
+        "site/topics/09-llm.html"
+      ],
+      "checked_at": "2026-09-30T19:44:14.269970+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/google/sentencepiece",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/karpathy/micrograd",
+      "sources": [
+        "data/resources-foundations.json:foundation-micrograd",
+        "docs/resources.md",
+        "docs/topics/05-deep-learning.md",
+        "site/resources.html",
+        "site/topics/05-deep-learning.html"
+      ],
+      "checked_at": "2026-09-30T19:44:14.359625+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/karpathy/micrograd",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/lvy010/AI-wiki",
+      "sources": [
+        "README.md",
+        "docs/research/README.md",
+        "docs/research/infra-sources.md",
+        "site/research/index.html",
+        "site/research/infra-sources.html"
+      ],
+      "checked_at": "2026-09-30T19:44:14.547612+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/lvy010/AI-wiki",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/microsoft/AI-For-Beginners",
+      "sources": [
+        "README.md",
+        "docs/research/README.md",
+        "site/research/index.html"
+      ],
+      "checked_at": "2026-09-30T19:44:14.646156+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/microsoft/AI-For-Beginners",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/microsoft/generative-ai-for-beginners",
+      "sources": [
+        "data/resources-models.json:model-017",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/11-ai-applications.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/11-ai-applications.html"
+      ],
+      "checked_at": "2026-09-30T19:56:03.905994+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/microsoft/generative-ai-for-beginners",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/mlabonne/llm-course",
+      "sources": [
+        "README.md",
+        "docs/research/README.md",
+        "docs/research/models-sources.md",
+        "site/research/index.html",
+        "site/research/models-sources.html"
+      ],
+      "checked_at": "2026-09-30T19:44:14.835276+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/mlabonne/llm-course",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/ossu/computer-science",
+      "sources": [
+        "README.md",
+        "docs/research/README.md",
+        "site/research/index.html"
+      ],
+      "checked_at": "2026-09-30T19:44:14.886166+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/ossu/computer-science",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/pgvector/pgvector",
+      "sources": [
+        "data/resources-models.json:model-026",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/12-rag.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/12-rag.html"
+      ],
+      "checked_at": "2026-09-30T19:56:04.139832+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/pgvector/pgvector",
+      "status": "ok"
+    },
+    {
+      "url": "https://grouplens.org/datasets/movielens/",
+      "sources": [
+        "data/resources-specialties.json:specialty-movielens",
+        "docs/resources.md",
+        "docs/topics/23-recommendation-search.md",
+        "site/resources.html",
+        "site/topics/23-recommendation-search.html"
+      ],
+      "checked_at": "2026-09-30T19:44:15.704252+00:00",
+      "http_status": 200,
+      "final_url": "https://grouplens.org/datasets/movielens/",
+      "status": "ok"
+    },
+    {
+      "url": "https://gymnasium.farama.org/",
+      "sources": [
+        "data/resources-specialties.json:specialty-gymnasium",
+        "docs/resources.md",
+        "docs/topics/22-rl-robotics.md",
+        "site/resources.html",
+        "site/topics/22-rl-robotics.html"
+      ],
+      "checked_at": "2026-09-30T19:44:15.917711+00:00",
+      "http_status": 200,
+      "final_url": "https://gymnasium.farama.org/",
+      "status": "ok"
+    },
+    {
+      "url": "https://huggingface.co/docs/diffusers/index",
+      "sources": [
+        "data/resources-models.json:model-009",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/10-generative-multimodal.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/10-generative-multimodal.html"
+      ],
+      "checked_at": "2026-09-30T19:56:04.211006+00:00",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/docs/diffusers/index",
+      "status": "ok"
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/index",
+      "sources": [
+        "data/resources-specialties.json:specialty-lerobot",
+        "docs/resources.md",
+        "docs/topics/22-rl-robotics.md",
+        "site/resources.html",
+        "site/topics/22-rl-robotics.html"
+      ],
+      "checked_at": "2026-09-30T19:44:16.850142+00:00",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/docs/lerobot/index",
+      "status": "ok"
+    },
+    {
+      "url": "https://huggingface.co/docs/peft/index",
+      "sources": [
+        "data/resources-models.json:model-037",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/14-finetuning-alignment.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/14-finetuning-alignment.html"
+      ],
+      "checked_at": "2026-09-30T19:56:04.364266+00:00",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/docs/peft/index",
+      "status": "ok"
+    },
+    {
+      "url": "https://huggingface.co/docs/timm/quickstart",
+      "sources": [
+        "data/resources-foundations.json:foundation-timm",
+        "docs/resources.md",
+        "docs/topics/07-computer-vision.md",
+        "site/resources.html",
+        "site/topics/07-computer-vision.html"
+      ],
+      "checked_at": "2026-09-30T19:44:17.066972+00:00",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/docs/timm/quickstart",
+      "status": "ok"
+    },
+    {
+      "url": "https://huggingface.co/docs/transformers.js/en/guides/webgpu",
+      "sources": [
+        "data/resources-infra.json:infra-transformers-js-webgpu",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/21-edge-ai.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/21-edge-ai.html"
+      ],
+      "checked_at": "2026-09-30T19:44:17.286142+00:00",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/docs/transformers.js/en/guides/webgpu",
+      "status": "ok"
+    },
+    {
+      "url": "https://huggingface.co/docs/trl/index",
+      "sources": [
+        "data/resources-models.json:model-038",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/14-finetuning-alignment.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/14-finetuning-alignment.html"
+      ],
+      "checked_at": "2026-09-30T19:44:17.392050+00:00",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/docs/trl/index",
+      "status": "ok"
+    },
+    {
+      "url": "https://huggingface.co/learn",
+      "sources": [
+        "README.md",
+        "docs/research/README.md",
+        "site/research/index.html"
+      ],
+      "checked_at": "2026-09-30T19:44:17.792896+00:00",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/learn",
+      "status": "ok"
+    },
+    {
+      "url": "https://huggingface.co/learn/diffusion-course/unit1/1",
+      "sources": [
+        "data/resources-models.json:model-008",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/10-generative-multimodal.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/10-generative-multimodal.html"
+      ],
+      "checked_at": "2026-09-30T19:44:17.918609+00:00",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/learn/diffusion-course/unit1/1",
+      "status": "ok"
+    },
+    {
+      "url": "https://huggingface.co/learn/llm-course/chapter1/1",
+      "sources": [
+        "data/resources-foundations.json:foundation-hf-course",
+        "data/resources-models.json:model-001",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/06-nlp.md",
+        "docs/topics/09-llm.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/06-nlp.html",
+        "site/topics/09-llm.html"
+      ],
+      "checked_at": "2026-09-30T19:44:18.000520+00:00",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/learn/llm-course/chapter1/1",
+      "status": "ok"
+    },
+    {
+      "url": "https://inst.eecs.berkeley.edu/~cs188/archive/fa24/",
+      "sources": [
+        "data/resources-specialties.json:specialty-cs188",
+        "docs/resources.md",
+        "docs/topics/27-classical-ai.md",
+        "site/resources.html",
+        "site/topics/27-classical-ai.html"
+      ],
+      "checked_at": "2026-09-30T19:44:18.248726+00:00",
+      "http_status": 200,
+      "final_url": "https://inst.eecs.berkeley.edu/~cs188/archive/fa24/",
+      "status": "ok"
+    },
+    {
+      "url": "https://jalammar.github.io/illustrated-transformer/",
+      "sources": [
+        "data/resources-models.json:model-007",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/09-llm.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/09-llm.html"
+      ],
+      "checked_at": "2026-09-30T19:56:04.463228+00:00",
+      "http_status": 200,
+      "final_url": "https://jalammar.github.io/illustrated-transformer/",
+      "status": "ok"
+    },
+    {
+      "url": "https://json-schema.org/learn/getting-started-step-by-step",
+      "sources": [
+        "data/resources-models.json:model-018",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/11-ai-applications.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/11-ai-applications.html"
+      ],
+      "checked_at": "2026-09-30T19:44:18.520774+00:00",
+      "http_status": 200,
+      "final_url": "https://json-schema.org/learn/getting-started-step-by-step",
+      "status": "ok"
+    },
+    {
+      "url": "https://kserve.github.io/website/docs/intro",
+      "sources": [
+        "data/resources-infra.json:infra-kserve",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/20-mlops.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/20-mlops.html"
+      ],
+      "checked_at": "2026-09-30T19:44:18.926556+00:00",
+      "http_status": 200,
+      "final_url": "https://kserve.github.io/website/docs/intro",
+      "status": "ok"
+    },
+    {
+      "url": "https://madewithml.com/",
+      "sources": [
+        "README.md",
+        "docs/research/README.md",
+        "site/research/index.html"
+      ],
+      "checked_at": "2026-09-30T19:44:19.245382+00:00",
+      "http_status": 200,
+      "final_url": "https://madewithml.com/",
+      "status": "ok"
+    },
+    {
+      "url": "https://madewithml.com/courses/mlops/",
+      "sources": [
+        "data/resources-infra.json:infra-madewithml",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/20-mlops.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/20-mlops.html"
+      ],
+      "checked_at": "2026-09-30T19:44:19.311986+00:00",
+      "http_status": 200,
+      "final_url": "https://madewithml.com/courses/mlops/",
+      "status": "ok"
+    },
+    {
+      "url": "https://meta-pytorch.org/torchrec/overview.html",
+      "sources": [
+        "data/resources-specialties.json:specialty-torchrec",
+        "docs/resources.md",
+        "docs/topics/23-recommendation-search.md",
+        "site/resources.html",
+        "site/topics/23-recommendation-search.html"
+      ],
+      "checked_at": "2026-09-30T19:44:19.415393+00:00",
+      "http_status": 200,
+      "final_url": "https://meta-pytorch.org/torchrec/overview.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://microsoft.github.io/z3guide/",
+      "sources": [
+        "data/resources-specialties.json:specialty-z3",
+        "docs/resources.md",
+        "docs/topics/27-classical-ai.md",
+        "site/resources.html",
+        "site/topics/27-classical-ai.html"
+      ],
+      "checked_at": "2026-09-30T19:44:19.752027+00:00",
+      "http_status": 200,
+      "final_url": "https://microsoft.github.io/z3guide/",
+      "status": "ok"
+    },
+    {
+      "url": "https://miguelhernan.org/whatifbook",
+      "sources": [
+        "data/resources-specialties.json:specialty-whatif",
+        "docs/resources.md",
+        "docs/topics/25-causal-probabilistic.md",
+        "site/resources.html",
+        "site/topics/25-causal-probabilistic.html"
+      ],
+      "checked_at": "2026-09-30T19:44:19.860968+00:00",
+      "http_status": 200,
+      "final_url": "https://miguelhernan.org/whatifbook",
+      "status": "ok"
+    },
+    {
+      "url": "https://missing.csail.mit.edu/",
+      "sources": [
+        "data/resources-foundations.json:foundation-missing-semester",
+        "docs/resources.md",
+        "docs/topics/02-programming.md",
+        "site/resources.html",
+        "site/topics/02-programming.html"
+      ],
+      "checked_at": "2026-09-30T19:44:19.909366+00:00",
+      "http_status": 200,
+      "final_url": "https://missing.csail.mit.edu/",
+      "status": "ok"
+    },
+    {
+      "url": "https://ml-explore.github.io/mlx/build/html/index.html",
+      "sources": [
+        "data/resources-infra.json:infra-mlx",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/21-edge-ai.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/21-edge-ai.html"
+      ],
+      "checked_at": "2026-09-30T19:44:20.445129+00:00",
+      "http_status": 200,
+      "final_url": "https://ml-explore.github.io/mlx/build/html/index.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://mlcourse.ai/book/index.html",
+      "sources": [
+        "data/resources-foundations.json:foundation-mlcourse",
+        "docs/resources.md",
+        "docs/topics/04-machine-learning.md",
+        "site/resources.html",
+        "site/topics/04-machine-learning.html"
+      ],
+      "checked_at": "2026-09-30T19:44:20.508942+00:00",
+      "http_status": 200,
+      "final_url": "https://mlcourse.ai/book/index.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://mml-book.github.io/",
+      "sources": [
+        "data/resources-foundations.json:foundation-mml",
+        "docs/resources.md",
+        "docs/topics/01-math.md",
+        "site/resources.html",
+        "site/topics/01-math.html"
+      ],
+      "checked_at": "2026-09-30T19:44:20.518494+00:00",
+      "http_status": 200,
+      "final_url": "https://mml-book.github.io/",
+      "status": "ok"
+    },
+    {
+      "url": "https://modelcontextprotocol.io/docs/getting-started/intro",
+      "sources": [
+        "data/resources-models.json:model-031",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/13-agents.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/13-agents.html"
+      ],
+      "checked_at": "2026-09-30T19:44:20.547494+00:00",
+      "http_status": 200,
+      "final_url": "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
+      "status": "ok"
+    },
+    {
+      "url": "https://networkx.org/documentation/stable/",
+      "sources": [
+        "data/resources-specialties.json:specialty-networkx",
+        "docs/resources.md",
+        "docs/topics/24-graphs.md",
+        "site/resources.html",
+        "site/topics/24-graphs.html"
+      ],
+      "checked_at": "2026-09-30T19:44:20.643104+00:00",
+      "http_status": 200,
+      "final_url": "https://networkx.org/documentation/stable/",
+      "status": "ok"
+    },
+    {
+      "url": "https://neuraloperator.github.io/dev/",
+      "sources": [
+        "data/resources-specialties.json:specialty-neuraloperator",
+        "docs/resources.md",
+        "docs/topics/26-ai-for-science.md",
+        "site/resources.html",
+        "site/topics/26-ai-for-science.html"
+      ],
+      "checked_at": "2026-09-30T19:44:20.919836+00:00",
+      "http_status": 200,
+      "final_url": "https://neuraloperator.github.io/dev/",
+      "status": "ok"
+    },
+    {
+      "url": "https://nixtlaverse.nixtla.io/statsforecast/docs/getting-started/getting_started_short.html",
+      "sources": [
+        "data/resources-foundations.json:foundation-statsforecast",
+        "docs/resources.md",
+        "docs/topics/08-time-series.md",
+        "site/resources.html",
+        "site/topics/08-time-series.html"
+      ],
+      "checked_at": "2026-09-30T19:44:20.957659+00:00",
+      "http_status": 200,
+      "final_url": "https://nixtlaverse.nixtla.io/statsforecast/docs/getting-started/getting_started_short.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://nlp.stanford.edu/IR-book/",
+      "sources": [
+        "data/resources-specialties.json:specialty-ir",
+        "docs/resources.md",
+        "docs/topics/23-recommendation-search.md",
+        "site/resources.html",
+        "site/topics/23-recommendation-search.html"
+      ],
+      "checked_at": "2026-09-30T19:44:21.038315+00:00",
+      "http_status": 200,
+      "final_url": "https://nlp.stanford.edu/IR-book/",
+      "status": "ok"
+    },
+    {
+      "url": "https://numpy.org/doc/stable/user/quickstart.html",
+      "sources": [
+        "data/resources-foundations.json:foundation-numpy",
+        "docs/resources.md",
+        "docs/topics/02-programming.md",
+        "site/resources.html",
+        "site/topics/02-programming.html"
+      ],
+      "checked_at": "2026-09-30T19:44:21.120371+00:00",
+      "http_status": 200,
+      "final_url": "https://numpy.org/doc/stable/user/quickstart.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/",
+      "sources": [
+        "data/resources-foundations.json:foundation-mit-calculus",
+        "docs/resources.md",
+        "docs/topics/01-math.md",
+        "site/resources.html",
+        "site/topics/01-math.html"
+      ],
+      "checked_at": "2026-09-30T19:44:21.221040+00:00",
+      "http_status": 200,
+      "final_url": "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/",
+      "status": "ok"
+    },
+    {
+      "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/",
+      "sources": [
+        "data/resources-foundations.json:foundation-mit-linear",
+        "docs/resources.md",
+        "docs/topics/01-math.md",
+        "site/resources.html",
+        "site/topics/01-math.html"
+      ],
+      "checked_at": "2026-09-30T19:44:21.533415+00:00",
+      "http_status": 200,
+      "final_url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/",
+      "status": "ok"
+    },
+    {
+      "url": "https://ogb.stanford.edu/",
+      "sources": [
+        "data/resources-specialties.json:specialty-ogb",
+        "docs/resources.md",
+        "docs/topics/24-graphs.md",
+        "site/resources.html",
+        "site/topics/24-graphs.html"
+      ],
+      "checked_at": "2026-09-30T19:44:21.622585+00:00",
+      "http_status": 200,
+      "final_url": "https://ogb.stanford.edu/",
+      "status": "ok"
+    },
+    {
+      "url": "https://onnxruntime.ai/docs/performance/model-optimizations/quantization.html",
+      "sources": [
+        "data/resources-infra.json:infra-onnx-quantization",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/19-inference-serving.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/19-inference-serving.html"
+      ],
+      "checked_at": "2026-09-30T19:44:21.656367+00:00",
+      "http_status": 200,
+      "final_url": "https://onnxruntime.ai/docs/performance/model-optimizations/quantization.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://onnxruntime.ai/docs/tutorials/mobile/",
+      "sources": [
+        "data/resources-infra.json:infra-onnx-mobile",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/21-edge-ai.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/21-edge-ai.html"
+      ],
+      "checked_at": "2026-09-30T19:44:21.671556+00:00",
+      "http_status": 200,
+      "final_url": "https://onnxruntime.ai/docs/tutorials/mobile/",
+      "status": "ok"
+    },
+    {
+      "url": "https://onnxruntime.ai/docs/tutorials/web/",
+      "sources": [
+        "data/resources-infra.json:infra-onnx-web",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/21-edge-ai.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/21-edge-ai.html"
+      ],
+      "checked_at": "2026-09-30T19:44:21.887194+00:00",
+      "http_status": 200,
+      "final_url": "https://onnxruntime.ai/docs/tutorials/web/",
+      "status": "ok"
+    },
+    {
+      "url": "https://opentelemetry.io/docs/concepts/observability-primer/",
+      "sources": [
+        "data/resources-infra.json:infra-otel-primer",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/20-mlops.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/20-mlops.html"
+      ],
+      "checked_at": "2026-09-30T19:44:21.940335+00:00",
+      "http_status": 200,
+      "final_url": "https://opentelemetry.io/docs/concepts/observability-primer/",
+      "status": "ok"
+    },
+    {
+      "url": "https://opentelemetry.io/docs/concepts/signals/traces/",
+      "sources": [
+        "data/resources-models.json:model-022",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/11-ai-applications.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/11-ai-applications.html"
+      ],
+      "checked_at": "2026-09-30T19:56:04.656934+00:00",
+      "http_status": 200,
+      "final_url": "https://opentelemetry.io/docs/concepts/signals/traces/",
+      "status": "ok"
+    },
+    {
+      "url": "https://otexts.com/fpp3/",
+      "sources": [
+        "data/resources-foundations.json:foundation-fpp3",
+        "docs/resources.md",
+        "docs/topics/08-time-series.md",
+        "site/resources.html",
+        "site/topics/08-time-series.html"
+      ],
+      "checked_at": "2026-09-30T20:14:01.394818+00:00",
+      "http_status": 403,
+      "status": "restricted",
+      "note": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/",
+      "sources": [
+        "data/resources-infra.json:infra-ostep",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/16-hardware-systems.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/16-hardware-systems.html"
+      ],
+      "checked_at": "2026-09-30T19:44:22.426344+00:00",
+      "http_status": 200,
+      "final_url": "https://pages.cs.wisc.edu/~remzi/OSTEP/",
+      "status": "ok"
+    },
+    {
+      "url": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html",
+      "sources": [
+        "data/resources-foundations.json:foundation-pandas",
+        "docs/resources.md",
+        "docs/topics/03-data.md",
+        "site/resources.html",
+        "site/topics/03-data.html"
+      ],
+      "checked_at": "2026-09-30T19:44:22.509114+00:00",
+      "http_status": 200,
+      "final_url": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://parquet.apache.org/docs/overview/",
+      "sources": [
+        "data/resources-infra.json:infra-parquet",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/16-hardware-systems.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/16-hardware-systems.html"
+      ],
+      "checked_at": "2026-09-30T19:44:22.580954+00:00",
+      "http_status": 200,
+      "final_url": "https://parquet.apache.org/docs/overview/",
+      "status": "ok"
+    },
+    {
+      "url": "https://playground.tensorflow.org/",
+      "sources": [
+        "data/resources-foundations.json:foundation-playground",
+        "docs/resources.md",
+        "docs/topics/05-deep-learning.md",
+        "site/resources.html",
+        "site/topics/05-deep-learning.html"
+      ],
+      "checked_at": "2026-09-30T19:44:22.742089+00:00",
+      "http_status": 200,
+      "final_url": "https://playground.tensorflow.org/",
+      "status": "ok"
+    },
+    {
+      "url": "https://probml.github.io/pml-book/",
+      "sources": [
+        "data/resources-specialties.json:specialty-probml",
+        "docs/resources.md",
+        "docs/topics/25-causal-probabilistic.md",
+        "site/resources.html",
+        "site/topics/25-causal-probabilistic.html"
+      ],
+      "checked_at": "2026-09-30T19:44:22.996921+00:00",
+      "http_status": 200,
+      "final_url": "https://probml.github.io/pml-book/",
+      "status": "ok"
+    },
+    {
+      "url": "https://prometheus.io/docs/practices/histograms/",
+      "sources": [
+        "data/resources-infra.json:infra-prometheus-histograms",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/20-mlops.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/20-mlops.html"
+      ],
+      "checked_at": "2026-09-30T19:44:23.230912+00:00",
+      "http_status": 200,
+      "final_url": "https://prometheus.io/docs/practices/histograms/",
+      "status": "ok"
+    },
+    {
+      "url": "https://pytorch-forecasting.readthedocs.io/en/stable/tutorials.html",
+      "sources": [
+        "data/resources-foundations.json:foundation-pytorch-forecasting",
+        "docs/resources.md",
+        "docs/topics/08-time-series.md",
+        "site/resources.html",
+        "site/topics/08-time-series.html"
+      ],
+      "checked_at": "2026-09-30T19:44:23.273462+00:00",
+      "http_status": 200,
+      "final_url": "https://pytorch-forecasting.readthedocs.io/en/stable/tutorials.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://pytorch-geometric.readthedocs.io/en/latest/",
+      "sources": [
+        "data/resources-specialties.json:specialty-pyg",
+        "docs/resources.md",
+        "docs/topics/24-graphs.md",
+        "site/resources.html",
+        "site/topics/24-graphs.html"
+      ],
+      "checked_at": "2026-09-30T19:56:05.039224+00:00",
+      "http_status": 200,
+      "final_url": "https://pytorch-geometric.readthedocs.io/en/latest/",
+      "status": "ok"
+    },
+    {
+      "url": "https://rail.eecs.berkeley.edu/deeprlcourse/",
+      "sources": [
+        "data/resources-specialties.json:specialty-cs285",
+        "docs/resources.md",
+        "docs/topics/22-rl-robotics.md",
+        "site/resources.html",
+        "site/topics/22-rl-robotics.html"
+      ],
+      "checked_at": "2026-09-30T19:44:23.391996+00:00",
+      "http_status": 200,
+      "final_url": "https://rail.eecs.berkeley.edu/deeprlcourse/",
+      "status": "ok"
+    },
+    {
+      "url": "https://robotics-transformer2.github.io/",
+      "sources": [
+        "data/resources-specialties.json:specialty-rt2",
+        "docs/resources.md",
+        "docs/topics/22-rl-robotics.md",
+        "site/resources.html",
+        "site/topics/22-rl-robotics.html"
+      ],
+      "checked_at": "2026-09-30T19:44:23.478193+00:00",
+      "http_status": 200,
+      "final_url": "https://robotics-transformer2.github.io/",
+      "status": "ok"
+    },
+    {
+      "url": "https://scikit-learn.org/stable/common_pitfalls.html",
+      "sources": [
+        "data/resources-foundations.json:foundation-sklearn-pitfalls",
+        "docs/resources.md",
+        "docs/topics/03-data.md",
+        "site/resources.html",
+        "site/topics/03-data.html"
+      ],
+      "checked_at": "2026-09-30T19:44:23.595341+00:00",
+      "http_status": 200,
+      "final_url": "https://scikit-learn.org/stable/common_pitfalls.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://scikit-learn.org/stable/model_persistence.html",
+      "sources": [
+        "data/resources-infra.json:infra-model-persistence",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/20-mlops.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/20-mlops.html"
+      ],
+      "checked_at": "2026-09-30T19:44:23.903199+00:00",
+      "http_status": 200,
+      "final_url": "https://scikit-learn.org/stable/model_persistence.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://scikit-learn.org/stable/user_guide.html",
+      "sources": [
+        "data/resources-foundations.json:foundation-sklearn-guide",
+        "docs/resources.md",
+        "docs/topics/04-machine-learning.md",
+        "site/resources.html",
+        "site/topics/04-machine-learning.html"
+      ],
+      "checked_at": "2026-09-30T19:44:23.979623+00:00",
+      "http_status": 200,
+      "final_url": "https://scikit-learn.org/stable/user_guide.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://spacy.io/usage/linguistic-features",
+      "sources": [
+        "data/resources-foundations.json:foundation-spacy",
+        "docs/resources.md",
+        "docs/topics/06-nlp.md",
+        "site/resources.html",
+        "site/topics/06-nlp.html"
+      ],
+      "checked_at": "2026-09-30T19:44:24.100126+00:00",
+      "http_status": 200,
+      "final_url": "https://spacy.io/usage/linguistic-features",
+      "status": "ok"
+    },
+    {
+      "url": "https://squidfunk.github.io/mkdocs-material/",
+      "sources": [
+        "site/404.html",
+        "site/contributing.html",
+        "site/guides/environment.html",
+        "site/guides/maintenance.html",
+        "site/guides/study-method.html",
+        "site/index.html",
+        "site/map.html",
+        "site/projects/01-regression.html",
+        "site/projects/02-retrieval.html",
+        "site/projects/03-attention.html",
+        "site/projects/04-memory.html",
+        "site/projects/05-finetuning.html",
+        "site/projects/06-serving.html",
+        "site/projects/07-agent.html",
+        "site/projects/08-reproduction.html",
+        "site/projects/index.html",
+        "site/quality.html",
+        "site/research/foundations-sources.html",
+        "site/research/index.html",
+        "site/research/infra-sources.html",
+        "site/research/models-sources.html",
+        "site/research/specialties-sources.html",
+        "site/resources.html",
+        "site/roadmaps/algorithm.html",
+        "site/roadmaps/application.html",
+        "site/roadmaps/beginner.html",
+        "site/roadmaps/index.html",
+        "site/roadmaps/infra.html",
+        "site/roadmaps/llm.html",
+        "site/roadmaps/research.html",
+        "site/start.html",
+        "site/topics/01-math.html",
+        "site/topics/02-programming.html",
+        "site/topics/03-data.html",
+        "site/topics/04-machine-learning.html",
+        "site/topics/05-deep-learning.html",
+        "site/topics/06-nlp.html",
+        "site/topics/07-computer-vision.html",
+        "site/topics/08-time-series.html",
+        "site/topics/09-llm.html",
+        "site/topics/10-generative-multimodal.html",
+        "site/topics/11-ai-applications.html",
+        "site/topics/12-rag.html",
+        "site/topics/13-agents.html",
+        "site/topics/14-finetuning-alignment.html",
+        "site/topics/15-evaluation-safety.html",
+        "site/topics/16-hardware-systems.html",
+        "site/topics/17-gpu-kernels-compilers.html",
+        "site/topics/18-distributed-training.html",
+        "site/topics/19-inference-serving.html",
+        "site/topics/20-mlops.html",
+        "site/topics/21-edge-ai.html",
+        "site/topics/22-rl-robotics.html",
+        "site/topics/23-recommendation-search.html",
+        "site/topics/24-graphs.html",
+        "site/topics/25-causal-probabilistic.html",
+        "site/topics/26-ai-for-science.html",
+        "site/topics/27-classical-ai.html"
+      ],
+      "checked_at": "2026-09-30T20:14:01.394947+00:00",
+      "http_status": 200,
+      "final_url": "https://squidfunk.github.io/mkdocs-material/",
+      "status": "ok"
+    },
+    {
+      "url": "https://stat110.hsites.harvard.edu/",
+      "sources": [
+        "data/resources-foundations.json:foundation-stat110",
+        "docs/resources.md",
+        "docs/topics/01-math.md",
+        "site/resources.html",
+        "site/topics/01-math.html"
+      ],
+      "checked_at": "2026-09-30T19:44:24.128802+00:00",
+      "http_status": 200,
+      "final_url": "https://stat110.hsites.harvard.edu/",
+      "status": "ok"
+    },
+    {
+      "url": "https://szeliski.org/Book/",
+      "sources": [
+        "data/resources-foundations.json:foundation-szeliski",
+        "docs/resources.md",
+        "docs/topics/07-computer-vision.md",
+        "site/resources.html",
+        "site/topics/07-computer-vision.html"
+      ],
+      "checked_at": "2026-09-30T19:44:24.265613+00:00",
+      "http_status": 200,
+      "final_url": "https://szeliski.org/Book/",
+      "status": "ok"
+    },
+    {
+      "url": "https://triton-lang.org/main/getting-started/tutorials/",
+      "sources": [
+        "data/resources-infra.json:infra-triton-tutorials",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/17-gpu-kernels-compilers.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/17-gpu-kernels-compilers.html"
+      ],
+      "checked_at": "2026-09-30T19:44:24.796018+00:00",
+      "http_status": 200,
+      "final_url": "https://triton-lang.org/main/getting-started/tutorials/",
+      "status": "ok"
+    },
+    {
+      "url": "https://underactuated.mit.edu/",
+      "sources": [
+        "data/resources-specialties.json:specialty-underactuated",
+        "docs/resources.md",
+        "docs/topics/22-rl-robotics.md",
+        "site/resources.html",
+        "site/topics/22-rl-robotics.html"
+      ],
+      "checked_at": "2026-09-30T19:44:24.802497+00:00",
+      "http_status": 200,
+      "final_url": "https://underactuated.mit.edu/",
+      "status": "ok"
+    },
+    {
+      "url": "https://web.stanford.edu/class/cs224n/",
+      "sources": [
+        "data/resources-foundations.json:foundation-cs224n",
+        "docs/resources.md",
+        "docs/topics/06-nlp.md",
+        "site/resources.html",
+        "site/topics/06-nlp.html"
+      ],
+      "checked_at": "2026-09-30T19:44:25.346684+00:00",
+      "http_status": 200,
+      "final_url": "https://web.stanford.edu/class/cs224n/",
+      "status": "ok"
+    },
+    {
+      "url": "https://web.stanford.edu/~boyd/cvxbook/",
+      "sources": [
+        "data/resources-foundations.json:foundation-boyd",
+        "docs/resources.md",
+        "docs/topics/01-math.md",
+        "site/resources.html",
+        "site/topics/01-math.html"
+      ],
+      "checked_at": "2026-09-30T19:44:25.630520+00:00",
+      "http_status": 200,
+      "final_url": "https://web.stanford.edu/~boyd/cvxbook/",
+      "status": "ok"
+    },
+    {
+      "url": "https://web.stanford.edu/~jurafsky/slp3/",
+      "sources": [
+        "data/resources-foundations.json:foundation-slp",
+        "docs/resources.md",
+        "docs/topics/06-nlp.md",
+        "site/resources.html",
+        "site/topics/06-nlp.html"
+      ],
+      "checked_at": "2026-09-30T19:44:25.664022+00:00",
+      "http_status": 200,
+      "final_url": "https://web.stanford.edu/~jurafsky/slp3/",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.aeon-toolkit.org/en/stable/examples.html",
+      "sources": [
+        "data/resources-foundations.json:foundation-aeon",
+        "docs/resources.md",
+        "docs/topics/08-time-series.md",
+        "site/resources.html",
+        "site/topics/08-time-series.html"
+      ],
+      "checked_at": "2026-09-30T19:44:25.764941+00:00",
+      "http_status": 200,
+      "final_url": "https://www.aeon-toolkit.org/en/stable/examples.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "sources": [
+        "data/resources-models.json:model-030",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/13-agents.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/13-agents.html"
+      ],
+      "checked_at": "2026-09-30T19:44:26.003312+00:00",
+      "http_status": 200,
+      "final_url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.brendangregg.com/linuxperf.html",
+      "sources": [
+        "data/resources-infra.json:infra-linux-performance",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/16-hardware-systems.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/16-hardware-systems.html"
+      ],
+      "checked_at": "2026-09-30T19:44:26.445922+00:00",
+      "http_status": 200,
+      "final_url": "https://www.brendangregg.com/linuxperf.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.deeplearningbook.org/",
+      "sources": [
+        "data/resources-foundations.json:foundation-dlbook",
+        "docs/resources.md",
+        "docs/topics/05-deep-learning.md",
+        "site/resources.html",
+        "site/topics/05-deep-learning.html"
+      ],
+      "checked_at": "2026-09-30T19:44:26.560773+00:00",
+      "http_status": 200,
+      "final_url": "https://www.deeplearningbook.org/",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.deepspeed.ai/tutorials/mixture-of-experts/",
+      "sources": [
+        "data/resources-infra.json:infra-moe",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/18-distributed-training.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/18-distributed-training.html"
+      ],
+      "checked_at": "2026-09-30T19:44:26.801916+00:00",
+      "http_status": 200,
+      "final_url": "https://www.deepspeed.ai/tutorials/mixture-of-experts/",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.deepspeed.ai/tutorials/pipeline/",
+      "sources": [
+        "data/resources-infra.json:infra-pipeline",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/18-distributed-training.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/18-distributed-training.html"
+      ],
+      "checked_at": "2026-09-30T19:44:26.932047+00:00",
+      "http_status": 200,
+      "final_url": "https://www.deepspeed.ai/tutorials/pipeline/",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.deepspeed.ai/tutorials/zero/",
+      "sources": [
+        "data/resources-infra.json:infra-zero",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/18-distributed-training.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/18-distributed-training.html"
+      ],
+      "checked_at": "2026-09-30T19:44:27.354929+00:00",
+      "http_status": 200,
+      "final_url": "https://www.deepspeed.ai/tutorials/zero/",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.elastic.co/docs/reference/elasticsearch/rest-apis/reciprocal-rank-fusion",
+      "sources": [
+        "data/resources-models.json:model-025",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/12-rag.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/12-rag.html"
+      ],
+      "checked_at": "2026-09-30T19:44:27.461859+00:00",
+      "http_status": 200,
+      "final_url": "https://www.elastic.co/docs/reference/elasticsearch/rest-apis/reciprocal-rank-fusion",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.mlflow.org/docs/latest/registry/",
+      "sources": [
+        "data/resources-infra.json:infra-mlflow-registry",
+        "docs/research/infra-sources.md",
+        "docs/resources.md",
+        "docs/topics/20-mlops.md",
+        "site/research/infra-sources.html",
+        "site/resources.html",
+        "site/topics/20-mlops.html"
+      ],
+      "checked_at": "2026-09-30T19:44:27.667411+00:00",
+      "http_status": 200,
+      "final_url": "https://www.mlflow.org/docs/latest/registry/",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "sources": [
+        "data/resources-models.json:model-046",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/15-evaluation-safety.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/15-evaluation-safety.html"
+      ],
+      "checked_at": "2026-09-30T19:44:27.880448+00:00",
+      "http_status": 200,
+      "final_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.nltk.org/book/",
+      "sources": [
+        "data/resources-foundations.json:foundation-nltk",
+        "docs/resources.md",
+        "docs/topics/06-nlp.md",
+        "site/resources.html",
+        "site/topics/06-nlp.html"
+      ],
+      "checked_at": "2026-09-30T19:44:27.938554+00:00",
+      "http_status": 200,
+      "final_url": "https://www.nltk.org/book/",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/current/tutorial.html",
+      "sources": [
+        "data/resources-foundations.json:foundation-postgres",
+        "docs/resources.md",
+        "docs/topics/03-data.md",
+        "site/resources.html",
+        "site/topics/03-data.html"
+      ],
+      "checked_at": "2026-09-30T19:44:28.164215+00:00",
+      "http_status": 200,
+      "final_url": "https://www.postgresql.org/docs/current/tutorial.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.pymc.io/projects/docs/en/stable/learn.html",
+      "sources": [
+        "data/resources-specialties.json:specialty-pymc",
+        "docs/resources.md",
+        "docs/topics/25-causal-probabilistic.md",
+        "site/resources.html",
+        "site/topics/25-causal-probabilistic.html"
+      ],
+      "checked_at": "2026-09-30T19:44:28.239352+00:00",
+      "http_status": 200,
+      "final_url": "https://www.pymc.io/projects/docs/en/stable/learn.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.pywhy.org/EconML/",
+      "sources": [
+        "data/resources-specialties.json:specialty-econml",
+        "docs/resources.md",
+        "docs/topics/25-causal-probabilistic.md",
+        "site/resources.html",
+        "site/topics/25-causal-probabilistic.html"
+      ],
+      "checked_at": "2026-09-30T19:44:28.427115+00:00",
+      "http_status": 200,
+      "final_url": "https://www.pywhy.org/EconML/",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.pywhy.org/dowhy/v0.13/",
+      "sources": [
+        "data/resources-specialties.json:specialty-dowhy",
+        "docs/resources.md",
+        "docs/topics/25-causal-probabilistic.md",
+        "site/resources.html",
+        "site/topics/25-causal-probabilistic.html"
+      ],
+      "checked_at": "2026-09-30T19:44:28.434014+00:00",
+      "http_status": 200,
+      "final_url": "https://www.pywhy.org/dowhy/v0.13/",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc9111.html",
+      "sources": [
+        "data/resources-models.json:model-021",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/11-ai-applications.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/11-ai-applications.html"
+      ],
+      "checked_at": "2026-09-30T19:44:28.914423+00:00",
+      "http_status": 200,
+      "final_url": "https://www.rfc-editor.org/rfc/rfc9111.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html",
+      "sources": [
+        "data/resources-models.json:model-024",
+        "docs/research/models-sources.md",
+        "docs/resources.md",
+        "docs/topics/12-rag.md",
+        "site/research/models-sources.html",
+        "site/resources.html",
+        "site/topics/12-rag.html"
+      ],
+      "checked_at": "2026-09-30T19:44:29.032720+00:00",
+      "http_status": 200,
+      "final_url": "https://www.sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.sktime.net/docs/examples/",
+      "sources": [
+        "data/resources-foundations.json:foundation-sktime",
+        "docs/resources.md",
+        "docs/topics/08-time-series.md",
+        "site/resources.html",
+        "site/topics/08-time-series.html"
+      ],
+      "checked_at": "2026-09-30T19:44:29.208316+00:00",
+      "http_status": 200,
+      "final_url": "https://www.sktime.net/docs/examples/",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.statlearning.com/",
+      "sources": [
+        "data/resources-foundations.json:foundation-islp",
+        "docs/resources.md",
+        "docs/topics/04-machine-learning.md",
+        "site/resources.html",
+        "site/topics/04-machine-learning.html"
+      ],
+      "checked_at": "2026-09-30T19:44:29.307989+00:00",
+      "http_status": 200,
+      "final_url": "https://www.statlearning.com/",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.statsmodels.org/stable/tsa.html",
+      "sources": [
+        "data/resources-foundations.json:foundation-statsmodels",
+        "docs/resources.md",
+        "docs/topics/08-time-series.md",
+        "site/resources.html",
+        "site/topics/08-time-series.html"
+      ],
+      "checked_at": "2026-09-30T19:44:29.528862+00:00",
+      "http_status": 200,
+      "final_url": "https://www.statsmodels.org/stable/tsa.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.tensorflow.org/recommenders",
+      "sources": [
+        "data/resources-specialties.json:specialty-tfrs",
+        "docs/resources.md",
+        "docs/topics/23-recommendation-search.md",
+        "site/resources.html",
+        "site/topics/23-recommendation-search.html"
+      ],
+      "checked_at": "2026-09-30T19:44:29.631399+00:00",
+      "http_status": 200,
+      "final_url": "https://www.tensorflow.org/recommenders",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.w3.org/TR/rdf11-primer/",
+      "sources": [
+        "data/resources-specialties.json:specialty-rdf",
+        "docs/resources.md",
+        "docs/topics/24-graphs.md",
+        "site/resources.html",
+        "site/topics/24-graphs.html"
+      ],
+      "checked_at": "2026-09-30T19:44:29.801359+00:00",
+      "http_status": 200,
+      "final_url": "https://www.w3.org/TR/rdf11-primer/",
+      "status": "ok"
+    },
+    {
+      "url": "https://xgboost.readthedocs.io/en/stable/tutorials/model.html",
+      "sources": [
+        "data/resources-foundations.json:foundation-xgboost",
+        "docs/resources.md",
+        "docs/topics/04-machine-learning.md",
+        "site/resources.html",
+        "site/topics/04-machine-learning.html"
+      ],
+      "checked_at": "2026-09-30T19:44:30.244414+00:00",
+      "http_status": 200,
+      "final_url": "https://xgboost.readthedocs.io/en/stable/tutorials/model.html",
+      "status": "ok"
+    },
+    {
+      "url": "https://zh.d2l.ai/",
+      "sources": [
+        "data/resources-foundations.json:foundation-d2l",
+        "docs/resources.md",
+        "docs/topics/05-deep-learning.md",
+        "site/resources.html",
+        "site/topics/05-deep-learning.html"
+      ],
+      "checked_at": "2026-09-30T19:44:30.286527+00:00",
+      "http_status": 200,
+      "final_url": "https://zh.d2l.ai/",
+      "status": "ok"
+    },
+    {
+      "url": "https://zh.d2l.ai/chapter_preliminaries/index.html",
+      "sources": [
+        "data/resources-foundations.json:foundation-d2l-prelim",
+        "docs/resources.md",
+        "docs/topics/01-math.md",
+        "site/resources.html",
+        "site/topics/01-math.html"
+      ],
+      "checked_at": "2026-09-30T19:44:30.584562+00:00",
+      "http_status": 200,
+      "final_url": "https://zh.d2l.ai/chapter_preliminaries/index.html",
+      "status": "ok"
+    }
+  ]
+}

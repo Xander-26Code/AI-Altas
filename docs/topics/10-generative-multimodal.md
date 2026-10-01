@@ -1,7 +1,7 @@
 # 10 · 生成模型与多模态
 
 > 目标：理解模型如何生成图像、音频和视频，能区分表示学习、跨模态对齐与条件生成，并完成一个可复现的小实验。
-> 先修：概率分布、梯度下降、CNN / Transformer、PyTorch。主动学习约 30–50 小时；二维玩具实验可用 CPU，真实图像生成和训练通常建议 GPU。
+> 先修：概率分布、梯度下降、CNN / Transformer、PyTorch。建议规划 100–200 小时。这是完成先修后系统学习主教材、练习和一个项目的规划预算，不含补先修，不等于掌握整个领域。
 
 ## 按这个顺序学
 
@@ -42,7 +42,16 @@ Flow matching 学的是随时间变化的速度场。一个适合练习的线性
 
 阅读均免费；表中的算力指建议的动手环境，论文“无”表示阅读无需硬件。真实模型的显存需要取决于分辨率、长度、精度、批大小和实现。核实日期：2026-09-30。
 
-<!-- RESOURCE_TABLE:10-generative-multimodal -->
+| 资源 | 语言 / 级别 | 费用 / 算力 | 为什么推荐、读哪部分 |
+| --- | --- | --- | --- |
+| [Hugging Face Diffusion Course](https://huggingface.co/learn/diffusion-course/unit1/1) | 英文 / 进阶 | 免费 / 可选GPU | 先完成Unit 1最小去噪实验，再读条件控制；避免一开始下载大型文生图模型。 |
+| [Diffusers Documentation](https://huggingface.co/docs/diffusers/index) | 英文 / 进阶 | 免费 / GPU | 读Quickstart、pipeline与scheduler概念，再按硬件读优化；理解模型和采样器可以分别选择。 |
+| [Denoising Diffusion Probabilistic Models](https://arxiv.org/abs/2006.11239) | 英文 / 进阶 | 免费 / 无 | 读正向加噪、反向过程与训练目标；把损失和采样算法分别写成伪代码。 |
+| [Flow Matching for Generative Modeling](https://arxiv.org/abs/2210.02747) | 英文 / 研究 | 免费 / 无 | 读条件概率路径与向量场回归，先用二维线性路径理解训练，再研究ODE采样。 |
+| [CLIP: Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/abs/2103.00020) | 英文 / 进阶 | 免费 / 无 | 读图文配对训练和zero-shot分类方法，思考检索相似度与精细视觉推理的区别。 |
+| [Whisper: Robust Speech Recognition via Large-Scale Weak Supervision](https://arxiv.org/abs/2212.04356) | 英文 / 进阶 | 免费 / 无 | 读数据、任务构造和鲁棒性实验；关注语言、噪声与分布变化，不把一个总分当通用结论。 |
+| [DiT: Scalable Diffusion Models with Transformers](https://arxiv.org/abs/2212.09748) | 英文 / 研究 | 免费 / 无 | 读latent patch与Transformer骨干设计；理解扩散训练方式和网络结构是不同维度。 |
+| [Video Diffusion Models](https://arxiv.org/abs/2204.03458) | 英文 / 研究 | 免费 / 无 | 读视频架构与时间扩展方法；重点观察时序一致性为何超出单帧生成问题。 |
 
 ## 实践：两个低成本实验，选一条完成
 

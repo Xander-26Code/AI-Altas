@@ -1,7 +1,7 @@
 # 14 · 微调、后训练与对齐
 
 > 目标：判断一个问题是否值得微调，完成可复现的小规模 SFT 对照，并解释 LoRA、RLHF、DPO 与 GRPO 的目标和区别。
-> 先修：语言模型训练、PyTorch、梯度与交叉熵；理解强化学习的策略和奖励有助于后半章。主动学习约 35–60 小时；数据准备与玩具损失可用 CPU，实际语言模型训练通常需要 GPU。
+> 先修：语言模型训练、PyTorch、梯度与交叉熵；理解强化学习的策略和奖励有助于后半章。建议规划 120–220 小时。这是完成先修后系统学习主教材、练习和一个项目的规划预算，不含补先修，不等于掌握整个领域。
 
 ## 按这个顺序学
 
@@ -46,7 +46,15 @@ $$\mathcal L_{DPO}=-\log\sigma\left(\beta\left[\log\frac{\pi_\theta(y_w\mid x)}{
 
 阅读资料免费；GPU、存储和生成训练样本的服务费另计。先做小实验估算显存与吞吐，不套用别人的硬件结论。核实日期：2026-09-30。
 
-<!-- RESOURCE_TABLE:14-finetuning-alignment -->
+| 资源 | 语言 / 级别 | 费用 / 算力 | 为什么推荐、读哪部分 |
+| --- | --- | --- | --- |
+| [Hugging Face PEFT](https://huggingface.co/docs/peft/index) | 英文 / 进阶 | 免费 / GPU | 先读Quicktour、LoRA和checkpoint格式；检查真正参与训练的参数和底座依赖。 |
+| [Hugging Face TRL](https://huggingface.co/docs/trl/index) | 英文 / 进阶 | 免费 / GPU | 按Dataset Formats→Chat Templates→SFT→DPO/GRPO阅读，固定库版本再运行示例。 |
+| [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685) | 英文 / 进阶 | 免费 / 无 | 读低秩参数化、目标层与实验，手算adapter参数量；不要把节省比例当所有模型的常量。 |
+| [QLoRA: Efficient Finetuning of Quantized LLMs](https://arxiv.org/abs/2305.14314) | 英文 / 研究 | 免费 / 无 | 读量化底座、NF4与adapter训练；区分存储、计算精度和显存峰值。 |
+| [Training Language Models to Follow Instructions with Human Feedback](https://arxiv.org/abs/2203.02155) | 英文 / 进阶 | 免费 / 无 | 读SFT→偏好标注→RLHF流程与局限；理解优化人类偏好和绝对正确并非同义。 |
+| [Direct Preference Optimization](https://arxiv.org/abs/2305.18290) | 英文 / 研究 | 免费 / 无 | 读第3–4节和推导附录，写出优选/劣选相对参考策略的损失；先验证玩具例子梯度方向。 |
+| [DeepSeekMath](https://arxiv.org/abs/2402.03300) | 英文 / 研究 | 免费 / 无 | 重点读GRPO与奖励设计，同时检查数据筛选；不要把数学任务结果直接外推所有领域。 |
 
 ## 实践：让小模型学会稳定输出工单标签
 

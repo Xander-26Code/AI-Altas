@@ -1,0 +1,3170 @@
+{
+  "topics": [
+    {
+      "slug": "01-math",
+      "title": "数学基础",
+      "group": "基础与算法",
+      "summary": "线性代数、微积分、概率统计、优化与信息论",
+      "prerequisites": []
+    },
+    {
+      "slug": "02-programming",
+      "title": "编程与计算机基础",
+      "group": "基础与算法",
+      "summary": "Python、数据结构、Git、Linux、SQL 与软件工程",
+      "prerequisites": []
+    },
+    {
+      "slug": "03-data",
+      "title": "数据工程与数据质量",
+      "group": "基础与算法",
+      "summary": "采集、清洗、标注、切分、数据治理与数据版本",
+      "prerequisites": [
+        "02-programming"
+      ]
+    },
+    {
+      "slug": "04-machine-learning",
+      "title": "机器学习",
+      "group": "基础与算法",
+      "summary": "回归、分类、树模型、聚类、降维与泛化",
+      "prerequisites": [
+        "01-math",
+        "02-programming",
+        "03-data"
+      ]
+    },
+    {
+      "slug": "05-deep-learning",
+      "title": "深度学习",
+      "group": "基础与算法",
+      "summary": "自动微分、反向传播、优化、网络结构与训练诊断",
+      "prerequisites": [
+        "04-machine-learning"
+      ]
+    },
+    {
+      "slug": "06-nlp",
+      "title": "自然语言处理",
+      "group": "基础与算法",
+      "summary": "文本表示、序列建模、语言模型与语言任务",
+      "prerequisites": [
+        "05-deep-learning"
+      ]
+    },
+    {
+      "slug": "07-computer-vision",
+      "title": "计算机视觉",
+      "group": "基础与算法",
+      "summary": "分类、检测、分割、视觉表示与三维视觉",
+      "prerequisites": [
+        "05-deep-learning"
+      ]
+    },
+    {
+      "slug": "08-time-series",
+      "title": "时间序列与异常检测",
+      "group": "基础与算法",
+      "summary": "预测、时序切分、统计基线与分布漂移",
+      "prerequisites": [
+        "04-machine-learning"
+      ]
+    },
+    {
+      "slug": "09-llm",
+      "title": "大语言模型",
+      "group": "模型与应用",
+      "summary": "Tokenizer、Transformer、位置编码、预训练与 MoE",
+      "prerequisites": [
+        "05-deep-learning",
+        "06-nlp"
+      ]
+    },
+    {
+      "slug": "10-generative-multimodal",
+      "title": "生成模型与多模态",
+      "group": "模型与应用",
+      "summary": "VAE、GAN、扩散、flow matching、视觉语言、音频视频",
+      "prerequisites": [
+        "05-deep-learning"
+      ]
+    },
+    {
+      "slug": "11-ai-applications",
+      "title": "AI 应用开发",
+      "group": "模型与应用",
+      "summary": "API、结构化输出、流式、缓存、工具调用与产品设计",
+      "prerequisites": [
+        "02-programming"
+      ]
+    },
+    {
+      "slug": "12-rag",
+      "title": "检索增强生成",
+      "group": "模型与应用",
+      "summary": "切块、embedding、混合召回、重排、引用与权限",
+      "prerequisites": [
+        "11-ai-applications",
+        "23-recommendation-search"
+      ]
+    },
+    {
+      "slug": "13-agents",
+      "title": "Agent 与工作流",
+      "group": "模型与应用",
+      "summary": "工具、规划、状态、记忆、MCP、边界与评估",
+      "prerequisites": [
+        "11-ai-applications"
+      ]
+    },
+    {
+      "slug": "14-finetuning-alignment",
+      "title": "微调与对齐",
+      "group": "模型与应用",
+      "summary": "SFT、LoRA、QLoRA、RLHF、DPO 与偏好学习",
+      "prerequisites": [
+        "09-llm",
+        "03-data"
+      ]
+    },
+    {
+      "slug": "15-evaluation-safety",
+      "title": "评估、安全与负责任 AI",
+      "group": "模型与应用",
+      "summary": "评测、数据污染、红队、隐私、公平与可观测性",
+      "prerequisites": [
+        "04-machine-learning"
+      ]
+    },
+    {
+      "slug": "16-hardware-systems",
+      "title": "硬件与系统基础",
+      "group": "AI Infra",
+      "summary": "CPU、GPU、内存、OS、网络、存储与性能模型",
+      "prerequisites": [
+        "02-programming"
+      ]
+    },
+    {
+      "slug": "17-gpu-kernels-compilers",
+      "title": "GPU、算子与编译器",
+      "group": "AI Infra",
+      "summary": "CUDA、Triton、算子融合、roofline、图优化与编译",
+      "prerequisites": [
+        "16-hardware-systems",
+        "05-deep-learning"
+      ]
+    },
+    {
+      "slug": "18-distributed-training",
+      "title": "分布式训练",
+      "group": "AI Infra",
+      "summary": "DDP、FSDP、ZeRO、TP、PP、EP、通信与容错",
+      "prerequisites": [
+        "16-hardware-systems",
+        "05-deep-learning"
+      ]
+    },
+    {
+      "slug": "19-inference-serving",
+      "title": "推理与模型服务",
+      "group": "AI Infra",
+      "summary": "KV Cache、批处理、量化、推测解码、PD 分离与 SLO",
+      "prerequisites": [
+        "09-llm",
+        "16-hardware-systems"
+      ]
+    },
+    {
+      "slug": "20-mlops",
+      "title": "MLOps 与生产系统",
+      "group": "AI Infra",
+      "summary": "实验、流水线、版本、部署、监控、回滚与成本",
+      "prerequisites": [
+        "03-data",
+        "04-machine-learning"
+      ]
+    },
+    {
+      "slug": "21-edge-ai",
+      "title": "端侧 AI",
+      "group": "AI Infra",
+      "summary": "移动端、浏览器、ONNX、量化、隐私与设备约束",
+      "prerequisites": [
+        "05-deep-learning",
+        "19-inference-serving"
+      ]
+    },
+    {
+      "slug": "22-rl-robotics",
+      "title": "强化学习与机器人",
+      "group": "交叉领域",
+      "summary": "MDP、控制、模仿、离线 RL、具身智能与世界模型",
+      "prerequisites": [
+        "01-math",
+        "05-deep-learning"
+      ]
+    },
+    {
+      "slug": "23-recommendation-search",
+      "title": "推荐与信息检索",
+      "group": "交叉领域",
+      "summary": "倒排、BM25、向量检索、召回、排序与在线实验",
+      "prerequisites": [
+        "03-data",
+        "04-machine-learning"
+      ]
+    },
+    {
+      "slug": "24-graphs",
+      "title": "图学习与知识表示",
+      "group": "交叉领域",
+      "summary": "图算法、知识图谱、GNN、图评测与结构化关系",
+      "prerequisites": [
+        "05-deep-learning"
+      ]
+    },
+    {
+      "slug": "25-causal-probabilistic",
+      "title": "因果推断与概率建模",
+      "group": "交叉领域",
+      "summary": "贝叶斯、图模型、因果识别、干预与不确定性",
+      "prerequisites": [
+        "01-math",
+        "04-machine-learning"
+      ]
+    },
+    {
+      "slug": "26-ai-for-science",
+      "title": "AI for Science",
+      "group": "交叉领域",
+      "summary": "分子、蛋白质、材料、科学机器学习与神经算子",
+      "prerequisites": [
+        "05-deep-learning",
+        "24-graphs"
+      ]
+    },
+    {
+      "slug": "27-classical-ai",
+      "title": "经典 AI 与规划优化",
+      "group": "交叉领域",
+      "summary": "搜索、博弈、逻辑、约束求解、进化计算与神经符号",
+      "prerequisites": [
+        "02-programming"
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "id": "foundation-mml",
+      "title": "Mathematics for Machine Learning",
+      "url": "https://mml-book.github.io/",
+      "kind": "book",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "以机器学习问题连接数学；先读第 2–7 章，再做线性回归与 PCA notebook。",
+      "topics": [
+        "01-math"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "作者主页列出数学章节、算法示例与免费 PDF、练习及 notebook。"
+    },
+    {
+      "id": "foundation-mit-linear",
+      "title": "MIT 18.06 Linear Algebra",
+      "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/",
+      "kind": "course",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "无",
+      "why": "建立矩阵几何直觉；选线性方程组、子空间、正交投影和特征值，配习题。",
+      "topics": [
+        "01-math"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "MIT OCW 页面说明矩阵、向量空间、特征值与正定矩阵，并提供视频和习题入口。"
+    },
+    {
+      "id": "foundation-mit-calculus",
+      "title": "MIT 18.01SC Single Variable Calculus",
+      "url": "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/",
+      "kind": "course",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "无",
+      "why": "补导数与优化；先读 Differentiation 和 Applications，积分按需补。",
+      "topics": [
+        "01-math"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "课程目录含求导、优化、积分和级数，说明供自学并附例题、习题及答案。"
+    },
+    {
+      "id": "foundation-stat110",
+      "title": "Harvard Stat 110",
+      "url": "https://stat110.hsites.harvard.edu/",
+      "kind": "course",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "无",
+      "why": "练概率推理；优先条件概率、随机变量、期望和常见分布。",
+      "topics": [
+        "01-math"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "作者课程主页提供免费在线教材、讲义、练习解答与公开视频入口。"
+    },
+    {
+      "id": "foundation-boyd",
+      "title": "Convex Optimization",
+      "url": "https://web.stanford.edu/~boyd/cvxbook/",
+      "kind": "book",
+      "language": "英文",
+      "level": "研究",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "作为深入优化的参考；读凸集、凸函数和无约束优化，暂缓对偶细节。",
+      "topics": [
+        "01-math"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "作者主页提供出版社许可的在线书、课件、补充练习与代码。"
+    },
+    {
+      "id": "foundation-d2l-prelim",
+      "title": "动手学深度学习：预备知识",
+      "url": "https://zh.d2l.ai/chapter_preliminaries/index.html",
+      "kind": "book",
+      "language": "中文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "用张量代码复核数学；选 2.3–2.6 的线性代数、微积分、自动微分和概率。",
+      "topics": [
+        "01-math"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "中文目录核实到四个对应小节及 PyTorch 实现入口。"
+    },
+    {
+      "id": "foundation-cs50p",
+      "title": "CS50's Introduction to Programming with Python",
+      "url": "https://cs50.harvard.edu/python/",
+      "kind": "course",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "零编程基础的主线；做函数、循环、异常、测试和文件章节习题，证书不必购买。",
+      "topics": [
+        "02-programming"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "Harvard OCW 明确面向有或无编程经验者，十周公开材料可免费学习。"
+    },
+    {
+      "id": "foundation-python",
+      "title": "Python 官方中文教程",
+      "url": "https://docs.python.org/zh-cn/3/tutorial/",
+      "kind": "docs",
+      "language": "中文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "已有编程经验时作主线；读控制流、数据结构、模块、异常和虚拟环境。",
+      "topics": [
+        "02-programming"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "官方教程目录可读，并明确它面向新学 Python 的程序员而非零编程基础者。"
+    },
+    {
+      "id": "foundation-numpy",
+      "title": "NumPy Quickstart",
+      "url": "https://numpy.org/doc/stable/user/quickstart.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "训练 shape、axis 与向量化能力；做数组操作、广播和副本/视图练习。",
+      "topics": [
+        "02-programming"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "页面说明 n 维数组、shape/axis，包含数组创建及逐元素/矩阵乘法代码。"
+    },
+    {
+      "id": "foundation-missing-semester",
+      "title": "The Missing Semester",
+      "url": "https://missing.csail.mit.edu/",
+      "kind": "course",
+      "language": "中英",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "补实验开发工具；优先命令行、版本控制和调试，官网提供中文翻译入口。",
+      "topics": [
+        "02-programming"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "课程介绍强调命令行、编辑器和版本控制；Translations 列出简体中文。"
+    },
+    {
+      "id": "foundation-progit",
+      "title": "Pro Git 中文版",
+      "url": "https://git-scm.com/book/zh/v2",
+      "kind": "book",
+      "language": "中文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "让实验变更可追溯；读 Git 基础、分支新建与合并、远程分支。",
+      "topics": [
+        "02-programming"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "官方中文目录包含基础操作、提交历史、远程仓库和分支章节。"
+    },
+    {
+      "id": "foundation-pytest",
+      "title": "pytest Get Started",
+      "url": "https://docs.pytest.org/en/stable/getting-started.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "把边界条件写成可重复检查；读第一个测试、异常断言、浮点比较和临时目录。",
+      "topics": [
+        "02-programming"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "官方入门页核实上述小节，含可运行的首个测试示例。"
+    },
+    {
+      "id": "foundation-uv",
+      "title": "uv：Working on projects",
+      "url": "https://docs.astral.sh/uv/guides/projects/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "管理隔离环境与锁定依赖；读 pyproject、uv.lock、依赖管理和运行命令。",
+      "topics": [
+        "02-programming"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "官方项目指南解释锁文件精确版本、依赖添加及 uv run/sync。"
+    },
+    {
+      "id": "foundation-pandas",
+      "title": "pandas Getting started tutorials",
+      "url": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "用真实表格学习数据处理；做读写、筛选、聚合、合表及时间字段。",
+      "topics": [
+        "03-data"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "官方目录包含 DataFrame、读写、聚合、reshape、combine 和时间数据。"
+    },
+    {
+      "id": "foundation-postgres",
+      "title": "PostgreSQL Tutorial",
+      "url": "https://www.postgresql.org/docs/current/tutorial.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "学关系模型和 SQL；先读查询、JOIN、聚合，再读事务及窗口函数。",
+      "topics": [
+        "03-data"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "官方教程说明无需特定编程经验，目录核实查询、连接、聚合与窗口函数。"
+    },
+    {
+      "id": "foundation-duckdb",
+      "title": "DuckDB Guides",
+      "url": "https://duckdb.org/docs/current/guides/overview",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "练本地文件分析；读 CSV/Parquet 导入、直接查询 Parquet 与性能排查。",
+      "topics": [
+        "03-data"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "旧 stable 链接跳转到 current；指南含文件导入导出及性能专题。"
+    },
+    {
+      "id": "foundation-sklearn-pitfalls",
+      "title": "scikit-learn：Common pitfalls",
+      "url": "https://scikit-learn.org/stable/common_pitfalls.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "建立数据泄漏直觉；完整读预处理不一致、泄漏与随机性控制。",
+      "topics": [
+        "03-data"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "正文解释只在训练集拟合预处理器，并展示 Pipeline 的正确与错误示例。"
+    },
+    {
+      "id": "foundation-datasheets",
+      "title": "Datasheets for Datasets",
+      "url": "https://arxiv.org/abs/1803.09010",
+      "kind": "paper",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "无",
+      "why": "为数据写说明书；读动机与数据采集、组成、用途记录框架。",
+      "topics": [
+        "03-data",
+        "15-evaluation-safety"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已读作者、版本记录与摘要；摘要提出记录数据动机、组成、采集与推荐用途。"
+    },
+    {
+      "id": "foundation-uci",
+      "title": "UCI Machine Learning Repository",
+      "url": "https://archive.ics.uci.edu/",
+      "kind": "project",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "练数据来源审查；选一个小型表格集，阅读字段、出处、引用和许可后再建模。",
+      "topics": [
+        "03-data"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "UCI 主页列出 Iris、Wine Quality、Bank Marketing 等数据集及任务说明；具体许可需逐集确认。"
+    },
+    {
+      "id": "foundation-islp",
+      "title": "An Introduction to Statistical Learning",
+      "url": "https://www.statlearning.com/",
+      "kind": "book",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "以 Python 版作理论主线；读回归、分类、重采样、正则化、树模型与对应 lab。",
+      "topics": [
+        "04-machine-learning"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "作者主页提供免费 PDF，说明 Python 版及每章 lab，列出主要章节。"
+    },
+    {
+      "id": "foundation-mlcourse",
+      "title": "mlcourse.ai",
+      "url": "https://mlcourse.ai/book/index.html",
+      "kind": "course",
+      "language": "英文",
+      "level": "进阶",
+      "access": "部分免费",
+      "compute": "CPU",
+      "why": "练从 EDA 到 boosting 的完整流程；先做 Topic 1–5 和 10 的公开 demo。",
+      "topics": [
+        "04-machine-learning"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "课程自述列出十主题、文章/视频/作业；基础公开，Bonus Assignments 另收费，神经网络与 GenAI 不在范围。"
+    },
+    {
+      "id": "foundation-sklearn-guide",
+      "title": "scikit-learn User Guide",
+      "url": "https://scikit-learn.org/stable/user_guide.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "作为实验查阅手册；按当前模型阅读，再看交叉验证、指标和 Pipeline。",
+      "topics": [
+        "04-machine-learning"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "官方目录包含监督/无监督、模型选择、阈值调节、指标和预处理。"
+    },
+    {
+      "id": "foundation-xgboost",
+      "title": "XGBoost：Introduction to Boosted Trees",
+      "url": "https://xgboost.readthedocs.io/en/stable/tutorials/model.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "理解 boosting 优化目标；重点读训练损失+正则项、逐步加树和叶子权重。",
+      "topics": [
+        "04-machine-learning"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "正文给出正则化目标、加法训练、二阶近似和叶权重公式。"
+    },
+    {
+      "id": "foundation-google-mlcc",
+      "title": "Google Machine Learning Crash Course",
+      "url": "https://developers.google.com/machine-learning/crash-course",
+      "kind": "course",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "快速建立任务与指标直觉；做线性回归、逻辑回归和分类指标模块。",
+      "topics": [
+        "04-machine-learning"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "课程主页列明回归、梯度下降、阈值、混淆矩阵、精确率/召回率/AUC。"
+    },
+    {
+      "id": "foundation-cs229-notes",
+      "title": "CS229 Lecture Notes",
+      "url": "https://cs229.stanford.edu/main_notes.pdf",
+      "kind": "course",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "无",
+      "why": "补推导而非追视频；先读线性回归、逻辑回归和广义线性模型。",
+      "topics": [
+        "04-machine-learning"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开 Stanford 278 页公开 PDF，作者 Tengyu Ma/Andrew Ng；核实目录及回归推导。"
+    },
+    {
+      "id": "foundation-pumpkin",
+      "title": "Datawhale 南瓜书",
+      "url": "https://github.com/datawhalechina/pumpkin-book",
+      "kind": "book",
+      "language": "中文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "无",
+      "why": "需要中文推导时查阅；对照自己正在学的线性模型或 SVM，不当作零基础主教材。",
+      "topics": [
+        "04-machine-learning"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已读作者仓库 README：定位为《机器学习》公式解释与推导补充；网页版正文未被抓取。"
+    },
+    {
+      "id": "foundation-d2l",
+      "title": "动手学深度学习",
+      "url": "https://zh.d2l.ai/",
+      "kind": "book",
+      "language": "中文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "作为中文主线；按第 3–7 章学回归、MLP、训练、CNN，再补第 10–11 章。",
+      "topics": [
+        "05-deep-learning"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已审阅中文全书目录与首页；包含公式、图示、代码及从零和框架实现。"
+    },
+    {
+      "id": "foundation-pytorch-basics",
+      "title": "PyTorch Learn the Basics",
+      "url": "https://docs.pytorch.org/tutorials/beginner/basics/intro.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "建立标准训练循环；按 Tensors 到 Save & Load 全流程完成 FashionMNIST 示例。",
+      "topics": [
+        "05-deep-learning"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "官方页面说明数据、模型、优化和保存流程，并列出八个步骤及数据集。"
+    },
+    {
+      "id": "foundation-dlbook",
+      "title": "Deep Learning",
+      "url": "https://www.deeplearningbook.org/",
+      "kind": "book",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "无",
+      "why": "补数值计算和训练原理；读第 4、6–8、11 章，作为参考而非追新工具。",
+      "topics": [
+        "05-deep-learning"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "作者网站提供在线 HTML，目录含数值计算、前馈网络、正则化、优化及实践方法；官方不提供 PDF。"
+    },
+    {
+      "id": "foundation-fastai",
+      "title": "Practical Deep Learning for Coders",
+      "url": "https://course.fast.ai/",
+      "kind": "course",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "喜欢先做作品可选此主线；先完成 Part 1 的模型训练与迁移学习。",
+      "topics": [
+        "05-deep-learning"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "课程首页说明免费、有编程经验先修，列出 CV/NLP/表格/协同过滤与部署主题。"
+    },
+    {
+      "id": "foundation-playground",
+      "title": "TensorFlow Playground",
+      "url": "https://playground.tensorflow.org/",
+      "kind": "project",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "交互观察决策边界；比较不同层数、噪声、学习率与正则化。",
+      "topics": [
+        "05-deep-learning"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "页面提供浏览器神经网络实验，显示训练/测试 loss 与超参数控件；未代替用户执行交互。"
+    },
+    {
+      "id": "foundation-micrograd",
+      "title": "Karpathy micrograd",
+      "url": "https://github.com/karpathy/micrograd",
+      "kind": "project",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "看清自动微分；阅读 engine.py 的运算与 backward，再做二分类 demo。",
+      "topics": [
+        "05-deep-learning"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "作者 README 说明标量动态计算图与反向模式自动微分，提供 MLP 示例及源码。"
+    },
+    {
+      "id": "foundation-cs224n",
+      "title": "Stanford CS224N",
+      "url": "https://web.stanford.edu/class/cs224n/",
+      "kind": "course",
+      "language": "英文",
+      "level": "进阶",
+      "access": "部分免费",
+      "compute": "可选GPU",
+      "why": "系统学神经 NLP；从词向量、反向传播、注意力到模型评估，选公开讲义与往年视频。",
+      "topics": [
+        "06-nlp"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "2026 官网列先修、作业和讲义；当年视频仅校内，2024 视频公开，付费项目另列。"
+    },
+    {
+      "id": "foundation-slp",
+      "title": "Speech and Language Processing",
+      "url": "https://web.stanford.edu/~jurafsky/slp3/",
+      "kind": "book",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "无",
+      "why": "补文本与语言任务；读 Words and Tokens、N-grams、分类、Embeddings 和 Transformers。",
+      "topics": [
+        "06-nlp"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "作者主页标第三版草稿，2026-08-19 版本；目录核实词元、n-gram、分类、嵌入和 Transformer。"
+    },
+    {
+      "id": "foundation-hf-course",
+      "title": "Hugging Face LLM Course",
+      "url": "https://huggingface.co/learn/llm-course/chapter1/1",
+      "kind": "course",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "连接 NLP 理论与库；学 1–4 章模型流程及 5–8 章数据、分词器和任务。",
+      "topics": [
+        "06-nlp",
+        "09-llm"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "课程介绍明确 1–4/5–8/10–12 章节范围，先修 Python，建议先学深度学习。"
+    },
+    {
+      "id": "foundation-sentencepiece",
+      "title": "SentencePiece",
+      "url": "https://github.com/google/sentencepiece",
+      "kind": "project",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "理解子词与语言无关预处理；读分词、反分词、BPE/Unigram 与模型文件说明。",
+      "topics": [
+        "06-nlp",
+        "09-llm"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "作者仓库说明直接处理原始 Unicode 文本、空格标记和子词采样。"
+    },
+    {
+      "id": "foundation-spacy",
+      "title": "spaCy Linguistic Features",
+      "url": "https://spacy.io/usage/linguistic-features",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "认识结构化 NLP；选 tokenization、词性、依存和命名实体识别示例。",
+      "topics": [
+        "06-nlp"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "官方使用文档含 NER 正文与实体 span 示例，说明预测受训练数据影响。"
+    },
+    {
+      "id": "foundation-nltk",
+      "title": "Natural Language Processing with Python",
+      "url": "https://www.nltk.org/book/",
+      "kind": "book",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "练语料、文本处理和传统分类；读第 1–3、6–7 章，跳过不相关语法细节。",
+      "topics": [
+        "06-nlp"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "作者书页说明更新至 Python 3/NLTK 3，列出语料、原始文本、分类及信息抽取。"
+    },
+    {
+      "id": "foundation-cs231n",
+      "title": "Stanford CS231n",
+      "url": "https://cs231n.stanford.edu/",
+      "kind": "course",
+      "language": "英文",
+      "level": "进阶",
+      "access": "部分免费",
+      "compute": "可选GPU",
+      "why": "作深度视觉主线；从分类和 CNN 到检测，完成公开作业中的小模型。",
+      "topics": [
+        "07-computer-vision"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "2026 官网列目标、先修、作业及项目；当年视频校内，往年视频有公开入口。"
+    },
+    {
+      "id": "foundation-szeliski",
+      "title": "Computer Vision: Algorithms and Applications",
+      "url": "https://szeliski.org/Book/",
+      "kind": "book",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "补几何与经典视觉；选图像形成、特征、匹配和多视几何，深度内容按需看。",
+      "topics": [
+        "07-computer-vision"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "作者第二版主页提供个人使用电子版入口，下载需填写信息，不允许转载 PDF。"
+    },
+    {
+      "id": "foundation-torchvision",
+      "title": "TorchVision Object Detection Finetuning Tutorial",
+      "url": "https://docs.pytorch.org/tutorials/intermediate/torchvision_tutorial.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "把检测任务落到数据接口；完成 Penn-Fudan 上的 Mask R-CNN 微调及结果可视化。",
+      "topics": [
+        "07-computer-vision"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "官方正文核实 170 张图、345 个行人实例与自定义数据上的检测/分割微调流程。"
+    },
+    {
+      "id": "foundation-opencv",
+      "title": "OpenCV-Python Tutorials",
+      "url": "https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "掌握图像读写与坐标；先做 Core Operations、Image Processing，再学特征。",
+      "topics": [
+        "07-computer-vision"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "官方索引含图像/视频读写、像素操作、几何变换、图像处理和特征描述。"
+    },
+    {
+      "id": "foundation-timm",
+      "title": "timm Quickstart",
+      "url": "https://huggingface.co/docs/timm/quickstart",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "比较预训练骨干；读模型加载、分类头替换、特征抽取及匹配预处理。",
+      "topics": [
+        "07-computer-vision"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "官方文档展示 create_model、eval、num_classes 与 pretrained_cfg 对应变换。"
+    },
+    {
+      "id": "foundation-detectron2",
+      "title": "Detectron2 Tutorials",
+      "url": "https://detectron2.readthedocs.io/en/latest/tutorials/index.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "GPU",
+      "why": "进阶了解检测工程；先读数据注册、配置、训练和评估，注意依赖版本配套。",
+      "topics": [
+        "07-computer-vision"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "官方教程目录含数据集结构、注册、自定义数据、默认组件扩展；未安装执行。"
+    },
+    {
+      "id": "foundation-fpp3",
+      "title": "Forecasting: Principles and Practice",
+      "url": "https://otexts.com/fpp3/",
+      "kind": "book",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "先建立预测方法论；读探索、分解、基础预测、回测、ETS 与 ARIMA，代码使用 R。",
+      "topics": [
+        "08-time-series"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "作者前言说明免费在线、统计先修、R/fpp3 实现，先探索后建模。"
+    },
+    {
+      "id": "foundation-statsmodels",
+      "title": "statsmodels Time Series Analysis",
+      "url": "https://www.statsmodels.org/stable/tsa.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "用 Python 复现实验；查 ACF/PACF、ARIMA、ETS、STL 和诊断。",
+      "topics": [
+        "08-time-series"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "官方模块页列出相关模型、统计检验、状态空间及残差诊断入口。"
+    },
+    {
+      "id": "foundation-sktime",
+      "title": "sktime Notebook Examples",
+      "url": "https://www.sktime.net/docs/examples/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "规范预测实验；读 Forecasting、Window splitters、Pipelines and Tuning。",
+      "topics": [
+        "08-time-series"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "原 stable 页面跳转到 docs/examples；目录核实预测、概率预测、窗口切分及调参。"
+    },
+    {
+      "id": "foundation-aeon",
+      "title": "aeon Examples",
+      "url": "https://www.aeon-toolkit.org/en/stable/examples.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "拓展到序列分类；选 TSC、距离方法和 ROCKET/MiniRocket，区别预测与分类任务。",
+      "topics": [
+        "08-time-series"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "官方示例页含分类、回归、聚类、转换、距离方法与 ROCKET 系列。"
+    },
+    {
+      "id": "foundation-pytorch-forecasting",
+      "title": "PyTorch Forecasting Tutorials",
+      "url": "https://pytorch-forecasting.readthedocs.io/en/stable/tutorials.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "在可靠统计基线上学习深度预测；选 TFT 需求预测或 N-BEATS 一个项目。",
+      "topics": [
+        "08-time-series"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "官方教程目录含 TFT、N-BEATS、DeepAR/DeepVAR、自定义数据与 N-HiTS。"
+    },
+    {
+      "id": "foundation-statsforecast",
+      "title": "StatsForecast Quick Start",
+      "url": "https://nixtlaverse.nixtla.io/statsforecast/docs/getting-started/getting_started_short.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "快速跑统计预测基线；看 long-format 数据、AutoARIMA、预测区间与绘图。",
+      "topics": [
+        "08-time-series"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "官方示例核实季节周期、模型拟合、h 步预测及 level 区间参数。"
+    },
+    {
+      "id": "infra-csapp",
+      "title": "Computer Systems: A Programmer's Perspective 作者站",
+      "url": "https://csapp.cs.cmu.edu/",
+      "kind": "book",
+      "language": "英文",
+      "level": "进阶",
+      "access": "部分免费",
+      "compute": "CPU",
+      "why": "从程序员视角学习缓存、虚拟内存、并发与 I/O；教材通常需购买或借阅，配套站点部分免费。",
+      "topics": [
+        "16-hardware-systems"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "作者主页正文列出数据表示、内存层次、网络、并发及实验材料入口。"
+    },
+    {
+      "id": "infra-ostep",
+      "title": "Operating Systems: Three Easy Pieces",
+      "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/",
+      "kind": "book",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "按虚拟化、并发、持久化学习 OS，并用作者提供的模拟题验证理解。",
+      "topics": [
+        "16-hardware-systems"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "作者站确认章节 PDF 免费，列出进程、地址空间、线程、I/O 和作业。"
+    },
+    {
+      "id": "infra-cs144",
+      "title": "Stanford CS144: Introduction to Computer Networking",
+      "url": "https://cs144.github.io/",
+      "kind": "course",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "用字节流和网络实验理解可靠传输、拥塞与延迟；完整实验需要 C++ 基础。",
+      "topics": [
+        "16-hardware-systems"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开课程主页，确认网络课程、教材、练习和实验导航。"
+    },
+    {
+      "id": "infra-linux-performance",
+      "title": "Brendan Gregg: Linux Performance",
+      "url": "https://www.brendangregg.com/linuxperf.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "通过性能方法、工具地图和火焰图定位系统瓶颈；Linux 工具需相应环境。",
+      "topics": [
+        "16-hardware-systems"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开作者页面，核对 USE Method、Off-CPU Analysis、Flame Graphs 等入口。"
+    },
+    {
+      "id": "infra-linux-memory",
+      "title": "Linux Kernel: Memory Management Concepts",
+      "url": "https://docs.kernel.org/admin-guide/mm/concepts.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "区分虚拟地址、驻留内存、NUMA、页缓存与内存回收。",
+      "topics": [
+        "16-hardware-systems"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开内核文档并核对 NUMA、Page Cache、Anonymous Memory、Reclaim 内容。"
+    },
+    {
+      "id": "infra-parquet",
+      "title": "Apache Parquet Overview",
+      "url": "https://parquet.apache.org/docs/overview/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "理解列式格式与实现差异，为数据加载和特征读取建立存储模型。",
+      "topics": [
+        "16-hardware-systems"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开 Apache 官方概览，确认格式规范、实现及兼容性说明。"
+    },
+    {
+      "id": "infra-cuda-guide",
+      "title": "CUDA Programming Guide",
+      "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/index.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "GPU",
+      "why": "查阅 Programming Model、SIMT、异步执行和内存语义，作为 CUDA 实验依据。",
+      "topics": [
+        "17-gpu-kernels-compilers"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开 NVIDIA 官方指南，核对 Programming Model、SIMT Kernels、Unified Memory 目录。"
+    },
+    {
+      "id": "infra-triton-tutorials",
+      "title": "Triton 官方教程",
+      "url": "https://triton-lang.org/main/getting-started/tutorials/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "GPU",
+      "why": "按向量加法、融合 softmax、矩阵乘法顺序实现算子并比较性能。",
+      "topics": [
+        "17-gpu-kernels-compilers"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开官方教程列表，确认 Vector Addition、Fused Softmax、Matrix Multiplication 及示例入口。"
+    },
+    {
+      "id": "infra-mlc-zh",
+      "title": "机器学习编译课程（中文）",
+      "url": "https://book-zh.mlc.ai/",
+      "kind": "course",
+      "language": "中文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "通过 TensorIR、自动优化、GPU 加速和计算图理解编译思想；注意课程版本与库版本差异。",
+      "topics": [
+        "17-gpu-kernels-compilers"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开课程中文站，核对第 2、4、6、7 章及英文原版链接。"
+    },
+    {
+      "id": "infra-dlsys",
+      "title": "Deep Learning Systems: Algorithms and Implementation",
+      "url": "https://dlsyscourse.org/",
+      "kind": "course",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "通过自动微分、数组库与硬件加速学习深度学习框架内部机制。",
+      "topics": [
+        "17-gpu-kernels-compilers"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开课程主页和课程描述，确认 full-stack 系统教学、公开材料及作业结构；当前学期材料可能分批发布。"
+    },
+    {
+      "id": "infra-nsight-compute",
+      "title": "Nsight Compute Profiling Guide",
+      "url": "https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "GPU",
+      "why": "学习 Roofline、Memory Chart 与性能指标，用证据解释算子瓶颈。",
+      "topics": [
+        "17-gpu-kernels-compilers"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开官方 Profiling Guide，并定位 Roofline Charts 和 Memory Chart 的解释。"
+    },
+    {
+      "id": "infra-cs336",
+      "title": "Stanford CS336: Language Modeling from Scratch",
+      "url": "https://cs336.stanford.edu/",
+      "kind": "course",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "GPU",
+      "why": "选学 resource accounting、kernels、parallelism 和 systems 作业，连接算子与训练系统。",
+      "topics": [
+        "17-gpu-kernels-compilers"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开课程主页，核对 2026 课程表、Systems 作业以及资源计量、Triton、并行和推理讲义入口。"
+    },
+    {
+      "id": "infra-torch-compile",
+      "title": "PyTorch: Introduction to torch.compile",
+      "url": "https://docs.pytorch.org/tutorials/intermediate/torch_compile_tutorial.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "理解 eager/compiled 对比、编译冷启动、graph break 和动态行为。",
+      "topics": [
+        "17-gpu-kernels-compilers"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开官方教程并定位 graph break 与排错说明；不将编译视作固定加速承诺。"
+    },
+    {
+      "id": "infra-ddp",
+      "title": "PyTorch: Distributed Data Parallel",
+      "url": "https://docs.pytorch.org/tutorials/intermediate/ddp_tutorial.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "建立最小多进程训练，理解梯度同步、初始化与保存加载。",
+      "topics": [
+        "18-distributed-training"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开官方 DDP 教程，确认多进程训练、checkpoint 与通信相关内容；CPU 学习需合适后端。"
+    },
+    {
+      "id": "infra-fsdp2",
+      "title": "PyTorch: Fully Sharded Data Parallel (FSDP2)",
+      "url": "https://docs.pytorch.org/tutorials/intermediate/FSDP_tutorial.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "GPU",
+      "why": "理解 fully_shard、参数重组与状态分片，避免混用旧 FSDP API。",
+      "topics": [
+        "18-distributed-training"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开当前 FSDP2 教程并核对 fully_shard、通信和旧 API 对应表。"
+    },
+    {
+      "id": "infra-tensor-parallel",
+      "title": "PyTorch: Tensor Parallel",
+      "url": "https://docs.pytorch.org/tutorials/intermediate/TP_tutorial.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "GPU",
+      "why": "学习按行/列切分、DeviceMesh、DTensor 和布局带来的通信。",
+      "topics": [
+        "18-distributed-training"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开官方 TP 教程，确认 RowwiseParallel、ColwiseParallel、SequenceParallel 和 loss_parallel 示例。"
+    },
+    {
+      "id": "infra-zero",
+      "title": "DeepSpeed: Zero Redundancy Optimizer",
+      "url": "https://www.deepspeed.ai/tutorials/zero/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "GPU",
+      "why": "把 ZeRO 三阶段与参数、梯度、优化器状态的显存账本对应起来。",
+      "topics": [
+        "18-distributed-training"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开官方 ZeRO 教程，核对三阶段状态分片的概念与配置示例。"
+    },
+    {
+      "id": "infra-nccl",
+      "title": "NCCL: Collective Operations",
+      "url": "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/usage/collectives.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "GPU",
+      "why": "用各集合通信图例理解 all-reduce、all-gather、reduce-scatter 和 all-to-all。",
+      "topics": [
+        "18-distributed-training"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开 NVIDIA 官方子页，核对各原语的 rank、输入输出和数据布局语义。"
+    },
+    {
+      "id": "infra-distributed-checkpoint",
+      "title": "PyTorch: Distributed Checkpoint",
+      "url": "https://docs.pytorch.org/tutorials/recipes/distributed_checkpoint_recipe.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "学习分片保存、加载与 resharding，并理解恢复需要的目标状态布局。",
+      "topics": [
+        "18-distributed-training"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开官方 DCP 教程，核对模型/优化器状态保存及加载时所需分片信息。"
+    },
+    {
+      "id": "infra-pipeline",
+      "title": "DeepSpeed: Pipeline Parallelism",
+      "url": "https://www.deepspeed.ai/tutorials/pipeline/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "GPU",
+      "why": "理解层切分、micro-batch、流水线调度与 stage 负载均衡。",
+      "topics": [
+        "18-distributed-training"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开官方教程，核对 micro-batch 数据迭代、PipelineModule 和 Load Balancing 小节。"
+    },
+    {
+      "id": "infra-moe",
+      "title": "DeepSpeed: Mixture of Experts",
+      "url": "https://www.deepspeed.ai/tutorials/mixture-of-experts/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "GPU",
+      "why": "理解专家分组、数据/专家并行组合，建立 MoE 路由通信模型。",
+      "topics": [
+        "18-distributed-training"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开官方 MoE 教程，核对 Expert groups initialization 与并行组合表。"
+    },
+    {
+      "id": "infra-vllm-quickstart",
+      "title": "vLLM Quickstart",
+      "url": "https://docs.vllm.ai/en/stable/getting_started/quickstart/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "先建立离线批推理和在线服务，再按当前 CPU/GPU 安装要求选择环境。",
+      "topics": [
+        "19-inference-serving"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开官方 Quickstart，确认 Offline Batched Inference、Online Serving 和各硬件安装入口。"
+    },
+    {
+      "id": "infra-paged-attention",
+      "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+      "url": "https://arxiv.org/abs/2309.06180",
+      "kind": "paper",
+      "language": "英文",
+      "level": "研究",
+      "access": "免费",
+      "compute": "无",
+      "why": "阅读 KV 分页、碎片和共享机制，不直接套用论文硬件上的加速比。",
+      "topics": [
+        "19-inference-serving"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开 arXiv 原论文摘要与元数据，确认作者、问题设定及 PagedAttention 的分页设计动机。"
+    },
+    {
+      "id": "infra-speculative-decoding",
+      "title": "Fast Inference from Transformers via Speculative Decoding",
+      "url": "https://arxiv.org/abs/2211.17192",
+      "kind": "paper",
+      "language": "英文",
+      "level": "研究",
+      "access": "免费",
+      "compute": "无",
+      "why": "学习 draft、验证和修正采样，理解保持目标分布的条件。",
+      "topics": [
+        "19-inference-serving"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开 arXiv 原论文摘要和元数据，确认并行验证及保持目标模型采样分布的论述。"
+    },
+    {
+      "id": "infra-disagg-prefill",
+      "title": "vLLM Disaggregated Prefilling",
+      "url": "https://docs.vllm.ai/en/stable/features/disagg_prefill/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "GPU",
+      "why": "理解独立调整 TTFT/ITL 的动机、KV 传输和 connector 的额外复杂度。",
+      "topics": [
+        "19-inference-serving"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开官方文档并定位功能动机；页面明确标记 experimental，不承诺吞吐提高。"
+    },
+    {
+      "id": "infra-vllm-benchmark",
+      "title": "vLLM Benchmark CLI",
+      "url": "https://docs.vllm.ai/en/stable/benchmarking/cli/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "建立在线负载测试，记录输入输出分布、TTFT、ITL、TPOT 与有效吞吐。",
+      "topics": [
+        "19-inference-serving"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开官方基准文档，核对在线服务测试、结果保存、请求分布与指标术语说明。"
+    },
+    {
+      "id": "infra-onnx-quantization",
+      "title": "ONNX Runtime: Quantize ONNX Models",
+      "url": "https://onnxruntime.ai/docs/performance/model-optimizations/quantization.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "理解 scale/zero point、静态/动态量化、校准、误差诊断和硬件限制。",
+      "topics": [
+        "19-inference-serving",
+        "21-edge-ai"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开官方量化页并核对公式、校准数据、动态参数计算和量化调试内容。"
+    },
+    {
+      "id": "infra-distserve",
+      "title": "DistServe: Disaggregating Prefill and Decoding for Goodput-optimized LLM Serving",
+      "url": "https://arxiv.org/abs/2401.09670",
+      "kind": "paper",
+      "language": "英文",
+      "level": "研究",
+      "access": "免费",
+      "compute": "无",
+      "why": "从延迟目标与 goodput 理解 PD 分离，而不是只追求最高 token 吞吐。",
+      "topics": [
+        "19-inference-serving"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开 arXiv 摘要与元数据，确认论文研究 prefill/decode 分离和 SLO 下的 goodput。"
+    },
+    {
+      "id": "infra-madewithml",
+      "title": "Made With ML: MLOps Course",
+      "url": "https://madewithml.com/courses/mlops/",
+      "kind": "course",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "通过一个项目串起设计、测试、版本、CI/CD 与监控；免费指公开自学内容。",
+      "topics": [
+        "20-mlops"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开作者课程目录，核对 Design、Testing、Versioning、Production；不将直播班或算力视为免费权益。"
+    },
+    {
+      "id": "infra-mlflow-registry",
+      "title": "MLflow Model Registry",
+      "url": "https://www.mlflow.org/docs/latest/registry/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "区分实验记录、模型 lineage、版本、别名、标签与发布路由。",
+      "topics": [
+        "20-mlops"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "search-verified",
+      "evidence": "官方搜索索引返回完整标题及 lineage、versioning、aliasing、tagging 摘要；打开正文返回空内容，未宣称完成正文复核。"
+    },
+    {
+      "id": "infra-dvc-files",
+      "title": "DVC: .dvc Files",
+      "url": "https://doc.dvc.org/user-guide/project-structure/dvc-files",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "通过哈希、路径和远端元数据理解大文件版本机制。",
+      "topics": [
+        "20-mlops"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开官方 .dvc Files 说明，确认占位文件、YAML schema、输出/依赖及 remote 元数据。"
+    },
+    {
+      "id": "infra-kserve",
+      "title": "KServe 官方概览",
+      "url": "https://kserve.github.io/website/docs/intro",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "已有 Kubernetes 场景下理解 control plane、data plane 与模型服务资源。",
+      "topics": [
+        "20-mlops"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开官方概览，核对 InferenceService、控制/数据平面、服务模式和安装入口。"
+    },
+    {
+      "id": "infra-prometheus-histograms",
+      "title": "Prometheus: Histograms and Summaries",
+      "url": "https://prometheus.io/docs/practices/histograms/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "理解延迟分布和聚合，避免直接平均多副本分位数。",
+      "topics": [
+        "20-mlops"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开官方文档并定位 Quantiles/Overview，核对摘要分位数无法直接聚合的限制。"
+    },
+    {
+      "id": "infra-otel-primer",
+      "title": "OpenTelemetry: Observability Primer",
+      "url": "https://opentelemetry.io/docs/concepts/observability-primer/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "区分日志、指标和追踪，将模型服务请求串成可排查的证据。",
+      "topics": [
+        "20-mlops"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开官方概念文档并定位 Logs 等信号说明，确认可观测性基础范围。"
+    },
+    {
+      "id": "infra-model-persistence",
+      "title": "scikit-learn: Model Persistence",
+      "url": "https://scikit-learn.org/stable/model_persistence.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "比较持久化格式、版本兼容与可执行反序列化的边界。",
+      "topics": [
+        "20-mlops"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开官方模型持久化文档并核对任意代码执行风险、格式选择与版本限制。"
+    },
+    {
+      "id": "infra-onnx-mobile",
+      "title": "ONNX Runtime: Deploy on Mobile",
+      "url": "https://onnxruntime.ai/docs/tutorials/mobile/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "建立 CPU 基线再测手机执行后端，关注模型大小、延迟与功耗。",
+      "topics": [
+        "21-edge-ai"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开官方移动部署指南，核对 execution providers、子图划分及目标设备实测要求。"
+    },
+    {
+      "id": "infra-mlx",
+      "title": "MLX 官方文档",
+      "url": "https://ml-explore.github.io/mlx/build/html/index.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "Apple Silicon 路线重点学习惰性求值、统一内存与本地数组计算；先确认平台支持。",
+      "topics": [
+        "21-edge-ai"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开官方文档，核对 Quick Start、Lazy Evaluation、Unified Memory 及模型示例入口。"
+    },
+    {
+      "id": "infra-transformers-js-webgpu",
+      "title": "Transformers.js: Running Models on WebGPU",
+      "url": "https://huggingface.co/docs/transformers.js/en/guides/webgpu",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "学习浏览器 pipeline 的 GPU 设备选择，结合能力检测与 CPU 回退。",
+      "topics": [
+        "21-edge-ai"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开 Hugging Face 官方指南，确认 WebGPU 加载示例；页面引用历史支持比例，不作为当前统计使用。"
+    },
+    {
+      "id": "infra-litert",
+      "title": "Google LiteRT Overview",
+      "url": "https://developers.google.com/edge/litert/overview",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "理解端侧转换、CompiledModel 与 CPU/GPU/NPU 部署路线。",
+      "topics": [
+        "21-edge-ai"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开 Google 官方概览，核对模型转换、设备 API、硬件加速与参考应用。"
+    },
+    {
+      "id": "infra-coremltools",
+      "title": "Core ML Tools Overview",
+      "url": "https://apple.github.io/coremltools/docs-guides/source/overview-coremltools.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "学习第三方模型转换、验证和优化，面向 Apple 应用交付。",
+      "topics": [
+        "21-edge-ai"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开 Apple 官方指南，核对转换、模型包、macOS 验证和目标计算单元说明。"
+    },
+    {
+      "id": "infra-onnx-web",
+      "title": "ONNX Runtime Web",
+      "url": "https://onnxruntime.ai/docs/tutorials/web/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "比较客户端/服务端路线和 WASM、WebGPU 等后端，理解算子支持范围。",
+      "topics": [
+        "21-edge-ai"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "打开官方 Web 教程并核对 WASM 与 GPU 后端的支持差异、下载和运行约束。"
+    },
+    {
+      "id": "model-002",
+      "title": "Stanford CS336: Language Modeling from Scratch (2025)",
+      "url": "https://cs336.stanford.edu/spring2025/",
+      "kind": "course",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "GPU",
+      "why": "先做Assignment 1并读架构与MoE讲义；适合愿意自己实现组件的学习者，完整课程另有系统与数据作业。",
+      "topics": [
+        "09-llm"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开课程归档，核对先修、五项作业和课程日程；页面明确建议CPU调试、GPU完成训练。"
+    },
+    {
+      "id": "model-003",
+      "title": "Attention Is All You Need",
+      "url": "https://arxiv.org/abs/1706.03762",
+      "kind": "paper",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "无",
+      "why": "读模型结构与attention部分，手算一次Q/K/V维度；理解原始encoder-decoder而非假设所有LLM都相同。",
+      "topics": [
+        "09-llm"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开arXiv作者论文页，核对标题、作者和Transformer架构摘要；不是对全部实验的复现。"
+    },
+    {
+      "id": "model-004",
+      "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding",
+      "url": "https://arxiv.org/abs/2104.09864",
+      "kind": "paper",
+      "language": "英文",
+      "level": "研究",
+      "access": "免费",
+      "compute": "无",
+      "why": "读RoPE构造和相对位置性质；先推导二维旋转内积，再看扩展性质。",
+      "topics": [
+        "09-llm"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开arXiv作者论文页并阅读摘要，确认旋转位置表示与自注意力中的相对位置关系。"
+    },
+    {
+      "id": "model-005",
+      "title": "Switch Transformers",
+      "url": "https://arxiv.org/abs/2101.03961",
+      "kind": "paper",
+      "language": "英文",
+      "level": "研究",
+      "access": "免费",
+      "compute": "无",
+      "why": "读稀疏专家路由、负载均衡与训练稳定性；用于区分总参数与激活计算量。",
+      "topics": [
+        "09-llm"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开arXiv论文并单独复核摘要，确认稀疏激活、通信成本和训练稳定性讨论。"
+    },
+    {
+      "id": "model-007",
+      "title": "The Illustrated Transformer",
+      "url": "https://jalammar.github.io/illustrated-transformer/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "无",
+      "why": "先看张量流向、自注意力和多头图解，再回到原论文；用自己的例子复述，不把图解当严格证明。",
+      "topics": [
+        "09-llm"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开Jay Alammar作者原文，核对encoder、self-attention、逐位置FFN与张量说明。"
+    },
+    {
+      "id": "model-008",
+      "title": "Hugging Face Diffusion Course",
+      "url": "https://huggingface.co/learn/diffusion-course/unit1/1",
+      "kind": "course",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "先完成Unit 1最小去噪实验，再读条件控制；避免一开始下载大型文生图模型。",
+      "topics": [
+        "10-generative-multimodal"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开官方课程Unit 1，核对从零实现、Diffusers notebook、训练与采样解释及后续单元目录。"
+    },
+    {
+      "id": "model-009",
+      "title": "Diffusers Documentation",
+      "url": "https://huggingface.co/docs/diffusers/index",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "GPU",
+      "why": "读Quickstart、pipeline与scheduler概念，再按硬件读优化；理解模型和采样器可以分别选择。",
+      "topics": [
+        "10-generative-multimodal"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开官方文档首页，核对图像/视频/音频范围、pipeline组件与offloading/量化入口。"
+    },
+    {
+      "id": "model-010",
+      "title": "Denoising Diffusion Probabilistic Models",
+      "url": "https://arxiv.org/abs/2006.11239",
+      "kind": "paper",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "无",
+      "why": "读正向加噪、反向过程与训练目标；把损失和采样算法分别写成伪代码。",
+      "topics": [
+        "10-generative-multimodal"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开arXiv论文页并阅读摘要，核对作者、去噪扩散主题与实现链接。"
+    },
+    {
+      "id": "model-011",
+      "title": "Flow Matching for Generative Modeling",
+      "url": "https://arxiv.org/abs/2210.02747",
+      "kind": "paper",
+      "language": "英文",
+      "level": "研究",
+      "access": "免费",
+      "compute": "无",
+      "why": "读条件概率路径与向量场回归，先用二维线性路径理解训练，再研究ODE采样。",
+      "topics": [
+        "10-generative-multimodal"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开arXiv论文页并阅读摘要，确认CNF、向量场回归、扩散与非扩散路径的关系。"
+    },
+    {
+      "id": "model-012",
+      "title": "CLIP: Learning Transferable Visual Models From Natural Language Supervision",
+      "url": "https://arxiv.org/abs/2103.00020",
+      "kind": "paper",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "无",
+      "why": "读图文配对训练和zero-shot分类方法，思考检索相似度与精细视觉推理的区别。",
+      "topics": [
+        "10-generative-multimodal"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开并单独读取论文摘要，确认图文配对预训练与自然语言指定视觉概念的方法。"
+    },
+    {
+      "id": "model-013",
+      "title": "Whisper: Robust Speech Recognition via Large-Scale Weak Supervision",
+      "url": "https://arxiv.org/abs/2212.04356",
+      "kind": "paper",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "无",
+      "why": "读数据、任务构造和鲁棒性实验；关注语言、噪声与分布变化，不把一个总分当通用结论。",
+      "topics": [
+        "10-generative-multimodal"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开并单独读取论文摘要，确认多语言、多任务弱监督语音识别与推理代码发布。"
+    },
+    {
+      "id": "model-014",
+      "title": "DiT: Scalable Diffusion Models with Transformers",
+      "url": "https://arxiv.org/abs/2212.09748",
+      "kind": "paper",
+      "language": "英文",
+      "level": "研究",
+      "access": "免费",
+      "compute": "无",
+      "why": "读latent patch与Transformer骨干设计；理解扩散训练方式和网络结构是不同维度。",
+      "topics": [
+        "10-generative-multimodal"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开并单独读取论文摘要，确认latent diffusion中用Transformer替代U-Net并分析规模。"
+    },
+    {
+      "id": "model-015",
+      "title": "Video Diffusion Models",
+      "url": "https://arxiv.org/abs/2204.03458",
+      "kind": "paper",
+      "language": "英文",
+      "level": "研究",
+      "access": "免费",
+      "compute": "无",
+      "why": "读视频架构与时间扩展方法；重点观察时序一致性为何超出单帧生成问题。",
+      "topics": [
+        "10-generative-multimodal"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开并单独读取论文摘要，确认视频扩散、图像视频联合训练与时空扩展主题。"
+    },
+    {
+      "id": "model-016",
+      "title": "Full Stack LLM Bootcamp",
+      "url": "https://fullstackdeeplearning.com/llm-bootcamp/",
+      "kind": "course",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "先读UX、LLMOps和askFSDL项目分析，学习产品完整链路；2023示例接口需对照现行文档。",
+      "topics": [
+        "11-ai-applications"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开课程正文与目录，确认免费2023录播、UX/LLMOps/项目章节及官方工具已演进提示。"
+    },
+    {
+      "id": "model-017",
+      "title": "Microsoft Generative AI for Beginners",
+      "url": "https://github.com/microsoft/generative-ai-for-beginners",
+      "kind": "course",
+      "language": "中英",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "优先学提示、聊天、函数调用、UX、安全和生命周期章节；材料免费，云端API可能收费。",
+      "topics": [
+        "11-ai-applications"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开官方仓库README，核对Learn/Build结构、Python/TypeScript示例、中文翻译与章节目录。"
+    },
+    {
+      "id": "model-018",
+      "title": "JSON Schema: Creating your first schema",
+      "url": "https://json-schema.org/learn/getting-started-step-by-step",
+      "kind": "docs",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "完整做一遍对象、字段、嵌套与验证示例；用于给模型输出定义可检查的结构契约。",
+      "topics": [
+        "11-ai-applications"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开JSON Schema官方教程，核对商品目录示例、字段约束与验证步骤。"
+    },
+    {
+      "id": "model-019",
+      "title": "MDN: Using server-sent events",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "读EventSource、事件格式、错误和关闭连接；将流式展示与最终业务提交分开设计。",
+      "topics": [
+        "11-ai-applications"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开MDN正文并复核EventSource连接与message事件示例。"
+    },
+    {
+      "id": "model-020",
+      "title": "Pydantic Models",
+      "url": "https://docs.pydantic.dev/latest/concepts/models/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "读模型定义、字段与验证错误；练习结构校验后再做业务语义检查。",
+      "topics": [
+        "11-ai-applications"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开官方Models文档，页面重定向到pydantic.dev；核对BaseModel、字段、JSON Schema与错误处理目录。"
+    },
+    {
+      "id": "model-021",
+      "title": "RFC 9111: HTTP Caching",
+      "url": "https://www.rfc-editor.org/rfc/rfc9111.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "读缓存键、新鲜度、验证与失效章节；迁移这些思想时区分HTTP缓存和模型结果缓存。",
+      "topics": [
+        "11-ai-applications"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开RFC Editor原文，核对缓存键、Freshness、Validation和Invalidating Stored Responses目录。"
+    },
+    {
+      "id": "model-022",
+      "title": "OpenTelemetry: Traces",
+      "url": "https://opentelemetry.io/docs/concepts/signals/traces/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "读trace与span概念，把检索、模型、重排和工具各阶段耗时关联到一次请求。",
+      "topics": [
+        "11-ai-applications"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开OpenTelemetry官方Traces文档，确认跟踪概念页及span相关文档入口；未执行SDK示例。"
+    },
+    {
+      "id": "model-023",
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "url": "https://arxiv.org/abs/2005.11401",
+      "kind": "paper",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "无",
+      "why": "读参数记忆与非参数记忆、RAG-Sequence/Token；区分原始训练方法和今日应用管线。",
+      "topics": [
+        "12-rag"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开arXiv作者论文，阅读摘要并核对检索索引、生成模型及两种RAG形式。"
+    },
+    {
+      "id": "model-024",
+      "title": "Sentence Transformers: Retrieve & Re-Rank",
+      "url": "https://www.sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "读完整双阶段检索例子，先复现召回再加CrossEncoder；用于定位相关性与延迟取舍。",
+      "topics": [
+        "12-rag"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开官方正文，旧URL重定向到sentence_transformer路径；阅读bi-encoder和cross-encoder分工及示例。"
+    },
+    {
+      "id": "model-025",
+      "title": "Elasticsearch: Reciprocal Rank Fusion",
+      "url": "https://www.elastic.co/docs/reference/elasticsearch/rest-apis/reciprocal-rank-fusion",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "先读RRF公式与手算示例，再研究查询实现；融合分数不同量纲的检索列表。",
+      "topics": [
+        "12-rag"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开Elastic官方文档并核对RRF公式、排名从1开始、rank constant与候选窗口定义。"
+    },
+    {
+      "id": "model-026",
+      "title": "pgvector",
+      "url": "https://github.com/pgvector/pgvector",
+      "kind": "project",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "读距离函数、HNSW/IVFFlat和过滤部分；适合把向量检索与已有Postgres数据模型结合。",
+      "topics": [
+        "12-rag"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者仓库，复核HNSW与IVFFlat、距离函数索引和速度/召回/内存讨论。"
+    },
+    {
+      "id": "model-027",
+      "title": "Faiss Wiki",
+      "url": "https://github.com/facebookresearch/faiss/wiki",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "先读相似度搜索和索引选择，再在固定向量集比较准确率、延迟与内存。",
+      "topics": [
+        "12-rag"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开Meta研究团队Wiki正文，核对密集向量相似度搜索定义、索引操作与GPU实现说明。"
+    },
+    {
+      "id": "model-028",
+      "title": "BEIR",
+      "url": "https://github.com/beir-cellar/beir",
+      "kind": "project",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "读数据格式和评估示例，学习跨数据集检索评估；先选小子集，不急着跑全套。",
+      "topics": [
+        "12-rag"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者仓库并阅读说明，确认异构信息检索基准、统一评估框架和原始论文链接。"
+    },
+    {
+      "id": "model-029",
+      "title": "Lost in the Middle: How Language Models Use Long Contexts",
+      "url": "https://arxiv.org/abs/2307.03172",
+      "kind": "paper",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "无",
+      "why": "读证据位置实验和评估协议；为自己的模型重做位置对照，不直接套用旧模型结论。",
+      "topics": [
+        "12-rag"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开并单独读取论文摘要，确认多文档问答/键值检索与上下文位置敏感性实验。"
+    },
+    {
+      "id": "model-030",
+      "title": "Building Effective Agents",
+      "url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "读workflows、agents和工具设计附录；先画清控制流，再选框架。",
+      "topics": [
+        "13-agents"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者工程文章正文，阅读工作流与agent区别、串联/路由/并行模式与停止条件。"
+    },
+    {
+      "id": "model-031",
+      "title": "Model Context Protocol Documentation",
+      "url": "https://modelcontextprotocol.io/docs/getting-started/intro",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "从简介进入Architecture与Security；实现前固定规范版本，并单独设计权限与信任边界。",
+      "topics": [
+        "13-agents"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开官方入口并解析到2026-07-28版本，还打开该版architecture页面；未声称完成实现兼容测试。"
+    },
+    {
+      "id": "model-032",
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "url": "https://arxiv.org/abs/2210.03629",
+      "kind": "paper",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "无",
+      "why": "读行动与观察交替的轨迹示例，自己用结构化状态实现最小循环。",
+      "topics": [
+        "13-agents"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者论文并阅读摘要，核对推理与工具行动交替及外部环境反馈主题。"
+    },
+    {
+      "id": "model-033",
+      "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "url": "https://arxiv.org/abs/2302.04761",
+      "kind": "paper",
+      "language": "英文",
+      "level": "研究",
+      "access": "免费",
+      "compute": "无",
+      "why": "读API调用样本构造和筛选方法；区分训练模型用工具与应用运行时调度。",
+      "topics": [
+        "13-agents"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开并单独读取论文摘要，确认自监督工具调用训练、参数选择与结果融入预测的描述。"
+    },
+    {
+      "id": "model-034",
+      "title": "SWE-bench",
+      "url": "https://github.com/SWE-bench/SWE-bench",
+      "kind": "project",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "读任务定义与评估harness，理解测试环境与最终代码行为；本地容器可能占用较多磁盘内存。",
+      "topics": [
+        "13-agents"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者仓库正文，核对真实GitHub问题任务与容器化评估harness说明；未运行完整基准。"
+    },
+    {
+      "id": "model-035",
+      "title": "τ-bench: Tool-Agent-User Interaction",
+      "url": "https://arxiv.org/abs/2406.12045",
+      "kind": "paper",
+      "language": "英文",
+      "level": "研究",
+      "access": "免费",
+      "compute": "无",
+      "why": "读最终数据库状态评估与多次运行可靠性指标；为自己的工具任务定义可执行成功条件。",
+      "topics": [
+        "13-agents"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开并单独读取论文摘要，确认用户交互、领域规则、数据库终态比较和多次试验可靠性。"
+    },
+    {
+      "id": "model-036",
+      "title": "LangGraph Overview",
+      "url": "https://docs.langchain.com/oss/python/langgraph/overview",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "读持久执行、状态、streaming与human-in-the-loop概念；先有纯代码基线再引入编排。",
+      "topics": [
+        "13-agents"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开官方概述并阅读正文，核对确定性步骤与模型步骤混合、持久化及人工介入能力。"
+    },
+    {
+      "id": "model-037",
+      "title": "Hugging Face PEFT",
+      "url": "https://huggingface.co/docs/peft/index",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "GPU",
+      "why": "先读Quicktour、LoRA和checkpoint格式；检查真正参与训练的参数和底座依赖。",
+      "topics": [
+        "14-finetuning-alignment"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开官方首页，核对参数高效适配定义、LoRA方法、量化和checkpoint格式入口。"
+    },
+    {
+      "id": "model-038",
+      "title": "Hugging Face TRL",
+      "url": "https://huggingface.co/docs/trl/index",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "GPU",
+      "why": "按Dataset Formats→Chat Templates→SFT→DPO/GRPO阅读，固定库版本再运行示例。",
+      "topics": [
+        "14-finetuning-alignment"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开官方文档，核对SFT/DPO/GRPO、reward modeling、在线与离线方法分类及数据格式目录。"
+    },
+    {
+      "id": "model-039",
+      "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+      "url": "https://arxiv.org/abs/2106.09685",
+      "kind": "paper",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "无",
+      "why": "读低秩参数化、目标层与实验，手算adapter参数量；不要把节省比例当所有模型的常量。",
+      "topics": [
+        "14-finetuning-alignment"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者论文并阅读摘要，核对冻结底座、训练低秩矩阵与公开实现链接。"
+    },
+    {
+      "id": "model-040",
+      "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
+      "url": "https://arxiv.org/abs/2305.14314",
+      "kind": "paper",
+      "language": "英文",
+      "level": "研究",
+      "access": "免费",
+      "compute": "无",
+      "why": "读量化底座、NF4与adapter训练；区分存储、计算精度和显存峰值。",
+      "topics": [
+        "14-finetuning-alignment"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者论文并阅读摘要，核对冻结4-bit底座、LoRA、NF4、double quantization与paged optimizers。"
+    },
+    {
+      "id": "model-041",
+      "title": "Training Language Models to Follow Instructions with Human Feedback",
+      "url": "https://arxiv.org/abs/2203.02155",
+      "kind": "paper",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "无",
+      "why": "读SFT→偏好标注→RLHF流程与局限；理解优化人类偏好和绝对正确并非同义。",
+      "topics": [
+        "14-finetuning-alignment"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开并单独读取作者论文摘要，确认示范、输出排序和强化学习的后训练流程。"
+    },
+    {
+      "id": "model-042",
+      "title": "Direct Preference Optimization",
+      "url": "https://arxiv.org/abs/2305.18290",
+      "kind": "paper",
+      "language": "英文",
+      "level": "研究",
+      "access": "免费",
+      "compute": "无",
+      "why": "读第3–4节和推导附录，写出优选/劣选相对参考策略的损失；先验证玩具例子梯度方向。",
+      "topics": [
+        "14-finetuning-alignment"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开论文摘要页及v2 HTML全文，阅读前置RLHF目标、DPO参数化和偏好优化解释。"
+    },
+    {
+      "id": "model-043",
+      "title": "DeepSeekMath",
+      "url": "https://arxiv.org/abs/2402.03300",
+      "kind": "paper",
+      "language": "英文",
+      "level": "研究",
+      "access": "免费",
+      "compute": "无",
+      "why": "重点读GRPO与奖励设计，同时检查数据筛选；不要把数学任务结果直接外推所有领域。",
+      "topics": [
+        "14-finetuning-alignment"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开并单独读取论文摘要，确认数学数据选择与提出GRPO作为PPO变体的内容。"
+    },
+    {
+      "id": "model-044",
+      "title": "LM Evaluation Harness",
+      "url": "https://github.com/EleutherAI/lm-evaluation-harness",
+      "kind": "project",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "读任务配置、指标和结果记录；先用小模型与小任务验证流程，再增加规模。",
+      "topics": [
+        "15-evaluation-safety"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开EleutherAI仓库正文，核对统一评估框架、任务配置、模型后端、命令和公开prompt说明。"
+    },
+    {
+      "id": "model-045",
+      "title": "HELM: Holistic Evaluation of Language Models",
+      "url": "https://arxiv.org/abs/2211.09110",
+      "kind": "paper",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "无",
+      "why": "读场景与多指标设计，给自己的应用建立覆盖矩阵；使用原论文理解方法而非追榜。",
+      "topics": [
+        "15-evaluation-safety"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "动态项目首页未提取正文，改为打开原论文并阅读摘要，确认场景覆盖、多指标与透明报告方法。"
+    },
+    {
+      "id": "model-046",
+      "title": "NIST AI Risk Management Framework",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "无",
+      "why": "从框架与Playbook入口理解治理、识别、衡量与管理，把责任与证据写进项目流程。",
+      "topics": [
+        "15-evaluation-safety"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开NIST官方页面并读取自愿使用、可信性纳入设计开发评估及Playbook入口；不把框架当法律认证。"
+    },
+    {
+      "id": "model-047",
+      "title": "OWASP Top 10 for LLM Applications",
+      "url": "https://genai.owasp.org/llm-top-10/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "优先读prompt injection、敏感信息泄漏、输出处理与过度代理；映射到自有系统测试。",
+      "topics": [
+        "15-evaluation-safety"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开OWASP官方条目页，核对2025版提示注入、敏感信息、供应链、数据投毒、输出处理和过度代理入口。"
+    },
+    {
+      "id": "model-048",
+      "title": "WinoBias: Gender Bias in Coreference Resolution",
+      "url": "https://arxiv.org/abs/1804.06876",
+      "kind": "paper",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "无",
+      "why": "读配对样本构造与分组评估；学习控制变量，不把一个英语基准当完整公平结论。",
+      "topics": [
+        "15-evaluation-safety"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开并单独读取论文摘要，确认职业/性别共指基准、刻板与反刻板配对及数据增强方法。"
+    },
+    {
+      "id": "model-050",
+      "title": "Model Cards for Model Reporting",
+      "url": "https://arxiv.org/abs/1810.03993",
+      "kind": "paper",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "无",
+      "why": "读模型卡要素与示例，为自己的模型记录用途、分组指标、评估条件与限制。",
+      "topics": [
+        "15-evaluation-safety"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开并单独读取论文摘要，确认预期用途、不同群体条件下评估、过程说明与示例模型卡。"
+    },
+    {
+      "id": "specialty-silver",
+      "title": "David Silver · Reinforcement Learning",
+      "url": "https://davidstarsilver.wordpress.com/teaching/",
+      "kind": "course",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "从 MDP、价值函数、策略梯度建立决策学习框架",
+      "topics": [
+        "22-rl-robotics"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-gymnasium",
+      "title": "Gymnasium",
+      "url": "https://gymnasium.farama.org/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "核对环境接口、终止与截断语义，练表格 Q-learning",
+      "topics": [
+        "22-rl-robotics"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-cs285",
+      "title": "Berkeley CS285 · Deep Reinforcement Learning",
+      "url": "https://rail.eecs.berkeley.edu/deeprlcourse/",
+      "kind": "course",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "以模仿、策略梯度、离线 RL 组织进阶；大型深度实验需 GPU",
+      "topics": [
+        "22-rl-robotics"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-underactuated",
+      "title": "MIT Underactuated Robotics",
+      "url": "https://underactuated.mit.edu/",
+      "kind": "book",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "补足动力学、LQR、轨迹优化和控制约束",
+      "topics": [
+        "22-rl-robotics"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-lerobot",
+      "title": "LeRobot",
+      "url": "https://huggingface.co/docs/lerobot/index",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "学习演示数据与策略接口；实机另需机器人硬件",
+      "topics": [
+        "22-rl-robotics"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-rt2",
+      "title": "RT-2: Vision-Language-Action Models",
+      "url": "https://robotics-transformer2.github.io/",
+      "kind": "paper",
+      "language": "英文",
+      "level": "研究",
+      "access": "免费",
+      "compute": "无",
+      "why": "从作者项目页理解 VLA 的动作表示，阅读不需 GPU",
+      "topics": [
+        "22-rl-robotics"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-mujoco",
+      "title": "MuJoCo",
+      "url": "https://github.com/google-deepmind/mujoco",
+      "kind": "project",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "认识动力学仿真与接触；大规模策略学习另算算力",
+      "topics": [
+        "22-rl-robotics"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-ir",
+      "title": "Introduction to Information Retrieval",
+      "url": "https://nlp.stanford.edu/IR-book/",
+      "kind": "book",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "作者免费在线版；优先倒排、评分和检索评估",
+      "topics": [
+        "23-recommendation-search"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-tfrs",
+      "title": "TensorFlow Recommenders",
+      "url": "https://www.tensorflow.org/recommenders",
+      "kind": "docs",
+      "language": "中英",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "官方示例连接推荐数据、召回与排序",
+      "topics": [
+        "23-recommendation-search"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-faiss",
+      "title": "Faiss Documentation",
+      "url": "https://faiss.ai/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "从精确向量索引到 ANN 的速度、内存、召回权衡",
+      "topics": [
+        "23-recommendation-search"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-movielens",
+      "title": "MovieLens · GroupLens",
+      "url": "https://grouplens.org/datasets/movielens/",
+      "kind": "project",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "推荐任务的数据入口；具体版本和再分发遵守原始数据条款",
+      "topics": [
+        "23-recommendation-search"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-torchrec",
+      "title": "TorchRec Overview",
+      "url": "https://meta-pytorch.org/torchrec/overview.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "把大 embedding 表、分片与推荐工程连接起来",
+      "topics": [
+        "23-recommendation-search"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-networkx",
+      "title": "NetworkX",
+      "url": "https://networkx.org/documentation/stable/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "先学图构造、路径、中心性，建立非神经基线",
+      "topics": [
+        "24-graphs"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-rdf",
+      "title": "W3C RDF 1.1 Primer",
+      "url": "https://www.w3.org/TR/rdf11-primer/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "无",
+      "why": "通过三元组、IRI 和 Turtle 理解知识表示",
+      "topics": [
+        "24-graphs"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-cs224w",
+      "title": "Stanford CS224W",
+      "url": "https://cs224w.stanford.edu/",
+      "kind": "course",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "图学习主线，连接消息传递、图表示与作业",
+      "topics": [
+        "24-graphs"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-pyg",
+      "title": "PyTorch Geometric",
+      "url": "https://pytorch-geometric.readthedocs.io/en/latest/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "从小图例子学到 mini-batch、采样与大图训练",
+      "topics": [
+        "24-graphs"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-ogb",
+      "title": "Open Graph Benchmark",
+      "url": "https://ogb.stanford.edu/",
+      "kind": "project",
+      "language": "英文",
+      "level": "研究",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "使用官方划分和评估器，规范节点、边和图任务比较",
+      "topics": [
+        "24-graphs"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-probml",
+      "title": "Probabilistic Machine Learning",
+      "url": "https://probml.github.io/pml-book/",
+      "kind": "book",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "作者公开资料可读；按概率、图模型和推断主题选章，纸书另售",
+      "topics": [
+        "25-causal-probabilistic"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-cs228",
+      "title": "Stanford CS228 Notes",
+      "url": "https://ermongroup.github.io/cs228-notes/",
+      "kind": "course",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "无",
+      "why": "按表示、推断、学习三层组织概率图模型",
+      "topics": [
+        "25-causal-probabilistic"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-pymc",
+      "title": "Learn PyMC & Bayesian Modeling",
+      "url": "https://www.pymc.io/projects/docs/en/stable/learn.html",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "做后验和预测检查，不只报告点估计",
+      "topics": [
+        "25-causal-probabilistic"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-whatif",
+      "title": "Causal Inference: What If",
+      "url": "https://miguelhernan.org/whatifbook",
+      "kind": "book",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "原作者开放电子资料，从识别假设学习因果推断",
+      "topics": [
+        "25-causal-probabilistic"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-dowhy",
+      "title": "DoWhy v0.13 Documentation",
+      "url": "https://www.pywhy.org/dowhy/v0.13/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "固定版本入口，区分建模、识别、估计和反驳检查",
+      "topics": [
+        "25-causal-probabilistic"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-econml",
+      "title": "EconML",
+      "url": "https://www.pywhy.org/EconML/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "研究异质效应和 double machine learning 的使用条件",
+      "topics": [
+        "25-causal-probabilistic"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-deepchem",
+      "title": "DeepChem",
+      "url": "https://deepchem.io/",
+      "kind": "project",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "从分子表示、性质预测与结构切分开始",
+      "topics": [
+        "26-ai-for-science"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-alphafold",
+      "title": "AlphaFold 2",
+      "url": "https://github.com/google-deepmind/alphafold",
+      "kind": "project",
+      "language": "英文",
+      "level": "研究",
+      "access": "免费",
+      "compute": "GPU",
+      "why": "查看结构预测输入、置信度、数据库需求和原始许可；不是低成本复现承诺",
+      "topics": [
+        "26-ai-for-science"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-deepmd",
+      "title": "DeePMD-kit",
+      "url": "https://docs.deepmodeling.com/projects/deepmd/en/latest/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "研究",
+      "access": "免费",
+      "compute": "GPU",
+      "why": "学习能量与力目标、数据、势函数和模型偏差检查",
+      "topics": [
+        "26-ai-for-science"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-deepxde",
+      "title": "DeepXDE",
+      "url": "https://deepxde.readthedocs.io/en/latest/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "从 ODE/PDE 和边界条件理解物理约束训练",
+      "topics": [
+        "26-ai-for-science"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-neuraloperator",
+      "title": "NeuralOperator",
+      "url": "https://neuraloperator.github.io/dev/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "研究",
+      "access": "免费",
+      "compute": "可选GPU",
+      "why": "理解函数到函数映射及分辨率、训练分布的限制",
+      "topics": [
+        "26-ai-for-science"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-aima",
+      "title": "Artificial Intelligence: A Modern Approach",
+      "url": "https://aima.cs.berkeley.edu/",
+      "kind": "book",
+      "language": "英文",
+      "level": "入门",
+      "access": "部分免费",
+      "compute": "CPU",
+      "why": "目录、代码与练习公开，完整教材另售；补齐经典 AI 全景",
+      "topics": [
+        "27-classical-ai"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-cs188",
+      "title": "Berkeley CS188 · Fall 2024 archive",
+      "url": "https://inst.eecs.berkeley.edu/~cs188/archive/fa24/",
+      "kind": "course",
+      "language": "英文",
+      "level": "入门",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "固定归档课程；学习搜索、博弈、约束与概率推理",
+      "topics": [
+        "27-classical-ai"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-ortools",
+      "title": "Google OR-Tools",
+      "url": "https://developers.google.com/optimization",
+      "kind": "docs",
+      "language": "中英",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "从排班和路由理解组合优化、可行性与最优性",
+      "topics": [
+        "27-classical-ai"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-z3",
+      "title": "Online Z3 Guide",
+      "url": "https://microsoft.github.io/z3guide/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "使用 SMT 和可执行例子理解 SAT、UNSAT 与 UNKNOWN",
+      "topics": [
+        "27-classical-ai"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    },
+    {
+      "id": "specialty-deap",
+      "title": "DEAP",
+      "url": "https://deap.readthedocs.io/en/master/",
+      "kind": "docs",
+      "language": "英文",
+      "level": "进阶",
+      "access": "免费",
+      "compute": "CPU",
+      "why": "进化计算的表示、选择、变异、统计与多目标优化",
+      "topics": [
+        "27-classical-ai"
+      ],
+      "checked_on": "2026-09-30",
+      "verification": "content-reviewed",
+      "evidence": "已打开作者/机构/项目页面，核对标题、主题和公开入口；未声称完成整门课程或运行全部外部示例。"
+    }
+  ]
+}

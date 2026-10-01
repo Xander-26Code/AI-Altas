@@ -1,0 +1,700 @@
+[
+  {
+    "id": "infra-csapp",
+    "title": "Computer Systems: A Programmer's Perspective 作者站",
+    "url": "https://csapp.cs.cmu.edu/",
+    "kind": "book",
+    "language": "英文",
+    "level": "进阶",
+    "access": "部分免费",
+    "compute": "CPU",
+    "why": "从程序员视角学习缓存、虚拟内存、并发与 I/O；教材通常需购买或借阅，配套站点部分免费。",
+    "topics": [
+      "16-hardware-systems"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "作者主页正文列出数据表示、内存层次、网络、并发及实验材料入口。"
+  },
+  {
+    "id": "infra-ostep",
+    "title": "Operating Systems: Three Easy Pieces",
+    "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/",
+    "kind": "book",
+    "language": "英文",
+    "level": "入门",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "按虚拟化、并发、持久化学习 OS，并用作者提供的模拟题验证理解。",
+    "topics": [
+      "16-hardware-systems"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "作者站确认章节 PDF 免费，列出进程、地址空间、线程、I/O 和作业。"
+  },
+  {
+    "id": "infra-cs144",
+    "title": "Stanford CS144: Introduction to Computer Networking",
+    "url": "https://cs144.github.io/",
+    "kind": "course",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "用字节流和网络实验理解可靠传输、拥塞与延迟；完整实验需要 C++ 基础。",
+    "topics": [
+      "16-hardware-systems"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开课程主页，确认网络课程、教材、练习和实验导航。"
+  },
+  {
+    "id": "infra-linux-performance",
+    "title": "Brendan Gregg: Linux Performance",
+    "url": "https://www.brendangregg.com/linuxperf.html",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "通过性能方法、工具地图和火焰图定位系统瓶颈；Linux 工具需相应环境。",
+    "topics": [
+      "16-hardware-systems"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开作者页面，核对 USE Method、Off-CPU Analysis、Flame Graphs 等入口。"
+  },
+  {
+    "id": "infra-linux-memory",
+    "title": "Linux Kernel: Memory Management Concepts",
+    "url": "https://docs.kernel.org/admin-guide/mm/concepts.html",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "区分虚拟地址、驻留内存、NUMA、页缓存与内存回收。",
+    "topics": [
+      "16-hardware-systems"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开内核文档并核对 NUMA、Page Cache、Anonymous Memory、Reclaim 内容。"
+  },
+  {
+    "id": "infra-parquet",
+    "title": "Apache Parquet Overview",
+    "url": "https://parquet.apache.org/docs/overview/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "入门",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "理解列式格式与实现差异，为数据加载和特征读取建立存储模型。",
+    "topics": [
+      "16-hardware-systems"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开 Apache 官方概览，确认格式规范、实现及兼容性说明。"
+  },
+  {
+    "id": "infra-cuda-guide",
+    "title": "CUDA Programming Guide",
+    "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/index.html",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "GPU",
+    "why": "查阅 Programming Model、SIMT、异步执行和内存语义，作为 CUDA 实验依据。",
+    "topics": [
+      "17-gpu-kernels-compilers"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开 NVIDIA 官方指南，核对 Programming Model、SIMT Kernels、Unified Memory 目录。"
+  },
+  {
+    "id": "infra-triton-tutorials",
+    "title": "Triton 官方教程",
+    "url": "https://triton-lang.org/main/getting-started/tutorials/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "GPU",
+    "why": "按向量加法、融合 softmax、矩阵乘法顺序实现算子并比较性能。",
+    "topics": [
+      "17-gpu-kernels-compilers"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开官方教程列表，确认 Vector Addition、Fused Softmax、Matrix Multiplication 及示例入口。"
+  },
+  {
+    "id": "infra-mlc-zh",
+    "title": "机器学习编译课程（中文）",
+    "url": "https://book-zh.mlc.ai/",
+    "kind": "course",
+    "language": "中文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "通过 TensorIR、自动优化、GPU 加速和计算图理解编译思想；注意课程版本与库版本差异。",
+    "topics": [
+      "17-gpu-kernels-compilers"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开课程中文站，核对第 2、4、6、7 章及英文原版链接。"
+  },
+  {
+    "id": "infra-dlsys",
+    "title": "Deep Learning Systems: Algorithms and Implementation",
+    "url": "https://dlsyscourse.org/",
+    "kind": "course",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "通过自动微分、数组库与硬件加速学习深度学习框架内部机制。",
+    "topics": [
+      "17-gpu-kernels-compilers"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开课程主页和课程描述，确认 full-stack 系统教学、公开材料及作业结构；当前学期材料可能分批发布。"
+  },
+  {
+    "id": "infra-nsight-compute",
+    "title": "Nsight Compute Profiling Guide",
+    "url": "https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "GPU",
+    "why": "学习 Roofline、Memory Chart 与性能指标，用证据解释算子瓶颈。",
+    "topics": [
+      "17-gpu-kernels-compilers"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开官方 Profiling Guide，并定位 Roofline Charts 和 Memory Chart 的解释。"
+  },
+  {
+    "id": "infra-cs336",
+    "title": "Stanford CS336: Language Modeling from Scratch",
+    "url": "https://cs336.stanford.edu/",
+    "kind": "course",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "GPU",
+    "why": "选学 resource accounting、kernels、parallelism 和 systems 作业，连接算子与训练系统。",
+    "topics": [
+      "17-gpu-kernels-compilers"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开课程主页，核对 2026 课程表、Systems 作业以及资源计量、Triton、并行和推理讲义入口。"
+  },
+  {
+    "id": "infra-torch-compile",
+    "title": "PyTorch: Introduction to torch.compile",
+    "url": "https://docs.pytorch.org/tutorials/intermediate/torch_compile_tutorial.html",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "理解 eager/compiled 对比、编译冷启动、graph break 和动态行为。",
+    "topics": [
+      "17-gpu-kernels-compilers"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开官方教程并定位 graph break 与排错说明；不将编译视作固定加速承诺。"
+  },
+  {
+    "id": "infra-ddp",
+    "title": "PyTorch: Distributed Data Parallel",
+    "url": "https://docs.pytorch.org/tutorials/intermediate/ddp_tutorial.html",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "建立最小多进程训练，理解梯度同步、初始化与保存加载。",
+    "topics": [
+      "18-distributed-training"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开官方 DDP 教程，确认多进程训练、checkpoint 与通信相关内容；CPU 学习需合适后端。"
+  },
+  {
+    "id": "infra-fsdp2",
+    "title": "PyTorch: Fully Sharded Data Parallel (FSDP2)",
+    "url": "https://docs.pytorch.org/tutorials/intermediate/FSDP_tutorial.html",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "GPU",
+    "why": "理解 fully_shard、参数重组与状态分片，避免混用旧 FSDP API。",
+    "topics": [
+      "18-distributed-training"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开当前 FSDP2 教程并核对 fully_shard、通信和旧 API 对应表。"
+  },
+  {
+    "id": "infra-tensor-parallel",
+    "title": "PyTorch: Tensor Parallel",
+    "url": "https://docs.pytorch.org/tutorials/intermediate/TP_tutorial.html",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "GPU",
+    "why": "学习按行/列切分、DeviceMesh、DTensor 和布局带来的通信。",
+    "topics": [
+      "18-distributed-training"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开官方 TP 教程，确认 RowwiseParallel、ColwiseParallel、SequenceParallel 和 loss_parallel 示例。"
+  },
+  {
+    "id": "infra-zero",
+    "title": "DeepSpeed: Zero Redundancy Optimizer",
+    "url": "https://www.deepspeed.ai/tutorials/zero/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "GPU",
+    "why": "把 ZeRO 三阶段与参数、梯度、优化器状态的显存账本对应起来。",
+    "topics": [
+      "18-distributed-training"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开官方 ZeRO 教程，核对三阶段状态分片的概念与配置示例。"
+  },
+  {
+    "id": "infra-nccl",
+    "title": "NCCL: Collective Operations",
+    "url": "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/usage/collectives.html",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "GPU",
+    "why": "用各集合通信图例理解 all-reduce、all-gather、reduce-scatter 和 all-to-all。",
+    "topics": [
+      "18-distributed-training"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开 NVIDIA 官方子页，核对各原语的 rank、输入输出和数据布局语义。"
+  },
+  {
+    "id": "infra-distributed-checkpoint",
+    "title": "PyTorch: Distributed Checkpoint",
+    "url": "https://docs.pytorch.org/tutorials/recipes/distributed_checkpoint_recipe.html",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "学习分片保存、加载与 resharding，并理解恢复需要的目标状态布局。",
+    "topics": [
+      "18-distributed-training"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开官方 DCP 教程，核对模型/优化器状态保存及加载时所需分片信息。"
+  },
+  {
+    "id": "infra-pipeline",
+    "title": "DeepSpeed: Pipeline Parallelism",
+    "url": "https://www.deepspeed.ai/tutorials/pipeline/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "GPU",
+    "why": "理解层切分、micro-batch、流水线调度与 stage 负载均衡。",
+    "topics": [
+      "18-distributed-training"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开官方教程，核对 micro-batch 数据迭代、PipelineModule 和 Load Balancing 小节。"
+  },
+  {
+    "id": "infra-moe",
+    "title": "DeepSpeed: Mixture of Experts",
+    "url": "https://www.deepspeed.ai/tutorials/mixture-of-experts/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "GPU",
+    "why": "理解专家分组、数据/专家并行组合，建立 MoE 路由通信模型。",
+    "topics": [
+      "18-distributed-training"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开官方 MoE 教程，核对 Expert groups initialization 与并行组合表。"
+  },
+  {
+    "id": "infra-vllm-quickstart",
+    "title": "vLLM Quickstart",
+    "url": "https://docs.vllm.ai/en/stable/getting_started/quickstart/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "先建立离线批推理和在线服务，再按当前 CPU/GPU 安装要求选择环境。",
+    "topics": [
+      "19-inference-serving"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开官方 Quickstart，确认 Offline Batched Inference、Online Serving 和各硬件安装入口。"
+  },
+  {
+    "id": "infra-paged-attention",
+    "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+    "url": "https://arxiv.org/abs/2309.06180",
+    "kind": "paper",
+    "language": "英文",
+    "level": "研究",
+    "access": "免费",
+    "compute": "无",
+    "why": "阅读 KV 分页、碎片和共享机制，不直接套用论文硬件上的加速比。",
+    "topics": [
+      "19-inference-serving"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开 arXiv 原论文摘要与元数据，确认作者、问题设定及 PagedAttention 的分页设计动机。"
+  },
+  {
+    "id": "infra-speculative-decoding",
+    "title": "Fast Inference from Transformers via Speculative Decoding",
+    "url": "https://arxiv.org/abs/2211.17192",
+    "kind": "paper",
+    "language": "英文",
+    "level": "研究",
+    "access": "免费",
+    "compute": "无",
+    "why": "学习 draft、验证和修正采样，理解保持目标分布的条件。",
+    "topics": [
+      "19-inference-serving"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开 arXiv 原论文摘要和元数据，确认并行验证及保持目标模型采样分布的论述。"
+  },
+  {
+    "id": "infra-disagg-prefill",
+    "title": "vLLM Disaggregated Prefilling",
+    "url": "https://docs.vllm.ai/en/stable/features/disagg_prefill/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "GPU",
+    "why": "理解独立调整 TTFT/ITL 的动机、KV 传输和 connector 的额外复杂度。",
+    "topics": [
+      "19-inference-serving"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开官方文档并定位功能动机；页面明确标记 experimental，不承诺吞吐提高。"
+  },
+  {
+    "id": "infra-vllm-benchmark",
+    "title": "vLLM Benchmark CLI",
+    "url": "https://docs.vllm.ai/en/stable/benchmarking/cli/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "建立在线负载测试，记录输入输出分布、TTFT、ITL、TPOT 与有效吞吐。",
+    "topics": [
+      "19-inference-serving"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开官方基准文档，核对在线服务测试、结果保存、请求分布与指标术语说明。"
+  },
+  {
+    "id": "infra-onnx-quantization",
+    "title": "ONNX Runtime: Quantize ONNX Models",
+    "url": "https://onnxruntime.ai/docs/performance/model-optimizations/quantization.html",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "理解 scale/zero point、静态/动态量化、校准、误差诊断和硬件限制。",
+    "topics": [
+      "19-inference-serving",
+      "21-edge-ai"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开官方量化页并核对公式、校准数据、动态参数计算和量化调试内容。"
+  },
+  {
+    "id": "infra-distserve",
+    "title": "DistServe: Disaggregating Prefill and Decoding for Goodput-optimized LLM Serving",
+    "url": "https://arxiv.org/abs/2401.09670",
+    "kind": "paper",
+    "language": "英文",
+    "level": "研究",
+    "access": "免费",
+    "compute": "无",
+    "why": "从延迟目标与 goodput 理解 PD 分离，而不是只追求最高 token 吞吐。",
+    "topics": [
+      "19-inference-serving"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开 arXiv 摘要与元数据，确认论文研究 prefill/decode 分离和 SLO 下的 goodput。"
+  },
+  {
+    "id": "infra-madewithml",
+    "title": "Made With ML: MLOps Course",
+    "url": "https://madewithml.com/courses/mlops/",
+    "kind": "course",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "通过一个项目串起设计、测试、版本、CI/CD 与监控；免费指公开自学内容。",
+    "topics": [
+      "20-mlops"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开作者课程目录，核对 Design、Testing、Versioning、Production；不将直播班或算力视为免费权益。"
+  },
+  {
+    "id": "infra-mlflow-registry",
+    "title": "MLflow Model Registry",
+    "url": "https://www.mlflow.org/docs/latest/registry/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "区分实验记录、模型 lineage、版本、别名、标签与发布路由。",
+    "topics": [
+      "20-mlops"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "search-verified",
+    "evidence": "官方搜索索引返回完整标题及 lineage、versioning、aliasing、tagging 摘要；打开正文返回空内容，未宣称完成正文复核。"
+  },
+  {
+    "id": "infra-dvc-files",
+    "title": "DVC: .dvc Files",
+    "url": "https://doc.dvc.org/user-guide/project-structure/dvc-files",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "通过哈希、路径和远端元数据理解大文件版本机制。",
+    "topics": [
+      "20-mlops"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开官方 .dvc Files 说明，确认占位文件、YAML schema、输出/依赖及 remote 元数据。"
+  },
+  {
+    "id": "infra-kserve",
+    "title": "KServe 官方概览",
+    "url": "https://kserve.github.io/website/docs/intro",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "已有 Kubernetes 场景下理解 control plane、data plane 与模型服务资源。",
+    "topics": [
+      "20-mlops"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开官方概览，核对 InferenceService、控制/数据平面、服务模式和安装入口。"
+  },
+  {
+    "id": "infra-prometheus-histograms",
+    "title": "Prometheus: Histograms and Summaries",
+    "url": "https://prometheus.io/docs/practices/histograms/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "理解延迟分布和聚合，避免直接平均多副本分位数。",
+    "topics": [
+      "20-mlops"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开官方文档并定位 Quantiles/Overview，核对摘要分位数无法直接聚合的限制。"
+  },
+  {
+    "id": "infra-otel-primer",
+    "title": "OpenTelemetry: Observability Primer",
+    "url": "https://opentelemetry.io/docs/concepts/observability-primer/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "入门",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "区分日志、指标和追踪，将模型服务请求串成可排查的证据。",
+    "topics": [
+      "20-mlops"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开官方概念文档并定位 Logs 等信号说明，确认可观测性基础范围。"
+  },
+  {
+    "id": "infra-model-persistence",
+    "title": "scikit-learn: Model Persistence",
+    "url": "https://scikit-learn.org/stable/model_persistence.html",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "比较持久化格式、版本兼容与可执行反序列化的边界。",
+    "topics": [
+      "20-mlops"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开官方模型持久化文档并核对任意代码执行风险、格式选择与版本限制。"
+  },
+  {
+    "id": "infra-onnx-mobile",
+    "title": "ONNX Runtime: Deploy on Mobile",
+    "url": "https://onnxruntime.ai/docs/tutorials/mobile/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "建立 CPU 基线再测手机执行后端，关注模型大小、延迟与功耗。",
+    "topics": [
+      "21-edge-ai"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开官方移动部署指南，核对 execution providers、子图划分及目标设备实测要求。"
+  },
+  {
+    "id": "infra-mlx",
+    "title": "MLX 官方文档",
+    "url": "https://ml-explore.github.io/mlx/build/html/index.html",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "Apple Silicon 路线重点学习惰性求值、统一内存与本地数组计算；先确认平台支持。",
+    "topics": [
+      "21-edge-ai"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开官方文档，核对 Quick Start、Lazy Evaluation、Unified Memory 及模型示例入口。"
+  },
+  {
+    "id": "infra-transformers-js-webgpu",
+    "title": "Transformers.js: Running Models on WebGPU",
+    "url": "https://huggingface.co/docs/transformers.js/en/guides/webgpu",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "学习浏览器 pipeline 的 GPU 设备选择，结合能力检测与 CPU 回退。",
+    "topics": [
+      "21-edge-ai"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开 Hugging Face 官方指南，确认 WebGPU 加载示例；页面引用历史支持比例，不作为当前统计使用。"
+  },
+  {
+    "id": "infra-litert",
+    "title": "Google LiteRT Overview",
+    "url": "https://developers.google.com/edge/litert/overview",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "理解端侧转换、CompiledModel 与 CPU/GPU/NPU 部署路线。",
+    "topics": [
+      "21-edge-ai"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开 Google 官方概览，核对模型转换、设备 API、硬件加速与参考应用。"
+  },
+  {
+    "id": "infra-coremltools",
+    "title": "Core ML Tools Overview",
+    "url": "https://apple.github.io/coremltools/docs-guides/source/overview-coremltools.html",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "学习第三方模型转换、验证和优化，面向 Apple 应用交付。",
+    "topics": [
+      "21-edge-ai"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开 Apple 官方指南，核对转换、模型包、macOS 验证和目标计算单元说明。"
+  },
+  {
+    "id": "infra-onnx-web",
+    "title": "ONNX Runtime Web",
+    "url": "https://onnxruntime.ai/docs/tutorials/web/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "入门",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "比较客户端/服务端路线和 WASM、WebGPU 等后端，理解算子支持范围。",
+    "topics": [
+      "21-edge-ai"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "打开官方 Web 教程并核对 WASM 与 GPU 后端的支持差异、下载和运行约束。"
+  }
+]

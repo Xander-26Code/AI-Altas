@@ -1,7 +1,7 @@
 # 09 · 大语言模型
 
 > 目标：从 token 到下一词概率，能解释并实现一个小型自回归 Transformer；知道模型规模、训练目标与真实能力之间的区别。
-> 先修：Python、PyTorch 张量、线性代数、概率、反向传播。主动学习约 35–55 小时；完整复现大学课程作业另计。CPU 能完成分词和形状检查，训练实验建议 GPU。
+> 先修：Python、PyTorch 张量、线性代数、概率、反向传播。建议规划 120–220 小时。这是完成先修后系统学习主教材、练习和一个项目的规划预算，不含补先修，不等于掌握整个领域。
 
 ## 按这个顺序学
 
@@ -43,7 +43,15 @@ Q 是当前位置在“找什么”，K 是各位置提供的匹配线索，V �
 
 以下“免费”指阅读资料；GPU 费用、模型下载许可另行确认。“无”表示读论文无需算力，复现大型实验通常需要 GPU。核实日期：2026-09-30。
 
-<!-- RESOURCE_TABLE:09-llm -->
+| 资源 | 语言 / 级别 | 费用 / 算力 | 为什么推荐、读哪部分 |
+| --- | --- | --- | --- |
+| [Hugging Face LLM Course](https://huggingface.co/learn/llm-course/chapter1/1) | 中英 / 入门 | 免费 / 可选GPU | 先读第1–3章与第6章；把架构、训练和分词连起来，后续按需读数据与微调章节。 |
+| [Stanford CS336: Language Modeling from Scratch (2025)](https://cs336.stanford.edu/spring2025/) | 英文 / 进阶 | 免费 / GPU | 先做Assignment 1并读架构与MoE讲义；适合愿意自己实现组件的学习者，完整课程另有系统与数据作业。 |
+| [Attention Is All You Need](https://arxiv.org/abs/1706.03762) | 英文 / 进阶 | 免费 / 无 | 读模型结构与attention部分，手算一次Q/K/V维度；理解原始encoder-decoder而非假设所有LLM都相同。 |
+| [RoFormer: Enhanced Transformer with Rotary Position Embedding](https://arxiv.org/abs/2104.09864) | 英文 / 研究 | 免费 / 无 | 读RoPE构造和相对位置性质；先推导二维旋转内积，再看扩展性质。 |
+| [Switch Transformers](https://arxiv.org/abs/2101.03961) | 英文 / 研究 | 免费 / 无 | 读稀疏专家路由、负载均衡与训练稳定性；用于区分总参数与激活计算量。 |
+| [SentencePiece](https://github.com/google/sentencepiece) | 英文 / 进阶 | 免费 / CPU | 读Quick Start和分词算法说明，训练小词表并观察BPE/Unigram、Unicode与特殊token。 |
+| [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) | 英文 / 入门 | 免费 / 无 | 先看张量流向、自注意力和多头图解，再回到原论文；用自己的例子复述，不把图解当严格证明。 |
 
 ## 实践：训练一个能被你解释的小语言模型
 

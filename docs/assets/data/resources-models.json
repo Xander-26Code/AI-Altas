@@ -1,0 +1,852 @@
+[
+  {
+    "id": "model-001",
+    "title": "Hugging Face LLM Course",
+    "url": "https://huggingface.co/learn/llm-course/chapter1/1",
+    "kind": "course",
+    "language": "中英",
+    "level": "入门",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "先读第1–3章与第6章；把架构、训练和分词连起来，后续按需读数据与微调章节。",
+    "topics": [
+      "09-llm"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开官方课程导言，核对章节目录、Python先修、免费声明及中文翻译入口。"
+  },
+  {
+    "id": "model-002",
+    "title": "Stanford CS336: Language Modeling from Scratch (2025)",
+    "url": "https://cs336.stanford.edu/spring2025/",
+    "kind": "course",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "GPU",
+    "why": "先做Assignment 1并读架构与MoE讲义；适合愿意自己实现组件的学习者，完整课程另有系统与数据作业。",
+    "topics": [
+      "09-llm"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开课程归档，核对先修、五项作业和课程日程；页面明确建议CPU调试、GPU完成训练。"
+  },
+  {
+    "id": "model-003",
+    "title": "Attention Is All You Need",
+    "url": "https://arxiv.org/abs/1706.03762",
+    "kind": "paper",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "无",
+    "why": "读模型结构与attention部分，手算一次Q/K/V维度；理解原始encoder-decoder而非假设所有LLM都相同。",
+    "topics": [
+      "09-llm"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开arXiv作者论文页，核对标题、作者和Transformer架构摘要；不是对全部实验的复现。"
+  },
+  {
+    "id": "model-004",
+    "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding",
+    "url": "https://arxiv.org/abs/2104.09864",
+    "kind": "paper",
+    "language": "英文",
+    "level": "研究",
+    "access": "免费",
+    "compute": "无",
+    "why": "读RoPE构造和相对位置性质；先推导二维旋转内积，再看扩展性质。",
+    "topics": [
+      "09-llm"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开arXiv作者论文页并阅读摘要，确认旋转位置表示与自注意力中的相对位置关系。"
+  },
+  {
+    "id": "model-005",
+    "title": "Switch Transformers",
+    "url": "https://arxiv.org/abs/2101.03961",
+    "kind": "paper",
+    "language": "英文",
+    "level": "研究",
+    "access": "免费",
+    "compute": "无",
+    "why": "读稀疏专家路由、负载均衡与训练稳定性；用于区分总参数与激活计算量。",
+    "topics": [
+      "09-llm"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开arXiv论文并单独复核摘要，确认稀疏激活、通信成本和训练稳定性讨论。"
+  },
+  {
+    "id": "model-006",
+    "title": "SentencePiece",
+    "url": "https://github.com/google/sentencepiece",
+    "kind": "project",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "读Quick Start和分词算法说明，训练小词表并观察BPE/Unigram、Unicode与特殊token。",
+    "topics": [
+      "09-llm"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者仓库正文，核对BPE/Unigram介绍、Python训练与编码解码示例；项目声明并非Google官方产品。"
+  },
+  {
+    "id": "model-007",
+    "title": "The Illustrated Transformer",
+    "url": "https://jalammar.github.io/illustrated-transformer/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "入门",
+    "access": "免费",
+    "compute": "无",
+    "why": "先看张量流向、自注意力和多头图解，再回到原论文；用自己的例子复述，不把图解当严格证明。",
+    "topics": [
+      "09-llm"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开Jay Alammar作者原文，核对encoder、self-attention、逐位置FFN与张量说明。"
+  },
+  {
+    "id": "model-008",
+    "title": "Hugging Face Diffusion Course",
+    "url": "https://huggingface.co/learn/diffusion-course/unit1/1",
+    "kind": "course",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "先完成Unit 1最小去噪实验，再读条件控制；避免一开始下载大型文生图模型。",
+    "topics": [
+      "10-generative-multimodal"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开官方课程Unit 1，核对从零实现、Diffusers notebook、训练与采样解释及后续单元目录。"
+  },
+  {
+    "id": "model-009",
+    "title": "Diffusers Documentation",
+    "url": "https://huggingface.co/docs/diffusers/index",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "GPU",
+    "why": "读Quickstart、pipeline与scheduler概念，再按硬件读优化；理解模型和采样器可以分别选择。",
+    "topics": [
+      "10-generative-multimodal"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开官方文档首页，核对图像/视频/音频范围、pipeline组件与offloading/量化入口。"
+  },
+  {
+    "id": "model-010",
+    "title": "Denoising Diffusion Probabilistic Models",
+    "url": "https://arxiv.org/abs/2006.11239",
+    "kind": "paper",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "无",
+    "why": "读正向加噪、反向过程与训练目标；把损失和采样算法分别写成伪代码。",
+    "topics": [
+      "10-generative-multimodal"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开arXiv论文页并阅读摘要，核对作者、去噪扩散主题与实现链接。"
+  },
+  {
+    "id": "model-011",
+    "title": "Flow Matching for Generative Modeling",
+    "url": "https://arxiv.org/abs/2210.02747",
+    "kind": "paper",
+    "language": "英文",
+    "level": "研究",
+    "access": "免费",
+    "compute": "无",
+    "why": "读条件概率路径与向量场回归，先用二维线性路径理解训练，再研究ODE采样。",
+    "topics": [
+      "10-generative-multimodal"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开arXiv论文页并阅读摘要，确认CNF、向量场回归、扩散与非扩散路径的关系。"
+  },
+  {
+    "id": "model-012",
+    "title": "CLIP: Learning Transferable Visual Models From Natural Language Supervision",
+    "url": "https://arxiv.org/abs/2103.00020",
+    "kind": "paper",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "无",
+    "why": "读图文配对训练和zero-shot分类方法，思考检索相似度与精细视觉推理的区别。",
+    "topics": [
+      "10-generative-multimodal"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开并单独读取论文摘要，确认图文配对预训练与自然语言指定视觉概念的方法。"
+  },
+  {
+    "id": "model-013",
+    "title": "Whisper: Robust Speech Recognition via Large-Scale Weak Supervision",
+    "url": "https://arxiv.org/abs/2212.04356",
+    "kind": "paper",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "无",
+    "why": "读数据、任务构造和鲁棒性实验；关注语言、噪声与分布变化，不把一个总分当通用结论。",
+    "topics": [
+      "10-generative-multimodal"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开并单独读取论文摘要，确认多语言、多任务弱监督语音识别与推理代码发布。"
+  },
+  {
+    "id": "model-014",
+    "title": "DiT: Scalable Diffusion Models with Transformers",
+    "url": "https://arxiv.org/abs/2212.09748",
+    "kind": "paper",
+    "language": "英文",
+    "level": "研究",
+    "access": "免费",
+    "compute": "无",
+    "why": "读latent patch与Transformer骨干设计；理解扩散训练方式和网络结构是不同维度。",
+    "topics": [
+      "10-generative-multimodal"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开并单独读取论文摘要，确认latent diffusion中用Transformer替代U-Net并分析规模。"
+  },
+  {
+    "id": "model-015",
+    "title": "Video Diffusion Models",
+    "url": "https://arxiv.org/abs/2204.03458",
+    "kind": "paper",
+    "language": "英文",
+    "level": "研究",
+    "access": "免费",
+    "compute": "无",
+    "why": "读视频架构与时间扩展方法；重点观察时序一致性为何超出单帧生成问题。",
+    "topics": [
+      "10-generative-multimodal"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开并单独读取论文摘要，确认视频扩散、图像视频联合训练与时空扩展主题。"
+  },
+  {
+    "id": "model-016",
+    "title": "Full Stack LLM Bootcamp",
+    "url": "https://fullstackdeeplearning.com/llm-bootcamp/",
+    "kind": "course",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "先读UX、LLMOps和askFSDL项目分析，学习产品完整链路；2023示例接口需对照现行文档。",
+    "topics": [
+      "11-ai-applications"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开课程正文与目录，确认免费2023录播、UX/LLMOps/项目章节及官方工具已演进提示。"
+  },
+  {
+    "id": "model-017",
+    "title": "Microsoft Generative AI for Beginners",
+    "url": "https://github.com/microsoft/generative-ai-for-beginners",
+    "kind": "course",
+    "language": "中英",
+    "level": "入门",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "优先学提示、聊天、函数调用、UX、安全和生命周期章节；材料免费，云端API可能收费。",
+    "topics": [
+      "11-ai-applications"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开官方仓库README，核对Learn/Build结构、Python/TypeScript示例、中文翻译与章节目录。"
+  },
+  {
+    "id": "model-018",
+    "title": "JSON Schema: Creating your first schema",
+    "url": "https://json-schema.org/learn/getting-started-step-by-step",
+    "kind": "docs",
+    "language": "英文",
+    "level": "入门",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "完整做一遍对象、字段、嵌套与验证示例；用于给模型输出定义可检查的结构契约。",
+    "topics": [
+      "11-ai-applications"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开JSON Schema官方教程，核对商品目录示例、字段约束与验证步骤。"
+  },
+  {
+    "id": "model-019",
+    "title": "MDN: Using server-sent events",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "读EventSource、事件格式、错误和关闭连接；将流式展示与最终业务提交分开设计。",
+    "topics": [
+      "11-ai-applications"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开MDN正文并复核EventSource连接与message事件示例。"
+  },
+  {
+    "id": "model-020",
+    "title": "Pydantic Models",
+    "url": "https://docs.pydantic.dev/latest/concepts/models/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "读模型定义、字段与验证错误；练习结构校验后再做业务语义检查。",
+    "topics": [
+      "11-ai-applications"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开官方Models文档，页面重定向到pydantic.dev；核对BaseModel、字段、JSON Schema与错误处理目录。"
+  },
+  {
+    "id": "model-021",
+    "title": "RFC 9111: HTTP Caching",
+    "url": "https://www.rfc-editor.org/rfc/rfc9111.html",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "读缓存键、新鲜度、验证与失效章节；迁移这些思想时区分HTTP缓存和模型结果缓存。",
+    "topics": [
+      "11-ai-applications"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开RFC Editor原文，核对缓存键、Freshness、Validation和Invalidating Stored Responses目录。"
+  },
+  {
+    "id": "model-022",
+    "title": "OpenTelemetry: Traces",
+    "url": "https://opentelemetry.io/docs/concepts/signals/traces/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "读trace与span概念，把检索、模型、重排和工具各阶段耗时关联到一次请求。",
+    "topics": [
+      "11-ai-applications"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开OpenTelemetry官方Traces文档，确认跟踪概念页及span相关文档入口；未执行SDK示例。"
+  },
+  {
+    "id": "model-023",
+    "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "url": "https://arxiv.org/abs/2005.11401",
+    "kind": "paper",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "无",
+    "why": "读参数记忆与非参数记忆、RAG-Sequence/Token；区分原始训练方法和今日应用管线。",
+    "topics": [
+      "12-rag"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开arXiv作者论文，阅读摘要并核对检索索引、生成模型及两种RAG形式。"
+  },
+  {
+    "id": "model-024",
+    "title": "Sentence Transformers: Retrieve & Re-Rank",
+    "url": "https://www.sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "读完整双阶段检索例子，先复现召回再加CrossEncoder；用于定位相关性与延迟取舍。",
+    "topics": [
+      "12-rag"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开官方正文，旧URL重定向到sentence_transformer路径；阅读bi-encoder和cross-encoder分工及示例。"
+  },
+  {
+    "id": "model-025",
+    "title": "Elasticsearch: Reciprocal Rank Fusion",
+    "url": "https://www.elastic.co/docs/reference/elasticsearch/rest-apis/reciprocal-rank-fusion",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "先读RRF公式与手算示例，再研究查询实现；融合分数不同量纲的检索列表。",
+    "topics": [
+      "12-rag"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开Elastic官方文档并核对RRF公式、排名从1开始、rank constant与候选窗口定义。"
+  },
+  {
+    "id": "model-026",
+    "title": "pgvector",
+    "url": "https://github.com/pgvector/pgvector",
+    "kind": "project",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "读距离函数、HNSW/IVFFlat和过滤部分；适合把向量检索与已有Postgres数据模型结合。",
+    "topics": [
+      "12-rag"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者仓库，复核HNSW与IVFFlat、距离函数索引和速度/召回/内存讨论。"
+  },
+  {
+    "id": "model-027",
+    "title": "Faiss Wiki",
+    "url": "https://github.com/facebookresearch/faiss/wiki",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "先读相似度搜索和索引选择，再在固定向量集比较准确率、延迟与内存。",
+    "topics": [
+      "12-rag"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开Meta研究团队Wiki正文，核对密集向量相似度搜索定义、索引操作与GPU实现说明。"
+  },
+  {
+    "id": "model-028",
+    "title": "BEIR",
+    "url": "https://github.com/beir-cellar/beir",
+    "kind": "project",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "读数据格式和评估示例，学习跨数据集检索评估；先选小子集，不急着跑全套。",
+    "topics": [
+      "12-rag"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者仓库并阅读说明，确认异构信息检索基准、统一评估框架和原始论文链接。"
+  },
+  {
+    "id": "model-029",
+    "title": "Lost in the Middle: How Language Models Use Long Contexts",
+    "url": "https://arxiv.org/abs/2307.03172",
+    "kind": "paper",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "无",
+    "why": "读证据位置实验和评估协议；为自己的模型重做位置对照，不直接套用旧模型结论。",
+    "topics": [
+      "12-rag"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开并单独读取论文摘要，确认多文档问答/键值检索与上下文位置敏感性实验。"
+  },
+  {
+    "id": "model-030",
+    "title": "Building Effective Agents",
+    "url": "https://www.anthropic.com/engineering/building-effective-agents",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "读workflows、agents和工具设计附录；先画清控制流，再选框架。",
+    "topics": [
+      "13-agents"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者工程文章正文，阅读工作流与agent区别、串联/路由/并行模式与停止条件。"
+  },
+  {
+    "id": "model-031",
+    "title": "Model Context Protocol Documentation",
+    "url": "https://modelcontextprotocol.io/docs/getting-started/intro",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "从简介进入Architecture与Security；实现前固定规范版本，并单独设计权限与信任边界。",
+    "topics": [
+      "13-agents"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开官方入口并解析到2026-07-28版本，还打开该版architecture页面；未声称完成实现兼容测试。"
+  },
+  {
+    "id": "model-032",
+    "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+    "url": "https://arxiv.org/abs/2210.03629",
+    "kind": "paper",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "无",
+    "why": "读行动与观察交替的轨迹示例，自己用结构化状态实现最小循环。",
+    "topics": [
+      "13-agents"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者论文并阅读摘要，核对推理与工具行动交替及外部环境反馈主题。"
+  },
+  {
+    "id": "model-033",
+    "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+    "url": "https://arxiv.org/abs/2302.04761",
+    "kind": "paper",
+    "language": "英文",
+    "level": "研究",
+    "access": "免费",
+    "compute": "无",
+    "why": "读API调用样本构造和筛选方法；区分训练模型用工具与应用运行时调度。",
+    "topics": [
+      "13-agents"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开并单独读取论文摘要，确认自监督工具调用训练、参数选择与结果融入预测的描述。"
+  },
+  {
+    "id": "model-034",
+    "title": "SWE-bench",
+    "url": "https://github.com/SWE-bench/SWE-bench",
+    "kind": "project",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "读任务定义与评估harness，理解测试环境与最终代码行为；本地容器可能占用较多磁盘内存。",
+    "topics": [
+      "13-agents"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者仓库正文，核对真实GitHub问题任务与容器化评估harness说明；未运行完整基准。"
+  },
+  {
+    "id": "model-035",
+    "title": "τ-bench: Tool-Agent-User Interaction",
+    "url": "https://arxiv.org/abs/2406.12045",
+    "kind": "paper",
+    "language": "英文",
+    "level": "研究",
+    "access": "免费",
+    "compute": "无",
+    "why": "读最终数据库状态评估与多次运行可靠性指标；为自己的工具任务定义可执行成功条件。",
+    "topics": [
+      "13-agents"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开并单独读取论文摘要，确认用户交互、领域规则、数据库终态比较和多次试验可靠性。"
+  },
+  {
+    "id": "model-036",
+    "title": "LangGraph Overview",
+    "url": "https://docs.langchain.com/oss/python/langgraph/overview",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "读持久执行、状态、streaming与human-in-the-loop概念；先有纯代码基线再引入编排。",
+    "topics": [
+      "13-agents"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开官方概述并阅读正文，核对确定性步骤与模型步骤混合、持久化及人工介入能力。"
+  },
+  {
+    "id": "model-037",
+    "title": "Hugging Face PEFT",
+    "url": "https://huggingface.co/docs/peft/index",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "GPU",
+    "why": "先读Quicktour、LoRA和checkpoint格式；检查真正参与训练的参数和底座依赖。",
+    "topics": [
+      "14-finetuning-alignment"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开官方首页，核对参数高效适配定义、LoRA方法、量化和checkpoint格式入口。"
+  },
+  {
+    "id": "model-038",
+    "title": "Hugging Face TRL",
+    "url": "https://huggingface.co/docs/trl/index",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "GPU",
+    "why": "按Dataset Formats→Chat Templates→SFT→DPO/GRPO阅读，固定库版本再运行示例。",
+    "topics": [
+      "14-finetuning-alignment"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开官方文档，核对SFT/DPO/GRPO、reward modeling、在线与离线方法分类及数据格式目录。"
+  },
+  {
+    "id": "model-039",
+    "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+    "url": "https://arxiv.org/abs/2106.09685",
+    "kind": "paper",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "无",
+    "why": "读低秩参数化、目标层与实验，手算adapter参数量；不要把节省比例当所有模型的常量。",
+    "topics": [
+      "14-finetuning-alignment"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者论文并阅读摘要，核对冻结底座、训练低秩矩阵与公开实现链接。"
+  },
+  {
+    "id": "model-040",
+    "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
+    "url": "https://arxiv.org/abs/2305.14314",
+    "kind": "paper",
+    "language": "英文",
+    "level": "研究",
+    "access": "免费",
+    "compute": "无",
+    "why": "读量化底座、NF4与adapter训练；区分存储、计算精度和显存峰值。",
+    "topics": [
+      "14-finetuning-alignment"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开作者论文并阅读摘要，核对冻结4-bit底座、LoRA、NF4、double quantization与paged optimizers。"
+  },
+  {
+    "id": "model-041",
+    "title": "Training Language Models to Follow Instructions with Human Feedback",
+    "url": "https://arxiv.org/abs/2203.02155",
+    "kind": "paper",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "无",
+    "why": "读SFT→偏好标注→RLHF流程与局限；理解优化人类偏好和绝对正确并非同义。",
+    "topics": [
+      "14-finetuning-alignment"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开并单独读取作者论文摘要，确认示范、输出排序和强化学习的后训练流程。"
+  },
+  {
+    "id": "model-042",
+    "title": "Direct Preference Optimization",
+    "url": "https://arxiv.org/abs/2305.18290",
+    "kind": "paper",
+    "language": "英文",
+    "level": "研究",
+    "access": "免费",
+    "compute": "无",
+    "why": "读第3–4节和推导附录，写出优选/劣选相对参考策略的损失；先验证玩具例子梯度方向。",
+    "topics": [
+      "14-finetuning-alignment"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开论文摘要页及v2 HTML全文，阅读前置RLHF目标、DPO参数化和偏好优化解释。"
+  },
+  {
+    "id": "model-043",
+    "title": "DeepSeekMath",
+    "url": "https://arxiv.org/abs/2402.03300",
+    "kind": "paper",
+    "language": "英文",
+    "level": "研究",
+    "access": "免费",
+    "compute": "无",
+    "why": "重点读GRPO与奖励设计，同时检查数据筛选；不要把数学任务结果直接外推所有领域。",
+    "topics": [
+      "14-finetuning-alignment"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开并单独读取论文摘要，确认数学数据选择与提出GRPO作为PPO变体的内容。"
+  },
+  {
+    "id": "model-044",
+    "title": "LM Evaluation Harness",
+    "url": "https://github.com/EleutherAI/lm-evaluation-harness",
+    "kind": "project",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "可选GPU",
+    "why": "读任务配置、指标和结果记录；先用小模型与小任务验证流程，再增加规模。",
+    "topics": [
+      "15-evaluation-safety"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开EleutherAI仓库正文，核对统一评估框架、任务配置、模型后端、命令和公开prompt说明。"
+  },
+  {
+    "id": "model-045",
+    "title": "HELM: Holistic Evaluation of Language Models",
+    "url": "https://arxiv.org/abs/2211.09110",
+    "kind": "paper",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "无",
+    "why": "读场景与多指标设计，给自己的应用建立覆盖矩阵；使用原论文理解方法而非追榜。",
+    "topics": [
+      "15-evaluation-safety"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "动态项目首页未提取正文，改为打开原论文并阅读摘要，确认场景覆盖、多指标与透明报告方法。"
+  },
+  {
+    "id": "model-046",
+    "title": "NIST AI Risk Management Framework",
+    "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "无",
+    "why": "从框架与Playbook入口理解治理、识别、衡量与管理，把责任与证据写进项目流程。",
+    "topics": [
+      "15-evaluation-safety"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开NIST官方页面并读取自愿使用、可信性纳入设计开发评估及Playbook入口；不把框架当法律认证。"
+  },
+  {
+    "id": "model-047",
+    "title": "OWASP Top 10 for LLM Applications",
+    "url": "https://genai.owasp.org/llm-top-10/",
+    "kind": "docs",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "CPU",
+    "why": "优先读prompt injection、敏感信息泄漏、输出处理与过度代理；映射到自有系统测试。",
+    "topics": [
+      "15-evaluation-safety"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开OWASP官方条目页，核对2025版提示注入、敏感信息、供应链、数据投毒、输出处理和过度代理入口。"
+  },
+  {
+    "id": "model-048",
+    "title": "WinoBias: Gender Bias in Coreference Resolution",
+    "url": "https://arxiv.org/abs/1804.06876",
+    "kind": "paper",
+    "language": "英文",
+    "level": "进阶",
+    "access": "免费",
+    "compute": "无",
+    "why": "读配对样本构造与分组评估；学习控制变量，不把一个英语基准当完整公平结论。",
+    "topics": [
+      "15-evaluation-safety"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开并单独读取论文摘要，确认职业/性别共指基准、刻板与反刻板配对及数据增强方法。"
+  },
+  {
+    "id": "model-049",
+    "title": "Datasheets for Datasets",
+    "url": "https://arxiv.org/abs/1803.09010",
+    "kind": "paper",
+    "language": "英文",
+    "level": "入门",
+    "access": "免费",
+    "compute": "无",
+    "why": "按动机、组成、收集和推荐用途整理自己的数据说明；填未知而不是编造来源。",
+    "topics": [
+      "15-evaluation-safety"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开并单独读取论文摘要，核对数据文档动机、组成、收集过程和用途透明度。"
+  },
+  {
+    "id": "model-050",
+    "title": "Model Cards for Model Reporting",
+    "url": "https://arxiv.org/abs/1810.03993",
+    "kind": "paper",
+    "language": "英文",
+    "level": "入门",
+    "access": "免费",
+    "compute": "无",
+    "why": "读模型卡要素与示例，为自己的模型记录用途、分组指标、评估条件与限制。",
+    "topics": [
+      "15-evaluation-safety"
+    ],
+    "checked_on": "2026-09-30",
+    "verification": "content-reviewed",
+    "evidence": "已打开并单独读取论文摘要，确认预期用途、不同群体条件下评估、过程说明与示例模型卡。"
+  }
+]

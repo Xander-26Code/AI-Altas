@@ -1,7 +1,7 @@
 # 12 · RAG 与知识系统
 
 > 目标：建立能够检索、引用、拒答并遵守文档权限的知识问答系统；能区分检索失败与生成失败。
-> 先修：Python、基本文本处理、向量相似度、HTTP；了解语言模型上下文。主动学习约 25–40 小时。小语料和传统检索可用 CPU，embedding / 重排 GPU 为可选加速。
+> 先修：Python、基本文本处理、向量相似度、HTTP；了解语言模型上下文。建议规划 80–140 小时。这是完成先修后系统学习主教材、练习和一个项目的规划预算，不含补先修，不等于掌握整个领域。
 
 ## 按这个顺序学
 
@@ -47,7 +47,15 @@ Recall@k 是“前 k 条检索结果覆盖了多少已标注相关文档”；Hi
 
 资料阅读免费；数据库托管和模型服务可能收费。先用本地小数据确认正确性。核实日期：2026-09-30。
 
-<!-- RESOURCE_TABLE:12-rag -->
+| 资源 | 语言 / 级别 | 费用 / 算力 | 为什么推荐、读哪部分 |
+| --- | --- | --- | --- |
+| [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401) | 英文 / 进阶 | 免费 / 无 | 读参数记忆与非参数记忆、RAG-Sequence/Token；区分原始训练方法和今日应用管线。 |
+| [Sentence Transformers: Retrieve & Re-Rank](https://www.sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html) | 英文 / 进阶 | 免费 / 可选GPU | 读完整双阶段检索例子，先复现召回再加CrossEncoder；用于定位相关性与延迟取舍。 |
+| [Elasticsearch: Reciprocal Rank Fusion](https://www.elastic.co/docs/reference/elasticsearch/rest-apis/reciprocal-rank-fusion) | 英文 / 进阶 | 免费 / CPU | 先读RRF公式与手算示例，再研究查询实现；融合分数不同量纲的检索列表。 |
+| [pgvector](https://github.com/pgvector/pgvector) | 英文 / 进阶 | 免费 / CPU | 读距离函数、HNSW/IVFFlat和过滤部分；适合把向量检索与已有Postgres数据模型结合。 |
+| [Faiss Wiki](https://github.com/facebookresearch/faiss/wiki) | 英文 / 进阶 | 免费 / 可选GPU | 先读相似度搜索和索引选择，再在固定向量集比较准确率、延迟与内存。 |
+| [BEIR](https://github.com/beir-cellar/beir) | 英文 / 进阶 | 免费 / 可选GPU | 读数据格式和评估示例，学习跨数据集检索评估；先选小子集，不急着跑全套。 |
+| [Lost in the Middle: How Language Models Use Long Contexts](https://arxiv.org/abs/2307.03172) | 英文 / 进阶 | 免费 / 无 | 读证据位置实验和评估协议；为自己的模型重做位置对照，不直接套用旧模型结论。 |
 
 ## 实践：给本 Wiki 建一个可验证的问答器
 
