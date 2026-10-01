@@ -8,7 +8,7 @@
 |---|---|---|---|---|
 | 1. 能独立写程序 | [Python 与工具](../topics/02-programming.md) | 120–200 小时 | 读写文件、处理异常、参数化脚本、基本测试 | [CS50P](https://cs50.harvard.edu/python/) 函数、循环、文件与对应习题 → NumPy Quickstart 数组练习 |
 | 2. 用数学描述学习 | [数学](../topics/01-math.md)，与阶段 1 后半并行 | 100–160 小时 | 推导回归梯度，检查矩阵维度，解释期望与方差 | [MML](https://mml-book.github.io/) 第 2–7 章选读；中文起步用 D2L 预备知识，薄弱项补 MIT / Stat 110 |
-| 3. 做可靠的 ML 实验 | [数据](../topics/03-data.md)、[ML](../topics/04-machine-learning.md) | 140–220 小时 | 先切分数据再拟合预处理，基线与错误分析 | [Python for Data Analysis](https://wesmckinney.com/book/) 表格清洗 → [ISL](https://www.statlearning.com/) 回归、分类、重采样及 Python lab |
+| 3. 做可靠的 ML 实验 | [数据](../topics/03-data.md)、[ML](../topics/04-machine-learning.md) | 140–220 小时 | 先切分数据再拟合预处理，基线与错误分析 | [Python for Data Analysis](https://wesmckinney.com/book/) 表格清洗 → [ISLP（Python 版）](https://drive.google.com/file/d/1ajFkHO6zjrdGNqhqW1jKBZdiNGh_8YQ1/view) 回归、分类、重采样及 Python lab |
 | 4. 理解神经网络 | [深度学习](../topics/05-deep-learning.md) | 120–200 小时 | 训练一个小网络，区分过拟合与优化失败 | [D2L](https://zh.d2l.ai/) 第 3–7 章；配 PyTorch Basics 完整训练循环 |
 | 5. 完成个人项目 | 从 [视觉](../topics/07-computer-vision.md)、[NLP](../topics/06-nlp.md)、[时序](../topics/08-time-series.md) 选一个 | 120–220 小时 | 数据、实验、测试与局限完整交付 | CV 选 CS231n 分类作业；NLP 选 HF LLM Course 文本任务；时序选 FPP3 + statsmodels，三选一；具体链接和顺序见左列专题 |
 

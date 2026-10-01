@@ -4,7 +4,7 @@
 
 | 阶段 | 主线 | 投入 | 验收 | 主资源与范围 |
 |---|---|---|---|---|
-| 数据与统计基线 | [数据](../topics/03-data.md)、[机器学习](../topics/04-machine-learning.md) | 100–160 小时 | 数据说明、无泄漏的 pipeline、合理基线、分组误差 | [ISL](https://www.statlearning.com/) 回归/分类 lab → scikit-learn Pipeline、交叉验证；已有基础可换 [ML Zoomcamp](https://github.com/DataTalksClub/machine-learning-zoomcamp) |
+| 数据与统计基线 | [数据](../topics/03-data.md)、[机器学习](../topics/04-machine-learning.md) | 100–160 小时 | 数据说明、无泄漏的 pipeline、合理基线、分组误差 | [ISLP（Python 版）](https://drive.google.com/file/d/1ajFkHO6zjrdGNqhqW1jKBZdiNGh_8YQ1/view) 回归/分类 lab → scikit-learn Pipeline、交叉验证；已有基础可换 [ML Zoomcamp](https://github.com/DataTalksClub/machine-learning-zoomcamp) |
 | 训练基本功 | [深度学习](../topics/05-deep-learning.md) | 100–160 小时 | 过拟合小 batch、诊断梯度、学习率与正则对照 | [Zero to Hero](https://github.com/karpathy/nn-zero-to-hero) micrograd 与 makemore 梯度练习 → D2L 训练与正则选读 |
 | 选择一个领域 | [CV](../topics/07-computer-vision.md)、[NLP](../topics/06-nlp.md)、[时序](../topics/08-time-series.md)、[推荐](../topics/23-recommendation-search.md) 四选一 | 120–200 小时 | 在固定预算与切分下比较两种方法 | CV：CS231n；NLP：CS224N；时序：FPP3；推荐：TFR + MovieLens。只选一个领域，按左列专题资源表推进 |
 | 验证与交付 | [评估](../topics/15-evaluation-safety.md)、[MLOps](../topics/20-mlops.md) 选读 | 70–120 小时 | 重跑配置、误差切片、接口与回滚方案 | [MLOps Zoomcamp](https://github.com/DataTalksClub/mlops-zoomcamp) 实验追踪、部署、监控与 Best Practices；评估用专题中的模型卡模板 |

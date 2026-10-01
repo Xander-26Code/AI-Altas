@@ -1,9 +1,9 @@
 {
-  "checked_at": "2026-10-01T01:23:34.470867+00:00",
+  "checked_at": "2026-10-01T01:50:44.891424+00:00",
   "scope": "Markdown/image destinations, curated resource URLs, configured scripts and built HTML href/src when site exists; capped GET; external fragments need separate review",
   "counts": {
     "local-preview": 1,
-    "ok": 215,
+    "ok": 218,
     "restricted": 2
   },
   "results": [
@@ -12,7 +12,7 @@
       "sources": [
         "README.md"
       ],
-      "checked_at": "2026-10-01T01:23:15.263950+00:00",
+      "checked_at": "2026-10-01T01:50:37.019452+00:00",
       "status": "local-preview",
       "note": "Local preview URL; not a public web resource"
     },
@@ -1015,7 +1015,7 @@
         "site/resources.html",
         "site/topics/07-computer-vision.html"
       ],
-      "checked_at": "2026-10-01T01:23:15.265390+00:00",
+      "checked_at": "2026-10-01T01:50:37.021315+00:00",
       "http_status": 403,
       "status": "restricted",
       "note": "HTTP Error 403: Forbidden"
@@ -1218,6 +1218,35 @@
       "checked_at": "2026-09-30T19:44:12.555482+00:00",
       "http_status": 200,
       "final_url": "https://docs.vllm.ai/en/stable/getting_started/quickstart/",
+      "status": "ok"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1ajFkHO6zjrdGNqhqW1jKBZdiNGh_8YQ1/view",
+      "sources": [
+        "data/resources-foundations.json:foundation-islp",
+        "docs/resources.md",
+        "docs/roadmaps/algorithm.md",
+        "docs/roadmaps/beginner.md",
+        "docs/topics/04-machine-learning.md",
+        "site/resources.html",
+        "site/roadmaps/algorithm.html",
+        "site/roadmaps/beginner.html",
+        "site/topics/04-machine-learning.html"
+      ],
+      "checked_at": "2026-10-01T01:50:37.021721+00:00",
+      "http_status": 200,
+      "final_url": "https://drive.google.com/file/d/1ajFkHO6zjrdGNqhqW1jKBZdiNGh_8YQ1/view",
+      "status": "ok"
+    },
+    {
+      "url": "https://drive.google.com/uc?export=download&id=1ajFkHO6zjrdGNqhqW1jKBZdiNGh_8YQ1",
+      "sources": [
+        "docs/topics/04-machine-learning.md",
+        "site/topics/04-machine-learning.html"
+      ],
+      "checked_at": "2026-10-01T01:50:37.021879+00:00",
+      "http_status": 200,
+      "final_url": "https://drive.usercontent.google.com/download?id=1ajFkHO6zjrdGNqhqW1jKBZdiNGh_8YQ1&export=download",
       "status": "ok"
     },
     {
@@ -2126,6 +2155,17 @@
       "status": "ok"
     },
     {
+      "url": "https://intro-stat-learning.github.io/ISLP/",
+      "sources": [
+        "docs/topics/04-machine-learning.md",
+        "site/topics/04-machine-learning.html"
+      ],
+      "checked_at": "2026-10-01T01:50:37.022491+00:00",
+      "http_status": 200,
+      "final_url": "https://intro-stat-learning.github.io/ISLP/",
+      "status": "ok"
+    },
+    {
       "url": "https://jalammar.github.io/illustrated-transformer/",
       "sources": [
         "data/resources-models.json:model-007",
@@ -2191,6 +2231,17 @@
       "checked_at": "2026-09-30T19:44:18.926556+00:00",
       "http_status": 200,
       "final_url": "https://kserve.github.io/website/docs/intro",
+      "status": "ok"
+    },
+    {
+      "url": "https://link.springer.com/book/10.1007/978-3-031-38747-0",
+      "sources": [
+        "docs/topics/04-machine-learning.md",
+        "site/topics/04-machine-learning.html"
+      ],
+      "checked_at": "2026-10-01T01:50:37.022692+00:00",
+      "http_status": 200,
+      "final_url": "https://link.springer.com/book/10.1007/978-3-031-38747-0?error=cookies_not_supported&code=63329782-8369-4828-9d42-9c166d207738",
       "status": "ok"
     },
     {
@@ -2576,7 +2627,7 @@
         "site/resources.html",
         "site/topics/08-time-series.html"
       ],
-      "checked_at": "2026-10-01T01:23:27.027709+00:00",
+      "checked_at": "2026-10-01T01:50:37.023056+00:00",
       "http_status": 403,
       "status": "restricted",
       "note": "HTTP Error 403: Forbidden"
@@ -3271,24 +3322,6 @@
       "checked_at": "2026-09-30T19:44:29.208316+00:00",
       "http_status": 200,
       "final_url": "https://www.sktime.net/docs/examples/",
-      "status": "ok"
-    },
-    {
-      "url": "https://www.statlearning.com/",
-      "sources": [
-        "data/resources-foundations.json:foundation-islp",
-        "docs/resources.md",
-        "docs/roadmaps/algorithm.md",
-        "docs/roadmaps/beginner.md",
-        "docs/topics/04-machine-learning.md",
-        "site/resources.html",
-        "site/roadmaps/algorithm.html",
-        "site/roadmaps/beginner.html",
-        "site/topics/04-machine-learning.html"
-      ],
-      "checked_at": "2026-09-30T19:44:29.307989+00:00",
-      "http_status": 200,
-      "final_url": "https://www.statlearning.com/",
       "status": "ok"
     },
     {

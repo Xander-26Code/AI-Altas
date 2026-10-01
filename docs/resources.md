@@ -68,7 +68,7 @@ hide:
 |---|---|---|---|
 | [DataTalks.Club · Machine Learning Zoomcamp](https://github.com/DataTalksClub/machine-learning-zoomcamp) | 英文 · 进阶 | 免费 · CPU | 偏工程的替代主线；按回归、分类、评估、部署做作业和自己的项目，不直接套用开课周数。 |
 | [Hands-On Machine Learning 第三版配套 notebook](https://github.com/ageron/handson-ml3) | 英文 · 进阶 | 部分免费 · 可选GPU | 选完整 ML 项目、分类、训练模型等 notebook；深度学习部分使用 Keras/TensorFlow，勿与 PyTorch 示例混装。 |
-| [An Introduction to Statistical Learning](https://www.statlearning.com/) | 英文 · 入门 | 免费 · CPU | 以 Python 版作理论主线；读回归、分类、重采样、正则化、树模型与对应 lab。 |
+| [An Introduction to Statistical Learning（Python 版，ISLP）](https://drive.google.com/file/d/1ajFkHO6zjrdGNqhqW1jKBZdiNGh_8YQ1/view) | 英文 · 入门 | 免费 · CPU | 作者提供的免费 Python 版 PDF；读回归、分类、重采样、正则化、树模型，并完成配套 lab。 |
 | [mlcourse.ai](https://mlcourse.ai/book/index.html) | 英文 · 进阶 | 部分免费 · CPU | 练从 EDA 到 boosting 的完整流程；先做 Topic 1–5 和 10 的公开 demo。 |
 | [scikit-learn User Guide](https://scikit-learn.org/stable/user_guide.html) | 英文 · 进阶 | 免费 · CPU | 作为实验查阅手册；按当前模型阅读，再看交叉验证、指标和 Pipeline。 |
 | [XGBoost：Introduction to Boosted Trees](https://xgboost.readthedocs.io/en/stable/tutorials/model.html) | 英文 · 进阶 | 免费 · CPU | 理解 boosting 优化目标；重点读训练损失+正则项、逐步加树和叶子权重。 |

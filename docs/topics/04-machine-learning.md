@@ -6,7 +6,7 @@
 
 ISLP 是推荐主教材；Google 课程适合先建立直觉，其余按疑问查阅。南瓜书是其作者提供的推导笔记，不替代周志华《机器学习》原书。
 
-- **[An Introduction to Statistical Learning](https://www.statlearning.com/)**｜英文 · 入门 · 免费 · CPU。以 Python 版作理论主线；读回归、分类、重采样、正则化、树模型与对应 lab。
+- **[An Introduction to Statistical Learning（Python 版，ISLP）](https://drive.google.com/file/d/1ajFkHO6zjrdGNqhqW1jKBZdiNGh_8YQ1/view)**｜英文 · 入门 · 免费 · CPU。作者提供的免费 PDF，支持在线预览；读回归、分类、重采样、正则化、树模型与对应 lab。需要保存时使用 [PDF 下载](https://drive.google.com/uc?export=download&id=1ajFkHO6zjrdGNqhqW1jKBZdiNGh_8YQ1)，配套代码见 [官方 Python 实验](https://intro-stat-learning.github.io/ISLP/)。Google Drive 无法访问时，可查阅 [出版社入口](https://link.springer.com/book/10.1007/978-3-031-38747-0)（全文需购买或机构权限）。
 - **[mlcourse.ai](https://mlcourse.ai/book/index.html)**｜英文 · 进阶 · 部分免费 · CPU。练从 EDA 到 boosting 的完整流程；先做 Topic 1–5 和 10 的公开 demo。
 - **[scikit-learn User Guide](https://scikit-learn.org/stable/user_guide.html)**｜英文 · 进阶 · 免费 · CPU。作为实验查阅手册；按当前模型阅读，再看交叉验证、指标和 Pipeline。
 - **[XGBoost：Introduction to Boosted Trees](https://xgboost.readthedocs.io/en/stable/tutorials/model.html)**｜英文 · 进阶 · 免费 · CPU。理解 boosting 优化目标；重点读训练损失+正则项、逐步加树和叶子权重。
@@ -32,7 +32,7 @@ ISLP 是推荐主教材；Google 课程适合先建立直觉，其余按疑问�
 | 阶段 | 使用资源 | 阅读 / 练习范围 | 完成后应留下什么 |
 |---|---|---|---|
 | 1 · 建立任务直觉 | [Google Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course) | 回归、分类、训练与指标模块 | 说明任务、标签、基线和评估指标 |
-| 2 · 主教材 | [An Introduction to Statistical Learning](https://www.statlearning.com/)；[DataTalks.Club · Machine Learning Zoomcamp](https://github.com/DataTalksClub/machine-learning-zoomcamp)；[Hands-On Machine Learning 第三版配套 notebook](https://github.com/ageron/handson-ml3) | ISL 回归、分类及 lab；或另两套课程的对应模块 | 完成回归和分类各一次，保留训练/验证切分 |
+| 2 · 主教材 | [An Introduction to Statistical Learning（Python 版，ISLP）](https://drive.google.com/file/d/1ajFkHO6zjrdGNqhqW1jKBZdiNGh_8YQ1/view)；[DataTalks.Club · Machine Learning Zoomcamp](https://github.com/DataTalksClub/machine-learning-zoomcamp)；[Hands-On Machine Learning 第三版配套 notebook](https://github.com/ageron/handson-ml3) | ISLP 回归、分类及 lab；或另两套课程的对应模块 | 完成回归和分类各一次，保留训练/验证切分 |
 | 3 · 模型比较 | [scikit-learn User Guide](https://scikit-learn.org/stable/user_guide.html)；[XGBoost：Introduction to Boosted Trees](https://xgboost.readthedocs.io/en/stable/tutorials/model.html) | 交叉验证、Pipeline、树模型；XGBoost 目标与逐步加树 | 固定数据比较线性模型和树模型 |
 | 4 · 独立项目 | [mlcourse.ai](https://mlcourse.ai/book/index.html) | Topic 1–5、10 中与项目相关的公开 demo | 完成下方项目和错误分析 |
 | 选修 · 推导 | [CS229 Lecture Notes](https://cs229.stanford.edu/main_notes.pdf)；[Datawhale 南瓜书](https://github.com/datawhalechina/pumpkin-book) | CS229 线性模型；南瓜书相应推导 | 为正在用的模型补推导，避免两本从头重复读 |

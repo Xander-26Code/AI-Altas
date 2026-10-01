@@ -1026,20 +1026,20 @@
     },
     {
       "id": "foundation-islp",
-      "title": "An Introduction to Statistical Learning",
-      "url": "https://www.statlearning.com/",
+      "title": "An Introduction to Statistical Learning（Python 版，ISLP）",
+      "url": "https://drive.google.com/file/d/1ajFkHO6zjrdGNqhqW1jKBZdiNGh_8YQ1/view",
       "kind": "book",
       "language": "英文",
       "level": "入门",
       "access": "免费",
       "compute": "CPU",
-      "why": "以 Python 版作理论主线；读回归、分类、重采样、正则化、树模型与对应 lab。",
+      "why": "作者提供的免费 Python 版 PDF；读回归、分类、重采样、正则化、树模型，并完成配套 lab。",
       "topics": [
         "04-machine-learning"
       ],
-      "checked_on": "2026-09-30",
+      "checked_on": "2026-10-01",
       "verification": "content-reviewed",
-      "evidence": "作者主页提供免费 PDF，说明 Python 版及每章 lab，列出主要章节。"
+      "evidence": "官网 Python 版下载中转页指向此 Google Drive 文件；已验证公开预览页标题为 ISLP_website.pdf，下载请求返回 HTTP 200 且文件头为 %PDF-。旧 hastie.su.domains/ISLP/ISLP_website.pdf 返回 404。"
     },
     {
       "id": "foundation-mlcourse",
