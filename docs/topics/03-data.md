@@ -42,12 +42,12 @@
 
 pandas 用来学表格操作，SQL 用来理解关系与聚合，泄漏文档必须读。数据源免费访问不意味着任何用途都获许可，应阅读所选数据集自己的授权。
 
-- **[pandas Getting started tutorials](https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html)**｜英文 · 入门 · 免费 · CPU。用真实表格学习数据处理；做读写、筛选、聚合、合表及时间字段。
-- **[PostgreSQL Tutorial](https://www.postgresql.org/docs/current/tutorial.html)**｜英文 · 入门 · 免费 · CPU。学关系模型和 SQL；先读查询、JOIN、聚合，再读事务及窗口函数。
-- **[DuckDB Guides](https://duckdb.org/docs/current/guides/overview)**｜英文 · 进阶 · 免费 · CPU。练本地文件分析；读 CSV/Parquet 导入、直接查询 Parquet 与性能排查。
-- **[scikit-learn：Common pitfalls](https://scikit-learn.org/stable/common_pitfalls.html)**｜英文 · 入门 · 免费 · CPU。建立数据泄漏直觉；完整读预处理不一致、泄漏与随机性控制。
-- **[Datasheets for Datasets](https://arxiv.org/abs/1803.09010)**｜英文 · 进阶 · 免费 · 无。为数据写说明书；读动机与数据采集、组成、用途记录框架。
-- **[UCI Machine Learning Repository](https://archive.ics.uci.edu/)**｜英文 · 入门 · 免费 · CPU。练数据来源审查；选一个小型表格集，阅读字段、出处、引用和许可后再建模。
+- [pandas Getting started tutorials](https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html)｜英文 · 入门 · 免费 · CPU。用真实表格学习数据处理；做读写、筛选、聚合、合表及时间字段。
+- [PostgreSQL Tutorial](https://www.postgresql.org/docs/current/tutorial.html)｜英文 · 入门 · 免费 · CPU。学关系模型和 SQL；先读查询、JOIN、聚合，再读事务及窗口函数。
+- [DuckDB Guides](https://duckdb.org/docs/current/guides/overview)｜英文 · 进阶 · 免费 · CPU。练本地文件分析；读 CSV/Parquet 导入、直接查询 Parquet 与性能排查。
+- [scikit-learn：Common pitfalls](https://scikit-learn.org/stable/common_pitfalls.html)｜英文 · 入门 · 免费 · CPU。建立数据泄漏直觉；完整读预处理不一致、泄漏与随机性控制。
+- [Datasheets for Datasets](https://arxiv.org/abs/1803.09010)｜英文 · 进阶 · 免费 · 无。为数据写说明书；读动机与数据采集、组成、用途记录框架。
+- [UCI Machine Learning Repository](https://archive.ics.uci.edu/)｜英文 · 入门 · 免费 · CPU。练数据来源审查；选一个小型表格集，阅读字段、出处、引用和许可后再建模。
 
 ## 实践任务与验收
 
