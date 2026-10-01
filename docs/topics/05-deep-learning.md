@@ -2,51 +2,7 @@
 
 > 目标：解释反向传播，独立实现训练循环，诊断训练失败，完成一个小模型项目。先修：[数学](01-math.md)、[编程](02-programming.md) 和 [机器学习](04-machine-learning.md)。**规划预算：120–220 小时**，用于完成先修后系统学习主教材、做练习并完成一个项目；不含补先修，不是领域掌握承诺。小型 MLP 可用 CPU，图像实验可选 GPU。
 
-神经网络把多次可学习变换组合起来，让数据的表示和最终预测一起优化。你需要理解的不只是网络结构，还包括损失如何定义、梯度怎样传递、参数何时更新，以及验证集上发生了什么。先训练一个自己能完全解释的小网络，再阅读更复杂架构。
-
-## 学习顺序
-
-1. **张量与自动微分**：shape、dtype、device、计算图、梯度累加；手算一个标量例子。
-2. **多层感知机**：线性层、非线性激活、初始化、损失；明确每层输入输出。
-3. **训练闭环**：Dataset/DataLoader、前向、反向、更新、评估、保存恢复。
-4. **训练诊断**：学习率、batch size、正则化、归一化、过拟合、梯度消失/爆炸。
-5. **典型架构与迁移学习**：理解 CNN、序列模型、注意力的基本归纳偏置，选择一个完成项目。
-
-推荐中文主线为 D2L，配官方 PyTorch 教程。喜欢先做作品可选 fast.ai，再补推导。不要把所有教材串成必修任务，也不要同时切换多个框架来证明“广度”。
-
-## 核心概念：反向传播在计算什么
-
-令 \(u=wx\)、\(v=u+b\)、\(L=\frac12(v-y)^2\)。前向传播先得到预测和损失，反向传播应用链式法则：
-
-$$
-\frac{\partial L}{\partial w}
-=\frac{\partial L}{\partial v}
-\frac{\partial v}{\partial u}
-\frac{\partial u}{\partial w}
-=(v-y)x
-$$
-
-取 \(x=2,w=1,b=0,y=5\)，预测是 2，损失是 4.5，参数梯度分别为 \(\partial L/\partial w=-6\)、\(\partial L/\partial b=-3\)。学习率为 0.1 时，更新后 \(w=1.6,b=0.3\)，预测变成 3.5，损失降为 1.125。自动微分替你计算这些局部导数的组合；它并不自动选择好模型，也不自动执行参数更新。
-
-如果一个参数影响损失的多条路径，各路径贡献需要相加。例如同一个权重被重复使用，不可以只保留最后一次出现的梯度。理解这一点后，再读 [micrograd](https://github.com/karpathy/micrograd) 的小型计算图实现，就能看懂它为什么要建立依赖顺序并累加梯度。
-
-框架的训练循环也由不同职责组成：清理上一步梯度、计算当前批次损失、反向传播、优化器更新。若忘记清理，通常会累加历史梯度；但梯度累积又可以是有意的训练策略，必须配套考虑损失缩放和更新频率。评估时 `model.eval()` 调整 Dropout/BatchNorm 等模块行为，`no_grad` 或推理模式控制梯度记录，两者解决不同问题，不能互相替代。官方入门流程可查 [PyTorch Learn the Basics](https://docs.pytorch.org/tutorials/beginner/basics/intro.html)。
-
-遇到训练失败，先做“极小数据过拟合”实验：固定十几个样本、关闭随机增强，观察模型能否把训练误差降得很低。若做不到，先查标签、形状、损失、梯度和更新，不要立即增加网络层数。若能做到，再恢复完整数据和正则化，检查泛化。
-
-## 核心知识表
-
-| 知识 | 理解标准 | 需要观察的量 |
-|---|---|---|
-| 计算图与反向传播 | 能手算并核对局部导数 | 参数梯度 |
-| 非线性与表达能力 | 多个纯线性层仍可合成线性变换 | 激活分布 |
-| 初始化与归一化 | 解释信号尺度怎样影响训练 | 激活/梯度尺度 |
-| SGD、动量、Adam | 区分优化器状态与模型参数 | 学习率与更新幅度 |
-| 正则化与增强 | 区分训练技巧及其假设 | 训练/验证差距 |
-| CNN、序列、注意力 | 知道各自利用什么结构 | 参数量、计算量 |
-| 检查点与复现 | 能恢复模型和必要训练状态 | 配置、种子、版本 |
-
-## 精选资源
+## 资源列表
 
 “CPU/可选 GPU”指本页建议的学习实验，不表示能在 CPU 上高效复现教材内所有大规模训练。在线教材免费，训练服务费用另算。
 
@@ -56,6 +12,30 @@ $$
 - **[Practical Deep Learning for Coders](https://course.fast.ai/)**｜英文 · 入门 · 免费 · 可选GPU。喜欢先做作品可选此主线；先完成 Part 1 的模型训练与迁移学习。
 - **[TensorFlow Playground](https://playground.tensorflow.org/)**｜英文 · 入门 · 免费 · CPU。交互观察决策边界；比较不同层数、噪声、学习率与正则化。
 - **[Karpathy micrograd](https://github.com/karpathy/micrograd)**｜英文 · 进阶 · 免费 · CPU。看清自动微分；阅读 engine.py 的运算与 backward，再做二分类 demo。
+
+### 补充课程与实作资源
+
+| 资源 | 语言 · 难度 | 获取 · 算力 | 用法与阅读范围 |
+|---|---|---|---|
+| [Karpathy · Neural Networks: Zero to Hero](https://github.com/karpathy/nn-zero-to-hero) | 英文 · 入门 | 免费 · 可选GPU | 视频与 notebook 配套；深度学习先做 micrograd、makemore，再学 GPT 与 tokenizer。 |
+| [Hands-On Machine Learning 第三版配套 notebook](https://github.com/ageron/handson-ml3) | 英文 · 进阶 | 部分免费 · 可选GPU | 选完整 ML 项目、分类、训练模型等 notebook；深度学习部分使用 Keras/TensorFlow，勿与 PyTorch 示例混装。 |
+| [邱锡鹏 · 神经网络与深度学习](https://nndl.ai/) | 中文 · 进阶 | 免费 · CPU | 中文理论参考；从作者入口选神经网络与深度学习教材，按前馈网络、反向传播与优化主题选读。 |
+
+以上新增入口核实于 2026-10-01；资料免费不含硬件与 API 费用。
+
+## 按资源安排学习顺序
+
+中文主线选 D2L；偏视频可换 fast.ai。Zero to Hero 用于手写实现，中文 NNDL 和 Deep Learning 作为理论参考。
+
+按顺序完成主线，每步完成右列产出后再推进；选修不计入必做清单。页首时长包含所选主线、练习与本页项目，不包含把全部资料逐一学完。
+
+| 阶段 | 使用资源 | 阅读 / 练习范围 | 完成后应留下什么 |
+|---|---|---|---|
+| 1 · 训练工具 | [PyTorch Learn the Basics](https://docs.pytorch.org/tutorials/beginner/basics/intro.html) | Tensors 到 Save & Load | 独立跑通并改写一个训练循环 |
+| 2 · 课程主线 | [动手学深度学习](https://zh.d2l.ai/)；[Practical Deep Learning for Coders](https://course.fast.ai/) | D2L 第 3–7 章；或 fast.ai Part 1 | 训练小型分类模型，做过拟合与正则对照 |
+| 3 · 手写与排错 | [Karpathy · Neural Networks: Zero to Hero](https://github.com/karpathy/nn-zero-to-hero)；[Karpathy micrograd](https://github.com/karpathy/micrograd) | micrograd 和 makemore 的 MLP、梯度相关课 | 手写一个反向传播例子，比较自动微分结果 |
+| 4 · 完成项目 | [动手学深度学习](https://zh.d2l.ai/) | 回到主课的训练与 CNN 练习 | 完成下方任务，保存学习率和误差分析 |
+| 选修 · 理论与替代框架 | [邱锡鹏 · 神经网络与深度学习](https://nndl.ai/)；[Deep Learning](https://www.deeplearningbook.org/)；[Hands-On Machine Learning 第三版配套 notebook](https://github.com/ageron/handson-ml3) | 优化、正则与训练；Keras notebook 仅作框架分支 | 选择一个困惑的问题查证，不重复修三套主课 |
 
 ## 实践任务与验收
 

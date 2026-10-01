@@ -2,53 +2,7 @@
 
 > 目标：建立符合时间因果顺序的回测，比较统计与学习方法，报告预测误差和不确定性。先修：[数据](03-data.md)、[机器学习](04-machine-learning.md)；深度预测另需 [深度学习](05-deep-learning.md)。**规划预算：60–120 小时**，用于完成先修后系统学习主教材、做练习并完成一个项目；不含补先修，不是领域掌握承诺。统计基线用 CPU 即可。
 
-销量、电量、传感器和服务流量都带时间结构。时间序列任务不只有预测未来：给一整段传感器记录分类、识别异常片段或检测状态变化，也是独立任务。先确认目标、预测跨度与信息可用时间，才能选择正确的实验设计。
-
-## 学习顺序
-
-1. **时间与数据语义**：采样频率、缺测、重复时间、时区、节假日、观测延迟和多条序列 ID。
-2. **探索与简单预测**：趋势、季节、分解、ACF；均值、最近值和季节朴素基线。
-3. **统计模型**：指数平滑、ETS、AR/ARIMA、状态空间，结合残差诊断。
-4. **学习方法与回测**：滞后特征、滚动统计、树模型、滚动预测起点、多步预测。
-5. **概率与扩展任务**：预测区间、分位数、层级预测；按需要选深度预测、分类或异常检测。
-
-主教材推荐 FPP3，其代码使用 R。以 Python 为主的学习者可以阅读方法论，再用 statsmodels 或 StatsForecast 复现小实验；不必为了读概念而同时精通两种语言。
-
-## 核心概念：你评估的是哪一种“未来”
-
-假设每周一上午预测未来七天销量，那么周一预测时，只能使用截至当时已经到账的数据。周三实际销量虽然存在于完整历史表里，却不能作为本周四预测的输入，除非你的系统确实会在周三重新预测。**预测时刻、预测跨度与更新频率共同定义任务。**
-
-因此，随机拆行可能把未来样本混进训练，让回测偏乐观。一个更贴近部署的方案是：用一月至六月训练，预测七月第一周；将预测起点向后移动，再用当时可用的历史训练或更新，预测下一周。比较模型时使用同样的起点与跨度，并规定是否每次重新拟合。这种滚动评估能暴露季节、制度变化和长跨度误差。[FPP3](https://otexts.com/fpp3/) 与 [sktime 示例](https://www.sktime.net/docs/examples/) 可作为方法与实现参考。
-
-特征也必须遵守这个边界。预测第 \(t\) 天时，“过去七日平均值”应使用 \(y_{t-1},\ldots,y_{t-7}\)，而不是包含尚未知晓的 \(y_t\)。在 pandas 中常见的安全顺序是先按序列和时间排序，再做 `shift(1)` 后的滚动统计。多条序列必须分组，不能让上一家店的末尾记录进入下一家店的窗口。
-
-对于星期规律明显的序列，季节朴素预测为：
-
-$$
-\hat y_t=y_{t-7}
-$$
-
-它把上周同一天作为本周基线。看起来简单，却能直接利用强季节性；复杂模型必须在相同回测条件下证明增益。预测模型也不一定输出单个数字。对库存决策，缺货与积压成本不对称，可用分位数预测：
-
-$$
-\rho_\tau(u)=u\bigl(\tau-\mathbb{1}[u<0]\bigr),\qquad u=y-\hat q_\tau
-$$
-
-当 \(\tau=0.9\) 时，低估真实值的惩罚系数为 0.9，高估时为 0.1；这驱动模型学习较高的条件分位数。90% 预测区间是否可信，要在多个回测窗口检查覆盖率，同时观察宽度，不能只看一张好看的阴影图。
-
-## 核心知识表
-
-| 知识 | 必须分清 | 应保留的证据 |
-|---|---|---|
-| 趋势与季节 | 长期变化与固定周期 | 时序图与季节图 |
-| 平稳与差分 | 统计性质假设及变换作用 | 原序列/差分与诊断 |
-| 滞后与滚动特征 | 历史可用值与未来信息 | 特征可用时刻 |
-| ETS 与 ARIMA | 状态演化与自回归误差结构 | 基线比较与残差 |
-| 多步预测 | 递归、直接、多输出 | 各跨度误差 |
-| 回测 | 起点、跨度、窗口、重训策略 | 每一折时间边界 |
-| 不确定性 | 点预测与区间/分位数 | 覆盖率、宽度、分位数损失 |
-
-## 精选资源
+## 资源列表
 
 先完成统计基线与回测，再考虑深度预测。aeon 用于序列分类等任务，不能把它的分类样例直接当成未来预测协议。
 
@@ -58,6 +12,19 @@ $$
 - **[aeon Examples](https://www.aeon-toolkit.org/en/stable/examples.html)**｜英文 · 进阶 · 免费 · CPU。拓展到序列分类；选 TSC、距离方法和 ROCKET/MiniRocket，区别预测与分类任务。
 - **[PyTorch Forecasting Tutorials](https://pytorch-forecasting.readthedocs.io/en/stable/tutorials.html)**｜英文 · 进阶 · 免费 · 可选GPU。在可靠统计基线上学习深度预测；选 TFT 需求预测或 N-BEATS 一个项目。
 - **[StatsForecast Quick Start](https://nixtlaverse.nixtla.io/statsforecast/docs/getting-started/getting_started_short.html)**｜英文 · 入门 · 免费 · CPU。快速跑统计预测基线；看 long-format 数据、AutoARIMA、预测区间与绘图。
+
+## 按资源安排学习顺序
+
+方法论选 FPP3；代码希望统一 Python 时，配 statsmodels 或 StatsForecast。深度预测放在统计基线之后。
+
+按顺序完成主线，每步完成右列产出后再推进；选修不计入必做清单。页首时长包含所选主线、练习与本页项目，不包含把全部资料逐一学完。
+
+| 阶段 | 使用资源 | 阅读 / 练习范围 | 完成后应留下什么 |
+|---|---|---|---|
+| 1 · 预测方法 | [Forecasting: Principles and Practice](https://otexts.com/fpp3/) | 探索、分解、基础预测与回测；教材示例用 R | 定义预测时点、跨度与可用信息 |
+| 2 · 统计基线 | [statsmodels Time Series Analysis](https://www.statsmodels.org/stable/tsa.html)；[StatsForecast Quick Start](https://nixtlaverse.nixtla.io/statsforecast/docs/getting-started/getting_started_short.html) | ARIMA、ETS、诊断；两套工具择一 | 用滚动回测比较朴素方法与统计模型 |
+| 3 · 规范实验 | [sktime Notebook Examples](https://www.sktime.net/docs/examples/) | Forecasting、Window splitters、Pipelines and Tuning | 检查特征生成和调参不泄漏未来 |
+| 选修 · 任务分支 | [aeon Examples](https://www.aeon-toolkit.org/en/stable/examples.html)；[PyTorch Forecasting Tutorials](https://pytorch-forecasting.readthedocs.io/en/stable/tutorials.html) | 分类选 aeon；深度预测选 TFT 或 N-BEATS 教程 | 只选一种，与前面的可靠基线比较 |
 
 ## 实践任务与验收
 

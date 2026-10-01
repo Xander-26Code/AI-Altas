@@ -2,46 +2,7 @@
 
 > 目标：了解分子、蛋白质、材料与科学计算中的 AI，学会把领域约束和验证协议放进实验。先修：[数学](01-math.md)、[深度学习](05-deep-learning.md)；分子任务另需 [图学习](24-graphs.md)。具备先修后，围绕一个科学方向学习主教材、做练习并完成一个项目，建议预留 **140–280 小时**。领域科学基础另计；不代表完成多个科学领域的训练。
 
-## 先选科学问题，再选网络
-
-预测分子性质、估计蛋白质结构、近似 PDE 解和寻找材料结构，都可能使用深度学习，但其数据、约束与正确性标准不同。误差较小不必然有科学价值：模型可能记住相似分子，在新结构上失效；也可能数值拟合很好，却违反守恒规律。
-
-AI for Science 通常是某一科学领域的方法工具，需要同时学习该领域的基础。这里提供入口，不替代化学、物理、生物或数值分析的专业训练。
-
-## 学习顺序
-
-1. 明确输入、输出、量纲、对称性、已有数值或统计基线。
-2. 学习领域表示：分子图、序列、三维结构、网格与场。
-3. 学数据切分：scaffold split、同源性切分、时间切分、参数分布外测试。
-4. 按方向选图网络、等变网络、物理约束网络（PINN）或神经算子。
-5. 检查不确定性、误差传播、可重复性与外部分布泛化。
-6. 将模型结果与领域实验或可信求解器比较，再判断是否真的节省计算。
-
-## 核心概念：物理约束是目标的一部分
-
-普通监督模型拟合观测误差。PINN 一类方法还会把微分方程残差、初始条件或边界条件加入训练目标。例如，对满足 `u'(t) + u(t) = 0`、`u(0)=1` 的函数，可构造：
-
-```text
-loss = mean((du_model/dt + u_model)^2)
-     + lambda_bc * (u_model(0) - 1)^2
-```
-
-已知解析解是 `exp(-t)`，因此可以独立检验训练区间内和区间外的误差。小训练损失不保证求解精确：残差采样点过少、损失项尺度不同、优化失败都可能产生问题。先与简单数值求解器比较，再讨论更复杂的 PDE。[DeepXDE 官方文档](https://deepxde.readthedocs.io/en/latest/)
-
-神经算子则试图学习从一个函数到另一个函数的映射，例如从系数场到解场。它和“对一个固定方程训练一套参数”的任务设置不同；分辨率、边界条件和训练分布必须一并说明。[NeuralOperator](https://neuraloperator.github.io/dev/)
-
-## 核心知识地图
-
-| 分支 | 代表问题 | 关键先修 / 验证 |
-|---|---|---|
-| 分子与药物研究 | 性质预测、分子生成 | 化学表示、scaffold split、实验条件 |
-| 蛋白质 | 结构与功能相关任务 | 序列/结构、同源性、置信度与生物学验证 |
-| 材料与分子动力学 | 能量、力与势函数 | 对称性、能量守恒、不同构型泛化 |
-| 科学机器学习 | PDE、逆问题、代理模型 | 数值分析、边界条件、单位和误差界 |
-| 气候与地球系统 | 时空预测与模拟加速 | 时间外推、空间切分、极端事件 |
-| 实验设计 | 主动学习、贝叶斯优化 | 采集成本、uncertainty、独立验证 |
-
-## 精选资源
+## 资源列表
 
 | 资源 | 语言 / 难度 / 费用 / 算力 | 建议读法 |
 |---|---|---|
@@ -50,6 +11,19 @@ loss = mean((du_model/dt + u_model)^2)
 | [DeePMD-kit](https://docs.deepmodeling.com/projects/deepmd/en/latest/) | 英文 / 研究 / 免费文档 / GPU | 理解原子势的数据、能量/力目标与模型偏差检查 |
 | [DeepXDE](https://deepxde.readthedocs.io/en/latest/) | 英文 / 进阶 / 免费 / 可选 GPU | 先做最小 ODE/PDE 示例，再读 PINN 与算子学习 |
 | [NeuralOperator](https://neuraloperator.github.io/dev/) | 英文 / 研究 / 免费 / 可选 GPU | 观察函数空间映射、数据网格和训练配置；大型实验另估算算力 |
+
+## 按资源安排学习顺序
+
+先选一个科学问题。分子、蛋白、势函数、微分方程是不同分支，下面各资源不构成必须连续学完的课程。
+
+按顺序完成主线，每步完成右列产出后再推进；选修不计入必做清单。页首时长包含所选主线、练习与本页项目，不包含把全部资料逐一学完。
+
+| 阶段 | 使用资源 | 阅读 / 练习范围 | 完成后应留下什么 |
+|---|---|---|---|
+| 1 · 选择分支 | [DeepChem](https://deepchem.io/)；[AlphaFold 2 作者仓库](https://github.com/google-deepmind/alphafold)；[DeePMD-kit](https://docs.deepmodeling.com/projects/deepmd/en/latest/)；[DeepXDE](https://deepxde.readthedocs.io/en/latest/)；[NeuralOperator](https://neuraloperator.github.io/dev/) | 分子选 DeepChem；蛋白选 AlphaFold；势函数选 DeePMD；ODE/PDE 选 DeepXDE 或 NeuralOperator | 明确领域基础、数据、真值与硬件要求 |
+| 2 · 最小复现 | [DeepChem](https://deepchem.io/)；[DeepXDE](https://deepxde.readthedocs.io/en/latest/) | 入门可从分子性质预测或简单 ODE/PDE 例子二选一 | 复现小案例，记录数据切分和误差 |
+| 3 · 验证与对照 | [DeepChem](https://deepchem.io/)；[DeePMD-kit](https://docs.deepmodeling.com/projects/deepmd/en/latest/)；[DeepXDE](https://deepxde.readthedocs.io/en/latest/) | 回到所选项目的数据与训练说明 | 加领域基线，检查外推与边界条件 |
+| 选修 · 扩大范围 | [AlphaFold 2 作者仓库](https://github.com/google-deepmind/alphafold)；[NeuralOperator](https://neuraloperator.github.io/dev/) | 蛋白结构置信度或算子学习的分辨率与分布限制 | 提出一个可验证问题；不承诺低成本重训大型模型 |
 
 ## 实践：一个带独立真值的科学实验
 

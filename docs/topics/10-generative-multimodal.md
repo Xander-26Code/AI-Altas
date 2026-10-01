@@ -3,42 +3,7 @@
 > 目标：理解模型如何生成图像、音频和视频，能区分表示学习、跨模态对齐与条件生成，并完成一个可复现的小实验。
 > 先修：概率分布、梯度下降、CNN / Transformer、PyTorch。建议规划 100–200 小时。这是完成先修后系统学习主教材、练习和一个项目的规划预算，不含补先修，不等于掌握整个领域。
 
-## 按这个顺序学
-
-1. **先分任务**：图像分类、图文检索、图像描述、语音识别、语音合成、文生图并不是同一个问题。
-2. **理解表示**：图像 patch、音频波形和频谱、视频帧、离散 codec token、连续潜变量，各自损失了什么、保留了什么。
-3. **复习生成模型谱系**：自回归逐步预测；VAE 通过编码器和解码器学习潜空间；GAN 通过生成器与判别器训练；扩散与 flow 从简单分布逐步变换。
-4. **手写加噪与去噪目标**：理解时间步、噪声日程、训练目标与采样器的区别。
-5. **加入条件**：类别、文本、图像、音频都可以提供条件；比较 cross-attention、拼接和条件引导。
-6. **理解跨模态接口**：CLIP 式双编码器适合匹配；视觉编码器加投影器再连接语言模型适合问答，两者能力边界不同。
-7. **最后处理时间维度**：语音的时长与对齐、视频的运动与一致性、实时系统的分块延迟。
-
-## 核心概念：从噪声到样本
-
-扩散模型的一个常见训练构造是：
-
-$$x_t=\sqrt{\bar\alpha_t}x_0+\sqrt{1-\bar\alpha_t}\epsilon,\quad \epsilon\sim\mathcal N(0,I),$$
-
-$$\mathcal L=\mathbb E_{x_0,t,\epsilon}\left[\|\epsilon-\epsilon_\theta(x_t,t)\|^2\right].$$
-
-这里 $x_0$ 是干净样本，$t$ 表示噪声程度，网络学习预测噪声。训练时能直接采样某个噪声程度，不需要从头连续加噪几百次；生成时则从噪声出发，用采样规则逐步更新。**网络、训练目标与采样器是三件事**，更换采样步数不会自动改变已经学到的权重。[DDPM](https://arxiv.org/abs/2006.11239) 与 [Hugging Face Diffusion Course](https://huggingface.co/learn/diffusion-course/unit1/1) 提供了这一基本路线。
-
-Flow matching 学的是随时间变化的速度场。一个适合练习的线性条件路径是 $x_t=(1-t)x_0+t x_1$，其中 $x_0$ 是噪声，$x_1$ 是数据，目标速度为 $x_1-x_0$。训练让 $v_\theta(x_t,t)$ 逼近目标速度，生成时数值求解 $dx/dt=v_\theta(x,t)$。这里的 $x_0$ 记号与上一段“干净样本”的定义不同，应在代码里用 `noise`、`data` 避免混淆。这个玩具路径帮助理解，不能把所有 flow 方法简化为同一条直线。[Flow Matching 原论文](https://arxiv.org/abs/2210.02747) 讨论了更一般的概率路径。
-
-多模态的关键是“信息在哪一步交互”。例如图文检索可分别将图片与文本编码成向量，让正确配对相似、错误配对相远；查询时无需每张图片都与查询共同经过大模型。[CLIP](https://arxiv.org/abs/2103.00020) 属于这条路线。若要回答“图中左侧瓶子的标签是什么”，通常还需要视觉细节、文本生成和细粒度对齐；相似度高不等于具备 OCR 或精确计数能力。
-
-图像生成可在像素空间或压缩潜空间进行。压缩减少计算，但也引入重建误差。DiT 将 Transformer 用作扩散过程中的骨干网络，所以“Transformer”和“diffusion”不是互斥类别：[DiT 论文](https://arxiv.org/abs/2212.09748) 是架构与训练方式组合的好例子。视频进一步增加时间维度，单帧漂亮不保证物体跨帧连续、动作合理；音频则要同时关注采样率、时间分辨率、说话人和语言覆盖。
-
-## 知识点清单
-
-| 分支 | 必学问题 | 推荐衡量方式 |
-| --- | --- | --- |
-| 图像生成 | 噪声预测、潜空间、guidance、采样器 | 盲评、条件遵循、覆盖度、生成时间 |
-| 图文理解 | 双编码器、投影器、cross-attention、OCR | 检索 Recall@k、问答正确率、细节错误 |
-| 语音 | 频谱、ASR、TTS、codec token、时间戳 | WER / CER、延迟、说话人分组误差 |
-| 视频 | 时空表示、帧率、运动与长时一致性 | 时间一致性、人评、任务成功率 |
-
-## 精选资源
+## 资源列表
 
 阅读均免费；表中的算力指建议的动手环境，论文“无”表示阅读无需硬件。真实模型的显存需要取决于分辨率、长度、精度、批大小和实现。核实日期：2026-09-30。
 
@@ -52,6 +17,19 @@ Flow matching 学的是随时间变化的速度场。一个适合练习的线性
 | [Whisper: Robust Speech Recognition via Large-Scale Weak Supervision](https://arxiv.org/abs/2212.04356) | 英文 / 进阶 | 免费 / 无 | 读数据、任务构造和鲁棒性实验；关注语言、噪声与分布变化，不把一个总分当通用结论。 |
 | [DiT: Scalable Diffusion Models with Transformers](https://arxiv.org/abs/2212.09748) | 英文 / 研究 | 免费 / 无 | 读latent patch与Transformer骨干设计；理解扩散训练方式和网络结构是不同维度。 |
 | [Video Diffusion Models](https://arxiv.org/abs/2204.03458) | 英文 / 研究 | 免费 / 无 | 读视频架构与时间扩展方法；重点观察时序一致性为何超出单帧生成问题。 |
+
+## 按资源安排学习顺序
+
+生成方向先做 Diffusion Course；跨模态方向可在共同基础后转 CLIP 或 Whisper，不要求同时做图像、音频与视频。
+
+按顺序完成主线，每步完成右列产出后再推进；选修不计入必做清单。页首时长包含所选主线、练习与本页项目，不包含把全部资料逐一学完。
+
+| 阶段 | 使用资源 | 阅读 / 练习范围 | 完成后应留下什么 |
+|---|---|---|---|
+| 1 · 最小去噪 | [Hugging Face Diffusion Course](https://huggingface.co/learn/diffusion-course/unit1/1) | Unit 1 及其 notebook | 在小数据上训练并观察去噪过程 |
+| 2 · 对照原文 | [Denoising Diffusion Probabilistic Models](https://arxiv.org/abs/2006.11239)；[Diffusers Documentation](https://huggingface.co/docs/diffusers/index) | DDPM 训练/采样；Diffusers pipeline 与 scheduler | 记录采样器、步数和种子对输出的影响 |
+| 3 · 完成一个分支 | [CLIP: Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/abs/2103.00020)；[Whisper: Robust Speech Recognition via Large-Scale Weak Supervision](https://arxiv.org/abs/2212.04356) | 图文选 CLIP 的训练与分类；语音选 Whisper 任务与实验 | 提交下方生成或检索实验之一 |
+| 选修 · 扩展阅读 | [Flow Matching for Generative Modeling](https://arxiv.org/abs/2210.02747)；[DiT: Scalable Diffusion Models with Transformers](https://arxiv.org/abs/2212.09748)；[Video Diffusion Models](https://arxiv.org/abs/2204.03458) | Flow Matching、DiT 或 Video Diffusion 三选一 | 用对照表说明它改变了训练目标、骨干还是数据维度 |
 
 ## 实践：两个低成本实验，选一条完成
 

@@ -3,43 +3,7 @@
 > 目标：用有限工具、显式状态和停止条件构建一个能完成任务的 agent；知道什么时候确定性工作流更合适。
 > 先修：AI 应用开发、JSON schema、函数调用、状态机、基本测试。建议规划 80–160 小时。这是完成先修后系统学习主教材、练习和一个项目的规划预算，不含补先修，不等于掌握整个领域。
 
-## 按这个顺序学
-
-1. **先做固定工作流**：例如读取工单 → 分类 → 检索规则 → 生成回复草稿，逐阶段写输入输出。
-2. **定义工具契约**：名称、参数、权限、返回值、错误类型、副作用、幂等性和超时。
-3. **实现最小循环**：观察当前状态 → 选择动作 → 校验 → 执行 → 获取结果 → 更新状态。
-4. **加入停止条件**：任务完成、预算耗尽、重复动作、连续失败、缺少授权或必要输入。
-5. **管理记忆**：区分当前上下文、任务状态、持久化用户数据；保存事实来源和失效时间。
-6. **学习协议与框架**：了解 MCP 的 host / client / server 和工具、资源边界，再考虑工作流框架。
-7. **测任务成功率**：在可重置环境中重复运行，检查最终世界状态、调用轨迹和成本，而非只看答复是否流畅。
-
-## 核心概念：决策权到底在哪里
-
-当路径主要由代码决定，模型只负责某几个步骤时，可称为工作流；当模型依据观察动态选择下一动作时，更接近 agent。这个区别帮助定位测试责任，不是产品命名标准。[Anthropic 的工程文章](https://www.anthropic.com/engineering/building-effective-agents) 提供了串联、路由、并行和动态编排等模式的清晰讨论。
-
-设任务状态是 $s_t$，模型选择动作 $a_t$，工具返回观察 $o_{t+1}$，应用更新状态：
-
-$$a_t\sim\pi(\cdot\mid s_t),\quad o_{t+1}=\operatorname{tool}(a_t),\quad s_{t+1}=\operatorname{update}(s_t,a_t,o_{t+1}).$$
-
-这里的 `update` 应是你能检查的程序。以“查库存并写采购建议”为例，模型不能凭自己上轮说“库存为零”就把它当作数据库事实。状态应记录库存查询结果、时间、商品 ID 与错误状态；工具失败必须保持为失败，不能伪装成空库存。[ReAct](https://arxiv.org/abs/2210.03629) 强调推理与环境行动交替，但工程系统还需要独立的权限与状态控制。
-
-工具设计影响模型能否正确行动。`update_record(data)` 太宽泛，`get_inventory(item_id)` 与 `draft_purchase(item_id, quantity)` 的责任更清楚。让工具返回结构化状态，例如 `{"ok": false, "error": "ITEM_NOT_FOUND"}`，比返回一大段网页错误更容易处理。对写操作，先验证参数与用户权限，再执行；仅把“不要越权”放在提示词里不是权限系统。
-
-MCP 解决的是应用连接外部能力时的接口协议问题。host 管理应用与用户交互，client 与 server 建立连接，server 暴露能力。**协议互通不等于工具可信，也不等于已经获得用户授权**；外部资源、网页和工具返回文本仍可能包含恶意指令。应根据应用的信任边界处理数据，并用服务器端授权限制效果。[MCP 官方入口](https://modelcontextprotocol.io/docs/getting-started/intro) 与架构页面可作为规范起点，实施时固定版本。
-
-多 agent 适合可独立验证、可并行的子任务，例如分别检查不同模块。增加多个模型不保证独立判断：共享同一错误前提时，投票也可能一致地错。先比较单 agent、固定工作流和多 agent 的任务成功率、总 token、延迟与失败类型，再决定是否值得增加复杂度。
-
-## 知识点清单
-
-| 组件 | 必须回答的问题 | 常见实现证据 |
-| --- | --- | --- |
-| 规划 | 哪些步骤可固定，哪些需要动态判断 | 状态图和路由条件 |
-| 工具 | 权限在哪里检查，错误怎样表示 | 输入 schema、允许列表、审计记录 |
-| 记忆 | 保存什么、来源是什么、何时过期 | 带 provenance 的状态记录 |
-| 恢复 | 中断后怎样继续，会不会重复写入 | checkpoint、幂等键、重试边界 |
-| 评估 | 是否真正改变到目标状态 | 环境断言、重复实验、轨迹分析 |
-
-## 精选资源
+## 资源列表
 
 教程与论文免费；接入模型服务、运行大型软件环境可能另有成本。CPU 可完成本章模拟练习。核实日期：2026-09-30。
 
@@ -52,6 +16,31 @@ MCP 解决的是应用连接外部能力时的接口协议问题。host 管理�
 | [SWE-bench](https://github.com/SWE-bench/SWE-bench) | 英文 / 进阶 | 免费 / CPU | 读任务定义与评估harness，理解测试环境与最终代码行为；本地容器可能占用较多磁盘内存。 |
 | [τ-bench: Tool-Agent-User Interaction](https://arxiv.org/abs/2406.12045) | 英文 / 研究 | 免费 / 无 | 读最终数据库状态评估与多次运行可靠性指标；为自己的工具任务定义可执行成功条件。 |
 | [LangGraph Overview](https://docs.langchain.com/oss/python/langgraph/overview) | 英文 / 进阶 | 免费 / CPU | 读持久执行、状态、streaming与human-in-the-loop概念；先有纯代码基线再引入编排。 |
+
+### 补充课程与实作资源
+
+| 资源 | 语言 · 难度 | 获取 · 算力 | 用法与阅读范围 |
+|---|---|---|---|
+| [Datawhale · Hello-Agents](https://github.com/datawhalechina/hello-agents) | 中文 · 进阶 | 免费 · CPU | 先第 1、3、4 章，再第 7–10、12 章；做一个工具循环和评估项目，综合案例选修。 |
+| [Hugging Face · Agents Course](https://github.com/huggingface/agents-course) | 英文 · 进阶 | 免费 · CPU | 按课程的基础、框架与用例阶段推进；与其他 Agent 主课择一，模型调用与算力另计。 |
+| [Microsoft · AI Agents for Beginners](https://github.com/microsoft/ai-agents-for-beginners) | 中英 · 入门 | 免费 · CPU | 先读简介、工具使用、可信 Agent，再查规划、协议和生产部署；适合已有 Python 的开发者。 |
+| [Awesome LLM Apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | 英文 · 进阶 | 免费 · CPU | 项目选题库；完成主课后只挑一个 RAG 或 Agent 示例阅读架构、依赖与评估，不把 demo 当生产方案。 |
+
+以上新增入口核实于 2026-10-01；资料免费不含硬件与 API 费用。
+
+## 按资源安排学习顺序
+
+主课程从 Hello-Agents、HF Agents Course、Microsoft Agents 三选一；中文默认 Hello-Agents。先有简单工作流，再考虑复杂 Agent。
+
+按顺序完成主线，每步完成右列产出后再推进；选修不计入必做清单。页首时长包含所选主线、练习与本页项目，不包含把全部资料逐一学完。
+
+| 阶段 | 使用资源 | 阅读 / 练习范围 | 完成后应留下什么 |
+|---|---|---|---|
+| 1 · 选择控制流程 | [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents)；[Datawhale · Hello-Agents](https://github.com/datawhalechina/hello-agents) | Building Effective Agents；Hello-Agents 第 1、3、4 章 | 实现固定工作流与一个有限步数工具循环 |
+| 2 · 主课实践 | [Datawhale · Hello-Agents](https://github.com/datawhalechina/hello-agents)；[Hugging Face · Agents Course](https://github.com/huggingface/agents-course)；[Microsoft · AI Agents for Beginners](https://github.com/microsoft/ai-agents-for-beginners) | Hello-Agents 第 7–9 章；或另一套课的工具、框架与用例 | 加入状态、工具校验和失败恢复 |
+| 3 · 协议与框架 | [Model Context Protocol Documentation](https://modelcontextprotocol.io/docs/getting-started/intro)；[LangGraph Overview](https://docs.langchain.com/oss/python/langgraph/overview) | MCP Architecture/Security；需要持久化时查 LangGraph | 明确权限、重试与人工接管入口 |
+| 4 · 评估 | [Datawhale · Hello-Agents](https://github.com/datawhalechina/hello-agents)；[τ-bench: Tool-Agent-User Interaction](https://arxiv.org/abs/2406.12045)；[SWE-bench](https://github.com/SWE-bench/SWE-bench) | Hello-Agents 第 12 章；τ-bench 方法；编码任务才看 SWE-bench | 用固定任务与最终状态衡量可靠性 |
+| 选修 · 论文与案例 | [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629)；[Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761)；[Awesome LLM Apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | ReAct、Toolformer 或一个应用实例 | 解释示例与自己的控制流程有什么差别 |
 
 ## 实践：在模拟仓库里完成补货建议
 

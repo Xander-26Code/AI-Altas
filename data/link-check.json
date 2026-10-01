@@ -1,9 +1,9 @@
 {
-  "checked_at": "2026-09-30T20:14:04.396968+00:00",
+  "checked_at": "2026-10-01T01:23:34.470867+00:00",
   "scope": "Markdown/image destinations, curated resource URLs, configured scripts and built HTML href/src when site exists; capped GET; external fragments need separate review",
   "counts": {
     "local-preview": 1,
-    "ok": 181,
+    "ok": 215,
     "restricted": 2
   },
   "results": [
@@ -12,7 +12,7 @@
       "sources": [
         "README.md"
       ],
-      "checked_at": "2026-09-30T20:14:01.392955+00:00",
+      "checked_at": "2026-10-01T01:23:15.263950+00:00",
       "status": "local-preview",
       "note": "Local preview URL; not a public web resource"
     },
@@ -531,6 +531,7 @@
         "site/research/index.html",
         "site/research/infra-sources.html",
         "site/research/models-sources.html",
+        "site/research/resource-expansion.html",
         "site/research/specialties-sources.html",
         "site/resources.html",
         "site/roadmaps/algorithm.html",
@@ -694,8 +695,10 @@
       "sources": [
         "data/resources-foundations.json:foundation-cs50p",
         "docs/resources.md",
+        "docs/roadmaps/beginner.md",
         "docs/topics/02-programming.md",
         "site/resources.html",
+        "site/roadmaps/beginner.html",
         "site/topics/02-programming.html"
       ],
       "checked_at": "2026-09-30T19:44:06.502957+00:00",
@@ -1005,12 +1008,14 @@
       "url": "https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html",
       "sources": [
         "data/resources-foundations.json:foundation-opencv",
+        "docs/quality.md",
         "docs/resources.md",
         "docs/topics/07-computer-vision.md",
+        "site/quality.html",
         "site/resources.html",
         "site/topics/07-computer-vision.html"
       ],
-      "checked_at": "2026-09-30T20:14:01.394336+00:00",
+      "checked_at": "2026-10-01T01:23:15.265390+00:00",
       "http_status": 403,
       "status": "restricted",
       "note": "HTTP Error 403: Forbidden"
@@ -1316,6 +1321,109 @@
       "status": "ok"
     },
     {
+      "url": "https://github.com/DLR-RM/rl-baselines3-zoo",
+      "sources": [
+        "data/resources-expanded.json:expanded-rlzoo",
+        "docs/resources.md",
+        "docs/roadmaps/research.md",
+        "docs/topics/22-rl-robotics.md",
+        "site/resources.html",
+        "site/roadmaps/research.html",
+        "site/topics/22-rl-robotics.html"
+      ],
+      "checked_at": "2026-10-01T01:23:15.265619+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/DLR-RM/rl-baselines3-zoo",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/DataTalksClub/data-engineering-zoomcamp",
+      "sources": [
+        "data/resources-expanded.json:expanded-dezoom",
+        "docs/resources.md",
+        "docs/topics/03-data.md",
+        "site/resources.html",
+        "site/topics/03-data.html"
+      ],
+      "checked_at": "2026-10-01T01:23:15.265667+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/DataTalksClub/data-engineering-zoomcamp",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/DataTalksClub/llm-zoomcamp",
+      "sources": [
+        "data/resources-expanded.json:expanded-llmzoom",
+        "docs/research/resource-expansion.md",
+        "docs/resources.md",
+        "docs/roadmaps/application.md",
+        "docs/topics/11-ai-applications.md",
+        "docs/topics/12-rag.md",
+        "docs/topics/15-evaluation-safety.md",
+        "site/research/resource-expansion.html",
+        "site/resources.html",
+        "site/roadmaps/application.html",
+        "site/topics/11-ai-applications.html",
+        "site/topics/12-rag.html",
+        "site/topics/15-evaluation-safety.html"
+      ],
+      "checked_at": "2026-10-01T01:23:15.265713+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/DataTalksClub/llm-zoomcamp",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/DataTalksClub/machine-learning-zoomcamp",
+      "sources": [
+        "data/resources-expanded.json:expanded-mlzoom",
+        "docs/research/resource-expansion.md",
+        "docs/resources.md",
+        "docs/roadmaps/algorithm.md",
+        "docs/topics/04-machine-learning.md",
+        "site/research/resource-expansion.html",
+        "site/resources.html",
+        "site/roadmaps/algorithm.html",
+        "site/topics/04-machine-learning.html"
+      ],
+      "checked_at": "2026-10-01T01:23:15.265737+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/DataTalksClub/machine-learning-zoomcamp",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/DataTalksClub/mlops-zoomcamp",
+      "sources": [
+        "data/resources-expanded.json:expanded-mlopszoom",
+        "docs/research/resource-expansion.md",
+        "docs/resources.md",
+        "docs/roadmaps/algorithm.md",
+        "docs/roadmaps/application.md",
+        "docs/roadmaps/infra.md",
+        "docs/topics/20-mlops.md",
+        "site/research/resource-expansion.html",
+        "site/resources.html",
+        "site/roadmaps/algorithm.html",
+        "site/roadmaps/application.html",
+        "site/roadmaps/infra.html",
+        "site/topics/20-mlops.html"
+      ],
+      "checked_at": "2026-10-01T01:23:15.265760+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/DataTalksClub/mlops-zoomcamp",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/DucLong06/ai-infra-roadmap",
+      "sources": [
+        "docs/research/resource-expansion.md",
+        "site/research/resource-expansion.html"
+      ],
+      "checked_at": "2026-10-01T01:23:15.265780+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/DucLong06/ai-infra-roadmap",
+      "status": "ok"
+    },
+    {
       "url": "https://github.com/EleutherAI/lm-evaluation-harness",
       "sources": [
         "data/resources-models.json:model-044",
@@ -1348,6 +1456,40 @@
       "status": "ok"
     },
     {
+      "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+      "sources": [
+        "data/resources-expanded.json:expanded-apps",
+        "docs/research/resource-expansion.md",
+        "docs/resources.md",
+        "docs/topics/11-ai-applications.md",
+        "docs/topics/13-agents.md",
+        "site/research/resource-expansion.html",
+        "site/resources.html",
+        "site/topics/11-ai-applications.html",
+        "site/topics/13-agents.html"
+      ],
+      "checked_at": "2026-10-01T01:23:15.265810+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/ageron/handson-ml3",
+      "sources": [
+        "data/resources-expanded.json:expanded-handson",
+        "docs/resources.md",
+        "docs/topics/04-machine-learning.md",
+        "docs/topics/05-deep-learning.md",
+        "site/resources.html",
+        "site/topics/04-machine-learning.html",
+        "site/topics/05-deep-learning.html"
+      ],
+      "checked_at": "2026-10-01T01:23:15.792492+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/ageron/handson-ml3",
+      "status": "ok"
+    },
+    {
       "url": "https://github.com/beir-cellar/beir",
       "sources": [
         "data/resources-models.json:model-028",
@@ -1361,6 +1503,77 @@
       "checked_at": "2026-09-30T19:56:03.889462+00:00",
       "http_status": 200,
       "final_url": "https://github.com/beir-cellar/beir",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/dair-ai/ML-YouTube-Courses",
+      "sources": [
+        "docs/research/resource-expansion.md",
+        "site/research/resource-expansion.html"
+      ],
+      "checked_at": "2026-10-01T01:23:16.296366+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/dair-ai/ML-YouTube-Courses",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/datawhalechina/happy-llm",
+      "sources": [
+        "data/resources-expanded.json:expanded-happy",
+        "docs/research/resource-expansion.md",
+        "docs/resources.md",
+        "docs/roadmaps/llm.md",
+        "docs/topics/06-nlp.md",
+        "docs/topics/09-llm.md",
+        "docs/topics/14-finetuning-alignment.md",
+        "site/research/resource-expansion.html",
+        "site/resources.html",
+        "site/roadmaps/llm.html",
+        "site/topics/06-nlp.html",
+        "site/topics/09-llm.html",
+        "site/topics/14-finetuning-alignment.html"
+      ],
+      "checked_at": "2026-10-01T01:23:16.410367+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/datawhalechina/happy-llm",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/datawhalechina/hello-agents",
+      "sources": [
+        "data/resources-expanded.json:expanded-hello",
+        "docs/research/resource-expansion.md",
+        "docs/resources.md",
+        "docs/roadmaps/application.md",
+        "docs/topics/13-agents.md",
+        "site/research/resource-expansion.html",
+        "site/resources.html",
+        "site/roadmaps/application.html",
+        "site/topics/13-agents.html"
+      ],
+      "checked_at": "2026-10-01T01:23:17.243647+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/datawhalechina/hello-agents",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/datawhalechina/llm-universe",
+      "sources": [
+        "data/resources-expanded.json:expanded-universe",
+        "docs/research/resource-expansion.md",
+        "docs/resources.md",
+        "docs/roadmaps/application.md",
+        "docs/topics/11-ai-applications.md",
+        "docs/topics/12-rag.md",
+        "site/research/resource-expansion.html",
+        "site/resources.html",
+        "site/roadmaps/application.html",
+        "site/topics/11-ai-applications.html",
+        "site/topics/12-rag.html"
+      ],
+      "checked_at": "2026-10-01T01:23:18.165435+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/datawhalechina/llm-universe",
       "status": "ok"
     },
     {
@@ -1441,6 +1654,56 @@
       "status": "ok"
     },
     {
+      "url": "https://github.com/gpu-mode/lectures",
+      "sources": [
+        "data/resources-expanded.json:expanded-gpu",
+        "docs/resources.md",
+        "docs/roadmaps/infra.md",
+        "docs/topics/17-gpu-kernels-compilers.md",
+        "docs/topics/18-distributed-training.md",
+        "site/resources.html",
+        "site/roadmaps/infra.html",
+        "site/topics/17-gpu-kernels-compilers.html",
+        "site/topics/18-distributed-training.html"
+      ],
+      "checked_at": "2026-10-01T01:23:18.173996+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/gpu-mode/lectures",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/huggingface/agents-course",
+      "sources": [
+        "data/resources-expanded.json:expanded-hfagents",
+        "docs/resources.md",
+        "docs/topics/13-agents.md",
+        "site/resources.html",
+        "site/topics/13-agents.html"
+      ],
+      "checked_at": "2026-10-01T01:23:19.343192+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/huggingface/agents-course",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/huggingface/smol-course",
+      "sources": [
+        "data/resources-expanded.json:expanded-smol",
+        "docs/resources.md",
+        "docs/roadmaps/llm.md",
+        "docs/topics/14-finetuning-alignment.md",
+        "docs/topics/15-evaluation-safety.md",
+        "site/resources.html",
+        "site/roadmaps/llm.html",
+        "site/topics/14-finetuning-alignment.html",
+        "site/topics/15-evaluation-safety.html"
+      ],
+      "checked_at": "2026-10-01T01:23:19.343656+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/huggingface/smol-course",
+      "status": "ok"
+    },
+    {
       "url": "https://github.com/karpathy/micrograd",
       "sources": [
         "data/resources-foundations.json:foundation-micrograd",
@@ -1455,13 +1718,35 @@
       "status": "ok"
     },
     {
+      "url": "https://github.com/karpathy/nn-zero-to-hero",
+      "sources": [
+        "data/resources-expanded.json:expanded-zero",
+        "docs/research/resource-expansion.md",
+        "docs/resources.md",
+        "docs/roadmaps/algorithm.md",
+        "docs/topics/05-deep-learning.md",
+        "docs/topics/09-llm.md",
+        "site/research/resource-expansion.html",
+        "site/resources.html",
+        "site/roadmaps/algorithm.html",
+        "site/topics/05-deep-learning.html",
+        "site/topics/09-llm.html"
+      ],
+      "checked_at": "2026-10-01T01:23:20.381209+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/karpathy/nn-zero-to-hero",
+      "status": "ok"
+    },
+    {
       "url": "https://github.com/lvy010/AI-wiki",
       "sources": [
         "README.md",
         "docs/research/README.md",
         "docs/research/infra-sources.md",
+        "docs/research/resource-expansion.md",
         "site/research/index.html",
-        "site/research/infra-sources.html"
+        "site/research/infra-sources.html",
+        "site/research/resource-expansion.html"
       ],
       "checked_at": "2026-09-30T19:44:14.547612+00:00",
       "http_status": 200,
@@ -1478,6 +1763,20 @@
       "checked_at": "2026-09-30T19:44:14.646156+00:00",
       "http_status": 200,
       "final_url": "https://github.com/microsoft/AI-For-Beginners",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/microsoft/ai-agents-for-beginners",
+      "sources": [
+        "data/resources-expanded.json:expanded-msagents",
+        "docs/resources.md",
+        "docs/topics/13-agents.md",
+        "site/resources.html",
+        "site/topics/13-agents.html"
+      ],
+      "checked_at": "2026-10-01T01:23:21.144709+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/microsoft/ai-agents-for-beginners",
       "status": "ok"
     },
     {
@@ -1502,12 +1801,28 @@
         "README.md",
         "docs/research/README.md",
         "docs/research/models-sources.md",
+        "docs/research/resource-expansion.md",
         "site/research/index.html",
-        "site/research/models-sources.html"
+        "site/research/models-sources.html",
+        "site/research/resource-expansion.html"
       ],
       "checked_at": "2026-09-30T19:44:14.835276+00:00",
       "http_status": 200,
       "final_url": "https://github.com/mlabonne/llm-course",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/openai/spinningup",
+      "sources": [
+        "data/resources-expanded.json:expanded-spinning",
+        "docs/resources.md",
+        "docs/topics/22-rl-robotics.md",
+        "site/resources.html",
+        "site/topics/22-rl-robotics.html"
+      ],
+      "checked_at": "2026-10-01T01:23:21.333222+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/openai/spinningup",
       "status": "ok"
     },
     {
@@ -1520,6 +1835,17 @@
       "checked_at": "2026-09-30T19:44:14.886166+00:00",
       "http_status": 200,
       "final_url": "https://github.com/ossu/computer-science",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/pacoxu/AI-Infra",
+      "sources": [
+        "docs/research/resource-expansion.md",
+        "site/research/resource-expansion.html"
+      ],
+      "checked_at": "2026-10-01T01:23:22.128510+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/pacoxu/AI-Infra",
       "status": "ok"
     },
     {
@@ -1536,6 +1862,66 @@
       "checked_at": "2026-09-30T19:56:04.139832+00:00",
       "http_status": 200,
       "final_url": "https://github.com/pgvector/pgvector",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/rasbt/LLMs-from-scratch",
+      "sources": [
+        "data/resources-expanded.json:expanded-scratch",
+        "docs/resources.md",
+        "docs/roadmaps/llm.md",
+        "docs/topics/09-llm.md",
+        "docs/topics/14-finetuning-alignment.md",
+        "site/resources.html",
+        "site/roadmaps/llm.html",
+        "site/topics/09-llm.html",
+        "site/topics/14-finetuning-alignment.html"
+      ],
+      "checked_at": "2026-10-01T01:23:23.086792+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/rasbt/LLMs-from-scratch",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/rasbt/LLMs-from-scratch/blob/main/ch07/04_preference-tuning-with-dpo/create-preference-data-ollama.ipynb",
+      "sources": [
+        "docs/research/resource-expansion.md",
+        "site/research/resource-expansion.html"
+      ],
+      "checked_at": "2026-10-01T01:23:23.278979+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/rasbt/LLMs-from-scratch/blob/main/ch07/04_preference-tuning-with-dpo/create-preference-data-ollama.ipynb",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/rasbt/LLMs-from-scratch/blob/main/ch07/04_preference-tuning-with-dpo/dpo-from-scratch.ipynb",
+      "sources": [
+        "docs/research/resource-expansion.md",
+        "site/research/resource-expansion.html"
+      ],
+      "checked_at": "2026-10-01T01:23:24.205638+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/rasbt/LLMs-from-scratch/blob/main/ch07/04_preference-tuning-with-dpo/dpo-from-scratch.ipynb",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04/03_kv-cache",
+      "sources": [
+        "data/resources-expanded.json:expanded-kv",
+        "docs/research/resource-expansion.md",
+        "docs/resources.md",
+        "docs/roadmaps/llm.md",
+        "docs/topics/09-llm.md",
+        "docs/topics/19-inference-serving.md",
+        "site/research/resource-expansion.html",
+        "site/resources.html",
+        "site/roadmaps/llm.html",
+        "site/topics/09-llm.html",
+        "site/topics/19-inference-serving.html"
+      ],
+      "checked_at": "2026-10-01T01:23:24.704624+00:00",
+      "http_status": 200,
+      "final_url": "https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04/03_kv-cache",
       "status": "ok"
     },
     {
@@ -1564,6 +1950,26 @@
       "checked_at": "2026-09-30T19:44:15.917711+00:00",
       "http_status": 200,
       "final_url": "https://gymnasium.farama.org/",
+      "status": "ok"
+    },
+    {
+      "url": "https://hanlab.mit.edu/courses/2024-fall-65940",
+      "sources": [
+        "data/resources-expanded.json:expanded-tinyml",
+        "docs/resources.md",
+        "docs/roadmaps/infra.md",
+        "docs/topics/17-gpu-kernels-compilers.md",
+        "docs/topics/19-inference-serving.md",
+        "docs/topics/21-edge-ai.md",
+        "site/resources.html",
+        "site/roadmaps/infra.html",
+        "site/topics/17-gpu-kernels-compilers.html",
+        "site/topics/19-inference-serving.html",
+        "site/topics/21-edge-ai.html"
+      ],
+      "checked_at": "2026-10-01T01:23:25.295918+00:00",
+      "http_status": 200,
+      "final_url": "https://hanlab.mit.edu/courses/2024-fall-65940",
       "status": "ok"
     },
     {
@@ -1736,6 +2142,26 @@
       "status": "ok"
     },
     {
+      "url": "https://jax-ml.github.io/scaling-book/",
+      "sources": [
+        "data/resources-expanded.json:expanded-scaling",
+        "docs/resources.md",
+        "docs/roadmaps/infra.md",
+        "docs/topics/16-hardware-systems.md",
+        "docs/topics/18-distributed-training.md",
+        "docs/topics/19-inference-serving.md",
+        "site/resources.html",
+        "site/roadmaps/infra.html",
+        "site/topics/16-hardware-systems.html",
+        "site/topics/18-distributed-training.html",
+        "site/topics/19-inference-serving.html"
+      ],
+      "checked_at": "2026-10-01T01:23:25.928750+00:00",
+      "http_status": 200,
+      "final_url": "https://jax-ml.github.io/scaling-book/",
+      "status": "ok"
+    },
+    {
       "url": "https://json-schema.org/learn/getting-started-step-by-step",
       "sources": [
         "data/resources-models.json:model-018",
@@ -1882,12 +2308,34 @@
       "status": "ok"
     },
     {
+      "url": "https://mlsysbook.ai/",
+      "sources": [
+        "data/resources-expanded.json:expanded-mlsys",
+        "docs/resources.md",
+        "docs/roadmaps/infra.md",
+        "docs/topics/16-hardware-systems.md",
+        "docs/topics/20-mlops.md",
+        "docs/topics/21-edge-ai.md",
+        "site/resources.html",
+        "site/roadmaps/infra.html",
+        "site/topics/16-hardware-systems.html",
+        "site/topics/20-mlops.html",
+        "site/topics/21-edge-ai.html"
+      ],
+      "checked_at": "2026-10-01T01:23:26.415659+00:00",
+      "http_status": 200,
+      "final_url": "https://mlsysbook.ai/",
+      "status": "ok"
+    },
+    {
       "url": "https://mml-book.github.io/",
       "sources": [
         "data/resources-foundations.json:foundation-mml",
         "docs/resources.md",
+        "docs/roadmaps/beginner.md",
         "docs/topics/01-math.md",
         "site/resources.html",
+        "site/roadmaps/beginner.html",
         "site/topics/01-math.html"
       ],
       "checked_at": "2026-09-30T19:44:20.518494+00:00",
@@ -1965,6 +2413,20 @@
       "checked_at": "2026-09-30T19:44:21.038315+00:00",
       "http_status": 200,
       "final_url": "https://nlp.stanford.edu/IR-book/",
+      "status": "ok"
+    },
+    {
+      "url": "https://nndl.ai/",
+      "sources": [
+        "data/resources-expanded.json:expanded-nndl",
+        "docs/resources.md",
+        "docs/topics/05-deep-learning.md",
+        "site/resources.html",
+        "site/topics/05-deep-learning.html"
+      ],
+      "checked_at": "2026-10-01T01:23:26.565279+00:00",
+      "http_status": 200,
+      "final_url": "https://nndl.ai/",
       "status": "ok"
     },
     {
@@ -2107,12 +2569,14 @@
       "url": "https://otexts.com/fpp3/",
       "sources": [
         "data/resources-foundations.json:foundation-fpp3",
+        "docs/quality.md",
         "docs/resources.md",
         "docs/topics/08-time-series.md",
+        "site/quality.html",
         "site/resources.html",
         "site/topics/08-time-series.html"
       ],
-      "checked_at": "2026-09-30T20:14:01.394818+00:00",
+      "checked_at": "2026-10-01T01:23:27.027709+00:00",
       "http_status": 403,
       "status": "restricted",
       "note": "HTTP Error 403: Forbidden"
@@ -2308,6 +2772,22 @@
       "status": "ok"
     },
     {
+      "url": "https://seeing-theory.brown.edu/",
+      "sources": [
+        "data/resources-expanded.json:expanded-seeing",
+        "docs/resources.md",
+        "docs/topics/01-math.md",
+        "docs/topics/25-causal-probabilistic.md",
+        "site/resources.html",
+        "site/topics/01-math.html",
+        "site/topics/25-causal-probabilistic.html"
+      ],
+      "checked_at": "2026-10-01T01:23:27.797911+00:00",
+      "http_status": 200,
+      "final_url": "https://seeing-theory.brown.edu/",
+      "status": "ok"
+    },
+    {
       "url": "https://spacy.io/usage/linguistic-features",
       "sources": [
         "data/resources-foundations.json:foundation-spacy",
@@ -2345,6 +2825,7 @@
         "site/research/index.html",
         "site/research/infra-sources.html",
         "site/research/models-sources.html",
+        "site/research/resource-expansion.html",
         "site/research/specialties-sources.html",
         "site/resources.html",
         "site/roadmaps/algorithm.html",
@@ -2486,6 +2967,38 @@
       "checked_at": "2026-09-30T19:44:25.664022+00:00",
       "http_status": 200,
       "final_url": "https://web.stanford.edu/~jurafsky/slp3/",
+      "status": "ok"
+    },
+    {
+      "url": "https://wesmckinney.com/book/",
+      "sources": [
+        "data/resources-expanded.json:expanded-pydata",
+        "docs/resources.md",
+        "docs/roadmaps/beginner.md",
+        "docs/topics/02-programming.md",
+        "docs/topics/03-data.md",
+        "site/resources.html",
+        "site/roadmaps/beginner.html",
+        "site/topics/02-programming.html",
+        "site/topics/03-data.html"
+      ],
+      "checked_at": "2026-10-01T01:23:28.089050+00:00",
+      "http_status": 200,
+      "final_url": "https://wesmckinney.com/book/",
+      "status": "ok"
+    },
+    {
+      "url": "https://www.3blue1brown.com/?topic=linear-algebra",
+      "sources": [
+        "data/resources-expanded.json:expanded-linearvisual",
+        "docs/resources.md",
+        "docs/topics/01-math.md",
+        "site/resources.html",
+        "site/topics/01-math.html"
+      ],
+      "checked_at": "2026-10-01T01:23:28.117426+00:00",
+      "http_status": 200,
+      "final_url": "https://www.3blue1brown.com/?topic=linear-algebra",
       "status": "ok"
     },
     {
@@ -2765,8 +3278,12 @@
       "sources": [
         "data/resources-foundations.json:foundation-islp",
         "docs/resources.md",
+        "docs/roadmaps/algorithm.md",
+        "docs/roadmaps/beginner.md",
         "docs/topics/04-machine-learning.md",
         "site/resources.html",
+        "site/roadmaps/algorithm.html",
+        "site/roadmaps/beginner.html",
         "site/topics/04-machine-learning.html"
       ],
       "checked_at": "2026-09-30T19:44:29.307989+00:00",
@@ -2817,6 +3334,50 @@
       "status": "ok"
     },
     {
+      "url": "https://x.com/rasbt/status/1684902178509504512",
+      "sources": [
+        "docs/research/resource-expansion.md",
+        "site/research/resource-expansion.html"
+      ],
+      "checked_at": "2026-10-01T01:23:28.784843+00:00",
+      "http_status": 200,
+      "final_url": "https://x.com/rasbt/status/1684902178509504512",
+      "status": "ok"
+    },
+    {
+      "url": "https://x.com/rasbt/status/1817210266838339916",
+      "sources": [
+        "docs/research/resource-expansion.md",
+        "site/research/resource-expansion.html"
+      ],
+      "checked_at": "2026-10-01T01:23:29.379093+00:00",
+      "http_status": 200,
+      "final_url": "https://x.com/rasbt/status/1817210266838339916",
+      "status": "ok"
+    },
+    {
+      "url": "https://x.com/rasbt/status/1820096879440662972",
+      "sources": [
+        "docs/research/resource-expansion.md",
+        "site/research/resource-expansion.html"
+      ],
+      "checked_at": "2026-10-01T01:23:29.579595+00:00",
+      "http_status": 200,
+      "final_url": "https://x.com/rasbt/status/1820096879440662972",
+      "status": "ok"
+    },
+    {
+      "url": "https://x.com/rasbt/status/2096596372661113294",
+      "sources": [
+        "docs/research/resource-expansion.md",
+        "site/research/resource-expansion.html"
+      ],
+      "checked_at": "2026-10-01T01:23:30.182579+00:00",
+      "http_status": 200,
+      "final_url": "https://x.com/rasbt/status/2096596372661113294",
+      "status": "ok"
+    },
+    {
       "url": "https://xgboost.readthedocs.io/en/stable/tutorials/model.html",
       "sources": [
         "data/resources-foundations.json:foundation-xgboost",
@@ -2835,8 +3396,10 @@
       "sources": [
         "data/resources-foundations.json:foundation-d2l",
         "docs/resources.md",
+        "docs/roadmaps/beginner.md",
         "docs/topics/05-deep-learning.md",
         "site/resources.html",
+        "site/roadmaps/beginner.html",
         "site/topics/05-deep-learning.html"
       ],
       "checked_at": "2026-09-30T19:44:30.286527+00:00",

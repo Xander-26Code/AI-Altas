@@ -2,49 +2,7 @@
 
 > 目标：定义学习任务，建立基线，比较模型，并解释泛化误差。先修：[数学基础](01-math.md)、[编程基础](02-programming.md)、[数据基础](03-data.md)。**规划预算：120–200 小时**，用于完成先修后系统学习主教材、做练习并完成一个项目；不含补先修，不是掌握整个领域的承诺。大部分练习 CPU 可完成。
 
-机器学习不等于给数据调用一个 `fit`。它包含任务定义、数据选择、训练目标、验证方式和使用决策。学完本章，你应能解释某个模型为什么适合这个问题、性能证据来自哪里，以及在什么情况下该结论会失效。
-
-## 学习顺序
-
-1. **任务与评估**：监督/无监督，回归/分类；多数类、均值、简单规则基线。
-2. **线性模型**：线性回归、逻辑回归、正则化；自己推导并实现一个。
-3. **非线性与集成**：近邻、决策树、随机森林、梯度提升；理解归纳偏置。
-4. **验证与改进**：交叉验证、学习曲线、阈值、校准、类别不均衡、误差切片。
-5. **无监督与项目**：PCA、聚类、异常检测；完成一次固定协议的模型比较。
-
-先把线性模型和树模型做扎实，再按问题补 SVM、核方法、概率模型或在线学习。模型列表不是必刷清单。对已有结构化业务特征的任务，简单模型能提供很强、也容易审查的起点。
-
-## 核心概念：训练目标和使用目标并不相同
-
-逻辑回归先算分数 \(z=w^\top x+b\)，再映射为概率 \(p=1/(1+e^{-z})\)。二分类常用对数损失：
-
-$$
-L=-\frac1n\sum_{i=1}^{n}\left[y_i\log p_i+(1-y_i)\log(1-p_i)\right]
-$$
-
-它奖励给真实类别更高概率，并强烈惩罚“自信地犯错”。但用户真正关心的可能是漏检多少缺陷、人工复核多少条记录，而不是对数损失本身。概率还要经过阈值才能变成行动，阈值通常应在验证集上按成本选择。
-
-假设 1000 件产品中有 20 件缺陷。模型把所有产品都预测为正常，准确率仍有 98%，却没有检出任何缺陷。另一个模型标记 50 件，其中 16 件确实有缺陷，那么精确率为 \(16/50=32\%\)，召回率为 \(16/20=80\%\)。哪个系统可用，取决于漏检与人工检查的成本。把准确率单独放在报告上，读者看不到这些区别。[Google ML Crash Course](https://developers.google.com/machine-learning/crash-course) 的分类模块适合进一步练习。
-
-“训练分数很好、验证分数较差”经常提示过拟合，但不能机械地归因于模型太大。也要检查切分分布、标签噪声、预处理不一致和数据泄漏。学习曲线能帮助区分假设：若增加训练样本持续缩小差距，可能值得补数据；若训练和验证都差，要检查特征、优化或模型表达能力。
-
-梯度提升则逐步添加弱模型，沿着损失下降的方向补充预测。平方损失下常表现为拟合残差，但其他损失对应的是梯度信息，并非都直接拟合原始残差。树的数量、深度与学习率共同决定拟合程度，正则化和早停控制复杂度。可对照 [XGBoost 推导](https://xgboost.readthedocs.io/en/stable/tutorials/model.html)。
-
-模型比较还必须控制实验机会：若对一个模型试了两百组参数，另一个只用默认值，胜负同时反映了搜索预算。记录训练时间、搜索范围和种子，报告各折分数。一次最好的结果不能代表可重复的改进。
-
-## 核心知识表
-
-| 知识 | 学会什么 | 最小实验 |
-|---|---|---|
-| 经验风险与泛化 | 训练目标不等于可靠预测新样本 | 比较训练/验证损失 |
-| 线性与逻辑回归 | 参数、概率、损失及正则化 | 实现梯度下降 |
-| 树与集成 | 切分、bagging、boosting 的区别 | 比较单树与随机森林 |
-| 交叉验证 | 验证单位和部署场景一致 | Pipeline 内完整交叉验证 |
-| 指标与阈值 | 区分排序、概率质量、分类决策 | PR 曲线并选阈值 |
-| PCA 与聚类 | 表示压缩和分组的假设 | 标准化前后比较 |
-| 解释与误差分析 | 解释局部错误及分组表现 | 审查至少 20 个错例 |
-
-## 精选资源
+## 资源列表
 
 ISLP 是推荐主教材；Google 课程适合先建立直觉，其余按疑问查阅。南瓜书是其作者提供的推导笔记，不替代周志华《机器学习》原书。
 
@@ -55,6 +13,29 @@ ISLP 是推荐主教材；Google 课程适合先建立直觉，其余按疑问�
 - **[Google Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course)**｜英文 · 入门 · 免费 · CPU。快速建立任务与指标直觉；做线性回归、逻辑回归和分类指标模块。
 - **[CS229 Lecture Notes](https://cs229.stanford.edu/main_notes.pdf)**｜英文 · 进阶 · 免费 · 无。补推导而非追视频；先读线性回归、逻辑回归和广义线性模型。
 - **[Datawhale 南瓜书](https://github.com/datawhalechina/pumpkin-book)**｜中文 · 进阶 · 免费 · 无。需要中文推导时查阅；对照自己正在学的线性模型或 SVM，不当作零基础主教材。
+
+### 补充课程与实作资源
+
+| 资源 | 语言 · 难度 | 获取 · 算力 | 用法与阅读范围 |
+|---|---|---|---|
+| [DataTalks.Club · Machine Learning Zoomcamp](https://github.com/DataTalksClub/machine-learning-zoomcamp) | 英文 · 进阶 | 免费 · CPU | 偏工程的替代主线；按回归、分类、评估、部署做作业和自己的项目，不直接套用开课周数。 |
+| [Hands-On Machine Learning 第三版配套 notebook](https://github.com/ageron/handson-ml3) | 英文 · 进阶 | 部分免费 · 可选GPU | 选完整 ML 项目、分类、训练模型等 notebook；深度学习部分使用 Keras/TensorFlow，勿与 PyTorch 示例混装。 |
+
+以上新增入口核实于 2026-10-01；资料免费不含硬件与 API 费用。
+
+## 按资源安排学习顺序
+
+统计主线选 ISL；工程主线可换成 ML Zoomcamp 或 Hands-On ML notebook。主线三选一，其他材料用于查阅。
+
+按顺序完成主线，每步完成右列产出后再推进；选修不计入必做清单。页首时长包含所选主线、练习与本页项目，不包含把全部资料逐一学完。
+
+| 阶段 | 使用资源 | 阅读 / 练习范围 | 完成后应留下什么 |
+|---|---|---|---|
+| 1 · 建立任务直觉 | [Google Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course) | 回归、分类、训练与指标模块 | 说明任务、标签、基线和评估指标 |
+| 2 · 主教材 | [An Introduction to Statistical Learning](https://www.statlearning.com/)；[DataTalks.Club · Machine Learning Zoomcamp](https://github.com/DataTalksClub/machine-learning-zoomcamp)；[Hands-On Machine Learning 第三版配套 notebook](https://github.com/ageron/handson-ml3) | ISL 回归、分类及 lab；或另两套课程的对应模块 | 完成回归和分类各一次，保留训练/验证切分 |
+| 3 · 模型比较 | [scikit-learn User Guide](https://scikit-learn.org/stable/user_guide.html)；[XGBoost：Introduction to Boosted Trees](https://xgboost.readthedocs.io/en/stable/tutorials/model.html) | 交叉验证、Pipeline、树模型；XGBoost 目标与逐步加树 | 固定数据比较线性模型和树模型 |
+| 4 · 独立项目 | [mlcourse.ai](https://mlcourse.ai/book/index.html) | Topic 1–5、10 中与项目相关的公开 demo | 完成下方项目和错误分析 |
+| 选修 · 推导 | [CS229 Lecture Notes](https://cs229.stanford.edu/main_notes.pdf)；[Datawhale 南瓜书](https://github.com/datawhalechina/pumpkin-book) | CS229 线性模型；南瓜书相应推导 | 为正在用的模型补推导，避免两本从头重复读 |
 
 ## 实践任务与验收
 

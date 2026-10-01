@@ -2,60 +2,7 @@
 
 > 目标：把学习笔记变成可运行、可复现、可检查的 Python 项目。先修：会使用电脑和文件目录即可；零基础从 CS50P 开始。零基础建议规划 **120–240 小时**；已有其他语言经验并通过基础自测者可按 **60–100 小时**规划。包含主教材、练习、调试和一个项目，不等于熟练掌握软件工程。普通 CPU，无需独立显卡。
 
-AI 项目首先是软件项目。模型可能只有十行，而读取文件、核对数据形状、管理依赖、定位错误和保存结果决定它是否可靠。此阶段的达标标准不是记住所有语法，而是能把一个输入处理为明确的输出，并解释失败时发生了什么。
-
-## 学习顺序
-
-1. **Python 基本表达**：变量、条件、循环、函数、列表与字典；每个概念独立写小程序。
-2. **文件和错误**：路径、UTF-8、JSON/CSV、异常、模块；理解程序工作目录与文件所在目录不同。
-3. **数值编程**：NumPy 数组、shape、dtype、axis、切片、广播、向量化。
-4. **开发工具**：终端、虚拟环境、依赖声明、Git、小规模测试和日志。
-5. **独立交付**：把 notebook 中的实验整理成参数可配置的命令行程序。
-
-先学一种环境管理方式即可：标准库 venv 配 pip 足以入门，uv 是后续可选工具。不要为了追求统一工具链而延迟第一次运行。Python 官方教程明确面向已有基本编程理解的人，真正从零起步优先选 [CS50P](https://cs50.harvard.edu/python/) 的练习路径。
-
-## 核心概念：数组形状是数据含义的一部分
-
-设一个批次有 32 个样本，每个样本 10 个特征，数据形状为 `(32, 10)`；权重形状为 `(10, 3)`，则 `X @ W` 得到 `(32, 3)`，代表每个样本的三个输出。这里 32 是样本轴，10 是特征轴，3 是输出轴。形状正确只是必要条件：把两个意义不同但长度碰巧相同的轴混用，程序也可能照常运行。
-
-广播尤其容易隐藏错误。若预测 `pred` 形状是 `(4, 1)`，标签 `target` 是 `(4,)`，执行 `pred - target` 会广播成 `(4, 4)`，比较了每个预测与每个标签，而非四组一一对应的残差。正确做法是明确约定两者都为 `(4,)` 或都为 `(4, 1)`，并在入口断言。NumPy 对数组、轴和运算规则的说明可查 [官方 Quickstart](https://numpy.org/doc/stable/user/quickstart.html)。
-
-下面是一个可独立运行的防错例子：
-
-~~~python
-import numpy as np
-
-def mean_squared_error(pred, target):
-    pred = np.asarray(pred, dtype=np.float64)
-    target = np.asarray(target, dtype=np.float64)
-    if pred.shape != target.shape:
-        raise ValueError(f"shape mismatch: {pred.shape} vs {target.shape}")
-    if pred.size == 0:
-        raise ValueError("empty input")
-    if not (np.isfinite(pred).all() and np.isfinite(target).all()):
-        raise ValueError("non-finite input")
-    return float(np.mean((pred - target) ** 2))
-
-assert mean_squared_error([1, 3], [2, 1]) == 2.5
-~~~
-
-这不是要给每一行代码都加检查，而是在数据边界和关键数学运算处明确契约：允许什么输入，返回什么输出，错误怎样暴露。一个短小、纯粹的指标函数，比混在 notebook 全局变量里的同一段表达式更容易复用和检查。
-
-向量化也不等于无限制创建大矩阵。计算一百万个向量两两距离会生成平方规模的输出，即使没写 Python 循环也可能耗尽内存。先估算元素个数乘以每个元素字节数，再决定分块、流式处理或使用索引。
-
-## 核心知识表
-
-| 知识 | 达标动作 | 后续连接 |
-|---|---|---|
-| 函数与模块 | 显式传入数据、配置并返回结果 | 可测试训练与评估代码 |
-| 容器与复杂度 | 知道列表、集合、字典的合适用途 | 去重、索引、数据查找 |
-| ndarray 与广播 | 写出每一步 shape 与 axis 含义 | 张量、批处理、GPU |
-| 文件与编码 | 能处理不存在的路径和损坏输入 | 数据管道 |
-| 环境与依赖 | 在干净环境重建所需包 | 实验复现与部署 |
-| Git | 阅读 diff、提交小变更、解决简单冲突 | 团队协作 |
-| 测试、调试、日志 | 让真实错误被发现并可定位 | 可靠应用与 MLOps |
-
-## 精选资源
+## 资源列表
 
 零基础以 CS50P 为主，中文 Python 文档作查阅。已有经验可跳过完整入门课，直接做数值编程与项目交付。以下公开学习材料免费，商业证书不是学习前提。
 
@@ -66,6 +13,27 @@ assert mean_squared_error([1, 3], [2, 1]) == 2.5
 - **[Pro Git 中文版](https://git-scm.com/book/zh/v2)**｜中文 · 入门 · 免费 · CPU。让实验变更可追溯；读 Git 基础、分支新建与合并、远程分支。
 - **[pytest Get Started](https://docs.pytest.org/en/stable/getting-started.html)**｜英文 · 入门 · 免费 · CPU。把边界条件写成可重复检查；读第一个测试、异常断言、浮点比较和临时目录。
 - **[uv：Working on projects](https://docs.astral.sh/uv/guides/projects/)**｜英文 · 进阶 · 免费 · CPU。管理隔离环境与锁定依赖；读 pyproject、uv.lock、依赖管理和运行命令。
+
+### 补充课程与实作资源
+
+| 资源 | 语言 · 难度 | 获取 · 算力 | 用法与阅读范围 |
+|---|---|---|---|
+| [Wes McKinney · Python for Data Analysis, 3E](https://wesmckinney.com/book/) | 英文 · 入门 | 免费 · CPU | 作者开放在线版；选 NumPy、pandas、数据清洗、连接与聚合，跟随代码整理一份真实表格。 |
+
+以上新增入口核实于 2026-10-01；资料免费不含硬件与 API 费用。
+
+## 按资源安排学习顺序
+
+零编程基础选 CS50P；有其他语言经验选 Python 官方教程。两条主线择一，后续工具按同一项目练习。
+
+按顺序完成主线，每步完成右列产出后再推进；选修不计入必做清单。页首时长包含所选主线、练习与本页项目，不包含把全部资料逐一学完。
+
+| 阶段 | 使用资源 | 阅读 / 练习范围 | 完成后应留下什么 |
+|---|---|---|---|
+| 1 · Python 主课 | [CS50's Introduction to Programming with Python](https://cs50.harvard.edu/python/)；[Python 官方中文教程](https://docs.python.org/zh-cn/3/tutorial/) | 函数、控制流、数据结构、异常、文件；零基础完成 CS50P 对应习题 | 独立完成读取文件并统计结果的脚本 |
+| 2 · 开发工具 | [The Missing Semester](https://missing.csail.mit.edu/)；[Pro Git 中文版](https://git-scm.com/book/zh/v2)；[uv：Working on projects](https://docs.astral.sh/uv/guides/projects/) | 命令行、Git 基础与分支、隔离环境和依赖锁定 | 用 Git 保存一次实验，能从空环境重建 |
+| 3 · 数据计算 | [NumPy Quickstart](https://numpy.org/doc/stable/user/quickstart.html)；[Wes McKinney · Python for Data Analysis, 3E](https://wesmckinney.com/book/) | NumPy 数组、广播、axis；书中 NumPy 与 pandas 入门 | 用数组替代循环并检查结果一致 |
+| 4 · 测试 | [pytest Get Started](https://docs.pytest.org/en/stable/getting-started.html) | 首个测试、异常断言与临时目录 | 为下方数据处理任务加入正常和异常输入测试 |
 
 ## 实践任务与验收
 

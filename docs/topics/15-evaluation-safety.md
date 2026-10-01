@@ -3,45 +3,7 @@
 > 目标：为 AI 系统建立能发现退化的评估集，量化不确定性，检查数据泄漏、隐私、权限和群体表现，并写出可供他人判断的报告。
 > 先修：训练/验证/测试切分、基础统计、AI 应用或模型实验。建议规划 80–140 小时。这是完成先修后系统学习主教材、练习和一个项目的规划预算，不含补先修，不等于掌握整个领域。
 
-## 按这个顺序学
-
-1. **明确决策**：比较模型、批准上线、选择检索参数还是诊断某类失败？先写指标对应的产品判断。
-2. **建立数据合同**：来源、许可、收集时间、用户或文档分组、标签规范、覆盖范围与禁止用途。
-3. **冻结基线与测试集**：开发集用于迭代，最终测试集用于报告；保存模型、提示、数据与推理配置。
-4. **多维评估**：质量、事实支持、校准、鲁棒性、公平、隐私、安全、延迟与成本分别报告。
-5. **处理随机性**：多次运行、配对比较、置信区间、分组样本量；不要凭个位数示例判断。
-6. **开展受控红队测试**：在自己的沙箱中构造恶意输入、工具结果污染和越权请求，验证防线。
-7. **持续监控**：采样线上反馈，维护事故回归集，定义回滚条件和责任人。
-
-## 核心概念：分数必须回答一个具体问题
-
-一个分类器在 100 个样本上答对 80 个，点估计是 80%，不意味着真实成功率精确等于 80%。若样本近似独立且具有代表性，粗略标准误可写为：
-
-$$SE\approx\sqrt{\hat p(1-\hat p)/n}.$$
-
-这里约为 4 个百分点；小样本、极端比例、重复模板或相关用户样本需要更合适的区间与分组方法。比较系统 A 与 B 时，让它们回答同一批问题，检查哪些问题一方对、另一方错，比比较两个来源不同的平均分更有意义。Bootstrap 也应按真正独立单位重采样，不能把同一文档的十个改写当成十份独立证据。
-
-评估至少分三层：**组件层**测检索召回、schema 和工具校验；**任务层**测用户目标是否完成；**系统层**测权限、延迟、成本、故障恢复与长期影响。公开榜单可帮助寻找候选，不能替代实际业务任务。[HELM 原论文](https://arxiv.org/abs/2211.09110) 展示了覆盖多个场景与指标的评估思想；[LM Evaluation Harness](https://github.com/EleutherAI/lm-evaluation-harness) 帮助标准化语言模型评测流程。
-
-数据泄漏有不同形态：训练集重复了测试答案；同一用户或同一文档的改写跨集合；预处理在全量数据上拟合；反复查看测试集后调 prompt；检索库意外包含基准答案。预训练数据不透明时，不能证明“绝无污染”，应记录可检查的去重方法、时间切分和局限。不要把下载日期误当数据首次公开日期。
-
-LLM-as-a-judge 可以快速辅助标注，但它也可能偏爱更长、风格相似或位置靠前的答案。明确评分 rubric，隐藏系统身份，交换 A/B 顺序，用人工样本估计一致性，并保存争议案例。让模型给自己打分，既不能证明真实性，也不能替代环境中的可执行验收。
-
-安全威胁要沿数据流定位。检索网页中的恶意指令属于不可信输入；生成的 SQL、HTML 或工具参数需要按对应语言和权限检查。敏感数据最小化、访问控制、日志脱敏和保留周期应由应用实施，不能只写进系统提示。[OWASP LLM Top 10](https://genai.owasp.org/llm-top-10/) 可作为威胁清单入口；[NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) 是自愿风险管理框架，不等于法律认证。
-
-公平性需要结合任务定义。总体正确率相同，某些语言、口音、群体或交叉群体的错误率仍可能差异很大。检查差异时报告样本量、标签质量和使用场景；同一公平指标并不适合所有任务。[WinoBias](https://arxiv.org/abs/1804.06876) 提供了通过配对样本检查职业与性别刻板关联的具体例子，不能把其结论直接外推到所有模型和社会群体。
-
-## 知识点清单
-
-| 维度 | 常用检查 | 容易漏掉的部分 |
-| --- | --- | --- |
-| 质量 | accuracy、F1、任务成功率、人工 rubric | 不可回答题、长尾输入 |
-| 统计 | 配对比较、区间、重复运行 | 同源样本相关性、多次调参 |
-| 可靠性 | 鲁棒性、校准、漂移、回滚 | 新版本与旧提示的交互 |
-| 安全与隐私 | 输入污染、权限、泄漏、工具副作用 | 缓存、日志、embedding 索引 |
-| 透明度 | dataset / model card、版本与局限 | 失败例子与不适用用途 |
-
-## 精选资源
+## 资源列表
 
 阅读免费；评估工具的 CPU / GPU 条件取决于待测模型。安全练习只在自己的测试系统内运行。核实日期：2026-09-30。
 
@@ -54,6 +16,28 @@ LLM-as-a-judge 可以快速辅助标注，但它也可能偏爱更长、风格�
 | [WinoBias: Gender Bias in Coreference Resolution](https://arxiv.org/abs/1804.06876) | 英文 / 进阶 | 免费 / 无 | 读配对样本构造与分组评估；学习控制变量，不把一个英语基准当完整公平结论。 |
 | [Datasheets for Datasets](https://arxiv.org/abs/1803.09010) | 英文 / 入门 | 免费 / 无 | 按动机、组成、收集和推荐用途整理自己的数据说明；填未知而不是编造来源。 |
 | [Model Cards for Model Reporting](https://arxiv.org/abs/1810.03993) | 英文 / 入门 | 免费 / 无 | 读模型卡要素与示例，为自己的模型记录用途、分组指标、评估条件与限制。 |
+
+### 补充课程与实作资源
+
+| 资源 | 语言 · 难度 | 获取 · 算力 | 用法与阅读范围 |
+|---|---|---|---|
+| [Hugging Face · smol course](https://github.com/huggingface/smol-course) | 英文 · 进阶 | 免费 · GPU | 沿 Instruction Tuning → Evaluation → Preference Alignment 学；先完成小模型 SFT 与评估，再选 DPO。 |
+| [DataTalks.Club · LLM Zoomcamp](https://github.com/DataTalksClub/llm-zoomcamp) | 英文 · 进阶 | 免费 · CPU | 选 RAG、Vector Search、Evaluation、Monitoring 和项目；先完成普通检索基线，再扩展 agentic 流程。 |
+
+以上新增入口核实于 2026-10-01；资料免费不含硬件与 API 费用。
+
+## 按资源安排学习顺序
+
+先建立任务和评估集，再选工具。模型评测以 Harness 为入口，应用评估可用 LLM Zoomcamp 对应模块。
+
+按顺序完成主线，每步完成右列产出后再推进；选修不计入必做清单。页首时长包含所选主线、练习与本页项目，不包含把全部资料逐一学完。
+
+| 阶段 | 使用资源 | 阅读 / 练习范围 | 完成后应留下什么 |
+|---|---|---|---|
+| 1 · 评估设计 | [HELM: Holistic Evaluation of Language Models](https://arxiv.org/abs/2211.09110)；[Datasheets for Datasets](https://arxiv.org/abs/1803.09010)；[Model Cards for Model Reporting](https://arxiv.org/abs/1810.03993) | HELM 场景与多指标；Datasheets 和 Model Cards | 写任务、数据来源、指标与已知限制 |
+| 2 · 可执行评测 | [LM Evaluation Harness](https://github.com/EleutherAI/lm-evaluation-harness)；[DataTalks.Club · LLM Zoomcamp](https://github.com/DataTalksClub/llm-zoomcamp)；[Hugging Face · smol course](https://github.com/huggingface/smol-course) | Harness 任务/指标；应用选 Zoomcamp Evaluation；微调选 smol Evaluation | 保存配置与结果，能重复运行 |
+| 3 · 风险与分组 | [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)；[OWASP Top 10 for LLM Applications](https://genai.owasp.org/llm-top-10/)；[WinoBias: Gender Bias in Coreference Resolution](https://arxiv.org/abs/1804.06876) | NIST 框架；OWASP 风险；WinoBias 配对样本方法 | 补提示注入、权限与分组误差测试 |
+| 4 · 整理报告 | [Model Cards for Model Reporting](https://arxiv.org/abs/1810.03993) | Model Cards 示例 | 完成下方评估包，说明仍未覆盖的场景 |
 
 ## 实践：给一个 AI 项目做“可以复算”的评估包
 

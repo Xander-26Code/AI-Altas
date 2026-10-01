@@ -2,48 +2,7 @@
 
 > 目标：把“预测答案”转成“在环境中选择动作”，区分强化学习、模仿学习、控制与规划。先修：[概率与优化](01-math.md)、[深度学习](05-deep-learning.md)。具备先修后，系统学习主教材、做练习并完成一个项目，建议预留 **180–320 小时**。补先修另计；这不等于掌握强化学习和机器人两个完整领域。
 
-## 为什么需要这个分支
-
-图像分类的输入通常不会因为预测结果而改变；机器人伸手以后，下一帧画面和可用动作都会改变。一个动作可能当下没有奖励，却影响十步后的成功率。这里需要处理状态、动作、转移、奖励和长期回报，而不仅是给静态样本贴标签。
-
-机器人并非一定要用强化学习。已知动力学、约束明确的问题，轨迹优化或模型预测控制往往是很强的起点；有大量专家演示时，可先做行为克隆。把方法和任务条件匹配，比直接选择最复杂的策略网络更重要。
-
-## 学习顺序
-
-1. 用多臂老虎机理解探索与利用，再学习有限马尔可夫决策过程（MDP）。
-2. 手算价值迭代，比较 Monte Carlo、TD 和 Q-learning 的更新对象。
-3. 在小环境上实现表格 Q-learning，理解 episode、终止、时间截断和随机种子。
-4. 再学 DQN、策略梯度、actor-critic、PPO 和 SAC。先解释目标函数，再调用库。
-5. 学离线 RL、模仿学习、模型学习与规划；理解数据分布外动作为什么危险。
-6. 进入机器人分支：刚体变换、运动学、动力学、状态估计、控制，再读视觉—语言—动作模型。
-
-## 核心概念：奖励不是监督标签
-
-折扣回报定义为 `G_t = r_t + γ r_(t+1) + γ² r_(t+2) + ...`。Q 函数估计从某状态执行某动作、之后遵循策略的预期回报。表格 Q-learning 的一次更新可以写成：
-
-```text
-target = reward + gamma * max(Q[next_state])  # 真实终止时去掉后半项
-Q[state, action] += alpha * (target - Q[state, action])
-```
-
-假设当前 Q 值为 2，奖励为 1，下一状态最大 Q 值为 4，`γ=0.9, α=0.1`，更新后得到 `2 + 0.1 × (1 + 3.6 - 2) = 2.26`。这个目标本身由已有估计组成，称为自举；它不是一条确定正确的人工标签。
-
-环境的 `terminated` 与 `truncated` 不能随手合并进价值目标：任务真正结束通常不自举，而仅因采样时间上限截断时，是否自举取决于任务的有限/无限时域建模。Gymnasium 将两者区分在接口中，先读其时间限制说明，再写训练循环。[Gymnasium 文档](https://gymnasium.farama.org/)
-
-## 核心知识地图
-
-| 层次 | 应掌握的问题 | 常见检查方式 |
-|---|---|---|
-| 决策建模 | 状态是否满足 Markov 性？部分可观测时怎么办？ | 遮掉速度后比较策略表现 |
-| 价值学习 | 自举误差、过估计、off-policy 分布 | 在已知最优值的网格世界检查 |
-| 策略优化 | 方差、baseline、优势函数、信赖域 | 多随机种子回报和方差 |
-| 离线与模仿 | 行为克隆分布偏移、离线数据覆盖 | 不同起始状态与扰动测试 |
-| 控制与规划 | PID、LQR、MPC、轨迹约束 | 超调、稳定性、约束违例 |
-| 具身模型 | 感知、动作表示、VLA、diffusion policy | 闭环任务成功率，不只单步动作误差 |
-| 世界模型 | 学习状态转移并在模型中规划 | 多步误差累积与真实环境迁移 |
-| 多智能体 | 非平稳性、合作/竞争、信用分配 | 对手变化、种群与策略泛化 |
-
-## 精选资源
+## 资源列表
 
 以下资料阅读免费；具体实验可能需要算力或实体硬件。
 
@@ -56,6 +15,28 @@ Q[state, action] += alpha * (target - Q[state, action])
 | [LeRobot](https://huggingface.co/docs/lerobot/index) | 英文 / 进阶 / 可选 GPU | 理解演示数据、策略与机器人接口；实机任务还需硬件 |
 | [RT-2 项目页](https://robotics-transformer2.github.io/) | 英文 / 研究 / 无 | 观察视觉语言知识如何进入动作表示；阅读不等于可低成本复现 |
 | [MuJoCo](https://github.com/google-deepmind/mujoco) | 英文 / 进阶 / CPU | 了解仿真状态、接触与动力学；大规模学习另算预算 |
+
+### 补充课程与实作资源
+
+| 资源 | 语言 · 难度 | 获取 · 算力 | 用法与阅读范围 |
+|---|---|---|---|
+| [RL Baselines3 Zoo](https://github.com/DLR-RM/rl-baselines3-zoo) | 英文 · 进阶 | 免费 · 可选GPU | 在掌握环境接口后选一个小任务，学习训练、评估与配置；作为实验参考，不直接照搬超参数。 |
+| [Spinning Up in Deep RL](https://github.com/openai/spinningup) | 英文 · 进阶 | 免费 · 可选GPU | 补读算法、伪代码与实验方法；代码是历史教学实现，先核对旧依赖，当前实验可用 Gymnasium 与 SB3。 |
+
+以上新增入口核实于 2026-10-01；资料免费不含硬件与 API 费用。
+
+## 按资源安排学习顺序
+
+先完成表格 RL 和一个小型深度 RL 实验，再决定走算法还是机器人。机器人需要额外控制与动力学基础。
+
+按顺序完成主线，每步完成右列产出后再推进；选修不计入必做清单。页首时长包含所选主线、练习与本页项目，不包含把全部资料逐一学完。
+
+| 阶段 | 使用资源 | 阅读 / 练习范围 | 完成后应留下什么 |
+|---|---|---|---|
+| 1 · RL 主课 | [David Silver · RL lectures](https://davidstarsilver.wordpress.com/teaching/)；[Gymnasium](https://gymnasium.farama.org/) | Silver 的 MDP、价值函数；Gymnasium 环境接口 | 实现网格世界并区分 terminated/truncated |
+| 2 · 深度 RL | [Berkeley CS285](https://rail.eecs.berkeley.edu/deeprlcourse/)；[Spinning Up in Deep RL](https://github.com/openai/spinningup) | CS285 模仿学习、策略梯度；Spinning Up 算法与伪代码 | 用小环境比较基线，记录多个种子 |
+| 3 · 规范实验 | [RL Baselines3 Zoo](https://github.com/DLR-RM/rl-baselines3-zoo) | 训练、评估与配置说明 | 保存可重跑配置，分析方差与失败 |
+| 选修 · 机器人 | [MIT Underactuated Robotics](https://underactuated.mit.edu/)；[MuJoCo](https://github.com/google-deepmind/mujoco)；[LeRobot](https://huggingface.co/docs/lerobot/index)；[RT-2 项目页](https://robotics-transformer2.github.io/) | Underactuated 控制/轨迹优化 → MuJoCo → LeRobot；RT-2 用作延伸阅读 | 先完成仿真或离线数据实验，实机单独规划 |
 
 ## 实践：先让网格世界可解释
 

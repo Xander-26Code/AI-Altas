@@ -3,49 +3,7 @@
 > 目标：能区分训练加速与模型装载问题，选出合适的并行策略，验证多进程结果，并从检查点恢复训练。先修：PyTorch 训练循环、梯度累积、优化器状态，以及 [GPU 与系统基础](17-gpu-kernels-compilers.md)。学习规划预算约 120–240 小时。CPU 可完成双进程通信与一致性实验；完整 GPU 性能实验通常需要至少两张兼容 GPU。
 > 时间口径：具备先修后，系统学习主教材、完成练习与一个项目的规划预算；不包含补先修，也不等于掌握整个领域。实际投入受基础、实验条件和项目深度影响。
 
-多卡训练不是把设备数量写成 8。你需要决定数据、参数、梯度、优化器状态和激活分别放在哪里，谁在什么时候通信，以及某个进程失败后如何恢复。正确性先于加速比。
-
-## 学习顺序
-
-1. **通信原语**：用几个短数组手算 broadcast、all-reduce、all-gather、reduce-scatter、all-to-all。
-2. **DDP**：进程组、rank、数据分片、梯度平均；与单进程等效 batch 对齐。
-3. **状态分片**：显存账本、ZeRO/FSDP、分组粒度、参数重组、激活重计算。
-4. **模型并行**：TP、PP、EP 与拓扑；先做纸上切分，再运行现成教学例子。
-5. **恢复与测量**：完整 checkpoint、吞吐、通信占比和失败恢复。
-
-## 先明确你在拆什么
-
-**数据并行复制模型、切分样本。** 每个 rank 对自己的 batch 做前向和反向，随后同步梯度。设两份等大的 batch 的平均梯度为 g₁、g₂，全局平均梯度为 (g₁+g₂)/2；本地 batch 不等大时，简单平均这两个数不再等价，必须考虑样本权重。`DistributedDataParallel` 通常采用每设备一个进程；经典 `DataParallel` 的单进程路径并不等同于 DDP。DDP 也不会替你自动切分全部输入数据，需要正确的 sampler 与每轮设置。[PyTorch DDP 教程](https://docs.pytorch.org/tutorials/intermediate/ddp_tutorial.html)是实践入口。
-
-对于纯数据并行，若每 rank 的 micro-batch 为 b，数据并行度为 D，累积 A 次才更新，则有效 batch 为 b×D×A。增加卡数而保持 b、A 不变，会改变优化过程；比较多卡与单卡时，要先固定全局 batch、损失归一化和优化器步数。
-
-**状态分片解决的是常驻副本开销。** 一个教学用混合精度 Adam 账本可以按每参数 16 字节估算：低精度权重 2、低精度梯度 2、FP32 主权重 4、两份 FP32 动量 8。实际框架可能使用不同梯度或权重表示，应以测量为准。7B 参数据此约 112 GB；8 路完整分片的常驻状态理想值约 14 GB/卡，但激活、临时 all-gather、通信 buffer 与碎片还没算进去。
-
-ZeRO-1 分优化器状态，ZeRO-2 再分梯度，ZeRO-3 再分参数；FSDP 在相关思路上按模块组织参数分片与重组。它们减少常驻状态，并不意味着每层计算不再需要对应参数。分片过细会增加小通信，分片过粗会抬高瞬时峰值。当前 [FSDP2 教程](https://docs.pytorch.org/tutorials/intermediate/FSDP_tutorial.html)采用 `fully_shard`，不要把旧包装器 API 与新教程混用。激活重计算则少保存中间结果、在反向时重新计算，消耗额外算力换显存。
-
-**模型并行拆的是计算。** TP 把一个矩阵的行或列分到多卡，层内频繁交换结果，因而更依赖快速互联；PP 把连续层交给不同 stage，通过 micro-batch 让多个 stage 同时工作，但仍有流水线气泡与负载不均。EP 把 MoE 专家放到不同设备，token 路由产生 all-to-all，热门专家会造成倾斜。DP、TP、PP 可以组合；EP 与数据并行分组可能共享维度，不应机械地把所有并行度都相乘来算卡数。
-
-**通信时间包含固定开销和传输开销。** 在理想 ring all-reduce 模型中，N 个 rank、每 rank 梯度大小 M、链路有效带宽 B、每步启动延迟 α，可粗略估计：
-
-$$
-t_{\mathrm{allreduce}}\approx2(N-1)\alpha+\frac{2(N-1)}{N}\frac{M}{B}
-$$
-
-这不是所有拓扑与 NCCL 算法的统一公式，却能解释为什么小张量受延迟影响、卡数增加后通信不一定变短。通信和反向计算可重叠，最终要看训练 step 时间，而不只是单次通信时间。各原语的数据语义见 [NCCL Collective Operations](https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/usage/collectives.html)。
-
-## 核心知识表
-
-| 方法 | 拆分对象 | 主要收益 | 主要代价 |
-| --- | --- | --- | --- |
-| DDP | 样本 | 增加数据处理能力 | 模型状态仍复制；同步梯度 |
-| FSDP / ZeRO | 参数、梯度、优化器状态 | 降低每卡常驻状态 | 重组参数、通信与峰值管理 |
-| TP | 层内张量 | 超大单层可分布计算 | 频繁层内通信，依赖互联 |
-| PP | 模型层 | 分担模型与激活 | 气泡、stage 负载、micro-batch 调度 |
-| EP | MoE 专家 | 分担专家参数与计算 | token all-to-all 与路由倾斜 |
-| 激活 checkpointing | 保存的中间激活 | 降低激活显存 | 重算前向，与存盘恢复不是一回事 |
-| 训练 checkpoint | 训练状态与进度 | 故障后继续 | I/O、状态完整性、分片重载 |
-
-## 精选资源
+## 资源列表
 
 核验日期：2026-09-30；均为免费的一手文档。完整多卡示例的算力费用不包含在“免费”中。
 
@@ -59,6 +17,28 @@ $$
 | [PyTorch Distributed Checkpoint](https://docs.pytorch.org/tutorials/recipes/distributed_checkpoint_recipe.html) | 英文 / 进阶 / 可选GPU | 保存、加载、分片重排；理解加载为什么需要目标模型的状态布局。 |
 | [DeepSpeed Pipeline Parallelism](https://www.deepspeed.ai/tutorials/pipeline/) | 英文 / 进阶 / GPU | micro-batch、层切分、stage 平衡；展示模型结构和调度的关系。 |
 | [DeepSpeed MoE](https://www.deepspeed.ai/tutorials/mixture-of-experts/) | 英文 / 进阶 / GPU | 专家分组与并行组合；避免把专家参数量误当成每个 token 的实际计算量。 |
+
+### 补充课程与实作资源
+
+| 资源 | 语言 · 难度 | 获取 · 算力 | 用法与阅读范围 |
+|---|---|---|---|
+| [GPU MODE lectures](https://github.com/gpu-mode/lectures) | 英文 · 进阶 | 免费 · GPU | GPU 入门选第 3、4、8、14 讲；分布式选第 17 讲 NCCL。视频、讲义和代码按需搭配。 |
+| [How to Scale Your Model](https://jax-ml.github.io/scaling-book/) | 英文 · 进阶 | 免费 · 无 | 先 Roofline，再训练并行与推理部分；用题目练内存、通信和延迟估算，注意 TPU 与 GPU 差异。 |
+
+以上新增入口核实于 2026-10-01；资料免费不含硬件与 API 费用。
+
+## 按资源安排学习顺序
+
+先 DDP，再按显存或计算瓶颈选一种分片；多种并行策略不要求一次全部实现。
+
+按顺序完成主线，每步完成右列产出后再推进；选修不计入必做清单。页首时长包含所选主线、练习与本页项目，不包含把全部资料逐一学完。
+
+| 阶段 | 使用资源 | 阅读 / 练习范围 | 完成后应留下什么 |
+|---|---|---|---|
+| 1 · 通信与 DDP | [NCCL 集合通信](https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/usage/collectives.html)；[PyTorch DDP](https://docs.pytorch.org/tutorials/intermediate/ddp_tutorial.html)；[GPU MODE lectures](https://github.com/gpu-mode/lectures) | NCCL 图例、GPU MODE 第 17 讲；DDP 教程 | 验证双进程与单进程等效 batch 的结果 |
+| 2 · 状态分片 | [PyTorch FSDP2](https://docs.pytorch.org/tutorials/intermediate/FSDP_tutorial.html)；[DeepSpeed ZeRO](https://www.deepspeed.ai/tutorials/zero/) | FSDP2 与 ZeRO 对照阅读，实现二选一 | 记录参数、梯度、优化器状态的显存变化 |
+| 3 · 恢复能力 | [PyTorch Distributed Checkpoint](https://docs.pytorch.org/tutorials/recipes/distributed_checkpoint_recipe.html) | Distributed Checkpoint 保存、加载与重分片 | 中断再恢复并核对继续训练结果 |
+| 选修 · 扩展并行 | [PyTorch Tensor Parallel](https://docs.pytorch.org/tutorials/intermediate/TP_tutorial.html)；[DeepSpeed Pipeline Parallelism](https://www.deepspeed.ai/tutorials/pipeline/)；[DeepSpeed MoE](https://www.deepspeed.ai/tutorials/mixture-of-experts/)；[How to Scale Your Model](https://jax-ml.github.io/scaling-book/) | TP、PP、MoE 按目标选一；Scaling Book 估算通信 | 先纸面估算，再在可用硬件验证 |
 
 ## 实践：先证明双进程训练算得对
 

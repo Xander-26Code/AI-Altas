@@ -5,7 +5,7 @@ hide:
 
 # 精选资源目录
 
-当前收录 **171 个不同 URL 的资源入口**。一个资源可能对应多个专题；这不是课程数量或已完成实验数量。优先一手来源，具体阅读范围在各专题说明。
+当前收录 **196 个不同 URL 的资源入口**。一个资源可能对应多个专题；这不是课程数量或已完成实验数量。优先一手来源，具体阅读范围在各专题说明。
 
 语言、难度、费用和计算标签是学习建议。免费阅读不包含算力、证书、硬件或再分发权；`content-reviewed` 表示查看过对应页面，不表示读完全部资料。链接检查结论见 [质量记录](quality.md)。
 
@@ -21,6 +21,8 @@ hide:
 
 | 资源 | 语言 · 级别 | 费用 · 算力 | 推荐理由 |
 |---|---|---|---|
+| [3Blue1Brown · Linear Algebra](https://www.3blue1brown.com/?topic=linear-algebra) | 英文 · 入门 | 免费 · 无 | 视频补几何直觉；配合主教材学习向量、线性变换、矩阵乘法和特征值，不能替代习题。 |
+| [Seeing Theory](https://seeing-theory.brown.edu/) | 英文 · 入门 | 免费 · CPU | 用概率、条件概率、分布与贝叶斯推断交互页面辅助理解；站点已归档，作为补充。 |
 | [Mathematics for Machine Learning](https://mml-book.github.io/) | 英文 · 进阶 | 免费 · CPU | 以机器学习问题连接数学；先读第 2–7 章，再做线性回归与 PCA notebook。 |
 | [MIT 18.06 Linear Algebra](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/) | 英文 · 入门 | 免费 · 无 | 建立矩阵几何直觉；选线性方程组、子空间、正交投影和特征值，配习题。 |
 | [MIT 18.01SC Single Variable Calculus](https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/) | 英文 · 入门 | 免费 · 无 | 补导数与优化；先读 Differentiation 和 Applications，积分按需补。 |
@@ -34,6 +36,7 @@ hide:
 
 | 资源 | 语言 · 级别 | 费用 · 算力 | 推荐理由 |
 |---|---|---|---|
+| [Wes McKinney · Python for Data Analysis, 3E](https://wesmckinney.com/book/) | 英文 · 入门 | 免费 · CPU | 作者开放在线版；选 NumPy、pandas、数据清洗、连接与聚合，跟随代码整理一份真实表格。 |
 | [CS50's Introduction to Programming with Python](https://cs50.harvard.edu/python/) | 英文 · 入门 | 免费 · CPU | 零编程基础的主线；做函数、循环、异常、测试和文件章节习题，证书不必购买。 |
 | [Python 官方中文教程](https://docs.python.org/zh-cn/3/tutorial/) | 中文 · 入门 | 免费 · CPU | 已有编程经验时作主线；读控制流、数据结构、模块、异常和虚拟环境。 |
 | [NumPy Quickstart](https://numpy.org/doc/stable/user/quickstart.html) | 英文 · 入门 | 免费 · CPU | 训练 shape、axis 与向量化能力；做数组操作、广播和副本/视图练习。 |
@@ -48,6 +51,8 @@ hide:
 
 | 资源 | 语言 · 级别 | 费用 · 算力 | 推荐理由 |
 |---|---|---|---|
+| [Wes McKinney · Python for Data Analysis, 3E](https://wesmckinney.com/book/) | 英文 · 入门 | 免费 · CPU | 作者开放在线版；选 NumPy、pandas、数据清洗、连接与聚合，跟随代码整理一份真实表格。 |
+| [DataTalks.Club · Data Engineering Zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp) | 英文 · 进阶 | 免费 · CPU | 数据工程选修；从容器、SQL、编排到仓库和批处理，先完成本地小流水线，云服务另计。 |
 | [pandas Getting started tutorials](https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html) | 英文 · 入门 | 免费 · CPU | 用真实表格学习数据处理；做读写、筛选、聚合、合表及时间字段。 |
 | [PostgreSQL Tutorial](https://www.postgresql.org/docs/current/tutorial.html) | 英文 · 入门 | 免费 · CPU | 学关系模型和 SQL；先读查询、JOIN、聚合，再读事务及窗口函数。 |
 | [DuckDB Guides](https://duckdb.org/docs/current/guides/overview) | 英文 · 进阶 | 免费 · CPU | 练本地文件分析；读 CSV/Parquet 导入、直接查询 Parquet 与性能排查。 |
@@ -61,6 +66,8 @@ hide:
 
 | 资源 | 语言 · 级别 | 费用 · 算力 | 推荐理由 |
 |---|---|---|---|
+| [DataTalks.Club · Machine Learning Zoomcamp](https://github.com/DataTalksClub/machine-learning-zoomcamp) | 英文 · 进阶 | 免费 · CPU | 偏工程的替代主线；按回归、分类、评估、部署做作业和自己的项目，不直接套用开课周数。 |
+| [Hands-On Machine Learning 第三版配套 notebook](https://github.com/ageron/handson-ml3) | 英文 · 进阶 | 部分免费 · 可选GPU | 选完整 ML 项目、分类、训练模型等 notebook；深度学习部分使用 Keras/TensorFlow，勿与 PyTorch 示例混装。 |
 | [An Introduction to Statistical Learning](https://www.statlearning.com/) | 英文 · 入门 | 免费 · CPU | 以 Python 版作理论主线；读回归、分类、重采样、正则化、树模型与对应 lab。 |
 | [mlcourse.ai](https://mlcourse.ai/book/index.html) | 英文 · 进阶 | 部分免费 · CPU | 练从 EDA 到 boosting 的完整流程；先做 Topic 1–5 和 10 的公开 demo。 |
 | [scikit-learn User Guide](https://scikit-learn.org/stable/user_guide.html) | 英文 · 进阶 | 免费 · CPU | 作为实验查阅手册；按当前模型阅读，再看交叉验证、指标和 Pipeline。 |
@@ -75,6 +82,9 @@ hide:
 
 | 资源 | 语言 · 级别 | 费用 · 算力 | 推荐理由 |
 |---|---|---|---|
+| [Karpathy · Neural Networks: Zero to Hero](https://github.com/karpathy/nn-zero-to-hero) | 英文 · 入门 | 免费 · 可选GPU | 视频与 notebook 配套；深度学习先做 micrograd、makemore，再学 GPT 与 tokenizer。 |
+| [Hands-On Machine Learning 第三版配套 notebook](https://github.com/ageron/handson-ml3) | 英文 · 进阶 | 部分免费 · 可选GPU | 选完整 ML 项目、分类、训练模型等 notebook；深度学习部分使用 Keras/TensorFlow，勿与 PyTorch 示例混装。 |
+| [邱锡鹏 · 神经网络与深度学习](https://nndl.ai/) | 中文 · 进阶 | 免费 · CPU | 中文理论参考；从作者入口选神经网络与深度学习教材，按前馈网络、反向传播与优化主题选读。 |
 | [动手学深度学习](https://zh.d2l.ai/) | 中文 · 入门 | 免费 · 可选GPU | 作为中文主线；按第 3–7 章学回归、MLP、训练、CNN，再补第 10–11 章。 |
 | [PyTorch Learn the Basics](https://docs.pytorch.org/tutorials/beginner/basics/intro.html) | 英文 · 入门 | 免费 · CPU | 建立标准训练循环；按 Tensors 到 Save & Load 全流程完成 FashionMNIST 示例。 |
 | [Deep Learning](https://www.deeplearningbook.org/) | 英文 · 进阶 | 免费 · 无 | 补数值计算和训练原理；读第 4、6–8、11 章，作为参考而非追新工具。 |
@@ -88,6 +98,7 @@ hide:
 
 | 资源 | 语言 · 级别 | 费用 · 算力 | 推荐理由 |
 |---|---|---|---|
+| [Datawhale · Happy-LLM](https://github.com/datawhalechina/happy-llm) | 中文 · 进阶 | 免费 · 可选GPU | 中文主线；第 1–4 章入门，第 5–6 章搭建与训练；按章节硬件要求缩小模型。 |
 | [Stanford CS224N](https://web.stanford.edu/class/cs224n/) | 英文 · 进阶 | 部分免费 · 可选GPU | 系统学神经 NLP；从词向量、反向传播、注意力到模型评估，选公开讲义与往年视频。 |
 | [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp3/) | 英文 · 进阶 | 免费 · 无 | 补文本与语言任务；读 Words and Tokens、N-grams、分类、Embeddings 和 Transformers。 |
 | [Hugging Face LLM Course](https://huggingface.co/learn/llm-course/chapter1/1) | 英文 · 进阶 | 免费 · 可选GPU | 连接 NLP 理论与库；学 1–4 章模型流程及 5–8 章数据、分词器和任务。 |
@@ -127,6 +138,10 @@ hide:
 
 | 资源 | 语言 · 级别 | 费用 · 算力 | 推荐理由 |
 |---|---|---|---|
+| [Karpathy · Neural Networks: Zero to Hero](https://github.com/karpathy/nn-zero-to-hero) | 英文 · 入门 | 免费 · 可选GPU | 视频与 notebook 配套；深度学习先做 micrograd、makemore，再学 GPT 与 tokenizer。 |
+| [Raschka · LLMs from Scratch 配套代码](https://github.com/rasbt/LLMs-from-scratch) | 英文 · 进阶 | 部分免费 · 可选GPU | 第 2–5 章做分词、attention、GPT 与预训练；第 6–7 章和附录 E 做微调。代码免费，完整书籍另售。 |
+| [Datawhale · Happy-LLM](https://github.com/datawhalechina/happy-llm) | 中文 · 进阶 | 免费 · 可选GPU | 中文主线；第 1–4 章入门，第 5–6 章搭建与训练；按章节硬件要求缩小模型。 |
+| [LLMs from Scratch · KV Cache 实现](https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04/03_kv-cache) | 英文 · 进阶 | 免费 · CPU | 先看目录说明和基础缓存实现，再对照无缓存版本；比较生成一致性与解码耗时。 |
 | [Hugging Face LLM Course](https://huggingface.co/learn/llm-course/chapter1/1) | 英文 · 进阶 | 免费 · 可选GPU | 连接 NLP 理论与库；学 1–4 章模型流程及 5–8 章数据、分词器和任务。 |
 | [SentencePiece](https://github.com/google/sentencepiece) | 英文 · 进阶 | 免费 · CPU | 理解子词与语言无关预处理；读分词、反分词、BPE/Unigram 与模型文件说明。 |
 | [Stanford CS336: Language Modeling from Scratch (2025)](https://cs336.stanford.edu/spring2025/) | 英文 · 进阶 | 免费 · GPU | 先做Assignment 1并读架构与MoE讲义；适合愿意自己实现组件的学习者，完整课程另有系统与数据作业。 |
@@ -156,6 +171,9 @@ hide:
 
 | 资源 | 语言 · 级别 | 费用 · 算力 | 推荐理由 |
 |---|---|---|---|
+| [Datawhale · LLM Universe](https://github.com/datawhalechina/llm-universe) | 中文 · 入门 | 免费 · CPU | 选第一部分 API、知识库、RAG、评估与优化；进阶部分仍有在编内容。核对依赖版本，API 费用另计。 |
+| [DataTalks.Club · LLM Zoomcamp](https://github.com/DataTalksClub/llm-zoomcamp) | 英文 · 进阶 | 免费 · CPU | 选 RAG、Vector Search、Evaluation、Monitoring 和项目；先完成普通检索基线，再扩展 agentic 流程。 |
+| [Awesome LLM Apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | 英文 · 进阶 | 免费 · CPU | 项目选题库；完成主课后只挑一个 RAG 或 Agent 示例阅读架构、依赖与评估，不把 demo 当生产方案。 |
 | [Full Stack LLM Bootcamp](https://fullstackdeeplearning.com/llm-bootcamp/) | 英文 · 进阶 | 免费 · CPU | 先读UX、LLMOps和askFSDL项目分析，学习产品完整链路；2023示例接口需对照现行文档。 |
 | [Microsoft Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners) | 中英 · 入门 | 免费 · CPU | 优先学提示、聊天、函数调用、UX、安全和生命周期章节；材料免费，云端API可能收费。 |
 | [JSON Schema: Creating your first schema](https://json-schema.org/learn/getting-started-step-by-step) | 英文 · 入门 | 免费 · CPU | 完整做一遍对象、字段、嵌套与验证示例；用于给模型输出定义可检查的结构契约。 |
@@ -170,6 +188,8 @@ hide:
 
 | 资源 | 语言 · 级别 | 费用 · 算力 | 推荐理由 |
 |---|---|---|---|
+| [Datawhale · LLM Universe](https://github.com/datawhalechina/llm-universe) | 中文 · 入门 | 免费 · CPU | 选第一部分 API、知识库、RAG、评估与优化；进阶部分仍有在编内容。核对依赖版本，API 费用另计。 |
+| [DataTalks.Club · LLM Zoomcamp](https://github.com/DataTalksClub/llm-zoomcamp) | 英文 · 进阶 | 免费 · CPU | 选 RAG、Vector Search、Evaluation、Monitoring 和项目；先完成普通检索基线，再扩展 agentic 流程。 |
 | [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401) | 英文 · 进阶 | 免费 · 无 | 读参数记忆与非参数记忆、RAG-Sequence/Token；区分原始训练方法和今日应用管线。 |
 | [Sentence Transformers: Retrieve & Re-Rank](https://www.sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html) | 英文 · 进阶 | 免费 · 可选GPU | 读完整双阶段检索例子，先复现召回再加CrossEncoder；用于定位相关性与延迟取舍。 |
 | [Elasticsearch: Reciprocal Rank Fusion](https://www.elastic.co/docs/reference/elasticsearch/rest-apis/reciprocal-rank-fusion) | 英文 · 进阶 | 免费 · CPU | 先读RRF公式与手算示例，再研究查询实现；融合分数不同量纲的检索列表。 |
@@ -184,6 +204,10 @@ hide:
 
 | 资源 | 语言 · 级别 | 费用 · 算力 | 推荐理由 |
 |---|---|---|---|
+| [Datawhale · Hello-Agents](https://github.com/datawhalechina/hello-agents) | 中文 · 进阶 | 免费 · CPU | 先第 1、3、4 章，再第 7–10、12 章；做一个工具循环和评估项目，综合案例选修。 |
+| [Hugging Face · Agents Course](https://github.com/huggingface/agents-course) | 英文 · 进阶 | 免费 · CPU | 按课程的基础、框架与用例阶段推进；与其他 Agent 主课择一，模型调用与算力另计。 |
+| [Microsoft · AI Agents for Beginners](https://github.com/microsoft/ai-agents-for-beginners) | 中英 · 入门 | 免费 · CPU | 先读简介、工具使用、可信 Agent，再查规划、协议和生产部署；适合已有 Python 的开发者。 |
+| [Awesome LLM Apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | 英文 · 进阶 | 免费 · CPU | 项目选题库；完成主课后只挑一个 RAG 或 Agent 示例阅读架构、依赖与评估，不把 demo 当生产方案。 |
 | [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents) | 英文 · 进阶 | 免费 · CPU | 读workflows、agents和工具设计附录；先画清控制流，再选框架。 |
 | [Model Context Protocol Documentation](https://modelcontextprotocol.io/docs/getting-started/intro) | 英文 · 进阶 | 免费 · CPU | 从简介进入Architecture与Security；实现前固定规范版本，并单独设计权限与信任边界。 |
 | [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629) | 英文 · 进阶 | 免费 · 无 | 读行动与观察交替的轨迹示例，自己用结构化状态实现最小循环。 |
@@ -198,6 +222,9 @@ hide:
 
 | 资源 | 语言 · 级别 | 费用 · 算力 | 推荐理由 |
 |---|---|---|---|
+| [Raschka · LLMs from Scratch 配套代码](https://github.com/rasbt/LLMs-from-scratch) | 英文 · 进阶 | 部分免费 · 可选GPU | 第 2–5 章做分词、attention、GPT 与预训练；第 6–7 章和附录 E 做微调。代码免费，完整书籍另售。 |
+| [Datawhale · Happy-LLM](https://github.com/datawhalechina/happy-llm) | 中文 · 进阶 | 免费 · 可选GPU | 中文主线；第 1–4 章入门，第 5–6 章搭建与训练；按章节硬件要求缩小模型。 |
+| [Hugging Face · smol course](https://github.com/huggingface/smol-course) | 英文 · 进阶 | 免费 · GPU | 沿 Instruction Tuning → Evaluation → Preference Alignment 学；先完成小模型 SFT 与评估，再选 DPO。 |
 | [Hugging Face PEFT](https://huggingface.co/docs/peft/index) | 英文 · 进阶 | 免费 · GPU | 先读Quicktour、LoRA和checkpoint格式；检查真正参与训练的参数和底座依赖。 |
 | [Hugging Face TRL](https://huggingface.co/docs/trl/index) | 英文 · 进阶 | 免费 · GPU | 按Dataset Formats→Chat Templates→SFT→DPO/GRPO阅读，固定库版本再运行示例。 |
 | [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685) | 英文 · 进阶 | 免费 · 无 | 读低秩参数化、目标层与实验，手算adapter参数量；不要把节省比例当所有模型的常量。 |
@@ -212,6 +239,8 @@ hide:
 
 | 资源 | 语言 · 级别 | 费用 · 算力 | 推荐理由 |
 |---|---|---|---|
+| [Hugging Face · smol course](https://github.com/huggingface/smol-course) | 英文 · 进阶 | 免费 · GPU | 沿 Instruction Tuning → Evaluation → Preference Alignment 学；先完成小模型 SFT 与评估，再选 DPO。 |
+| [DataTalks.Club · LLM Zoomcamp](https://github.com/DataTalksClub/llm-zoomcamp) | 英文 · 进阶 | 免费 · CPU | 选 RAG、Vector Search、Evaluation、Monitoring 和项目；先完成普通检索基线，再扩展 agentic 流程。 |
 | [Datasheets for Datasets](https://arxiv.org/abs/1803.09010) | 英文 · 进阶 | 免费 · 无 | 为数据写说明书；读动机与数据采集、组成、用途记录框架。 |
 | [LM Evaluation Harness](https://github.com/EleutherAI/lm-evaluation-harness) | 英文 · 进阶 | 免费 · 可选GPU | 读任务配置、指标和结果记录；先用小模型与小任务验证流程，再增加规模。 |
 | [HELM: Holistic Evaluation of Language Models](https://arxiv.org/abs/2211.09110) | 英文 · 进阶 | 免费 · 无 | 读场景与多指标设计，给自己的应用建立覆盖矩阵；使用原论文理解方法而非追榜。 |
@@ -226,6 +255,8 @@ hide:
 
 | 资源 | 语言 · 级别 | 费用 · 算力 | 推荐理由 |
 |---|---|---|---|
+| [Machine Learning Systems](https://mlsysbook.ai/) | 英文 · 进阶 | 免费 · CPU | 用基础卷建立系统视角，规模化卷按问题查阅；教材、实验和硬件实践分开选择。 |
+| [How to Scale Your Model](https://jax-ml.github.io/scaling-book/) | 英文 · 进阶 | 免费 · 无 | 先 Roofline，再训练并行与推理部分；用题目练内存、通信和延迟估算，注意 TPU 与 GPU 差异。 |
 | [Computer Systems: A Programmer's Perspective 作者站](https://csapp.cs.cmu.edu/) | 英文 · 进阶 | 部分免费 · CPU | 从程序员视角学习缓存、虚拟内存、并发与 I/O；教材通常需购买或借阅，配套站点部分免费。 |
 | [Operating Systems: Three Easy Pieces](https://pages.cs.wisc.edu/~remzi/OSTEP/) | 英文 · 入门 | 免费 · CPU | 按虚拟化、并发、持久化学习 OS，并用作者提供的模拟题验证理解。 |
 | [Stanford CS144: Introduction to Computer Networking](https://cs144.github.io/) | 英文 · 进阶 | 免费 · CPU | 用字节流和网络实验理解可靠传输、拥塞与延迟；完整实验需要 C++ 基础。 |
@@ -239,6 +270,8 @@ hide:
 
 | 资源 | 语言 · 级别 | 费用 · 算力 | 推荐理由 |
 |---|---|---|---|
+| [GPU MODE lectures](https://github.com/gpu-mode/lectures) | 英文 · 进阶 | 免费 · GPU | GPU 入门选第 3、4、8、14 讲；分布式选第 17 讲 NCCL。视频、讲义和代码按需搭配。 |
+| [MIT 6.5940 · TinyML and Efficient Deep Learning Computing (2024)](https://hanlab.mit.edu/courses/2024-fall-65940) | 英文 · 进阶 | 免费 · 可选GPU | 固定 2024 课程入口；选剪枝、量化与部署主题的讲义和作业，做精度、延迟和模型大小对照。 |
 | [CUDA Programming Guide](https://docs.nvidia.com/cuda/cuda-programming-guide/index.html) | 英文 · 进阶 | 免费 · GPU | 查阅 Programming Model、SIMT、异步执行和内存语义，作为 CUDA 实验依据。 |
 | [Triton 官方教程](https://triton-lang.org/main/getting-started/tutorials/) | 英文 · 进阶 | 免费 · GPU | 按向量加法、融合 softmax、矩阵乘法顺序实现算子并比较性能。 |
 | [机器学习编译课程（中文）](https://book-zh.mlc.ai/) | 中文 · 进阶 | 免费 · 可选GPU | 通过 TensorIR、自动优化、GPU 加速和计算图理解编译思想；注意课程版本与库版本差异。 |
@@ -253,6 +286,8 @@ hide:
 
 | 资源 | 语言 · 级别 | 费用 · 算力 | 推荐理由 |
 |---|---|---|---|
+| [GPU MODE lectures](https://github.com/gpu-mode/lectures) | 英文 · 进阶 | 免费 · GPU | GPU 入门选第 3、4、8、14 讲；分布式选第 17 讲 NCCL。视频、讲义和代码按需搭配。 |
+| [How to Scale Your Model](https://jax-ml.github.io/scaling-book/) | 英文 · 进阶 | 免费 · 无 | 先 Roofline，再训练并行与推理部分；用题目练内存、通信和延迟估算，注意 TPU 与 GPU 差异。 |
 | [PyTorch: Distributed Data Parallel](https://docs.pytorch.org/tutorials/intermediate/ddp_tutorial.html) | 英文 · 进阶 | 免费 · 可选GPU | 建立最小多进程训练，理解梯度同步、初始化与保存加载。 |
 | [PyTorch: Fully Sharded Data Parallel (FSDP2)](https://docs.pytorch.org/tutorials/intermediate/FSDP_tutorial.html) | 英文 · 进阶 | 免费 · GPU | 理解 fully_shard、参数重组与状态分片，避免混用旧 FSDP API。 |
 | [PyTorch: Tensor Parallel](https://docs.pytorch.org/tutorials/intermediate/TP_tutorial.html) | 英文 · 进阶 | 免费 · GPU | 学习按行/列切分、DeviceMesh、DTensor 和布局带来的通信。 |
@@ -268,6 +303,9 @@ hide:
 
 | 资源 | 语言 · 级别 | 费用 · 算力 | 推荐理由 |
 |---|---|---|---|
+| [How to Scale Your Model](https://jax-ml.github.io/scaling-book/) | 英文 · 进阶 | 免费 · 无 | 先 Roofline，再训练并行与推理部分；用题目练内存、通信和延迟估算，注意 TPU 与 GPU 差异。 |
+| [MIT 6.5940 · TinyML and Efficient Deep Learning Computing (2024)](https://hanlab.mit.edu/courses/2024-fall-65940) | 英文 · 进阶 | 免费 · 可选GPU | 固定 2024 课程入口；选剪枝、量化与部署主题的讲义和作业，做精度、延迟和模型大小对照。 |
+| [LLMs from Scratch · KV Cache 实现](https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04/03_kv-cache) | 英文 · 进阶 | 免费 · CPU | 先看目录说明和基础缓存实现，再对照无缓存版本；比较生成一致性与解码耗时。 |
 | [vLLM Quickstart](https://docs.vllm.ai/en/stable/getting_started/quickstart/) | 英文 · 进阶 | 免费 · 可选GPU | 先建立离线批推理和在线服务，再按当前 CPU/GPU 安装要求选择环境。 |
 | [Efficient Memory Management for Large Language Model Serving with PagedAttention](https://arxiv.org/abs/2309.06180) | 英文 · 研究 | 免费 · 无 | 阅读 KV 分页、碎片和共享机制，不直接套用论文硬件上的加速比。 |
 | [Fast Inference from Transformers via Speculative Decoding](https://arxiv.org/abs/2211.17192) | 英文 · 研究 | 免费 · 无 | 学习 draft、验证和修正采样，理解保持目标分布的条件。 |
@@ -282,6 +320,8 @@ hide:
 
 | 资源 | 语言 · 级别 | 费用 · 算力 | 推荐理由 |
 |---|---|---|---|
+| [DataTalks.Club · MLOps Zoomcamp](https://github.com/DataTalksClub/mlops-zoomcamp) | 英文 · 进阶 | 免费 · CPU | 按实验追踪、流水线、部署、监控与最佳实践做项目；需 Python、Docker 与 ML 基础，云资源另计。 |
+| [Machine Learning Systems](https://mlsysbook.ai/) | 英文 · 进阶 | 免费 · CPU | 用基础卷建立系统视角，规模化卷按问题查阅；教材、实验和硬件实践分开选择。 |
 | [Made With ML: MLOps Course](https://madewithml.com/courses/mlops/) | 英文 · 进阶 | 免费 · 可选GPU | 通过一个项目串起设计、测试、版本、CI/CD 与监控；免费指公开自学内容。 |
 | [MLflow Model Registry](https://www.mlflow.org/docs/latest/registry/) | 英文 · 进阶 | 免费 · CPU | 区分实验记录、模型 lineage、版本、别名、标签与发布路由。 |
 | [DVC: .dvc Files](https://doc.dvc.org/user-guide/project-structure/dvc-files) | 英文 · 进阶 | 免费 · CPU | 通过哈希、路径和远端元数据理解大文件版本机制。 |
@@ -296,6 +336,8 @@ hide:
 
 | 资源 | 语言 · 级别 | 费用 · 算力 | 推荐理由 |
 |---|---|---|---|
+| [Machine Learning Systems](https://mlsysbook.ai/) | 英文 · 进阶 | 免费 · CPU | 用基础卷建立系统视角，规模化卷按问题查阅；教材、实验和硬件实践分开选择。 |
+| [MIT 6.5940 · TinyML and Efficient Deep Learning Computing (2024)](https://hanlab.mit.edu/courses/2024-fall-65940) | 英文 · 进阶 | 免费 · 可选GPU | 固定 2024 课程入口；选剪枝、量化与部署主题的讲义和作业，做精度、延迟和模型大小对照。 |
 | [ONNX Runtime: Quantize ONNX Models](https://onnxruntime.ai/docs/performance/model-optimizations/quantization.html) | 英文 · 进阶 | 免费 · CPU | 理解 scale/zero point、静态/动态量化、校准、误差诊断和硬件限制。 |
 | [ONNX Runtime: Deploy on Mobile](https://onnxruntime.ai/docs/tutorials/mobile/) | 英文 · 进阶 | 免费 · CPU | 建立 CPU 基线再测手机执行后端，关注模型大小、延迟与功耗。 |
 | [MLX 官方文档](https://ml-explore.github.io/mlx/build/html/index.html) | 英文 · 进阶 | 免费 · 可选GPU | Apple Silicon 路线重点学习惰性求值、统一内存与本地数组计算；先确认平台支持。 |
@@ -310,6 +352,8 @@ hide:
 
 | 资源 | 语言 · 级别 | 费用 · 算力 | 推荐理由 |
 |---|---|---|---|
+| [RL Baselines3 Zoo](https://github.com/DLR-RM/rl-baselines3-zoo) | 英文 · 进阶 | 免费 · 可选GPU | 在掌握环境接口后选一个小任务，学习训练、评估与配置；作为实验参考，不直接照搬超参数。 |
+| [Spinning Up in Deep RL](https://github.com/openai/spinningup) | 英文 · 进阶 | 免费 · 可选GPU | 补读算法、伪代码与实验方法；代码是历史教学实现，先核对旧依赖，当前实验可用 Gymnasium 与 SB3。 |
 | [David Silver · Reinforcement Learning](https://davidstarsilver.wordpress.com/teaching/) | 英文 · 入门 | 免费 · CPU | 从 MDP、价值函数、策略梯度建立决策学习框架 |
 | [Gymnasium](https://gymnasium.farama.org/) | 英文 · 入门 | 免费 · CPU | 核对环境接口、终止与截断语义，练表格 Q-learning |
 | [Berkeley CS285 · Deep Reinforcement Learning](https://rail.eecs.berkeley.edu/deeprlcourse/) | 英文 · 进阶 | 免费 · 可选GPU | 以模仿、策略梯度、离线 RL 组织进阶；大型深度实验需 GPU |
@@ -348,6 +392,7 @@ hide:
 
 | 资源 | 语言 · 级别 | 费用 · 算力 | 推荐理由 |
 |---|---|---|---|
+| [Seeing Theory](https://seeing-theory.brown.edu/) | 英文 · 入门 | 免费 · CPU | 用概率、条件概率、分布与贝叶斯推断交互页面辅助理解；站点已归档，作为补充。 |
 | [Probabilistic Machine Learning](https://probml.github.io/pml-book/) | 英文 · 进阶 | 免费 · CPU | 作者公开资料可读；按概率、图模型和推断主题选章，纸书另售 |
 | [Stanford CS228 Notes](https://ermongroup.github.io/cs228-notes/) | 英文 · 进阶 | 免费 · 无 | 按表示、推断、学习三层组织概率图模型 |
 | [Learn PyMC & Bayesian Modeling](https://www.pymc.io/projects/docs/en/stable/learn.html) | 英文 · 进阶 | 免费 · CPU | 做后验和预测检查，不只报告点估计 |

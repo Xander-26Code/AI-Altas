@@ -1,0 +1,447 @@
+[
+  {
+    "id": "expanded-zero",
+    "title": "Karpathy · Neural Networks: Zero to Hero",
+    "url": "https://github.com/karpathy/nn-zero-to-hero",
+    "kind": "course",
+    "language": "英文",
+    "level": "入门",
+    "compute": "可选GPU",
+    "access": "免费",
+    "why": "视频与 notebook 配套；深度学习先做 micrograd、makemore，再学 GPT 与 tokenizer。",
+    "topics": [
+      "05-deep-learning",
+      "09-llm"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-scratch",
+    "title": "Raschka · LLMs from Scratch 配套代码",
+    "url": "https://github.com/rasbt/LLMs-from-scratch",
+    "kind": "repository",
+    "language": "英文",
+    "level": "进阶",
+    "compute": "可选GPU",
+    "access": "部分免费",
+    "why": "第 2–5 章做分词、attention、GPT 与预训练；第 6–7 章和附录 E 做微调。代码免费，完整书籍另售。",
+    "topics": [
+      "09-llm",
+      "14-finetuning-alignment"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-happy",
+    "title": "Datawhale · Happy-LLM",
+    "url": "https://github.com/datawhalechina/happy-llm",
+    "kind": "course",
+    "language": "中文",
+    "level": "进阶",
+    "compute": "可选GPU",
+    "access": "免费",
+    "why": "中文主线；第 1–4 章入门，第 5–6 章搭建与训练；按章节硬件要求缩小模型。",
+    "topics": [
+      "06-nlp",
+      "09-llm",
+      "14-finetuning-alignment"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-universe",
+    "title": "Datawhale · LLM Universe",
+    "url": "https://github.com/datawhalechina/llm-universe",
+    "kind": "course",
+    "language": "中文",
+    "level": "入门",
+    "compute": "CPU",
+    "access": "免费",
+    "why": "选第一部分 API、知识库、RAG、评估与优化；进阶部分仍有在编内容。核对依赖版本，API 费用另计。",
+    "topics": [
+      "11-ai-applications",
+      "12-rag"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-hello",
+    "title": "Datawhale · Hello-Agents",
+    "url": "https://github.com/datawhalechina/hello-agents",
+    "kind": "course",
+    "language": "中文",
+    "level": "进阶",
+    "compute": "CPU",
+    "access": "免费",
+    "why": "先第 1、3、4 章，再第 7–10、12 章；做一个工具循环和评估项目，综合案例选修。",
+    "topics": [
+      "13-agents"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-smol",
+    "title": "Hugging Face · smol course",
+    "url": "https://github.com/huggingface/smol-course",
+    "kind": "course",
+    "language": "英文",
+    "level": "进阶",
+    "compute": "GPU",
+    "access": "免费",
+    "why": "沿 Instruction Tuning → Evaluation → Preference Alignment 学；先完成小模型 SFT 与评估，再选 DPO。",
+    "topics": [
+      "14-finetuning-alignment",
+      "15-evaluation-safety"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-hfagents",
+    "title": "Hugging Face · Agents Course",
+    "url": "https://github.com/huggingface/agents-course",
+    "kind": "course",
+    "language": "英文",
+    "level": "进阶",
+    "compute": "CPU",
+    "access": "免费",
+    "why": "按课程的基础、框架与用例阶段推进；与其他 Agent 主课择一，模型调用与算力另计。",
+    "topics": [
+      "13-agents"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-msagents",
+    "title": "Microsoft · AI Agents for Beginners",
+    "url": "https://github.com/microsoft/ai-agents-for-beginners",
+    "kind": "course",
+    "language": "中英",
+    "level": "入门",
+    "compute": "CPU",
+    "access": "免费",
+    "why": "先读简介、工具使用、可信 Agent，再查规划、协议和生产部署；适合已有 Python 的开发者。",
+    "topics": [
+      "13-agents"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-llmzoom",
+    "title": "DataTalks.Club · LLM Zoomcamp",
+    "url": "https://github.com/DataTalksClub/llm-zoomcamp",
+    "kind": "course",
+    "language": "英文",
+    "level": "进阶",
+    "compute": "CPU",
+    "access": "免费",
+    "why": "选 RAG、Vector Search、Evaluation、Monitoring 和项目；先完成普通检索基线，再扩展 agentic 流程。",
+    "topics": [
+      "11-ai-applications",
+      "12-rag",
+      "15-evaluation-safety"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-mlzoom",
+    "title": "DataTalks.Club · Machine Learning Zoomcamp",
+    "url": "https://github.com/DataTalksClub/machine-learning-zoomcamp",
+    "kind": "course",
+    "language": "英文",
+    "level": "进阶",
+    "compute": "CPU",
+    "access": "免费",
+    "why": "偏工程的替代主线；按回归、分类、评估、部署做作业和自己的项目，不直接套用开课周数。",
+    "topics": [
+      "04-machine-learning"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-mlopszoom",
+    "title": "DataTalks.Club · MLOps Zoomcamp",
+    "url": "https://github.com/DataTalksClub/mlops-zoomcamp",
+    "kind": "course",
+    "language": "英文",
+    "level": "进阶",
+    "compute": "CPU",
+    "access": "免费",
+    "why": "按实验追踪、流水线、部署、监控与最佳实践做项目；需 Python、Docker 与 ML 基础，云资源另计。",
+    "topics": [
+      "20-mlops"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-handson",
+    "title": "Hands-On Machine Learning 第三版配套 notebook",
+    "url": "https://github.com/ageron/handson-ml3",
+    "kind": "repository",
+    "language": "英文",
+    "level": "进阶",
+    "compute": "可选GPU",
+    "access": "部分免费",
+    "why": "选完整 ML 项目、分类、训练模型等 notebook；深度学习部分使用 Keras/TensorFlow，勿与 PyTorch 示例混装。",
+    "topics": [
+      "04-machine-learning",
+      "05-deep-learning"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-nndl",
+    "title": "邱锡鹏 · 神经网络与深度学习",
+    "url": "https://nndl.ai/",
+    "kind": "book",
+    "language": "中文",
+    "level": "进阶",
+    "compute": "CPU",
+    "access": "免费",
+    "why": "中文理论参考；从作者入口选神经网络与深度学习教材，按前馈网络、反向传播与优化主题选读。",
+    "topics": [
+      "05-deep-learning"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-linearvisual",
+    "title": "3Blue1Brown · Linear Algebra",
+    "url": "https://www.3blue1brown.com/?topic=linear-algebra",
+    "kind": "course",
+    "language": "英文",
+    "level": "入门",
+    "compute": "无",
+    "access": "免费",
+    "why": "视频补几何直觉；配合主教材学习向量、线性变换、矩阵乘法和特征值，不能替代习题。",
+    "topics": [
+      "01-math"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-seeing",
+    "title": "Seeing Theory",
+    "url": "https://seeing-theory.brown.edu/",
+    "kind": "interactive",
+    "language": "英文",
+    "level": "入门",
+    "compute": "CPU",
+    "access": "免费",
+    "why": "用概率、条件概率、分布与贝叶斯推断交互页面辅助理解；站点已归档，作为补充。",
+    "topics": [
+      "01-math",
+      "25-causal-probabilistic"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-gpu",
+    "title": "GPU MODE lectures",
+    "url": "https://github.com/gpu-mode/lectures",
+    "kind": "course",
+    "language": "英文",
+    "level": "进阶",
+    "compute": "GPU",
+    "access": "免费",
+    "why": "GPU 入门选第 3、4、8、14 讲；分布式选第 17 讲 NCCL。视频、讲义和代码按需搭配。",
+    "topics": [
+      "17-gpu-kernels-compilers",
+      "18-distributed-training"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-mlsys",
+    "title": "Machine Learning Systems",
+    "url": "https://mlsysbook.ai/",
+    "kind": "book",
+    "language": "英文",
+    "level": "进阶",
+    "compute": "CPU",
+    "access": "免费",
+    "why": "用基础卷建立系统视角，规模化卷按问题查阅；教材、实验和硬件实践分开选择。",
+    "topics": [
+      "16-hardware-systems",
+      "20-mlops",
+      "21-edge-ai"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-scaling",
+    "title": "How to Scale Your Model",
+    "url": "https://jax-ml.github.io/scaling-book/",
+    "kind": "book",
+    "language": "英文",
+    "level": "进阶",
+    "compute": "无",
+    "access": "免费",
+    "why": "先 Roofline，再训练并行与推理部分；用题目练内存、通信和延迟估算，注意 TPU 与 GPU 差异。",
+    "topics": [
+      "16-hardware-systems",
+      "18-distributed-training",
+      "19-inference-serving"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-tinyml",
+    "title": "MIT 6.5940 · TinyML and Efficient Deep Learning Computing (2024)",
+    "url": "https://hanlab.mit.edu/courses/2024-fall-65940",
+    "kind": "course",
+    "language": "英文",
+    "level": "进阶",
+    "compute": "可选GPU",
+    "access": "免费",
+    "why": "固定 2024 课程入口；选剪枝、量化与部署主题的讲义和作业，做精度、延迟和模型大小对照。",
+    "topics": [
+      "17-gpu-kernels-compilers",
+      "19-inference-serving",
+      "21-edge-ai"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-kv",
+    "title": "LLMs from Scratch · KV Cache 实现",
+    "url": "https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04/03_kv-cache",
+    "kind": "repository",
+    "language": "英文",
+    "level": "进阶",
+    "compute": "CPU",
+    "access": "免费",
+    "why": "先看目录说明和基础缓存实现，再对照无缓存版本；比较生成一致性与解码耗时。",
+    "topics": [
+      "09-llm",
+      "19-inference-serving"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者目录 README，包含 KV cache 说明、基础实现及扩展文件入口；未运行代码。"
+  },
+  {
+    "id": "expanded-rlzoo",
+    "title": "RL Baselines3 Zoo",
+    "url": "https://github.com/DLR-RM/rl-baselines3-zoo",
+    "kind": "repository",
+    "language": "英文",
+    "level": "进阶",
+    "compute": "可选GPU",
+    "access": "免费",
+    "why": "在掌握环境接口后选一个小任务，学习训练、评估与配置；作为实验参考，不直接照搬超参数。",
+    "topics": [
+      "22-rl-robotics"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-spinning",
+    "title": "Spinning Up in Deep RL",
+    "url": "https://github.com/openai/spinningup",
+    "kind": "repository",
+    "language": "英文",
+    "level": "进阶",
+    "compute": "可选GPU",
+    "access": "免费",
+    "why": "补读算法、伪代码与实验方法；代码是历史教学实现，先核对旧依赖，当前实验可用 Gymnasium 与 SB3。",
+    "topics": [
+      "22-rl-robotics"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-pydata",
+    "title": "Wes McKinney · Python for Data Analysis, 3E",
+    "url": "https://wesmckinney.com/book/",
+    "kind": "book",
+    "language": "英文",
+    "level": "入门",
+    "compute": "CPU",
+    "access": "免费",
+    "why": "作者开放在线版；选 NumPy、pandas、数据清洗、连接与聚合，跟随代码整理一份真实表格。",
+    "topics": [
+      "02-programming",
+      "03-data"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-dezoom",
+    "title": "DataTalks.Club · Data Engineering Zoomcamp",
+    "url": "https://github.com/DataTalksClub/data-engineering-zoomcamp",
+    "kind": "course",
+    "language": "英文",
+    "level": "进阶",
+    "compute": "CPU",
+    "access": "免费",
+    "why": "数据工程选修；从容器、SQL、编排到仓库和批处理，先完成本地小流水线，云服务另计。",
+    "topics": [
+      "03-data"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  },
+  {
+    "id": "expanded-apps",
+    "title": "Awesome LLM Apps",
+    "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+    "kind": "repository",
+    "language": "英文",
+    "level": "进阶",
+    "compute": "CPU",
+    "access": "免费",
+    "why": "项目选题库；完成主课后只挑一个 RAG 或 Agent 示例阅读架构、依赖与评估，不把 demo 当生产方案。",
+    "topics": [
+      "11-ai-applications",
+      "13-agents"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
+  }
+]

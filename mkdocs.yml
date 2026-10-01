@@ -109,6 +109,7 @@ nav:
       - 学习方法: guides/study-method.md
       - 环境与算力: guides/environment.md
       - 调研总览: research/README.md
+      - GitHub 与 X 增补调研: research/resource-expansion.md
       - 基础组来源: research/foundations-sources.md
       - 模型组来源: research/models-sources.md
       - 系统组来源: research/infra-sources.md

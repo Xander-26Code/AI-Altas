@@ -3,42 +3,7 @@
 > 目标：把一个小模型放到目标设备上，验证离线可用、数值行为、内存与延迟，并说明哪些数据会离开设备。先修：模型推理、张量形状、量化基础；选择浏览器路线需 JavaScript，移动端路线需对应平台基础。学习规划预算约 80–160 小时。普通电脑可完成 ONNX/浏览器主线；手机或 Apple Silicon 是相应扩展路线的条件。
 > 时间口径：具备先修后，系统学习主教材、完成练习与一个项目的规划预算；不包含补先修，也不等于掌握整个领域。实际投入受基础、实验条件和项目深度影响。
 
-端侧 AI 的价值常是低延迟、离线和减少原始数据传输。但用户设备有电池、散热、内存、浏览器兼容性及下载成本的限制。一个模型在开发电脑上跑通，还远未证明它适合最终设备。
-
-## 学习顺序
-
-1. **设备预算**：模型文件、运行内存、启动时间、单次延迟、能耗与联网边界。
-2. **模型导出**：固定输入输出契约，导出与前后处理一致性，检查算子和 shape。
-3. **选择运行时**：ONNX Runtime、浏览器、Core ML、LiteRT 或 MLX，先选一条完整路线。
-4. **压缩与加速**：量化、图优化、硬件执行后端；实测是否出现 CPU 回退和额外拷贝。
-5. **产品化实验**：冷启动、连续运行、离线、失败恢复及可解释的隐私边界。
-
-## 文件能加载，不代表部署已经成功
-
-**格式、运行时与硬件是三个层次。** ONNX 表达计算图与算子，ONNX Runtime 执行模型，Execution Provider 将可支持的子图交给某个设备后端。导出成功只说明文件可生成；具体后端可能不支持某些算子、精度或动态形状。图被拆成多段时，设备间复制可能抵消加速收益。[ONNX Runtime 移动端指南](https://onnxruntime.ai/docs/tutorials/mobile/)明确要求在目标设备上测延迟、模型大小和功耗，并提醒性能依赖设备与模型。
-
-**模型体积和运行内存必须分开计算。** 100M 参数的纯 INT8 权重理想约 100 MB，但模型还需要比例因子、图结构、激活、工作区及运行时。若初次下载链路有效速率为 20 Mbit/s，仅传输这 100 MB 理论上就要约 40 秒，尚未计入建连、解压和加载。缓存能改善后续启动，却不能消除第一次的等待。LLM 还需要随上下文增长的 KV cache，参见 [推理显存账本](19-inference-serving.md)。
-
-**量化要对任务负责。** 将 FP32 转成 INT8 不仅是文件变小；校准集应该覆盖真实输入分布，否则长尾样本可能明显退化。需要比较导出前、导出后和量化后的模型，先找出哪个阶段引入误差。分类器除了总体准确率，还应检查临界样本和关键类别；生成模型则需要检查任务级结果，不能只比一层输出的均方误差。
-
-**统一内存不等于零成本。** 在 Apple Silicon 路线上，MLX 的统一内存模型简化 CPU/GPU 间数组使用；其惰性求值把部分计算推迟到真正需要结果时。基准如果只计时建立表达式，可能测不到实际计算。因此要理解触发求值与同步，记录整体内存压力，而不是仅报告某个数组大小。[MLX 文档](https://ml-explore.github.io/mlx/build/html/index.html)提供 Unified Memory、Lazy Evaluation 和 Quick Start 入口。MLX 适合本地数组计算与模型实验；iOS 应用交付还要评估平台集成路线。
-
-**浏览器运行需要能力检测与回退。** WebGPU 支持受浏览器、设备和驱动影响，不能仅凭操作系统名字推断。WASM/CPU 路径可以覆盖部分不支持 GPU 的环境；模型初始化、tokenizer、预处理也会影响交互。把重计算放入合适的 worker，避免页面输入被阻塞；同时测试取消推理与释放资源。[ONNX Runtime Web](https://onnxruntime.ai/docs/tutorials/web/)区分了不同后端及算子支持范围，[Transformers.js WebGPU 指南](https://huggingface.co/docs/transformers.js/en/guides/webgpu)给出加载时选择设备的实践入口。
-
-**本地推理有助于隐私，但需要检查完整数据路径。** 应明确模型下载、遥测、错误报告、日志、缓存和云端回退是否联网。一个网页即使在本地算 embedding，仍可能把输入交给其他接口。离线验收应在首次资源准备完成后断网，再观察真实请求；设备端存储也要考虑用户清除数据的方式。涉及联邦学习时，梯度或模型更新仍可能泄露信息，不能把“数据未集中”当成自动的隐私证明。
-
-## 核心知识表
-
-| 选择 | 适合起点 | 必须验证 |
-| --- | --- | --- |
-| ONNX Runtime CPU | 跨平台小模型、建立正确性基线 | 导出算子、dtype、线程数、前后处理 |
-| ONNX Runtime Web / Transformers.js | 浏览器分类、embedding、语音或小模型演示 | WebGPU/WASM 能力、首次下载、UI 响应 |
-| Core ML | Apple 应用内集成 | 模型转换、支持算子、目标设备与计算单元 |
-| LiteRT | 移动与嵌入式部署路线 | 转换、CPU/GPU/NPU 后端、设备兼容与性能 |
-| MLX | Apple Silicon 本地模型与数组实验 | 惰性求值、峰值内存、计算同步 |
-| 云端/端侧混合 | 本地处理优先、必要时远端补充 | 回退条件、用户预期、联网数据与额外延迟 |
-
-## 精选资源
+## 资源列表
 
 核验日期：2026-09-30；文档免费，目标设备与模型下载流量另计。
 
@@ -50,6 +15,28 @@
 | [Google LiteRT Overview](https://developers.google.com/edge/litert/overview) | 英文 / 进阶 / 可选GPU | 转换、CompiledModel、设备加速与示例；官方端侧路线入口，按目标设备选择 API。 |
 | [Core ML Tools 概览](https://apple.github.io/coremltools/docs-guides/source/overview-coremltools.html) | 英文 / 进阶 / 可选GPU | 转换第三方模型、验证与优化；适合 Apple 应用交付，运行验证需相应平台。 |
 | [ONNX Runtime Web](https://onnxruntime.ai/docs/tutorials/web/) | 英文 / 入门 / CPU | WASM、WebGPU、WebNN 以及客户端/服务端选型；浏览器部署前应先读的兼容性入口。 |
+
+### 补充课程与实作资源
+
+| 资源 | 语言 · 难度 | 获取 · 算力 | 用法与阅读范围 |
+|---|---|---|---|
+| [Machine Learning Systems](https://mlsysbook.ai/) | 英文 · 进阶 | 免费 · CPU | 用基础卷建立系统视角，规模化卷按问题查阅；教材、实验和硬件实践分开选择。 |
+| [MIT 6.5940 · TinyML and Efficient Deep Learning Computing (2024)](https://hanlab.mit.edu/courses/2024-fall-65940) | 英文 · 进阶 | 免费 · 可选GPU | 固定 2024 课程入口；选剪枝、量化与部署主题的讲义和作业，做精度、延迟和模型大小对照。 |
+
+以上新增入口核实于 2026-10-01；资料免费不含硬件与 API 费用。
+
+## 按资源安排学习顺序
+
+按目标设备选择一套运行时，不需要同时学习浏览器、手机和 Apple 平台。MLSysBook 和 MIT 课程提供共同方法。
+
+按顺序完成主线，每步完成右列产出后再推进；选修不计入必做清单。页首时长包含所选主线、练习与本页项目，不包含把全部资料逐一学完。
+
+| 阶段 | 使用资源 | 阅读 / 练习范围 | 完成后应留下什么 |
+|---|---|---|---|
+| 1 · 设备约束 | [Machine Learning Systems](https://mlsysbook.ai/)；[MIT 6.5940 · TinyML and Efficient Deep Learning Computing (2024)](https://hanlab.mit.edu/courses/2024-fall-65940) | 端侧部署、量化相关材料 | 写内存、延迟、功耗、离线能力预算 |
+| 2 · 运行时分支 | [ONNX Runtime：Deploy on Mobile](https://onnxruntime.ai/docs/tutorials/mobile/)；[MLX 官方文档](https://ml-explore.github.io/mlx/build/html/index.html)；[Transformers.js：WebGPU](https://huggingface.co/docs/transformers.js/en/guides/webgpu)；[Google LiteRT Overview](https://developers.google.com/edge/litert/overview)；[Core ML Tools 概览](https://apple.github.io/coremltools/docs-guides/source/overview-coremltools.html)；[ONNX Runtime Web](https://onnxruntime.ai/docs/tutorials/web/) | 手机选 ONNX Mobile/LiteRT；Apple 选 Core ML/MLX；浏览器选 ORT Web/Transformers.js | 只选一条，加载模型并跑基线 |
+| 3 · 精度与性能 | [MIT 6.5940 · TinyML and Efficient Deep Learning Computing (2024)](https://hanlab.mit.edu/courses/2024-fall-65940) | 量化与部署相关作业 | 固定样本和设备比较原模型与优化模型 |
+| 4 · 实际交付 | [ONNX Runtime：Deploy on Mobile](https://onnxruntime.ai/docs/tutorials/mobile/)；[Core ML Tools 概览](https://apple.github.io/coremltools/docs-guides/source/overview-coremltools.html)；[ONNX Runtime Web](https://onnxruntime.ai/docs/tutorials/web/) | 回到所选运行时的部署说明 | 完成下方离线实验，记录回退和设备差异 |
 
 ## 实践：一个可断网使用的轻量分类器
 

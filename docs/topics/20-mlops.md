@@ -3,45 +3,7 @@
 > 目标：让一个模型结果能够追溯、复现、发布、监控和回滚，并把质量、可靠性与成本放进同一套决策记录。先修：能训练并评估一个小模型，熟悉 Git、Python 环境、HTTP 与基础测试。学习规划预算约 100–180 小时。以 CPU 上的小型分类或回归模型完成主线，无需先搭 Kubernetes。
 > 时间口径：具备先修后，系统学习主教材、完成练习与一个项目的规划预算；不包含补先修，也不等于掌握整个领域。实际投入受基础、实验条件和项目深度影响。
 
-MLOps 的对象不只是一份权重。训练结果依赖数据、预处理、代码、随机性与环境；线上行为还取决于请求流量、服务配置和下游使用方式。任何一项改变，都可能让相同文件名代表不同的系统。
-
-## 学习顺序
-
-1. **定义问题**：用户目标、基线、数据切分、质量指标与延迟预算。
-2. **可复现训练**：数据快照、配置、依赖、实验记录、模型登记。
-3. **测试与发布**：代码/数据/模型三层测试，API、容器、发布和回滚。
-4. **观测与反馈**：日志、指标、trace、质量变化、漂移和再训练决策。
-5. **综合演练**：从零重建一次产物，故意发布一个退化版本并恢复。
-
-## 最小闭环比工具数量更重要
-
-**复现需要一份明确的身份。** 为每次实验记录代码提交、数据版本、切分规则、特征/预处理版本、模型配置、随机种子、依赖锁定与评测结果。数据文件名 `latest.csv` 不是版本；它只告诉你从哪里读取，没告诉你读取了什么。可以用内容哈希、不可变对象路径或数据版本工具标识数据，再将这一标识连到实验记录。[DVC 的 `.dvc` 文件说明](https://doc.dvc.org/user-guide/project-structure/dvc-files)展示了通过元数据引用大文件的方式；这不等于把所有大文件直接提交到 Git。
-
-**实验追踪、模型登记和线上路由不是同一层。** 实验记录一次尝试的参数、指标与产物；模型登记管理候选版本、来源和标签；线上服务决定哪些请求使用哪个版本。一次发布应包含模型、预处理和推理配置的兼容组合。LLM 应用还应追踪 prompt、检索索引、embedding 模型与评测集；否则回滚权重后，行为未必恢复。[MLflow Model Registry](https://www.mlflow.org/docs/latest/registry/)提供了 lineage、版本、别名和标签的官方说明。
-
-**测试要针对可能失效的边界。** 代码测试检查输入输出与异常处理；数据测试检查 schema、缺失率、取值范围、时间穿越和标签泄漏；模型测试检查固定评测集及关键切片的质量。训练准确率升高不能证明可以发布。比如整体 F1 提升，但小语种召回下降，而该群体恰好是产品的重要用户，就需要事先定义的切片门槛决定是否接受。
-
-**监控分三层看。** 系统层观察延迟、错误、资源与队列；数据层观察输入分布、缺失和 schema；业务/模型层观察有标签时的质量与用户结果。输入漂移是 p(x) 改变，概念漂移关注 p(y|x) 改变；检测到分布变化不能直接推出准确率变差。标签可能延迟到达，告警先触发诊断，而不是自动开启昂贵的再训练。
-
-日志描述离散事件，metric 描述聚合趋势，trace 串起一次请求经过的组件。一个慢请求可能耗在检索、重试或队列，只有总耗时无法定位。[OpenTelemetry 观测入门](https://opentelemetry.io/docs/concepts/observability-primer/)适合建立这套词汇。多副本的 p95 不能直接取平均得到全局 p95；需要合理聚合分布信息，相关限制见 [Prometheus 直方图与摘要](https://prometheus.io/docs/practices/histograms/)。
-
-**成本以有效结果为分母。** 教学例子：假设服务资源计费为每小时 6 元，运行 2 小时，完成 100,000 次符合质量与延迟门槛的请求，则仅该资源的单位成本为 12/100,000=0.00012 元。失败重试、存储、网络和空闲成本若未计入，应明确说明。价格是假设，不是云厂商报价。优化 token/s 却增加大量无效结果，未必降低业务成本。
-
-## 核心知识表
-
-| 环节 | 最小产物 | 需要回答的问题 |
-| --- | --- | --- |
-| 数据与特征 | 数据版本、schema、切分规则 | 线上数据与训练数据的处理一致吗？ |
-| 实验 | 配置、种子、指标、产物引用 | 这次比基线改了什么？能重跑吗？ |
-| 模型登记 | 版本、来源、评测状态 | 哪个版本可发布，谁验证了什么？ |
-| 服务 | 输入契约、超时、限流、版本标识 | 错误输入、过载和依赖失败如何处理？ |
-| 发布 | 质量门槛、灰度策略、回滚包 | 退化如何发现，能恢复哪一个完整组合？ |
-| 观测 | 系统指标、质量切片、trace | 问题发生在哪一层，影响哪些请求？ |
-| 安全与成本 | 权限、产物来源、预算与配额 | 谁能读取模型/数据，资源会否失控？ |
-
-安全是工程边界的一部分：把凭据放进受控配置，限制数据与模型仓库权限，检查构建来源，不把原始敏感输入默认写入日志。尤其不要从未知来源加载可执行反序列化产物；[scikit-learn 模型持久化文档](https://scikit-learn.org/stable/model_persistence.html)说明了 pickle 类格式的风险与替代方式。选择格式时还要检查支持范围和运行时兼容性。
-
-## 精选资源
+## 资源列表
 
 核验日期：2026-09-30。下列开源文档免费；托管服务、教学云资源和硬件可能另收费。
 
@@ -54,6 +16,28 @@ MLOps 的对象不只是一份权重。训练结果依赖数据、预处理、�
 | [Prometheus Histograms and Summaries](https://prometheus.io/docs/practices/histograms/) | 英文 / 进阶 / CPU | 延迟分布、聚合和分位数；避免用错误指标证明发布成功。 |
 | [OpenTelemetry Observability Primer](https://opentelemetry.io/docs/concepts/observability-primer/) | 英文 / 入门 / CPU | 日志、指标与链路追踪；将多组件请求串成可排查证据。 |
 | [scikit-learn Model Persistence](https://scikit-learn.org/stable/model_persistence.html) | 英文 / 进阶 / CPU | 持久化格式、可执行加载与版本兼容；用小模型学习实际发布边界。 |
+
+### 补充课程与实作资源
+
+| 资源 | 语言 · 难度 | 获取 · 算力 | 用法与阅读范围 |
+|---|---|---|---|
+| [DataTalks.Club · MLOps Zoomcamp](https://github.com/DataTalksClub/mlops-zoomcamp) | 英文 · 进阶 | 免费 · CPU | 按实验追踪、流水线、部署、监控与最佳实践做项目；需 Python、Docker 与 ML 基础，云资源另计。 |
+| [Machine Learning Systems](https://mlsysbook.ai/) | 英文 · 进阶 | 免费 · CPU | 用基础卷建立系统视角，规模化卷按问题查阅；教材、实验和硬件实践分开选择。 |
+
+以上新增入口核实于 2026-10-01；资料免费不含硬件与 API 费用。
+
+## 按资源安排学习顺序
+
+选 MLOps Zoomcamp 或 Made With ML 做一条完整项目线。工具文档用于解决项目中的具体问题。
+
+按顺序完成主线，每步完成右列产出后再推进；选修不计入必做清单。页首时长包含所选主线、练习与本页项目，不包含把全部资料逐一学完。
+
+| 阶段 | 使用资源 | 阅读 / 练习范围 | 完成后应留下什么 |
+|---|---|---|---|
+| 1 · 项目与版本 | [DataTalks.Club · MLOps Zoomcamp](https://github.com/DataTalksClub/mlops-zoomcamp)；[Made With ML：MLOps](https://madewithml.com/courses/mlops/)；[DVC `.dvc` Files](https://doc.dvc.org/user-guide/project-structure/dvc-files) | 主课环境与实验；DVC 文件元数据 | 固定数据版本、依赖和训练命令 |
+| 2 · 实验与发布 | [MLflow Model Registry](https://www.mlflow.org/docs/latest/registry/)；[scikit-learn Model Persistence](https://scikit-learn.org/stable/model_persistence.html)；[DataTalks.Club · MLOps Zoomcamp](https://github.com/DataTalksClub/mlops-zoomcamp) | 实验追踪/Model Registry；持久化与部署模块 | 保存模型与配置，实现一次版本回滚 |
+| 3 · 监控与验证 | [Prometheus Histograms and Summaries](https://prometheus.io/docs/practices/histograms/)；[OpenTelemetry Observability Primer](https://opentelemetry.io/docs/concepts/observability-primer/)；[DataTalks.Club · MLOps Zoomcamp](https://github.com/DataTalksClub/mlops-zoomcamp) | Monitoring、Best Practices；指标分布与可观测性 | 记录质量、延迟和失败，建立发布检查 |
+| 选修 · 集群与系统 | [KServe 官方概览](https://kserve.github.io/website/docs/intro)；[Machine Learning Systems](https://mlsysbook.ai/) | 有 Kubernetes 需求再看 KServe；教材按部署规模选读 | 为现有服务补资源、容量与恢复说明 |
 
 ## 实践：一个能回滚的小模型服务
 

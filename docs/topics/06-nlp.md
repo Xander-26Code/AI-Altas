@@ -2,54 +2,7 @@
 
 > 目标：理解文本表示、分词、语言建模与常见任务，建立一个有基线和错误分析的 NLP 项目。先修：[机器学习](04-machine-learning.md)、[深度学习](05-deep-learning.md)。**规划预算：80–160 小时**，用于完成先修后系统学习主教材、做练习并完成一个项目；不含补先修，不是掌握整个领域的承诺。传统方法可用 CPU，微调小模型可选 GPU。
 
-NLP 不只包含聊天机器人。分类、实体抽取、搜索、机器翻译、句法分析、文本生成都有不同的输入输出、标注规则和评估方法。先把任务定义清楚，再决定使用词频特征、预训练编码器还是生成模型。
-
-## 学习顺序
-
-1. **文本与语料**：Unicode、清洗、分句、重复、语言与领域分布、标注规范。
-2. **传统基线**：词袋、字符/词 n-gram、TF-IDF、朴素贝叶斯和逻辑回归。
-3. **分词与表示**：子词、词向量、上下文表示、嵌入相似度。
-4. **神经 NLP**：编码器、序列标注、注意力、Transformer、预训练与微调。
-5. **任务评估**：分类、实体抽取、检索、生成各选合适指标，做领域外与扰动测试。
-
-中文文本不能直接假设单词由空格分开。可以先用字符 n-gram 建一个低成本基线，再比较分词方案；不要把某个英文教程里的清洗规则原样搬到中文、代码或多语言文本上。
-
-## 核心概念：词元不是词，表示也不是事实
-
-Tokenizer 把字符串转换成离散 ID。一个汉字、英文单词或 emoji 可能对应一个或多个词元；不同词表与分词算法可能得到不同结果。ID 只是索引，数值接近不代表语义接近。Embedding 则把 ID 映射成可学习向量，其几何关系来自训练目标与数据，不能当作世界知识的可靠性证明。
-
-例如“这款手机不算差”和“这款手机很差”共享不少词。词袋模型若忽略否定结构，可能给出相近判断；加入 n-gram 或上下文表示可能有所改善，但仍需要例子证明。可设计成对测试：“好/不好”“支持/不支持”“屏幕好但续航差”，检查模型究竟学到了什么，而不只看总分。
-
-自回归语言模型把序列概率拆成条件概率的乘积：
-
-$$
-P(x_1,\ldots,x_T)=\prod_{t=1}^{T}P(x_t\mid x_1,\ldots,x_{t-1})
-$$
-
-训练时常最小化真实下一词元的负对数概率；生成时再从预测分布中选择词元。这解释了“预测语言分布”与“保证陈述真实”的区别，也解释了温度和采样会改变生成行为。困惑度可写为平均负对数似然的指数，但比较时必须保持测试语料、分词方案、计数单位与计算协议一致，不能直接比较不同词表模型给出的裸数字。教材入口可查 [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp3/)。
-
-注意力常写为：
-
-$$
-\operatorname{Attention}(Q,K,V)=
-\operatorname{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}+M\right)V
-$$
-
-\(QK^\top\) 为每个位置计算与其他位置的匹配分数；softmax 把允许位置的分数归一化，再加权汇总 \(V\)。掩码 \(M\) 可阻止读取填充位置或未来词元。一个常见实现错误是掩码形状正确但含义反了，模型因而偷看未来或屏蔽有效上下文。先画一个三词元的可见性矩阵，再写代码，比直接复制库调用更容易检查。
-
-## 核心知识表
-
-| 主题 | 必须分清 | 最小验证 |
-|---|---|---|
-| 文本规范化 | Unicode 处理与语义保留 | 标点、数字、emoji 用例 |
-| Tokenization | 字符、词、子词、ID | 对相同文本比较切分 |
-| TF-IDF 与嵌入 | 稀疏频率特征与稠密表示 | 同一切分下分类比较 |
-| 语言模型 | 概率估计与解码策略 | 手算短序列概率 |
-| Transformer | 注意力、位置、残差、掩码 | 检查每个位置可见范围 |
-| 序列标注 | token 标签与实体边界 | 实体级 precision/recall |
-| 评估与泛化 | 总体分数与具体能力 | 否定、领域、长文本切片 |
-
-## 精选资源
+## 资源列表
 
 CS224N 当前年度部分视频需要校内登录，公开讲义与官网指向的往年视频可用于自学。SLP 是持续修订草稿，按章节标题定位比固定页码可靠。
 
@@ -59,6 +12,27 @@ CS224N 当前年度部分视频需要校内登录，公开讲义与官网指向�
 - **[SentencePiece](https://github.com/google/sentencepiece)**｜英文 · 进阶 · 免费 · CPU。理解子词与语言无关预处理；读分词、反分词、BPE/Unigram 与模型文件说明。
 - **[spaCy Linguistic Features](https://spacy.io/usage/linguistic-features)**｜英文 · 进阶 · 免费 · CPU。认识结构化 NLP；选 tokenization、词性、依存和命名实体识别示例。
 - **[Natural Language Processing with Python](https://www.nltk.org/book/)**｜英文 · 入门 · 免费 · CPU。练语料、文本处理和传统分类；读第 1–3、6–7 章，跳过不相关语法细节。
+
+### 补充课程与实作资源
+
+| 资源 | 语言 · 难度 | 获取 · 算力 | 用法与阅读范围 |
+|---|---|---|---|
+| [Datawhale · Happy-LLM](https://github.com/datawhalechina/happy-llm) | 中文 · 进阶 | 免费 · 可选GPU | 中文主线；第 1–4 章入门，第 5–6 章搭建与训练；按章节硬件要求缩小模型。 |
+
+以上新增入口核实于 2026-10-01；资料免费不含硬件与 API 费用。
+
+## 按资源安排学习顺序
+
+CS224N 或 SLP 作为主线；中文起步可先读 Happy-LLM 第 1–3 章，再进入同一实践路径。
+
+按顺序完成主线，每步完成右列产出后再推进；选修不计入必做清单。页首时长包含所选主线、练习与本页项目，不包含把全部资料逐一学完。
+
+| 阶段 | 使用资源 | 阅读 / 练习范围 | 完成后应留下什么 |
+|---|---|---|---|
+| 1 · 文本任务 | [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp3/)；[Natural Language Processing with Python](https://www.nltk.org/book/)；[Datawhale · Happy-LLM](https://github.com/datawhalechina/happy-llm) | SLP 分词、N-gram、分类；或 NLTK 第 1–3、6 章 | 做词袋文本分类基线并记录错误类别 |
+| 2 · 神经 NLP | [Stanford CS224N](https://web.stanford.edu/class/cs224n/) | 词向量、神经网络、注意力相关讲义与公开作业 | 比较词袋与一种神经表示 |
+| 3 · 预训练模型 | [Hugging Face LLM Course](https://huggingface.co/learn/llm-course/chapter1/1) | 第 1–4 章，再读数据与分词器相关章节 | 对小型文本任务做微调与独立评估 |
+| 选修 · 结构化任务 | [SentencePiece](https://github.com/google/sentencepiece)；[spaCy Linguistic Features](https://spacy.io/usage/linguistic-features) | SentencePiece 分词；spaCy 实体与依存例子 | 选择分词器对照或实体识别之一 |
 
 ## 实践任务与验收
 

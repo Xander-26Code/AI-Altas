@@ -3,43 +3,7 @@
 > 目标：从 token 到下一词概率，能解释并实现一个小型自回归 Transformer；知道模型规模、训练目标与真实能力之间的区别。
 > 先修：Python、PyTorch 张量、线性代数、概率、反向传播。建议规划 120–220 小时。这是完成先修后系统学习主教材、练习和一个项目的规划预算，不含补先修，不等于掌握整个领域。
 
-## 按这个顺序学
-
-1. **先看输入输出**：把一段中英混合文本变成 token ID，观察空格、数字、代码与生僻字的切分；再把 ID 解码回文本。
-2. **看训练问题**：构造输入 `x[:-1]` 与标签 `x[1:]`，理解 teacher forcing 和交叉熵；自己算一次困惑度。
-3. **走通一个 block**：embedding → 带因果遮罩的 attention → 残差连接 → 归一化 → FFN。画出每一步张量维度。
-4. **补位置与容量**：比较绝对位置、相对位置与 RoPE；理解 dense FFN 和 MoE 路由。
-5. **区分训练与推理**：训练时并行处理已知序列；生成时逐 token 解码。比较 greedy、temperature、top-p，理解 KV cache。
-6. **看完整生命周期**：语料许可、去重、预训练、指令微调、偏好优化、评估与部署。先做小模型，再讨论扩大规模。
-
-## 核心概念：模型究竟学到了什么
-
-语言模型把序列概率分解为条件概率：
-
-$$p(x_1,\ldots,x_T)=\prod_{t=1}^{T}p(x_t\mid x_{<t}),\qquad \mathcal L=-\frac1T\sum_t\log p(x_t\mid x_{<t}).$$
-
-假设训练样本是“北京的冬天很冷”，模型在预测“冷”时可以看到之前的 token，但不能偷看“冷”及其后文。**因果遮罩**就是把未来位置的 attention 分数设成负无穷，再做 softmax。一个经常被忽略的细节：token 不等于汉字，也不等于英语单词。同一句话换 tokenizer，序列长度会变，困惑度和上下文用量也会变，所以不同 tokenizer 的困惑度不能直接排名。[Hugging Face LLM Course](https://huggingface.co/learn/llm-course/chapter1/1) 提供了架构、分词和训练之间的入门路径。
-
-设输入矩阵为 $X\in\mathbb R^{T\times d}$，通过可学习投影得到 $Q=XW_Q,K=XW_K,V=XW_V$，则单头注意力为：
-
-$$A=\operatorname{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}+M\right)V.$$
-
-Q 是当前位置在“找什么”，K 是各位置提供的匹配线索，V 是被加权汇总的信息。这个比喻仅帮助理解矩阵乘法；每个维度并不必然对应人能命名的语义。多头是在多个投影空间中并行汇总。FFN 随后对每个位置独立做非线性变换；残差路径和归一化帮助深层网络稳定优化。[Transformer 原论文](https://arxiv.org/abs/1706.03762) 是这一结构的来源。
-
-位置编码让模型区分“人咬狗”和“狗咬人”的顺序。RoPE 对 Q、K 的二维子空间按位置旋转，使内积带有相对位置信息；它不意味着无限长度下能力不下降。[RoFormer](https://arxiv.org/abs/2104.09864) 给出这一构造。MoE 则通过路由器让 token 只经过部分专家，区分“总参数量”和“每 token 激活参数量”很关键：节省计算不等于不占内存，也会引入负载均衡和通信成本。[Switch Transformers](https://arxiv.org/abs/2101.03961) 是适合入门的稀疏专家论文。
-
-推理还有两个阶段：prefill 处理提示词，decode 逐步生成。KV cache 保存过去 token 的 K、V，避免每一步重复计算过去位置的投影；它会随层数、序列长度、批大小和 KV 头数增长。模型权重能放进显存，并不保证长上下文和高并发也能放下。
-
-## 知识点清单
-
-| 必须能解释 | 进阶再研究 | 检查理解的方法 |
-| --- | --- | --- |
-| BPE / Unigram、词表、特殊 token | 字节级分词、多语言 token 效率 | 同一段文本用两种 tokenizer 比较长度 |
-| causal mask、交叉熵、残差、LayerNorm / RMSNorm | GQA / MQA、RoPE 扩展 | 修改未来 token，检查前面位置输出不变 |
-| 预训练与指令微调的目标差异 | scaling laws、数据与计算预算 | 写出各阶段输入、标签与损失 |
-| 解码策略、停止条件、KV cache | MoE、负载均衡、长上下文 | 对固定提示保存多组解码结果 |
-
-## 精选资源
+## 资源列表
 
 以下“免费”指阅读资料；GPU 费用、模型下载许可另行确认。“无”表示读论文无需算力，复现大型实验通常需要 GPU。核实日期：2026-09-30。
 
@@ -52,6 +16,31 @@ Q 是当前位置在“找什么”，K 是各位置提供的匹配线索，V �
 | [Switch Transformers](https://arxiv.org/abs/2101.03961) | 英文 / 研究 | 免费 / 无 | 读稀疏专家路由、负载均衡与训练稳定性；用于区分总参数与激活计算量。 |
 | [SentencePiece](https://github.com/google/sentencepiece) | 英文 / 进阶 | 免费 / CPU | 读Quick Start和分词算法说明，训练小词表并观察BPE/Unigram、Unicode与特殊token。 |
 | [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) | 英文 / 入门 | 免费 / 无 | 先看张量流向、自注意力和多头图解，再回到原论文；用自己的例子复述，不把图解当严格证明。 |
+
+### 补充课程与实作资源
+
+| 资源 | 语言 · 难度 | 获取 · 算力 | 用法与阅读范围 |
+|---|---|---|---|
+| [Karpathy · Neural Networks: Zero to Hero](https://github.com/karpathy/nn-zero-to-hero) | 英文 · 入门 | 免费 · 可选GPU | 视频与 notebook 配套；深度学习先做 micrograd、makemore，再学 GPT 与 tokenizer。 |
+| [Raschka · LLMs from Scratch 配套代码](https://github.com/rasbt/LLMs-from-scratch) | 英文 · 进阶 | 部分免费 · 可选GPU | 第 2–5 章做分词、attention、GPT 与预训练；第 6–7 章和附录 E 做微调。代码免费，完整书籍另售。 |
+| [Datawhale · Happy-LLM](https://github.com/datawhalechina/happy-llm) | 中文 · 进阶 | 免费 · 可选GPU | 中文主线；第 1–4 章入门，第 5–6 章搭建与训练；按章节硬件要求缩小模型。 |
+| [LLMs from Scratch · KV Cache 实现](https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04/03_kv-cache) | 英文 · 进阶 | 免费 · CPU | 先看目录说明和基础缓存实现，再对照无缓存版本；比较生成一致性与解码耗时。 |
+
+以上新增入口核实于 2026-10-01；资料免费不含硬件与 API 费用。
+
+## 按资源安排学习顺序
+
+从零实现主线选 Raschka 配套代码；中文可换 Happy-LLM。视频用 Zero to Hero 配合，不要求三套完整重复。
+
+按顺序完成主线，每步完成右列产出后再推进；选修不计入必做清单。页首时长包含所选主线、练习与本页项目，不包含把全部资料逐一学完。
+
+| 阶段 | 使用资源 | 阅读 / 练习范围 | 完成后应留下什么 |
+|---|---|---|---|
+| 1 · 模型与分词 | [Hugging Face LLM Course](https://huggingface.co/learn/llm-course/chapter1/1)；[Datawhale · Happy-LLM](https://github.com/datawhalechina/happy-llm)；[SentencePiece](https://github.com/google/sentencepiece) | HF 第 1–3、6 章；中文对照 Happy-LLM 第 1–4 章；SentencePiece Quick Start | 比较分词结果，构造输入和下一词标签 |
+| 2 · Attention 到 GPT | [Raschka · LLMs from Scratch 配套代码](https://github.com/rasbt/LLMs-from-scratch)；[Karpathy · Neural Networks: Zero to Hero](https://github.com/karpathy/nn-zero-to-hero)；[The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)；[Attention Is All You Need](https://arxiv.org/abs/1706.03762) | Raschka 第 3–4 章或 Zero to Hero GPT 课；图解与原论文查结构 | 画张量维度，完成因果遮罩测试 |
+| 3 · 小规模训练 | [Raschka · LLMs from Scratch 配套代码](https://github.com/rasbt/LLMs-from-scratch)；[Datawhale · Happy-LLM](https://github.com/datawhalechina/happy-llm) | Raschka 第 5 章或 Happy-LLM 第 5–6 章 | 训练小模型并保存损失、采样与失败记录 |
+| 4 · 生成与缓存 | [LLMs from Scratch · KV Cache 实现](https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04/03_kv-cache) | 基础 KV cache 实现与无缓存对照 | 核对输出和逐 token 计时 |
+| 选修 · 系统与架构 | [Stanford CS336: Language Modeling from Scratch (2025)](https://cs336.stanford.edu/spring2025/)；[RoFormer: Enhanced Transformer with Rotary Position Embedding](https://arxiv.org/abs/2104.09864)；[Switch Transformers](https://arxiv.org/abs/2101.03961) | CS336 Assignment 1；RoPE 与 MoE 论文按兴趣选读 | 主线完成后再加一个架构对照 |
 
 ## 实践：训练一个能被你解释的小语言模型
 

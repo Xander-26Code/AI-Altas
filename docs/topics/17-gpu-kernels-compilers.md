@@ -3,48 +3,7 @@
 > 目标：能写一个数值正确的简单 GPU 算子，判断它受到计算、内存还是启动开销限制，并解释编译器优化的收益与边界。先修：张量运算、矩阵乘法、反向传播，以及 [硬件与系统基础](16-hardware-systems.md)。学习规划预算约 160–300 小时。理论与 CPU 编译实验可在普通电脑完成；CUDA/Triton 实验需要兼容 GPU。
 > 时间口径：具备先修后，系统学习主教材、完成练习与一个项目的规划预算；不包含补先修，也不等于掌握整个领域。实际投入受基础、实验条件和项目深度影响。
 
-GPU 不会因为代码中出现“并行”就自动变快。线程如何访问内存、数据能否复用、计算形状是否适合硬件、启动与同步是否频繁，都会影响执行时间。本章从性能模型出发，再走到代码。
-
-## 学习顺序
-
-1. **先算账**：张量尺寸、字节数、FLOPs、算术强度；手算逐元素加法与矩阵乘法。
-2. **理解执行与内存**：grid、block、warp、寄存器、共享内存、全局内存；画出线程和数据的映射。
-3. **实现与验证**：向量加法 → 归约/softmax → 分块矩阵乘；至少自己完成一个。
-4. **编译与 profiling**：计算图、IR、融合、布局、图中断；比较 eager 与编译后的完整调用。
-5. **写优化报告**：提交形状覆盖、精度检查和测量条件。
-
-## 性能模型先于优化技巧
-
-设算子工作量为 F FLOPs，从所分析存储层搬运的数据为 Q 字节，算术强度 I=F/Q。简化 Roofline 上界为：
-
-$$
-P\leq\min(P_{\mathrm{peak}},B\times I),\qquad
-t\geq\max(F/P_{\mathrm{peak}},Q/B)
-$$
-
-这里的峰值必须匹配实际精度和指令路径。假设设备有效带宽为 1 TB/s，FP32 向量加法每个元素读两个数、写一个数，共 12 字节，仅做 1 次加法，因此 I≈1/12 FLOP/byte；带宽对应上界约 83 GFLOP/s。即使计算峰值是 100 TFLOP/s，这个算子也不会因为浮点单元更多而自动接近峰值。真实执行还受缓存、占用率、同步和启动影响。[Nsight Compute Profiling Guide](https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html)给出了 Roofline 与分层内存分析方法。
-
-**分块提高复用，但会消耗片上资源。** 方阵乘法约需 2n³ FLOPs；若 A、B 各读一次，C 写一次，FP32 的理想数据量为 12n² 字节，算术强度约 n/6。这是理想复用模型，朴素实现可能反复读取相同数据。分块让一组线程把数据搬入共享内存或寄存器后复用；块过大又可能占满寄存器，使同一 SM 能驻留的线程组减少。优化目标是缩短时间，并不是把 occupancy 数字单独推到最大。
-
-**合并访存与减少搬运是不同问题。** 相邻线程访问相邻地址，能让内存事务利用得更充分；算子融合则可以消除中间张量写回与再次读取。例如 `y = relu(a*x+b)` 分成多次 kernel 时，会产生额外启动和中间结果；融合可减少这些成本，但更大的融合也可能增加寄存器压力。[CUDA Programming Guide](https://docs.nvidia.com/cuda/cuda-programming-guide/index.html)是核对执行、内存与同步语义的依据。
-
-**编译器把“做什么”转成“如何执行”。** 前端捕获计算图，IR 表达数据依赖与循环，优化阶段做融合、常量传播、布局变换和调度，后端生成目标代码。静态形状有利于专门优化，动态形状可能需要 guard、多个编译版本或退回普通执行。`torch.compile` 的第一次调用可能包含编译工作，应分别测冷启动和稳态；若额外编译 2 秒，每次只节省 1 毫秒，需要约 2000 次调用才能抵消初始成本。[PyTorch 编译教程](https://docs.pytorch.org/tutorials/intermediate/torch_compile_tutorial.html)还解释了 graph break 的限制。
-
-## 核心知识表
-
-| 概念 | 要回答的问题 | 典型失败 |
-| --- | --- | --- |
-| SIMT、warp、分支 | 哪些线程同时执行？分歧如何影响利用？ | 每个线程走不同分支，执行资源空转 |
-| HBM、共享内存、寄存器 | 哪些值被重复使用，放在哪里？ | 溢出到 local memory，搬运反而增加 |
-| 归约与同步 | 谁生产结果，谁消费，何时可见？ | 读到未完成写入的数据或线程死锁 |
-| tiling、布局、向量化 | 索引如何映射到线程与内存？ | 对某个矩阵形状快，换形状就失效 |
-| 融合与 IR | 可以消掉哪些中间结果？ | 图中断、动态控制流、过度融合 |
-| 混合精度与 Tensor Core | 输入/累加精度及形状是否合适？ | 精度回退或错误对比不匹配的峰值 |
-| profiling | 是 kernel 慢还是调度/传输慢？ | 只测异步提交时间，没有等待完成 |
-
-FlashAttention 可作为后续案例：通过分块和在线 softmax 减少注意力中间矩阵的物化与显存访问。它的核心是 IO 与计算调度的改变；不能从名称推断任意序列长度、形状和硬件上都有固定收益。
-
-## 精选资源
+## 资源列表
 
 核验日期：2026-09-30。GPU 指运行对应 GPU 实验的条件，阅读本身无需 GPU。
 
@@ -57,6 +16,29 @@ FlashAttention 可作为后续案例：通过分块和在线 softmax 减少注�
 | [Nsight Compute Profiling Guide](https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html) | 英文 / 进阶 / 免费 / GPU | Roofline、Memory Chart、指标解释；将性能猜测转换成证据。 |
 | [Stanford CS336](https://cs336.stanford.edu/) | 英文 / 进阶 / 免费 / GPU | Resource Accounting、Kernels/Triton、Systems 作业；让算子优化回到语言模型训练。完整作业投入明显高于本章。 |
 | [Introduction to torch.compile](https://docs.pytorch.org/tutorials/intermediate/torch_compile_tutorial.html) | 英文 / 进阶 / 免费 / 可选GPU | eager/compiled 对比、graph break 与排错；建立应用代码和编译器之间的联系。 |
+
+### 补充课程与实作资源
+
+| 资源 | 语言 · 难度 | 获取 · 算力 | 用法与阅读范围 |
+|---|---|---|---|
+| [GPU MODE lectures](https://github.com/gpu-mode/lectures) | 英文 · 进阶 | 免费 · GPU | GPU 入门选第 3、4、8、14 讲；分布式选第 17 讲 NCCL。视频、讲义和代码按需搭配。 |
+| [MIT 6.5940 · TinyML and Efficient Deep Learning Computing (2024)](https://hanlab.mit.edu/courses/2024-fall-65940) | 英文 · 进阶 | 免费 · 可选GPU | 固定 2024 课程入口；选剪枝、量化与部署主题的讲义和作业，做精度、延迟和模型大小对照。 |
+
+以上新增入口核实于 2026-10-01；资料免费不含硬件与 API 费用。
+
+## 按资源安排学习顺序
+
+GPU MODE 配 Triton 为实践主线；需要 CUDA C++ 时用 Programming Guide。编译器分支按兴趣选 MLC 或 Deep Learning Systems。
+
+按顺序完成主线，每步完成右列产出后再推进；选修不计入必做清单。页首时长包含所选主线、练习与本页项目，不包含把全部资料逐一学完。
+
+| 阶段 | 使用资源 | 阅读 / 练习范围 | 完成后应留下什么 |
+|---|---|---|---|
+| 1 · 编程模型 | [GPU MODE lectures](https://github.com/gpu-mode/lectures)；[CUDA Programming Guide](https://docs.nvidia.com/cuda/cuda-programming-guide/index.html) | GPU MODE 第 3、4 讲；CUDA Programming Model | 运行向量加法并核对线程与内存访问 |
+| 2 · 算子实现 | [Triton 官方教程](https://triton-lang.org/main/getting-started/tutorials/)；[GPU MODE lectures](https://github.com/gpu-mode/lectures) | Triton 向量加法、融合 softmax、矩阵乘法；GPU MODE 第 14 讲 | 建立多个 shape 的正确性与性能基线 |
+| 3 · Profiling | [Nsight Compute Profiling Guide](https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html)；[GPU MODE lectures](https://github.com/gpu-mode/lectures) | Nsight Roofline/Memory Chart；GPU MODE 第 8 讲 | 用数据解释一个瓶颈并验证优化 |
+| 选修 · 编译与框架 | [机器学习编译课程（中文）](https://book-zh.mlc.ai/)；[Deep Learning Systems](https://dlsyscourse.org/)；[Introduction to torch.compile](https://docs.pytorch.org/tutorials/intermediate/torch_compile_tutorial.html) | MLC TensorIR 或 DLSys 数组/自动微分；torch.compile 对照 | 选一个编译优化或框架内部实验 |
+| 选修 · 高效模型 | [MIT 6.5940 · TinyML and Efficient Deep Learning Computing (2024)](https://hanlab.mit.edu/courses/2024-fall-65940)；[Stanford CS336](https://cs336.stanford.edu/) | MIT 量化/剪枝；CS336 systems 作业选读 | 完成一个与主项目相关的扩展 |
 
 ## 实践：给融合逐元素算子做一张性能说明书
 

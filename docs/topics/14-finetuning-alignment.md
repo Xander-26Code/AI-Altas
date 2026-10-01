@@ -3,46 +3,7 @@
 > 目标：判断一个问题是否值得微调，完成可复现的小规模 SFT 对照，并解释 LoRA、RLHF、DPO 与 GRPO 的目标和区别。
 > 先修：语言模型训练、PyTorch、梯度与交叉熵；理解强化学习的策略和奖励有助于后半章。建议规划 120–220 小时。这是完成先修后系统学习主教材、练习和一个项目的规划预算，不含补先修，不等于掌握整个领域。
 
-## 按这个顺序学
-
-1. **先确认需要改变什么**：最新事实用检索，输出格式先用提示和 schema，稳定任务行为或领域表达才考虑微调。
-2. **准备训练与评估数据**：定义样本格式、许可、去重、文档级切分和标注规范；先留出测试集。
-3. **做 SFT 基线**：学习标准答案，检查 chat template、标签遮罩、截断和有效 token 数。
-4. **学习 PEFT**：理解 LoRA 的低秩更新、目标层、rank、缩放与 adapter 保存；再看 QLoRA 的量化底座。
-5. **理解偏好数据**：同一输入的优选与劣选回答、标注分歧、长度偏好与采样分布。
-6. **学习后训练目标**：奖励模型加策略优化的 RLHF、直接偏好优化 DPO，以及按组比较采样奖励的 GRPO。
-7. **检查收益与退化**：同时测任务质量、通用能力、格式、拒答和成本；保留能回滚的底座与训练配置。
-
-## 核心概念：四种问题，不要混成一个按钮
-
-继续预训练通常在领域文本上继续学习 token 分布；SFT 学习“给定指令，应该怎样回答”；偏好优化学习“两个候选中哪种行为更受偏好”；在线强化学习则让模型生成样本，并根据奖励更新策略。它们可能串联，也可能按任务选择，不能把每种训练都叫“给模型灌知识”。[TRL 官方文档](https://huggingface.co/docs/trl/index) 区分了这些训练方法和数据格式。
-
-SFT 对目标回答的 token 做负对数似然训练。若把用户问题也误当答案训练，或截断恰好删去答案，损失下降可能没有对应业务收益。使用哪种遮罩必须明确：只对 assistant 回复计损失，是常见指令微调设置，但不是所有训练任务的唯一选择。训练与推理的 chat template、结束 token 不一致，也会造成重复续写或角色混乱。
-
-LoRA 将某层权重更新限制为低秩形式：
-
-$$W'=W+\frac{\alpha}{r}BA,\quad W\in\mathbb R^{d_{out}\times d_{in}},\quad B\in\mathbb R^{d_{out}\times r},\ A\in\mathbb R^{r\times d_{in}}.$$
-
-底座 $W$ 冻结，只训练 A、B。新增参数由 $d_{out}d_{in}$ 变为 $r(d_{out}+d_{in})$，当 $r$ 较小时显著减少可训练参数和优化器状态。但底座权重、激活与注意力仍占显存，不能仅按 adapter 大小估计硬件。[LoRA](https://arxiv.org/abs/2106.09685) 是方法来源；[QLoRA](https://arxiv.org/abs/2305.14314) 在量化冻结底座上训练 adapter，量化存储位宽与实际计算精度也不是同一概念。
-
-经典 RLHF 流程包括示范数据 SFT、偏好比较训练奖励模型，再优化语言模型以提高奖励，同时约束偏离参考策略。奖励只是对目标的代理，模型可能学会“看起来像高质量回答”，却不更真实。[InstructGPT 论文](https://arxiv.org/abs/2203.02155) 是理解此流程的重要案例，其结论受论文的数据和实验分布限制。
-
-DPO 用偏好对直接训练策略。对优选 $y_w$ 与劣选 $y_l$，一个标准形式是：
-
-$$\mathcal L_{DPO}=-\log\sigma\left(\beta\left[\log\frac{\pi_\theta(y_w\mid x)}{\pi_{ref}(y_w\mid x)}-\log\frac{\pi_\theta(y_l\mid x)}{\pi_{ref}(y_l\mid x)}\right]\right).$$
-
-它不需要另训练显式奖励模型再运行同样的在线 RL 循环；仍依赖偏好模型假设、参考策略和数据质量。[DPO 原论文](https://arxiv.org/abs/2305.18290) 给出推导。GRPO 则对同一题生成一组回答，使用组内奖励构造相对优势，省去传统方案中的单独价值模型；奖励若恒定、被投机利用或标注错误，组内比较不会自动修复问题。[DeepSeekMath](https://arxiv.org/abs/2402.03300) 是 GRPO 的原始来源之一。
-
-## 知识点清单
-
-| 方法 | 主要数据 | 首先检查 |
-| --- | --- | --- |
-| SFT | 输入与示范答案 | 答案质量、template、loss mask、截断 |
-| LoRA / QLoRA | 与所选训练目标相同 | 可训练参数、目标层、精度、显存 |
-| DPO | 同一输入的偏好对 | 偏好依据、长度差异、参考策略 |
-| RLHF / GRPO | 生成样本与奖励 | 奖励可验证性、采样成本、奖励投机 |
-
-## 精选资源
+## 资源列表
 
 阅读资料免费；GPU、存储和生成训练样本的服务费另计。先做小实验估算显存与吞吐，不套用别人的硬件结论。核实日期：2026-09-30。
 
@@ -55,6 +16,30 @@ $$\mathcal L_{DPO}=-\log\sigma\left(\beta\left[\log\frac{\pi_\theta(y_w\mid x)}{
 | [Training Language Models to Follow Instructions with Human Feedback](https://arxiv.org/abs/2203.02155) | 英文 / 进阶 | 免费 / 无 | 读SFT→偏好标注→RLHF流程与局限；理解优化人类偏好和绝对正确并非同义。 |
 | [Direct Preference Optimization](https://arxiv.org/abs/2305.18290) | 英文 / 研究 | 免费 / 无 | 读第3–4节和推导附录，写出优选/劣选相对参考策略的损失；先验证玩具例子梯度方向。 |
 | [DeepSeekMath](https://arxiv.org/abs/2402.03300) | 英文 / 研究 | 免费 / 无 | 重点读GRPO与奖励设计，同时检查数据筛选；不要把数学任务结果直接外推所有领域。 |
+
+### 补充课程与实作资源
+
+| 资源 | 语言 · 难度 | 获取 · 算力 | 用法与阅读范围 |
+|---|---|---|---|
+| [Raschka · LLMs from Scratch 配套代码](https://github.com/rasbt/LLMs-from-scratch) | 英文 · 进阶 | 部分免费 · 可选GPU | 第 2–5 章做分词、attention、GPT 与预训练；第 6–7 章和附录 E 做微调。代码免费，完整书籍另售。 |
+| [Datawhale · Happy-LLM](https://github.com/datawhalechina/happy-llm) | 中文 · 进阶 | 免费 · 可选GPU | 中文主线；第 1–4 章入门，第 5–6 章搭建与训练；按章节硬件要求缩小模型。 |
+| [Hugging Face · smol course](https://github.com/huggingface/smol-course) | 英文 · 进阶 | 免费 · GPU | 沿 Instruction Tuning → Evaluation → Preference Alignment 学；先完成小模型 SFT 与评估，再选 DPO。 |
+
+以上新增入口核实于 2026-10-01；资料免费不含硬件与 API 费用。
+
+## 按资源安排学习顺序
+
+小模型实践选 smol course；原理配 LoRA、DPO 论文，中文可配 Happy-LLM 第 6 章。先完成 SFT 评估，再尝试偏好训练。
+
+按顺序完成主线，每步完成右列产出后再推进；选修不计入必做清单。页首时长包含所选主线、练习与本页项目，不包含把全部资料逐一学完。
+
+| 阶段 | 使用资源 | 阅读 / 练习范围 | 完成后应留下什么 |
+|---|---|---|---|
+| 1 · SFT 与数据 | [Hugging Face · smol course](https://github.com/huggingface/smol-course)；[Hugging Face TRL](https://huggingface.co/docs/trl/index)；[Datawhale · Happy-LLM](https://github.com/datawhalechina/happy-llm) | Instruction Tuning；TRL Dataset Formats、Chat Templates、SFT | 检查数据模板，保存底座与微调模型对照 |
+| 2 · 参数高效训练 | [Hugging Face PEFT](https://huggingface.co/docs/peft/index)；[LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685)；[Raschka · LLMs from Scratch 配套代码](https://github.com/rasbt/LLMs-from-scratch) | PEFT Quicktour/LoRA；LoRA 论文；Raschka 附录 E | 核对可训练参数、适配器保存与加载 |
+| 3 · 独立评估 | [Hugging Face · smol course](https://github.com/huggingface/smol-course) | Evaluation 单元与自建未见任务 | 记录提升、退化与重复数据检查 |
+| 4 · 偏好训练 | [Direct Preference Optimization](https://arxiv.org/abs/2305.18290)；[Hugging Face TRL](https://huggingface.co/docs/trl/index)；[Hugging Face · smol course](https://github.com/huggingface/smol-course) | Preference Alignment 与 TRL DPO；先用小数据验证 | 核对优选/劣选方向并与 SFT 比较 |
+| 选修 · 扩展方法 | [QLoRA: Efficient Finetuning of Quantized LLMs](https://arxiv.org/abs/2305.14314)；[Training Language Models to Follow Instructions with Human Feedback](https://arxiv.org/abs/2203.02155)；[DeepSeekMath](https://arxiv.org/abs/2402.03300) | QLoRA、InstructGPT 或 DeepSeekMath 按目标选读 | 明确量化、奖励、参考策略与数据前提 |
 
 ## 实践：让小模型学会稳定输出工单标签
 

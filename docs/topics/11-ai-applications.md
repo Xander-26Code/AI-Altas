@@ -3,49 +3,7 @@
 > 目标：把一次模型调用变成有输入契约、失败处理、成本记录和评估的应用；完成一个可演示、可维护的最小产品。
 > 先修：Python 或 TypeScript、HTTP / JSON、基础后端开发。无需先训练大模型。建议规划 80–140 小时。这是完成先修后系统学习主教材、练习和一个项目的规划预算，不含补先修，不等于掌握整个领域。
 
-## 按这个顺序学
-
-1. **写任务契约**：用户输入什么，应用输出什么，哪些情况拒绝或转人工，怎样算成功。
-2. **建立无模型基线**：规则、模板或传统检索能否解决？准备 30–50 条真实形态样例，保留测试集。
-3. **封装模型适配层**：统一请求、响应、超时、取消、错误类型；把供应商差异留在适配器。
-4. **设计提示与输出**：明确任务、上下文、示例和格式；用 schema 校验结构，用业务规则校验内容。
-5. **做完整交互**：加载、流式展示、失败重试、取消、纠错、来源查看和反馈入口。
-6. **接入工具与数据**：模型提出工具调用，服务器检查参数、权限与业务约束，再执行。
-7. **加入缓存、观测和评估**：记录延迟、成功率、token 用量与版本；用同一测试集比较改动。
-
-## 核心概念：模型调用只是一个不确定的组件
-
-以“把客服工单分流”为例，输入可能是含糊、很长或带恶意指令的文本。输出契约可定义为：
-
-```json
-{
-  "category": "billing",
-  "priority": "normal",
-  "evidence": ["用户描述了重复扣费"],
-  "needs_review": true
-}
-```
-
-`category` 应限制为枚举；`evidence` 必须能对应原文；没有充分依据就进入人工队列。有效 JSON 只说明语法可解析，schema 通过只说明字段符合规定，都不能证明分类正确。可以用 [JSON Schema](https://json-schema.org/learn/getting-started-step-by-step) 描述契约，用 [Pydantic](https://docs.pydantic.dev/latest/concepts/models/) 在 Python 边界校验。不要把模型自报的“置信度 0.99”直接当作已校准概率。
-
-模型适配器至少返回 `result`、`usage`、`latency`、`finish_reason` 和内部请求标识。把上下文长度超限、服务限流、网络超时、输出不完整、schema 失败分开处理：有的适合重试，有的应该压缩输入或直接报错。重试采用次数上限与退避；有副作用的工具还需幂等键，避免用户一次操作创建两个工单。
-
-**流式输出改善等待体验，不会自动缩短最终完成时间。** 首 token 延迟反映多久看到第一段内容，总延迟反映任务何时真正完成。前端可以显示部分文本，但结构化结果需要完成并校验后才能触发业务动作。[MDN 的 SSE 文档](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events) 说明了服务端事件流的通信机制；AI 应用仍需自己定义中断和完成状态。
-
-缓存需要先判断“什么结果可以复用”。相同输入不一定有相同权限或相同最新事实。一个精确缓存键通常包含模型版本、提示版本、参数、输入、数据版本和租户边界；语义缓存还必须评估近似匹配造成的错误。HTTP 缓存、应用结果缓存、embedding 缓存、推理前缀缓存的对象不同。[RFC 9111](https://www.rfc-editor.org/rfc/rfc9111.html) 适合学习缓存的新鲜度和失效思想，不能直接替代模型缓存设计。
-
-成本可以先用可审计的公式表达：`请求成本 = 输入用量 × 输入单价 + 输出用量 × 输出单价 + 工具/检索成本`。实际单价从所用服务当前账单读取，本 Wiki 不固定价格。更有意义的产品指标是“每个成功完成任务的成本”，因为失败后的重试和人工处理也要计入。
-
-## 知识点清单
-
-| 层次 | 要掌握的内容 | 最小可交付证据 |
-| --- | --- | --- |
-| 接口 | 超时、取消、限流、幂等、结构化错误 | 模拟故障后的响应 |
-| 模型 | prompt 版本、上下文、解码、工具调用 | 固定测试集比较报告 |
-| 体验 | 流式、进度、引用、可编辑结果、人工接管 | 完整成功与失败录屏 |
-| 运维 | tracing、日志脱敏、用量、缓存命中、回滚 | 一次请求的阶段耗时 |
-
-## 精选资源
+## 资源列表
 
 课程材料免费不意味着示例 API 免费；先用本地模拟响应完成测试，再自行选择模型服务。核实日期：2026-09-30。
 
@@ -58,6 +16,30 @@
 | [Pydantic Models](https://docs.pydantic.dev/latest/concepts/models/) | 英文 / 进阶 | 免费 / CPU | 读模型定义、字段与验证错误；练习结构校验后再做业务语义检查。 |
 | [RFC 9111: HTTP Caching](https://www.rfc-editor.org/rfc/rfc9111.html) | 英文 / 进阶 | 免费 / CPU | 读缓存键、新鲜度、验证与失效章节；迁移这些思想时区分HTTP缓存和模型结果缓存。 |
 | [OpenTelemetry: Traces](https://opentelemetry.io/docs/concepts/signals/traces/) | 英文 / 进阶 | 免费 / CPU | 读trace与span概念，把检索、模型、重排和工具各阶段耗时关联到一次请求。 |
+
+### 补充课程与实作资源
+
+| 资源 | 语言 · 难度 | 获取 · 算力 | 用法与阅读范围 |
+|---|---|---|---|
+| [Datawhale · LLM Universe](https://github.com/datawhalechina/llm-universe) | 中文 · 入门 | 免费 · CPU | 选第一部分 API、知识库、RAG、评估与优化；进阶部分仍有在编内容。核对依赖版本，API 费用另计。 |
+| [DataTalks.Club · LLM Zoomcamp](https://github.com/DataTalksClub/llm-zoomcamp) | 英文 · 进阶 | 免费 · CPU | 选 RAG、Vector Search、Evaluation、Monitoring 和项目；先完成普通检索基线，再扩展 agentic 流程。 |
+| [Awesome LLM Apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | 英文 · 进阶 | 免费 · CPU | 项目选题库；完成主课后只挑一个 RAG 或 Agent 示例阅读架构、依赖与评估，不把 demo 当生产方案。 |
+
+以上新增入口核实于 2026-10-01；资料免费不含硬件与 API 费用。
+
+## 按资源安排学习顺序
+
+中文主线选 LLM Universe，英文选 Microsoft Generative AI for Beginners。主课完成后用文档补接口与可观测性。
+
+按顺序完成主线，每步完成右列产出后再推进；选修不计入必做清单。页首时长包含所选主线、练习与本页项目，不包含把全部资料逐一学完。
+
+| 阶段 | 使用资源 | 阅读 / 练习范围 | 完成后应留下什么 |
+|---|---|---|---|
+| 1 · 第一个应用 | [Datawhale · LLM Universe](https://github.com/datawhalechina/llm-universe)；[Microsoft Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners) | API 调用、提示、聊天或分类；两套入门课择一 | 完成带超时、异常处理的模型适配器 |
+| 2 · 结构与界面 | [JSON Schema: Creating your first schema](https://json-schema.org/learn/getting-started-step-by-step)；[Pydantic Models](https://docs.pydantic.dev/latest/concepts/models/)；[MDN: Using server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events) | JSON Schema 对象与验证；Pydantic Models；SSE 事件格式 | 验证模型输出，区分流式展示与最终提交 |
+| 3 · 产品流程 | [Full Stack LLM Bootcamp](https://fullstackdeeplearning.com/llm-bootcamp/)；[DataTalks.Club · LLM Zoomcamp](https://github.com/DataTalksClub/llm-zoomcamp) | Bootcamp UX、LLMOps；Zoomcamp 评估与监控选读 | 补固定问题集、反馈和成本记录 |
+| 4 · 独立项目 | [Awesome LLM Apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | 从应用示例库选一个与目标相近的案例读代码 | 按下方任务自行实现并记录差异 |
+| 选修 · 性能与追踪 | [RFC 9111: HTTP Caching](https://www.rfc-editor.org/rfc/rfc9111.html)；[OpenTelemetry: Traces](https://opentelemetry.io/docs/concepts/signals/traces/) | 缓存新鲜度与失效；trace 和 span | 为已有应用测一次端到端调用链 |
 
 ## 实践：可审计的工单分类服务
 

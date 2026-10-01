@@ -3,47 +3,7 @@
 > 目标：建立能够检索、引用、拒答并遵守文档权限的知识问答系统；能区分检索失败与生成失败。
 > 先修：Python、基本文本处理、向量相似度、HTTP；了解语言模型上下文。建议规划 80–140 小时。这是完成先修后系统学习主教材、练习和一个项目的规划预算，不含补先修，不等于掌握整个领域。
 
-## 按这个顺序学
-
-1. **先做搜索**：为 20–50 篇有许可的文档建立关键词或 BM25 基线，不先接聊天界面。
-2. **建立数据管道**：解析、清理、切分、去重、文档 ID、章节路径、版本与权限元数据。
-3. **加入 dense retrieval**：用同一模型编码查询与文档，确认距离函数、归一化和输入模板匹配。
-4. **加入混合检索与重排**：合并关键词与向量候选，再用 cross-encoder 或其他相关性模型细排。
-5. **组织上下文**：去重、保留出处、控制 token 预算、处理相互矛盾或已过期的文档。
-6. **要求有证据的回答**：生成答案并引用具体段落；无证据时明确不足。
-7. **分层评估与运维**：召回、排序、引用支持度、最终正确率、权限与删除传播。
-
-## 核心概念：把事实查找与表达分开诊断
-
-RAG 的工程流程通常是 `问题 → 检索候选 → 重排 → 组装上下文 → 生成 → 检查引用`。历史上 [RAG 原论文](https://arxiv.org/abs/2005.11401) 提出结合参数记忆与外部可检索记忆的模型；今天的工程实践不一定采用论文的联合训练方式。把文档塞进提示词是一种实现起点，不是完整知识治理方案。
-
-假设问题是“合同 A-017 的提前终止条款是什么”。向量检索可能找到很多语义相似的合同，关键词匹配则更容易保住 `A-017` 这个精确标识。另一种问题“提前结束合作要付多少钱”又可能需要语义匹配。因此先分别测 BM25 和 dense，再考虑融合，不能预设向量一定优于关键词。
-
-一种常见融合方法是倒数排名融合：
-
-$$\operatorname{RRF}(d)=\sum_j\frac{1}{k+\operatorname{rank}_j(d)}.$$
-
-只对某检索列表中出现的文档求和，排名从 1 开始，$k$ 用于调节排名差距的影响。RRF 利用排名，避开不同检索器原始分数不在同一量纲的问题；候选窗口和 $k$ 仍应在开发集上比较。[Elastic 的官方说明](https://www.elastic.co/docs/reference/elasticsearch/rest-apis/reciprocal-rank-fusion) 给出了可核对的公式与示例。
-
-Bi-encoder 分别编码查询与文档，可以提前计算全部文档向量，适合快速召回。Cross-encoder 同时读取查询和候选文档，可利用细粒度交互，但很难对全库逐条运行；因此常用“先多召回，再少量重排”。[Sentence Transformers](https://www.sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html) 清楚展示了这种分工。
-
-切分没有万能长度。按固定字符切开可能把表头与数值分离，过大的 chunk 又容易稀释真正相关内容。保留章节标题、页码、表格关系和相邻段落 ID；对代码按符号、对合同按条款、对表格按结构处理。先建立人工标注的问题与证据段落，再用指标决定切分方式。
-
-**权限必须成为检索执行条件。** 查询用户只能在有权阅读的集合中召回；重排、缓存、引用和日志都要沿用相同边界。不能先取到秘密内容，再寄希望于生成模型不说出来。删除文档也应传播到 chunk、向量索引、缓存和备份策略。知识图谱检索、多跳检索、多模态 RAG 是扩展方向，但应在基本链路可测后再引入。
-
-## 知识点清单
-
-| 环节 | 最重要的问题 | 先观察的指标 |
-| --- | --- | --- |
-| 摄取 | 原文是否丢失表格、标题、时间与来源 | 解析错误率、缺失字段 |
-| 召回 | 正确证据有没有进入候选 | Recall@k、Hit@k |
-| 排序 | 相关内容是否靠前 | MRR、nDCG |
-| 生成 | 答案是否被证据支持 | 正确率、引用支持度、拒答表现 |
-| 权限 | 用户是否接触无权内容 | 越权用例结果、删除传播检查 |
-
-Recall@k 是“前 k 条检索结果覆盖了多少已标注相关文档”；Hit@k 是“是否至少命中一条”。两者不要混用。检索没有命中正确证据时，不宜只通过修改生成提示修补。
-
-## 精选资源
+## 资源列表
 
 资料阅读免费；数据库托管和模型服务可能收费。先用本地小数据确认正确性。核实日期：2026-09-30。
 
@@ -56,6 +16,28 @@ Recall@k 是“前 k 条检索结果覆盖了多少已标注相关文档”；Hi
 | [Faiss Wiki](https://github.com/facebookresearch/faiss/wiki) | 英文 / 进阶 | 免费 / 可选GPU | 先读相似度搜索和索引选择，再在固定向量集比较准确率、延迟与内存。 |
 | [BEIR](https://github.com/beir-cellar/beir) | 英文 / 进阶 | 免费 / 可选GPU | 读数据格式和评估示例，学习跨数据集检索评估；先选小子集，不急着跑全套。 |
 | [Lost in the Middle: How Language Models Use Long Contexts](https://arxiv.org/abs/2307.03172) | 英文 / 进阶 | 免费 / 无 | 读证据位置实验和评估协议；为自己的模型重做位置对照，不直接套用旧模型结论。 |
+
+### 补充课程与实作资源
+
+| 资源 | 语言 · 难度 | 获取 · 算力 | 用法与阅读范围 |
+|---|---|---|---|
+| [Datawhale · LLM Universe](https://github.com/datawhalechina/llm-universe) | 中文 · 入门 | 免费 · CPU | 选第一部分 API、知识库、RAG、评估与优化；进阶部分仍有在编内容。核对依赖版本，API 费用另计。 |
+| [DataTalks.Club · LLM Zoomcamp](https://github.com/DataTalksClub/llm-zoomcamp) | 英文 · 进阶 | 免费 · CPU | 选 RAG、Vector Search、Evaluation、Monitoring 和项目；先完成普通检索基线，再扩展 agentic 流程。 |
+
+以上新增入口核实于 2026-10-01；资料免费不含硬件与 API 费用。
+
+## 按资源安排学习顺序
+
+中文选 LLM Universe 第一部分，英文选 LLM Zoomcamp。先跑检索与评估，再引入混合检索和生成优化。
+
+按顺序完成主线，每步完成右列产出后再推进；选修不计入必做清单。页首时长包含所选主线、练习与本页项目，不包含把全部资料逐一学完。
+
+| 阶段 | 使用资源 | 阅读 / 练习范围 | 完成后应留下什么 |
+|---|---|---|---|
+| 1 · RAG 主课 | [Datawhale · LLM Universe](https://github.com/datawhalechina/llm-universe)；[DataTalks.Club · LLM Zoomcamp](https://github.com/DataTalksClub/llm-zoomcamp) | 文档加载、清洗、切片、检索问答与评估 | 建一份带来源的知识库和问题集 |
+| 2 · 提升检索 | [Sentence Transformers: Retrieve & Re-Rank](https://www.sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html)；[Elasticsearch: Reciprocal Rank Fusion](https://www.elastic.co/docs/reference/elasticsearch/rest-apis/reciprocal-rank-fusion) | Retrieve & Re-Rank，再读 RRF 公式与示例 | 比较单路召回、融合、重排的效果 |
+| 3 · 索引与评估 | [pgvector](https://github.com/pgvector/pgvector)；[Faiss Wiki](https://github.com/facebookresearch/faiss/wiki)；[BEIR](https://github.com/beir-cellar/beir) | pgvector 或 Faiss 二选一；BEIR 数据格式与评估 | 在固定数据上记录召回率、耗时和内存 |
+| 4 · 生成诊断 | [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401)；[Lost in the Middle: How Language Models Use Long Contexts](https://arxiv.org/abs/2307.03172) | 原始 RAG 方法；Lost in the Middle 实验协议 | 检查引用、无答案情况和证据位置敏感性 |
 
 ## 实践：给本 Wiki 建一个可验证的问答器
 
