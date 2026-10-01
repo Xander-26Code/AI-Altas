@@ -5,7 +5,7 @@ hide:
 
 # 精选资源目录
 
-当前收录 **196 个不同 URL 的资源入口**。一个资源可能对应多个专题；这不是课程数量或已完成实验数量。优先一手来源，具体阅读范围在各专题说明。
+当前收录 **197 个不同 URL 的资源入口**。一个资源可能对应多个专题；这不是课程数量或已完成实验数量。优先一手来源，具体阅读范围在各专题说明。
 
 语言、难度、费用和计算标签是学习建议。免费阅读不包含算力、证书、硬件或再分发权；`content-reviewed` 表示查看过对应页面，不表示读完全部资料。链接检查结论见 [质量记录](quality.md)。
 
@@ -140,6 +140,7 @@ hide:
 |---|---|---|---|
 | [Karpathy · Neural Networks: Zero to Hero](https://github.com/karpathy/nn-zero-to-hero) | 英文 · 入门 | 免费 · 可选GPU | 视频与 notebook 配套；深度学习先做 micrograd、makemore，再学 GPT 与 tokenizer。 |
 | [Raschka · LLMs from Scratch 配套代码](https://github.com/rasbt/LLMs-from-scratch) | 英文 · 进阶 | 部分免费 · 可选GPU | 第 2–5 章做分词、attention、GPT 与预训练；第 6–7 章和附录 E 做微调。代码免费，完整书籍另售。 |
+| [Build a Large Language Model (From Scratch) · 社区中文版](https://skindhu.github.io/Build-A-Large-Language-Model-CN/) | 中文 · 进阶 | 免费在线阅读 · 可选GPU | skindhu 社区翻译；第 1–5 章学习分词、attention、GPT 与预训练，第 6–7 章及附录 E 学习微调和 LoRA。配合作者代码逐章实践。 |
 | [Datawhale · Happy-LLM](https://github.com/datawhalechina/happy-llm) | 中文 · 进阶 | 免费 · 可选GPU | 中文主线；第 1–4 章入门，第 5–6 章搭建与训练；按章节硬件要求缩小模型。 |
 | [LLMs from Scratch · KV Cache 实现](https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04/03_kv-cache) | 英文 · 进阶 | 免费 · CPU | 先看目录说明和基础缓存实现，再对照无缓存版本；比较生成一致性与解码耗时。 |
 | [Hugging Face LLM Course](https://huggingface.co/learn/llm-course/chapter1/1) | 英文 · 进阶 | 免费 · 可选GPU | 连接 NLP 理论与库；学 1–4 章模型流程及 5–8 章数据、分词器和任务。 |
@@ -223,6 +224,7 @@ hide:
 | 资源 | 语言 · 级别 | 费用 · 算力 | 推荐理由 |
 |---|---|---|---|
 | [Raschka · LLMs from Scratch 配套代码](https://github.com/rasbt/LLMs-from-scratch) | 英文 · 进阶 | 部分免费 · 可选GPU | 第 2–5 章做分词、attention、GPT 与预训练；第 6–7 章和附录 E 做微调。代码免费，完整书籍另售。 |
+| [Build a Large Language Model (From Scratch) · 社区中文版](https://skindhu.github.io/Build-A-Large-Language-Model-CN/) | 中文 · 进阶 | 免费在线阅读 · 可选GPU | skindhu 社区翻译；第 1–5 章学习分词、attention、GPT 与预训练，第 6–7 章及附录 E 学习微调和 LoRA。配合作者代码逐章实践。 |
 | [Datawhale · Happy-LLM](https://github.com/datawhalechina/happy-llm) | 中文 · 进阶 | 免费 · 可选GPU | 中文主线；第 1–4 章入门，第 5–6 章搭建与训练；按章节硬件要求缩小模型。 |
 | [Hugging Face · smol course](https://github.com/huggingface/smol-course) | 英文 · 进阶 | 免费 · GPU | 沿 Instruction Tuning → Evaluation → Preference Alignment 学；先完成小模型 SFT 与评估，再选 DPO。 |
 | [Hugging Face PEFT](https://huggingface.co/docs/peft/index) | 英文 · 进阶 | 免费 · GPU | 先读Quicktour、LoRA和checkpoint格式；检查真正参与训练的参数和底座依赖。 |

@@ -36,6 +36,24 @@
     "evidence": "已查看作者或维护者页面的介绍、目录和学习要求；未逐项运行课程代码。"
   },
   {
+    "id": "expanded-scratch-cn",
+    "title": "Build a Large Language Model (From Scratch) · 社区中文版",
+    "url": "https://skindhu.github.io/Build-A-Large-Language-Model-CN/",
+    "kind": "book",
+    "language": "中文",
+    "level": "进阶",
+    "compute": "可选GPU",
+    "access": "免费在线阅读",
+    "why": "skindhu 社区翻译；第 1–5 章学习分词、attention、GPT 与预训练，第 6–7 章及附录 E 学习微调和 LoRA。配合作者代码逐章实践。",
+    "topics": [
+      "09-llm",
+      "14-finetuning-alignment"
+    ],
+    "checked_on": "2026-10-01",
+    "verification": "content-reviewed",
+    "evidence": "已查看维护者 README、站点侧栏与章节 Markdown，确认第 1–7 章及附录 A–E；是社区翻译，配套代码来自 rasbt/LLMs-from-scratch。未逐项运行书中代码。"
+  },
+  {
     "id": "expanded-happy",
     "title": "Datawhale · Happy-LLM",
     "url": "https://github.com/datawhalechina/happy-llm",

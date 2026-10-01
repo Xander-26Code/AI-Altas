@@ -4,9 +4,9 @@
 
 | 阶段 | 内容 | 投入 | 产出 | 主资源与范围 |
 |---|---|---|---|---|
-| 模型结构 | [LLM](../topics/09-llm.md)，分词与 attention | 90–150 小时 | 因果 mask 与形状检查，解释 loss 与采样 | [LLMs from Scratch](https://github.com/rasbt/LLMs-from-scratch) 第 2–4 章；中文替代 [Happy-LLM](https://github.com/datawhalechina/happy-llm) 第 1–5 章相应部分 |
-| 小规模预训练 | 数据流水线、小 Transformer、训练诊断 | 100–180 小时 | 训练/验证曲线、数据说明、检查点与可重跑配置 | [LLMs from Scratch](https://github.com/rasbt/LLMs-from-scratch) 第 5 章；中文选 Happy-LLM 第 5–6 章的小模型实践 |
-| SFT 与 PEFT | [微调对齐](../topics/14-finetuning-alignment.md) 前半 | 100–180 小时 | 底座与适配器对照，未见任务和退化分析 | [smol course](https://github.com/huggingface/smol-course) Instruction Tuning → PEFT Quicktour/LoRA；Raschka 附录 E 作补充 |
+| 模型结构 | [LLM](../topics/09-llm.md)，分词与 attention | 90–150 小时 | 因果 mask 与形状检查，解释 loss 与采样 | [LLMs from Scratch 中文版](https://skindhu.github.io/Build-A-Large-Language-Model-CN/) 第 1–4 章配 [作者代码](https://github.com/rasbt/LLMs-from-scratch)；另一中文路线选 [Happy-LLM](https://github.com/datawhalechina/happy-llm) 第 1–5 章相应部分 |
+| 小规模预训练 | 数据流水线、小 Transformer、训练诊断 | 100–180 小时 | 训练/验证曲线、数据说明、检查点与可重跑配置 | [LLMs from Scratch 中文版](https://skindhu.github.io/Build-A-Large-Language-Model-CN/) 第 5 章配作者代码；也可选 Happy-LLM 第 5–6 章的小模型实践 |
+| SFT 与 PEFT | [微调对齐](../topics/14-finetuning-alignment.md) 前半 | 100–180 小时 | 底座与适配器对照，未见任务和退化分析 | [smol course](https://github.com/huggingface/smol-course) Instruction Tuning → PEFT Quicktour/LoRA；[LLMs from Scratch 中文版](https://skindhu.github.io/Build-A-Large-Language-Model-CN/) 第 6–7 章与附录 E 作补充 |
 | 偏好与评估 | 偏好优化选读、[评估](../topics/15-evaluation-safety.md) | 80–150 小时 | 说明数据偏好、奖励与真正任务效果的差别 | [smol course](https://github.com/huggingface/smol-course) Evaluation → Preference Alignment；对照 DPO 原论文与 TRL 文档 |
 | 推理与报告 | [推理服务](../topics/19-inference-serving.md) 选读 | 80–140 小时 | 质量、显存、延迟与限制报告 | [KV cache 实现](https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04/03_kv-cache) → vLLM Quickstart 与 Benchmark CLI；保存质量与延迟报告 |
 

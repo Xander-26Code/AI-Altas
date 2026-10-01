@@ -21,6 +21,7 @@
 
 | 资源 | 语言 · 难度 | 获取 · 算力 | 用法与阅读范围 |
 |---|---|---|---|
+| [Build a Large Language Model (From Scratch) · 社区中文版](https://skindhu.github.io/Build-A-Large-Language-Model-CN/) | 中文 · 进阶 | 免费在线阅读 · 可选GPU | skindhu 社区翻译；第 1–5 章学习分词、attention、GPT 与预训练，第 6–7 章及附录 E 学习微调和 LoRA。配合作者代码逐章实践。 |
 | [Raschka · LLMs from Scratch 配套代码](https://github.com/rasbt/LLMs-from-scratch) | 英文 · 进阶 | 部分免费 · 可选GPU | 第 2–5 章做分词、attention、GPT 与预训练；第 6–7 章和附录 E 做微调。代码免费，完整书籍另售。 |
 | [Datawhale · Happy-LLM](https://github.com/datawhalechina/happy-llm) | 中文 · 进阶 | 免费 · 可选GPU | 中文主线；第 1–4 章入门，第 5–6 章搭建与训练；按章节硬件要求缩小模型。 |
 | [Hugging Face · smol course](https://github.com/huggingface/smol-course) | 英文 · 进阶 | 免费 · GPU | 沿 Instruction Tuning → Evaluation → Preference Alignment 学；先完成小模型 SFT 与评估，再选 DPO。 |
@@ -29,14 +30,14 @@
 
 ## 按资源安排学习顺序
 
-小模型实践选 smol course；原理配 LoRA、DPO 论文，中文可配 Happy-LLM 第 6 章。先完成 SFT 评估，再尝试偏好训练。
+小模型实践选 smol course；原理配 LoRA、DPO 论文，中文可配本书第 6–7 章和附录 E，或 Happy-LLM 第 6 章。先完成 SFT 评估，再尝试偏好训练。
 
 按顺序完成主线，每步完成右列产出后再推进；选修不计入必做清单。页首时长包含所选主线、练习与本页项目，不包含把全部资料逐一学完。
 
 | 阶段 | 使用资源 | 阅读 / 练习范围 | 完成后应留下什么 |
 |---|---|---|---|
-| 1 · SFT 与数据 | [Hugging Face · smol course](https://github.com/huggingface/smol-course)；[Hugging Face TRL](https://huggingface.co/docs/trl/index)；[Datawhale · Happy-LLM](https://github.com/datawhalechina/happy-llm) | Instruction Tuning；TRL Dataset Formats、Chat Templates、SFT | 检查数据模板，保存底座与微调模型对照 |
-| 2 · 参数高效训练 | [Hugging Face PEFT](https://huggingface.co/docs/peft/index)；[LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685)；[Raschka · LLMs from Scratch 配套代码](https://github.com/rasbt/LLMs-from-scratch) | PEFT Quicktour/LoRA；LoRA 论文；Raschka 附录 E | 核对可训练参数、适配器保存与加载 |
+| 1 · SFT 与数据 | [LLMs from Scratch 中文版](https://skindhu.github.io/Build-A-Large-Language-Model-CN/)；[Hugging Face · smol course](https://github.com/huggingface/smol-course)；[Hugging Face TRL](https://huggingface.co/docs/trl/index)；[Datawhale · Happy-LLM](https://github.com/datawhalechina/happy-llm) | 本书第 6 章分类微调 → 第 7 章指令微调；smol Instruction Tuning；TRL 数据格式与 SFT | 检查数据模板，保存底座与微调模型对照 |
+| 2 · 参数高效训练 | [LLMs from Scratch 中文版](https://skindhu.github.io/Build-A-Large-Language-Model-CN/)；[Hugging Face PEFT](https://huggingface.co/docs/peft/index)；[LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685)；[Raschka · LLMs from Scratch 配套代码](https://github.com/rasbt/LLMs-from-scratch) | PEFT Quicktour/LoRA；LoRA 论文；本书附录 E 配 Raschka 代码 | 核对可训练参数、适配器保存与加载 |
 | 3 · 独立评估 | [Hugging Face · smol course](https://github.com/huggingface/smol-course) | Evaluation 单元与自建未见任务 | 记录提升、退化与重复数据检查 |
 | 4 · 偏好训练 | [Direct Preference Optimization](https://arxiv.org/abs/2305.18290)；[Hugging Face TRL](https://huggingface.co/docs/trl/index)；[Hugging Face · smol course](https://github.com/huggingface/smol-course) | Preference Alignment 与 TRL DPO；先用小数据验证 | 核对优选/劣选方向并与 SFT 比较 |
 | 选修 · 扩展方法 | [QLoRA: Efficient Finetuning of Quantized LLMs](https://arxiv.org/abs/2305.14314)；[Training Language Models to Follow Instructions with Human Feedback](https://arxiv.org/abs/2203.02155)；[DeepSeekMath](https://arxiv.org/abs/2402.03300) | QLoRA、InstructGPT 或 DeepSeekMath 按目标选读 | 明确量化、奖励、参考策略与数据前提 |

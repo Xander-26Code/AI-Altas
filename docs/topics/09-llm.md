@@ -22,6 +22,7 @@
 | 资源 | 语言 · 难度 | 获取 · 算力 | 用法与阅读范围 |
 |---|---|---|---|
 | [Karpathy · Neural Networks: Zero to Hero](https://github.com/karpathy/nn-zero-to-hero) | 英文 · 入门 | 免费 · 可选GPU | 视频与 notebook 配套；深度学习先做 micrograd、makemore，再学 GPT 与 tokenizer。 |
+| [Build a Large Language Model (From Scratch) · 社区中文版](https://skindhu.github.io/Build-A-Large-Language-Model-CN/) | 中文 · 进阶 | 免费在线阅读 · 可选GPU | skindhu 社区翻译；第 1–5 章学习分词、attention、GPT 与预训练，第 6–7 章及附录 E 学习微调和 LoRA。配合作者代码逐章实践。 |
 | [Raschka · LLMs from Scratch 配套代码](https://github.com/rasbt/LLMs-from-scratch) | 英文 · 进阶 | 部分免费 · 可选GPU | 第 2–5 章做分词、attention、GPT 与预训练；第 6–7 章和附录 E 做微调。代码免费，完整书籍另售。 |
 | [Datawhale · Happy-LLM](https://github.com/datawhalechina/happy-llm) | 中文 · 进阶 | 免费 · 可选GPU | 中文主线；第 1–4 章入门，第 5–6 章搭建与训练；按章节硬件要求缩小模型。 |
 | [LLMs from Scratch · KV Cache 实现](https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04/03_kv-cache) | 英文 · 进阶 | 免费 · CPU | 先看目录说明和基础缓存实现，再对照无缓存版本；比较生成一致性与解码耗时。 |
@@ -30,15 +31,15 @@
 
 ## 按资源安排学习顺序
 
-从零实现主线选 Raschka 配套代码；中文可换 Happy-LLM。视频用 Zero to Hero 配合，不要求三套完整重复。
+从零实现主线可选本书社区中文版，配合 Raschka 官方代码逐章实践；已有英文书的读者可直接对照代码。Happy-LLM 是另一条中文路线，视频可用 Zero to Hero 补充，按需要选择。
 
 按顺序完成主线，每步完成右列产出后再推进；选修不计入必做清单。页首时长包含所选主线、练习与本页项目，不包含把全部资料逐一学完。
 
 | 阶段 | 使用资源 | 阅读 / 练习范围 | 完成后应留下什么 |
 |---|---|---|---|
-| 1 · 模型与分词 | [Hugging Face LLM Course](https://huggingface.co/learn/llm-course/chapter1/1)；[Datawhale · Happy-LLM](https://github.com/datawhalechina/happy-llm)；[SentencePiece](https://github.com/google/sentencepiece) | HF 第 1–3、6 章；中文对照 Happy-LLM 第 1–4 章；SentencePiece Quick Start | 比较分词结果，构造输入和下一词标签 |
-| 2 · Attention 到 GPT | [Raschka · LLMs from Scratch 配套代码](https://github.com/rasbt/LLMs-from-scratch)；[Karpathy · Neural Networks: Zero to Hero](https://github.com/karpathy/nn-zero-to-hero)；[The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)；[Attention Is All You Need](https://arxiv.org/abs/1706.03762) | Raschka 第 3–4 章或 Zero to Hero GPT 课；图解与原论文查结构 | 画张量维度，完成因果遮罩测试 |
-| 3 · 小规模训练 | [Raschka · LLMs from Scratch 配套代码](https://github.com/rasbt/LLMs-from-scratch)；[Datawhale · Happy-LLM](https://github.com/datawhalechina/happy-llm) | Raschka 第 5 章或 Happy-LLM 第 5–6 章 | 训练小模型并保存损失、采样与失败记录 |
+| 1 · 模型与分词 | [LLMs from Scratch 中文版](https://skindhu.github.io/Build-A-Large-Language-Model-CN/)；[Hugging Face LLM Course](https://huggingface.co/learn/llm-course/chapter1/1)；[Datawhale · Happy-LLM](https://github.com/datawhalechina/happy-llm)；[SentencePiece](https://github.com/google/sentencepiece) | 本书第 1–2 章；HF 第 1–3、6 章；另选中文路线可读 Happy-LLM 第 1–4 章；SentencePiece Quick Start | 比较分词结果，构造输入和下一词标签 |
+| 2 · Attention 到 GPT | [LLMs from Scratch 中文版](https://skindhu.github.io/Build-A-Large-Language-Model-CN/)；[Raschka · LLMs from Scratch 配套代码](https://github.com/rasbt/LLMs-from-scratch)；[Karpathy · Neural Networks: Zero to Hero](https://github.com/karpathy/nn-zero-to-hero)；[The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)；[Attention Is All You Need](https://arxiv.org/abs/1706.03762) | 本书第 3–4 章配 Raschka 代码，或 Zero to Hero GPT 课；图解与原论文查结构 | 画张量维度，完成因果遮罩测试 |
+| 3 · 小规模训练 | [LLMs from Scratch 中文版](https://skindhu.github.io/Build-A-Large-Language-Model-CN/)；[Raschka · LLMs from Scratch 配套代码](https://github.com/rasbt/LLMs-from-scratch)；[Datawhale · Happy-LLM](https://github.com/datawhalechina/happy-llm) | 本书第 5 章配 Raschka 代码，或 Happy-LLM 第 5–6 章 | 训练小模型并保存损失、采样与失败记录 |
 | 4 · 生成与缓存 | [LLMs from Scratch · KV Cache 实现](https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04/03_kv-cache) | 基础 KV cache 实现与无缓存对照 | 核对输出和逐 token 计时 |
 | 选修 · 系统与架构 | [Stanford CS336: Language Modeling from Scratch (2025)](https://cs336.stanford.edu/spring2025/)；[RoFormer: Enhanced Transformer with Rotary Position Embedding](https://arxiv.org/abs/2104.09864)；[Switch Transformers](https://arxiv.org/abs/2101.03961) | CS336 Assignment 1；RoPE 与 MoE 论文按兴趣选读 | 主线完成后再加一个架构对照 |
 

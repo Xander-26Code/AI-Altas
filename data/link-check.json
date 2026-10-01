@@ -1,9 +1,9 @@
 {
-  "checked_at": "2026-10-01T01:50:44.891424+00:00",
+  "checked_at": "2026-10-01T01:53:46.966925+00:00",
   "scope": "Markdown/image destinations, curated resource URLs, configured scripts and built HTML href/src when site exists; capped GET; external fragments need separate review",
   "counts": {
     "local-preview": 1,
-    "ok": 218,
+    "ok": 219,
     "restricted": 2
   },
   "results": [
@@ -12,7 +12,7 @@
       "sources": [
         "README.md"
       ],
-      "checked_at": "2026-10-01T01:50:37.019452+00:00",
+      "checked_at": "2026-10-01T01:53:45.790499+00:00",
       "status": "local-preview",
       "note": "Local preview URL; not a public web resource"
     },
@@ -1015,7 +1015,7 @@
         "site/resources.html",
         "site/topics/07-computer-vision.html"
       ],
-      "checked_at": "2026-10-01T01:50:37.021315+00:00",
+      "checked_at": "2026-10-01T01:53:45.792352+00:00",
       "http_status": 403,
       "status": "restricted",
       "note": "HTTP Error 403: Forbidden"
@@ -2627,7 +2627,7 @@
         "site/resources.html",
         "site/topics/08-time-series.html"
       ],
-      "checked_at": "2026-10-01T01:50:37.023056+00:00",
+      "checked_at": "2026-10-01T01:53:45.793517+00:00",
       "http_status": 403,
       "status": "restricted",
       "note": "HTTP Error 403: Forbidden"
@@ -2836,6 +2836,24 @@
       "checked_at": "2026-10-01T01:23:27.797911+00:00",
       "http_status": 200,
       "final_url": "https://seeing-theory.brown.edu/",
+      "status": "ok"
+    },
+    {
+      "url": "https://skindhu.github.io/Build-A-Large-Language-Model-CN/",
+      "sources": [
+        "data/resources-expanded.json:expanded-scratch-cn",
+        "docs/resources.md",
+        "docs/roadmaps/llm.md",
+        "docs/topics/09-llm.md",
+        "docs/topics/14-finetuning-alignment.md",
+        "site/resources.html",
+        "site/roadmaps/llm.html",
+        "site/topics/09-llm.html",
+        "site/topics/14-finetuning-alignment.html"
+      ],
+      "checked_at": "2026-10-01T01:53:45.793833+00:00",
+      "http_status": 200,
+      "final_url": "https://skindhu.github.io/Build-A-Large-Language-Model-CN/",
       "status": "ok"
     },
     {
